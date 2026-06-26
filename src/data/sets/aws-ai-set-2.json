@@ -1,0 +1,97 @@
+{
+  "id": "aws-ai-set-2",
+  "collection": "AWS AI Practitioner",
+  "title": "Practice Set 2",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "A company needs to search internal policy documents using natural language questions. Which design pattern is most appropriate?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Retrieval Augmented Generation",
+          "correct": true,
+          "explanation": "RAG retrieves relevant context from a knowledge base and supplies it to a model to generate grounded answers."
+        },
+        {
+          "id": "b",
+          "text": "Blue/green deployment",
+          "correct": false,
+          "explanation": "Blue/green deployment is a release strategy and does not address document-grounded question answering."
+        },
+        {
+          "id": "c",
+          "text": "Round-robin DNS",
+          "correct": false,
+          "explanation": "Round-robin DNS distributes traffic and is not an AI retrieval pattern."
+        },
+        {
+          "id": "d",
+          "text": "Server-side encryption",
+          "correct": false,
+          "explanation": "Encryption protects data at rest but does not enable natural language document search."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "question": "Which AWS services or features can support a RAG application on AWS? Select all that apply.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Knowledge Bases for Amazon Bedrock",
+          "correct": true,
+          "explanation": "Knowledge Bases for Amazon Bedrock can connect data sources, retrieve relevant context, and support RAG workflows."
+        },
+        {
+          "id": "b",
+          "text": "Amazon OpenSearch Service vector search",
+          "correct": true,
+          "explanation": "Vector search can store and retrieve embeddings for semantically similar content."
+        },
+        {
+          "id": "c",
+          "text": "AWS WAF managed rules only",
+          "correct": false,
+          "explanation": "AWS WAF helps protect web applications but does not provide retrieval or generation capabilities by itself."
+        },
+        {
+          "id": "d",
+          "text": "Amazon S3 as a source for documents",
+          "correct": true,
+          "explanation": "S3 can store source documents that are ingested into a knowledge base or retrieval pipeline."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "question": "What is the main purpose of model evaluation before deploying an AI feature?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "To confirm quality, safety, and task performance against expected criteria.",
+          "correct": true,
+          "explanation": "Evaluation checks whether a model meets functional and responsible AI expectations before users rely on it."
+        },
+        {
+          "id": "b",
+          "text": "To remove all need for user feedback.",
+          "correct": false,
+          "explanation": "User feedback is still valuable after evaluation because real-world usage can expose new issues."
+        },
+        {
+          "id": "c",
+          "text": "To guarantee the model will never hallucinate.",
+          "correct": false,
+          "explanation": "Evaluation reduces risk but cannot guarantee that generative models will never produce incorrect output."
+        },
+        {
+          "id": "d",
+          "text": "To bypass security testing.",
+          "correct": false,
+          "explanation": "Security testing remains necessary for any production application."
+        }
+      ]
+    }
+  ]
+}

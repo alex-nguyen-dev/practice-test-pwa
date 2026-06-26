@@ -1,0 +1,97 @@
+{
+  "id": "aws-ai-set-3",
+  "collection": "AWS AI Practitioner",
+  "title": "Practice Set 3",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Which machine learning type uses labeled examples to learn a mapping from inputs to expected outputs?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Supervised learning",
+          "correct": true,
+          "explanation": "Supervised learning trains on labeled examples where the expected output is provided."
+        },
+        {
+          "id": "b",
+          "text": "Unsupervised learning",
+          "correct": false,
+          "explanation": "Unsupervised learning finds patterns in data without labeled target outputs."
+        },
+        {
+          "id": "c",
+          "text": "Reinforcement learning",
+          "correct": false,
+          "explanation": "Reinforcement learning trains agents through rewards and actions, not labeled examples."
+        },
+        {
+          "id": "d",
+          "text": "DNS routing",
+          "correct": false,
+          "explanation": "DNS routing is a networking concept rather than a machine learning type."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "question": "Which actions can help protect sensitive data used with generative AI systems? Select all that apply.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Apply least privilege access to source data.",
+          "correct": true,
+          "explanation": "Least privilege limits access to only what the application or user needs."
+        },
+        {
+          "id": "b",
+          "text": "Mask or redact sensitive values before sending prompts when possible.",
+          "correct": true,
+          "explanation": "Redaction and masking reduce exposure of confidential or regulated data."
+        },
+        {
+          "id": "c",
+          "text": "Store secrets directly in client-side JavaScript.",
+          "correct": false,
+          "explanation": "Client-side code can be inspected, so secrets should not be stored there."
+        },
+        {
+          "id": "d",
+          "text": "Use encryption for data at rest and in transit.",
+          "correct": true,
+          "explanation": "Encryption helps protect data both when stored and when transmitted."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "question": "A business user wants to compare several foundation models for price and latency before selecting one. Which approach is most practical?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Evaluate candidate models with representative prompts and expected outputs.",
+          "correct": true,
+          "explanation": "Testing models against realistic prompts and measuring latency, cost, and quality supports informed selection."
+        },
+        {
+          "id": "b",
+          "text": "Choose the largest model in every case.",
+          "correct": false,
+          "explanation": "Larger models can cost more and may not be necessary for every task."
+        },
+        {
+          "id": "c",
+          "text": "Ignore latency because model quality is the only metric.",
+          "correct": false,
+          "explanation": "Latency affects user experience and can be a key requirement."
+        },
+        {
+          "id": "d",
+          "text": "Avoid evaluation if the model is available through a managed API.",
+          "correct": false,
+          "explanation": "Managed access simplifies operations but does not replace task-specific model evaluation."
+        }
+      ]
+    }
+  ]
+}
