@@ -28,6 +28,7 @@ export default function QuestionScreen() {
       setAnswers({});
       setSelected([]);
       setIndex(0);
+      window.scrollTo({ top: 0 });
     };
     return (
       <section className="space-y-4 sm:space-y-5">
@@ -78,6 +79,7 @@ export default function QuestionScreen() {
   const next = () => {
     setSelected([]);
     setIndex((i) => i + 1);
+    window.scrollTo({ top: 0 });
   };
 
   const choiceState = (choice) => {
