@@ -5,91 +5,91 @@
   "questions": [
     {
       "id": "q1",
-      "question": "A team wants to quickly build a text summarization feature without managing model infrastructure. Which AWS service is the best fit?",
+      "question": "A product team at a media company wants to add a feature that automatically generates short summaries of long news articles. The team has limited machine learning experience, does not want to provision or manage any GPU infrastructure, and needs to start experimenting with large language models through a simple API within days rather than months. Which AWS service best meets these requirements?",
       "choices": [
         {
           "id": "a",
-          "text": "Amazon Bedrock",
+          "text": "Amazon Bedrock, which provides serverless access to a choice of foundation models from Amazon and leading model providers through a single API.",
           "correct": true,
-          "explanation": "Amazon Bedrock provides access to foundation models through a managed API, making it suitable for generative AI tasks such as summarization."
+          "explanation": "Amazon Bedrock is a fully managed service that exposes foundation models from multiple providers through a unified, serverless API. Because there is no infrastructure to provision or manage, a team with limited ML experience can begin generating summaries quickly, making it the best fit for managed generative AI tasks such as text summarization."
         },
         {
           "id": "b",
-          "text": "Amazon EC2 Auto Scaling",
+          "text": "Amazon EC2 Auto Scaling, which automatically adjusts the number of compute instances based on demand.",
           "correct": false,
-          "explanation": "EC2 Auto Scaling manages compute capacity but does not provide managed foundation model access."
+          "explanation": "EC2 Auto Scaling only manages the number of compute instances to match load. It does not provide foundation models or a managed generative AI API, so the team would still have to source, host, and operate models themselves, which contradicts the requirement to avoid managing infrastructure."
         },
         {
           "id": "c",
-          "text": "AWS Glue",
+          "text": "AWS Glue, which discovers, prepares, and integrates data from many sources for analytics and machine learning.",
           "correct": false,
-          "explanation": "AWS Glue is used for data integration and ETL, not directly for managed text generation."
+          "explanation": "AWS Glue is a serverless data integration and ETL service used to catalog and transform data before it is analyzed or used for training. It does not generate text or provide access to language models, so it cannot directly produce article summaries."
         },
         {
           "id": "d",
-          "text": "Amazon Route 53",
+          "text": "Amazon Route 53, which provides scalable Domain Name System (DNS) and traffic routing for applications.",
           "correct": false,
-          "explanation": "Route 53 is a DNS service and is unrelated to text summarization."
+          "explanation": "Amazon Route 53 is a DNS web service for routing users to application endpoints. It has no relationship to natural language processing or text generation and therefore cannot be used to summarize articles."
         }
       ]
     },
     {
       "id": "q2",
-      "question": "Which statements describe responsible AI practices for a generative AI application? Select all that apply.",
+      "question": "A startup is preparing to launch a customer-facing generative AI assistant that drafts marketing copy. The leadership team asks the project owner to ensure that the assistant is built and operated following responsible AI principles throughout its lifecycle. Which of the following describe sound responsible AI practices the team should adopt? (Select all that apply.)",
       "choices": [
         {
           "id": "a",
-          "text": "Review outputs for bias and harmful content before broad release.",
+          "text": "Establish a process to review model outputs for bias, harmful content, and accuracy both before launch and on an ongoing basis after release.",
           "correct": true,
-          "explanation": "Evaluation for bias, harmful content, and quality is an important responsible AI practice."
+          "explanation": "Continuously evaluating outputs for bias, toxicity, and quality is a core responsible AI practice. Reviewing before launch reduces initial risk, and ongoing review catches new issues as usage patterns and inputs evolve over time."
         },
         {
           "id": "b",
-          "text": "Avoid monitoring after launch because model behavior is fixed.",
+          "text": "Skip post-launch monitoring of the assistant because a foundation model's behavior is fixed once it is deployed and will not change.",
           "correct": false,
-          "explanation": "Model inputs, usage patterns, and risks can change, so monitoring remains important after launch."
+          "explanation": "Even when the underlying model weights are fixed, real-world inputs, user behavior, prompt patterns, and business risks all change after launch. Responsible AI requires ongoing monitoring to detect drift, misuse, and emerging harms, so skipping it is not a sound practice."
         },
         {
           "id": "c",
-          "text": "Be transparent with users when AI-generated content is used.",
+          "text": "Clearly disclose to users when they are interacting with AI or receiving AI-generated content, so they can make informed decisions.",
           "correct": true,
-          "explanation": "Transparency helps users understand when they are interacting with or receiving generated content."
+          "explanation": "Transparency is a key responsible AI principle. Telling users when content is AI-generated, or when they are interacting with an automated assistant, helps set appropriate expectations and supports informed, trustworthy use of the system."
         },
         {
           "id": "d",
-          "text": "Grant the application broad production access to simplify testing.",
+          "text": "Grant the assistant broad, standing access to production systems and customer data to make testing and iteration faster.",
           "correct": false,
-          "explanation": "Least privilege access is safer and should be used for applications and testing."
+          "explanation": "Granting broad access violates the principle of least privilege and increases the blast radius of any mistake or compromise. Applications and test environments should be given only the minimum permissions they need, so this is not a responsible practice."
         }
       ]
     },
     {
       "id": "q3",
-      "question": "Which AWS service helps label data for machine learning training datasets?",
+      "question": "A data science team is building a supervised computer vision model and needs to create a large, high-quality set of labeled training images. They want a managed way to coordinate human labelers, apply automated labeling where confidence is high, and track labeling quality. Which AWS service is designed for this purpose?",
       "choices": [
         {
           "id": "a",
-          "text": "Amazon SageMaker Ground Truth",
+          "text": "Amazon SageMaker Ground Truth, which helps build labeled datasets using a combination of human annotators and automated, machine-assisted labeling.",
           "correct": true,
-          "explanation": "SageMaker Ground Truth helps create labeled datasets using human labelers and automation."
+          "explanation": "Amazon SageMaker Ground Truth is purpose-built for creating high-quality labeled training datasets. It can route data to human labelers, use automated (machine-assisted) labeling to reduce cost on high-confidence items, and help manage labeling workflows and quality, which is exactly what the team needs."
         },
         {
           "id": "b",
-          "text": "Amazon CloudFront",
+          "text": "Amazon CloudFront, which caches and delivers content to users from edge locations close to them.",
           "correct": false,
-          "explanation": "CloudFront is a content delivery network, not a data labeling service."
+          "explanation": "Amazon CloudFront is a content delivery network (CDN) that accelerates the distribution of static and dynamic content. It plays no role in annotating or labeling data for machine learning."
         },
         {
           "id": "c",
-          "text": "AWS CloudTrail",
+          "text": "AWS CloudTrail, which records account activity and API calls across AWS services for auditing and governance.",
           "correct": false,
-          "explanation": "CloudTrail records AWS API activity for auditing and governance."
+          "explanation": "AWS CloudTrail provides a log of API activity for security analysis, auditing, and compliance. While useful for governance, it does not create or manage labeled datasets for training models."
         },
         {
           "id": "d",
-          "text": "Amazon VPC",
+          "text": "Amazon VPC, which provides logically isolated virtual networks where AWS resources can be launched.",
           "correct": false,
-          "explanation": "Amazon VPC provides isolated networking resources, not data labeling."
+          "explanation": "Amazon Virtual Private Cloud (VPC) provides isolated networking and security boundaries for resources. It is an infrastructure networking service and has nothing to do with labeling training data."
         }
       ]
     }

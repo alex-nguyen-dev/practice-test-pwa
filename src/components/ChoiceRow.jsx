@@ -22,12 +22,12 @@ export default function ChoiceRow({ choice, selected, locked, multi, state, onSe
       type="button"
       disabled={locked}
       onClick={onSelect}
-      className={`w-full rounded-3xl border p-4 text-left shadow-glass-soft backdrop-blur-xl transition duration-200 active:scale-[.985] disabled:cursor-default ${stateClasses[state]}`}
+      className={`w-full rounded-3xl border p-3.5 text-left shadow-glass-soft backdrop-blur-xl transition duration-200 active:scale-[.985] disabled:cursor-default sm:p-4 ${stateClasses[state]}`}
     >
-      <div className="flex items-start gap-3">
-        <Icon className="mt-0.5 h-6 w-6 shrink-0 text-slate-700 dark:text-slate-200" />
+      <div className="flex items-start gap-2.5 sm:gap-3">
+        <Icon className="mt-0.5 h-5 w-5 shrink-0 text-slate-700 dark:text-slate-200 sm:h-6 sm:w-6" />
         <div className="min-w-0 flex-1">
-          <p className="text-base font-semibold leading-snug text-slate-900 dark:text-white">{choice.text}</p>
+          <p className="text-sm font-semibold leading-snug text-slate-900 dark:text-white sm:text-base">{choice.text}</p>
           {locked && (
             <div className="mt-3 flex flex-wrap gap-2 text-xs font-bold uppercase tracking-wide">
               {state === 'correct' && (

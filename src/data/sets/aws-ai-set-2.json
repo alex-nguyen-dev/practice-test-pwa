@@ -5,91 +5,91 @@
   "questions": [
     {
       "id": "q1",
-      "question": "A company needs to search internal policy documents using natural language questions. Which design pattern is most appropriate?",
+      "question": "A large enterprise wants employees to ask natural language questions and receive accurate answers grounded in the company's internal policy and HR documents. The answers must reflect the most current documents and include information the foundation model was never trained on. Which design pattern is the most appropriate way to meet these requirements?",
       "choices": [
         {
           "id": "a",
-          "text": "Retrieval Augmented Generation",
+          "text": "Retrieval Augmented Generation (RAG), which retrieves relevant passages from an external knowledge source and supplies them to the model as context when generating an answer.",
           "correct": true,
-          "explanation": "RAG retrieves relevant context from a knowledge base and supplies it to a model to generate grounded answers."
+          "explanation": "RAG combines a retrieval step with generation: relevant passages are fetched from an up-to-date knowledge base and passed to the model as context. This grounds responses in the company's own documents and lets the model answer using information it was never trained on, which directly satisfies the requirements."
         },
         {
           "id": "b",
-          "text": "Blue/green deployment",
+          "text": "Blue/green deployment, which runs two production environments so traffic can be shifted between an old and a new version.",
           "correct": false,
-          "explanation": "Blue/green deployment is a release strategy and does not address document-grounded question answering."
+          "explanation": "Blue/green deployment is a release strategy used to reduce downtime and risk when shipping new versions of an application. It does not retrieve documents or ground model answers, so it does not address grounded question answering."
         },
         {
           "id": "c",
-          "text": "Round-robin DNS",
+          "text": "Round-robin DNS, which distributes incoming requests across multiple servers by rotating through their IP addresses.",
           "correct": false,
-          "explanation": "Round-robin DNS distributes traffic and is not an AI retrieval pattern."
+          "explanation": "Round-robin DNS is a simple load-distribution technique at the networking layer. It has nothing to do with retrieving knowledge or generating grounded answers from documents."
         },
         {
           "id": "d",
-          "text": "Server-side encryption",
+          "text": "Server-side encryption, which automatically encrypts data before it is written to storage and decrypts it on retrieval.",
           "correct": false,
-          "explanation": "Encryption protects data at rest but does not enable natural language document search."
+          "explanation": "Server-side encryption protects data confidentiality at rest. While important for security, it does not enable natural language search over documents or ground a model's answers in them."
         }
       ]
     },
     {
       "id": "q2",
-      "question": "Which AWS services or features can support a RAG application on AWS? Select all that apply.",
+      "question": "A solutions team is designing a Retrieval Augmented Generation (RAG) application on AWS. They need to store source documents, convert content into searchable embeddings, and retrieve the most relevant context to pass to a foundation model at query time. Which AWS services or features can support this RAG architecture? (Select all that apply.)",
       "choices": [
         {
           "id": "a",
-          "text": "Knowledge Bases for Amazon Bedrock",
+          "text": "Knowledge Bases for Amazon Bedrock, which can connect to data sources, automatically ingest and chunk content, and retrieve relevant context for grounded responses.",
           "correct": true,
-          "explanation": "Knowledge Bases for Amazon Bedrock can connect data sources, retrieve relevant context, and support RAG workflows."
+          "explanation": "Knowledge Bases for Amazon Bedrock is a managed capability that connects data sources, handles ingestion and embedding, and retrieves relevant passages for a model to use. It is designed specifically to support RAG workflows with minimal custom code."
         },
         {
           "id": "b",
-          "text": "Amazon OpenSearch Service vector search",
+          "text": "Amazon OpenSearch Service with vector search, which stores embeddings and returns semantically similar passages for a given query.",
           "correct": true,
-          "explanation": "Vector search can store and retrieve embeddings for semantically similar content."
+          "explanation": "Amazon OpenSearch Service supports vector (k-NN) search, allowing the application to store document embeddings and retrieve the most semantically similar content. This retrieval capability is a common building block of RAG systems on AWS."
         },
         {
           "id": "c",
-          "text": "AWS WAF managed rules only",
+          "text": "AWS WAF managed rules used on their own to filter web traffic to the application.",
           "correct": false,
-          "explanation": "AWS WAF helps protect web applications but does not provide retrieval or generation capabilities by itself."
+          "explanation": "AWS WAF helps protect web applications from common exploits and unwanted traffic. While it can secure the application's front end, by itself it provides no retrieval, embedding, or generation capability and is not part of the RAG pipeline."
         },
         {
           "id": "d",
-          "text": "Amazon S3 as a source for documents",
+          "text": "Amazon S3 used as durable storage for the source documents that are ingested into the retrieval pipeline.",
           "correct": true,
-          "explanation": "S3 can store source documents that are ingested into a knowledge base or retrieval pipeline."
+          "explanation": "Amazon S3 is commonly used to store the raw source documents that feed a RAG system. A knowledge base or ingestion pipeline can read these objects, chunk and embed them, and make them available for retrieval."
         }
       ]
     },
     {
       "id": "q3",
-      "question": "What is the main purpose of model evaluation before deploying an AI feature?",
+      "question": "Before releasing a new AI-powered feature to customers, an organization plans to evaluate the model against a set of representative test cases with known expected results. A stakeholder asks why this evaluation step is necessary. What is the primary purpose of evaluating a model before deployment?",
       "choices": [
         {
           "id": "a",
-          "text": "To confirm quality, safety, and task performance against expected criteria.",
+          "text": "To verify that the model meets quality, safety, and task-performance expectations by measuring its outputs against defined acceptance criteria.",
           "correct": true,
-          "explanation": "Evaluation checks whether a model meets functional and responsible AI expectations before users rely on it."
+          "explanation": "Pre-deployment evaluation measures whether the model produces accurate, safe, and acceptable outputs for the intended task, using defined criteria and representative test cases. This is the main reason to evaluate before customers depend on the feature."
         },
         {
           "id": "b",
-          "text": "To remove all need for user feedback.",
+          "text": "To eliminate any future need to collect or act on user feedback once the feature is live.",
           "correct": false,
-          "explanation": "User feedback is still valuable after evaluation because real-world usage can expose new issues."
+          "explanation": "Evaluation reduces risk but does not replace real-world feedback. Production usage frequently surfaces edge cases and issues that pre-launch testing misses, so user feedback remains valuable after deployment."
         },
         {
           "id": "c",
-          "text": "To guarantee the model will never hallucinate.",
+          "text": "To guarantee that the generative model will never produce an incorrect or fabricated (hallucinated) response.",
           "correct": false,
-          "explanation": "Evaluation reduces risk but cannot guarantee that generative models will never produce incorrect output."
+          "explanation": "No evaluation can guarantee a generative model will never hallucinate. Evaluation lowers the likelihood and helps quantify the risk, but it cannot eliminate incorrect outputs entirely."
         },
         {
           "id": "d",
-          "text": "To bypass security testing.",
+          "text": "To remove the need for separate security testing of the application that hosts the model.",
           "correct": false,
-          "explanation": "Security testing remains necessary for any production application."
+          "explanation": "Model evaluation focuses on output quality and behavior, not on application security. Security testing of the surrounding application remains necessary regardless of how the model performs."
         }
       ]
     }

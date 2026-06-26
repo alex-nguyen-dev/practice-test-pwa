@@ -5,91 +5,91 @@
   "questions": [
     {
       "id": "q1",
-      "question": "Which machine learning type uses labeled examples to learn a mapping from inputs to expected outputs?",
+      "question": "A retail company has several years of historical sales records in which each example is paired with the actual revenue that resulted. The data science team wants to train a model that learns the relationship between input features and these known outcomes so it can predict revenue for new situations. Which type of machine learning does this scenario describe?",
       "choices": [
         {
           "id": "a",
-          "text": "Supervised learning",
+          "text": "Supervised learning, in which a model is trained on labeled examples that include the correct output for each input.",
           "correct": true,
-          "explanation": "Supervised learning trains on labeled examples where the expected output is provided."
+          "explanation": "Supervised learning uses labeled data where each input is paired with a known target output. Because the company has historical examples with the actual revenue outcomes, training a model to map inputs to those known outputs is a supervised learning task."
         },
         {
           "id": "b",
-          "text": "Unsupervised learning",
+          "text": "Unsupervised learning, in which a model finds structure or groupings in data that has no labeled outputs.",
           "correct": false,
-          "explanation": "Unsupervised learning finds patterns in data without labeled target outputs."
+          "explanation": "Unsupervised learning discovers patterns, clusters, or structure in unlabeled data. Since the dataset already includes the correct revenue outcome for each example, the scenario is supervised rather than unsupervised."
         },
         {
           "id": "c",
-          "text": "Reinforcement learning",
+          "text": "Reinforcement learning, in which an agent learns a policy by taking actions in an environment and receiving rewards or penalties.",
           "correct": false,
-          "explanation": "Reinforcement learning trains agents through rewards and actions, not labeled examples."
+          "explanation": "Reinforcement learning trains an agent through trial-and-error interactions with an environment, guided by reward signals. It does not learn from a fixed dataset of labeled input-output pairs, so it does not match this scenario."
         },
         {
           "id": "d",
-          "text": "DNS routing",
+          "text": "DNS routing, which directs network requests to the appropriate servers based on domain names.",
           "correct": false,
-          "explanation": "DNS routing is a networking concept rather than a machine learning type."
+          "explanation": "DNS routing is a networking concept used to resolve domain names to server addresses. It is not a category of machine learning and is unrelated to training predictive models."
         }
       ]
     },
     {
       "id": "q2",
-      "question": "Which actions can help protect sensitive data used with generative AI systems? Select all that apply.",
+      "question": "A healthcare organization is building a generative AI application that may process records containing personally identifiable information (PII) and other sensitive data. The security team wants to apply layered controls that reduce the risk of exposing this data while still allowing the application to function. Which of the following actions help protect the sensitive data? (Select all that apply.)",
       "choices": [
         {
           "id": "a",
-          "text": "Apply least privilege access to source data.",
+          "text": "Apply least privilege access so that the application and its users can reach only the specific source data they actually need.",
           "correct": true,
-          "explanation": "Least privilege limits access to only what the application or user needs."
+          "explanation": "Least privilege limits each identity and component to the minimum permissions required. Narrowing access to source data reduces the chance that sensitive records are exposed through over-broad permissions, making this a sound protective control."
         },
         {
           "id": "b",
-          "text": "Mask or redact sensitive values before sending prompts when possible.",
+          "text": "Mask or redact sensitive values, where feasible, before including data in prompts sent to the model.",
           "correct": true,
-          "explanation": "Redaction and masking reduce exposure of confidential or regulated data."
+          "explanation": "Masking or redacting PII before it is placed into a prompt reduces the amount of sensitive data that the model and downstream logs ever see. This lowers exposure of confidential or regulated information and is a recommended practice."
         },
         {
           "id": "c",
-          "text": "Store secrets directly in client-side JavaScript.",
+          "text": "Embed long-lived secrets and API keys directly in client-side JavaScript so the browser can call services without a backend.",
           "correct": false,
-          "explanation": "Client-side code can be inspected, so secrets should not be stored there."
+          "explanation": "Anything shipped to the browser can be viewed by users, so storing secrets in client-side JavaScript exposes them to anyone who inspects the page. Secrets should be kept server-side or in a managed secrets store, making this an insecure choice."
         },
         {
           "id": "d",
-          "text": "Use encryption for data at rest and in transit.",
+          "text": "Encrypt sensitive data both at rest in storage and in transit over the network.",
           "correct": true,
-          "explanation": "Encryption helps protect data both when stored and when transmitted."
+          "explanation": "Encrypting data at rest and in transit protects it from being read if storage or network traffic is intercepted or improperly accessed. This is a foundational control for safeguarding sensitive information end to end."
         }
       ]
     },
     {
       "id": "q3",
-      "question": "A business user wants to compare several foundation models for price and latency before selecting one. Which approach is most practical?",
+      "question": "A business analyst needs to choose a foundation model for a new chat feature and wants to compare several candidate models on cost per request, response latency, and answer quality before committing to one. The analyst asks for the most practical way to make this decision. Which approach should be recommended?",
       "choices": [
         {
           "id": "a",
-          "text": "Evaluate candidate models with representative prompts and expected outputs.",
+          "text": "Run an evaluation in which each candidate model is tested with representative prompts and expected outputs, measuring quality, latency, and cost.",
           "correct": true,
-          "explanation": "Testing models against realistic prompts and measuring latency, cost, and quality supports informed selection."
+          "explanation": "Testing each candidate against realistic, representative prompts and measuring quality, latency, and cost provides the evidence needed to choose the best model for the task. This data-driven evaluation is the most practical way to compare models on the metrics that matter."
         },
         {
           "id": "b",
-          "text": "Choose the largest model in every case.",
+          "text": "Always select the largest available model, since larger models are assumed to perform best in every situation.",
           "correct": false,
-          "explanation": "Larger models can cost more and may not be necessary for every task."
+          "explanation": "Larger models often cost more and add latency, and they are not necessarily better for a given task. Choosing the largest model by default ignores cost and latency requirements and is not a sound selection strategy."
         },
         {
           "id": "c",
-          "text": "Ignore latency because model quality is the only metric.",
+          "text": "Ignore latency entirely and base the decision only on the model with the highest answer quality.",
           "correct": false,
-          "explanation": "Latency affects user experience and can be a key requirement."
+          "explanation": "Latency strongly affects user experience in an interactive chat feature and can be a hard requirement. Optimizing for quality alone while ignoring latency could result in a model that is too slow for real use."
         },
         {
           "id": "d",
-          "text": "Avoid evaluation if the model is available through a managed API.",
+          "text": "Skip evaluation altogether whenever a model is available through a fully managed API.",
           "correct": false,
-          "explanation": "Managed access simplifies operations but does not replace task-specific model evaluation."
+          "explanation": "Managed API access simplifies operations but says nothing about how well a particular model fits this specific task, or its cost and latency for these workloads. Task-specific evaluation is still needed to make an informed choice."
         }
       ]
     }

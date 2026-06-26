@@ -30,7 +30,7 @@ export default function QuestionScreen() {
       setIndex(0);
     };
     return (
-      <section className="space-y-5">
+      <section className="space-y-4 sm:space-y-5">
         <GlassCard className="p-6 text-center">
           <p className="text-sm font-semibold text-slate-600 dark:text-slate-300">{set.title}</p>
           <h1 className="mt-3 text-5xl font-bold text-slate-950 dark:text-white">{percent}%</h1>
@@ -90,9 +90,9 @@ export default function QuestionScreen() {
   };
 
   return (
-    <section className="space-y-5">
-      <GlassCard className="overflow-hidden p-5">
-        <div className="mb-5 flex items-center justify-between gap-4">
+    <section className="space-y-4 sm:space-y-5">
+      <GlassCard className="overflow-hidden p-4 sm:p-5">
+        <div className="mb-4 flex items-center justify-between gap-4 sm:mb-5">
           <div>
             <p className="text-sm font-semibold text-slate-600 dark:text-slate-300">{set.title}</p>
             <p className="mt-1 text-xs font-bold uppercase text-slate-500 dark:text-slate-300">
@@ -104,9 +104,9 @@ export default function QuestionScreen() {
         <div className="mb-6 h-2 overflow-hidden rounded-full bg-white/50 dark:bg-white/10">
           <div className="h-full rounded-full bg-sky-500 transition-all duration-500" style={{ width: `${progress}%` }} />
         </div>
-        <h1 className="text-2xl font-bold leading-tight text-slate-950 dark:text-white">{question.question}</h1>
+        <h1 className="text-base font-bold leading-snug text-slate-950 dark:text-white sm:text-2xl sm:leading-tight">{question.question}</h1>
         {isMultiAnswer && (
-          <p className="mt-4 rounded-2xl border border-white/35 bg-white/35 px-4 py-3 text-sm font-semibold text-slate-700 dark:border-white/10 dark:bg-white/10 dark:text-slate-200">
+          <p className="mt-3 rounded-2xl border border-white/35 bg-white/35 px-3.5 py-2.5 text-xs font-semibold text-slate-700 dark:border-white/10 dark:bg-white/10 dark:text-slate-200 sm:mt-4 sm:px-4 sm:py-3 sm:text-sm">
             Select all that apply ({correctCount} correct)
           </p>
         )}
