@@ -1,0 +1,307 @@
+{
+  "id": "aws-ai-set-6",
+  "collection": "AWS AI Practitioner",
+  "title": "Practice Set 6",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "A team wants to use AWS-built foundation models, available through Amazon Bedrock, that are designed for speed, cost effectiveness, and enterprise use across text, image, and video tasks. Which AWS foundation model family fits this description?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Athena, an interactive query service.",
+          "correct": false,
+          "explanation": "Amazon Athena queries data in S3 using SQL. It is not a foundation model offering."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Inspector, a vulnerability scanning service.",
+          "correct": false,
+          "explanation": "Amazon Inspector scans workloads for vulnerabilities. It is not a foundation model family."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Nova, an AWS foundation model family for enterprise use.",
+          "correct": true,
+          "explanation": "Amazon Nova is an AWS foundation model family available through Bedrock, designed for speed, cost effectiveness, and enterprise use, with model types spanning text and multimodal reasoning, image and video generation, speech, and embeddings."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Macie, a sensitive data discovery service.",
+          "correct": false,
+          "explanation": "Amazon Macie discovers sensitive data in S3. It is not a foundation model family."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "question": "A business analyst with no coding experience wants to build and use a custom ML model through a visual, no-code interface. Which Amazon SageMaker capability is designed for this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker Canvas, a no-code interface for building models.",
+          "correct": true,
+          "explanation": "SageMaker Canvas provides a visual, no-code environment that lets business users build, evaluate, and use custom ML models without writing code, making it ideal for non-developers."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker Model Registry, which versions model artifacts.",
+          "correct": false,
+          "explanation": "Model Registry manages model versions and approvals. It is a governance tool, not a no-code model-building interface."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker Feature Store, which stores and reuses features.",
+          "correct": false,
+          "explanation": "Feature Store centralizes features for reuse. It does not provide a no-code modeling experience."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker Pipelines, which orchestrates ML CI/CD workflows.",
+          "correct": false,
+          "explanation": "Pipelines automate ML workflows and require technical setup. They are not a no-code interface for business users to build models."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "question": "After a model has been in production for months, its prediction quality slowly degrades as real-world data changes. Which Amazon SageMaker capability is designed to detect this drift in production?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker Model Monitor, which detects production drift.",
+          "correct": true,
+          "explanation": "SageMaker Model Monitor continuously watches deployed models for data and quality drift, bias, and other issues, alerting teams when production performance degrades over time."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker Data Wrangler, which prepares and transforms data.",
+          "correct": false,
+          "explanation": "Data Wrangler is used for data preparation before training. It does not monitor production model quality."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker JumpStart, a model hub and solution library.",
+          "correct": false,
+          "explanation": "JumpStart provides pre-built models and solutions to get started quickly. It does not monitor production drift."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker Ground Truth, which labels training data.",
+          "correct": false,
+          "explanation": "Ground Truth creates labeled datasets and gathers human feedback. It does not monitor deployed models for drift."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "question": "A compliance team needs to continuously collect evidence of their AWS environment's controls and generate assessment reports mapped to frameworks such as HIPAA, PCI DSS, and SOC 2. Which AWS service is purpose-built for this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "AWS Audit Manager, which collects audit evidence for frameworks.",
+          "correct": true,
+          "explanation": "AWS Audit Manager continuously audits AWS usage, collects evidence, and generates assessment reports mapped to frameworks such as CIS, GDPR, HIPAA, PCI DSS, and SOC 2, streamlining compliance work."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Macie, which discovers sensitive data in S3.",
+          "correct": false,
+          "explanation": "Amazon Macie focuses on discovering sensitive data. It is not an audit evidence and compliance assessment tool."
+        },
+        {
+          "id": "c",
+          "text": "AWS Artifact, which provides downloadable compliance reports and agreements.",
+          "correct": false,
+          "explanation": "AWS Artifact lets you download AWS's own compliance reports and agreements, but it does not continuously collect evidence about your own resources or generate custom assessment reports."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Inspector, which scans for software vulnerabilities.",
+          "correct": false,
+          "explanation": "Amazon Inspector finds vulnerabilities in EC2, ECR images, and Lambda. It does not produce compliance framework assessment reports."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "question": "A tester notices that submitting the exact same prompt to a large language model can produce different responses on different runs. What does this behavior demonstrate?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "LLMs are non-deterministic and generate tokens probabilistically.",
+          "correct": true,
+          "explanation": "Large language models are non-deterministic: they generate tokens based on probability distributions, so the same prompt can produce different outputs across runs, especially with higher temperature settings."
+        },
+        {
+          "id": "b",
+          "text": "The model is malfunctioning and must be retrained immediately.",
+          "correct": false,
+          "explanation": "Varying outputs are expected behavior for generative LLMs, not a malfunction. No retraining is needed simply because outputs differ between runs."
+        },
+        {
+          "id": "c",
+          "text": "The model has memorized only one correct answer and is leaking it.",
+          "correct": false,
+          "explanation": "Different outputs indicate probabilistic generation, not memorization or leaking. This is normal non-deterministic behavior."
+        },
+        {
+          "id": "d",
+          "text": "The prompt was tokenized incorrectly, which always causes errors.",
+          "correct": false,
+          "explanation": "Variation in output is due to the probabilistic nature of generation, not a tokenization error. Tokenization issues are a separate concern."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "question": "A data scientist transforms a raw 'BirthDate' column into an 'Age' value to make it more useful for a model. What is this process called?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Feature engineering, creating useful variables from raw data.",
+          "correct": true,
+          "explanation": "Feature engineering creates, transforms, or extracts informative input variables from raw data. Converting BirthDate into Age is a classic example of feature engineering."
+        },
+        {
+          "id": "b",
+          "text": "Tokenization, which splits text into tokens.",
+          "correct": false,
+          "explanation": "Tokenization breaks text into tokens for language models. It is not the same as deriving a new feature like Age from a date."
+        },
+        {
+          "id": "c",
+          "text": "Model deployment, which serves a trained model for inference.",
+          "correct": false,
+          "explanation": "Deployment makes a trained model available to serve predictions. It is unrelated to creating features from raw data."
+        },
+        {
+          "id": "d",
+          "text": "Hyperparameter tuning, which searches for the best training settings.",
+          "correct": false,
+          "explanation": "Hyperparameter tuning searches for good training configuration values like learning rate. It does not transform raw input columns into new features."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "question": "A company building an audiobook feature wants lifelike text-to-speech with control over pronunciation and pauses, plus word-level timing to highlight text as it is read. Which AWS service and features support this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Polly, using SSML and speech marks for timed narration.",
+          "correct": true,
+          "explanation": "Amazon Polly is a text-to-speech service. SSML controls pauses and pronunciation, lexicons customize pronunciation, and speech marks provide word and sentence timing useful for highlighting or lip sync."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Transcribe, using custom vocabularies for domain words.",
+          "correct": false,
+          "explanation": "Amazon Transcribe converts speech to text, the opposite of generating audio from text. It does not produce lifelike narration."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Comprehend, using sentiment analysis.",
+          "correct": false,
+          "explanation": "Amazon Comprehend analyzes text meaning. It does not generate speech audio for an audiobook."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Translate, using real-time translation.",
+          "correct": false,
+          "explanation": "Amazon Translate converts text between languages. It does not produce text-to-speech audio with timing marks."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "question": "An organization wants standardized documentation of an AWS AI service's intended use cases, limitations, and responsible AI design considerations. Which AWS resource provides this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "AWS Trusted Advisor checks, which recommend best practices.",
+          "correct": false,
+          "explanation": "Trusted Advisor provides account recommendations. It does not publish standardized responsible AI documentation for AI services."
+        },
+        {
+          "id": "b",
+          "text": "AWS Cost Explorer, which analyzes spending.",
+          "correct": false,
+          "explanation": "AWS Cost Explorer visualizes and analyzes AWS costs. It does not document AI service intended use and limitations."
+        },
+        {
+          "id": "c",
+          "text": "AWS AI Service Cards, documenting intended use and limitations.",
+          "correct": true,
+          "explanation": "AWS AI Service Cards document an AI service's intended use cases, limitations, responsible AI design choices, and best practices, supporting transparency and responsible use."
+        },
+        {
+          "id": "d",
+          "text": "Amazon CloudWatch dashboards, which visualize metrics.",
+          "correct": false,
+          "explanation": "CloudWatch dashboards display operational metrics. They are not documentation of responsible AI design choices for a service."
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "question": "A team needs a large number of simple human tasks completed at scale, such as labeling thousands of images through a crowdsourcing marketplace. Which AWS service is designed for this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Kendra, an enterprise search service.",
+          "correct": false,
+          "explanation": "Amazon Kendra provides document search. It does not coordinate crowdsourced human labeling tasks."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Polly, a text-to-speech service.",
+          "correct": false,
+          "explanation": "Amazon Polly converts text to speech. It is unrelated to crowdsourcing human tasks."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Mechanical Turk, a crowdsourcing marketplace for tasks.",
+          "correct": true,
+          "explanation": "Amazon Mechanical Turk is a crowdsourcing marketplace for distributing simple human tasks such as image labeling and data collection at scale, and it integrates with services like SageMaker Ground Truth and Augmented AI."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Translate, a translation service.",
+          "correct": false,
+          "explanation": "Amazon Translate handles language translation. It does not provide a crowdsourcing workforce."
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "A classification model is evaluated using a metric that compares the true positive rate against the false positive rate across many thresholds, summarizing performance in a single value. Which metric is this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "RMSE, a regression error metric.",
+          "correct": false,
+          "explanation": "RMSE (root mean squared error) measures error for regression predictions. It is not a threshold-based classification curve metric."
+        },
+        {
+          "id": "b",
+          "text": "MAPE, a regression percentage error metric.",
+          "correct": false,
+          "explanation": "MAPE (mean absolute percentage error) is a regression metric. It does not compare true and false positive rates across thresholds."
+        },
+        {
+          "id": "c",
+          "text": "R-squared, which measures variance explained in regression.",
+          "correct": false,
+          "explanation": "R-squared describes how much variance a regression model explains. It is not used for classification threshold analysis."
+        },
+        {
+          "id": "d",
+          "text": "AUC-ROC, comparing true and false positive rates across thresholds.",
+          "correct": true,
+          "explanation": "AUC-ROC summarizes a classifier's ability to distinguish classes by plotting the true positive rate against the false positive rate across thresholds and measuring the area under that curve."
+        }
+      ]
+    }
+  ]
+}

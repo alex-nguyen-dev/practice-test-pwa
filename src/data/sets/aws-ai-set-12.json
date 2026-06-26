@@ -1,0 +1,313 @@
+{
+  "id": "aws-ai-set-12",
+  "collection": "AWS AI Practitioner",
+  "title": "Practice Set 12",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "A team finds that a faulty sensor consistently recorded temperatures a few degrees too high, skewing the dataset used to train a model. Which type of bias does this flawed measurement introduce?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Confirmation bias, where humans favor information confirming their beliefs.",
+          "correct": false,
+          "explanation": "Confirmation bias is a human cognitive bias toward supporting evidence. A faulty sensor is a measurement problem, not confirmation bias."
+        },
+        {
+          "id": "b",
+          "text": "Observer bias, where the person interpreting data influences results.",
+          "correct": false,
+          "explanation": "Observer bias stems from human interpretation. The described issue is a malfunctioning measurement tool, which is measurement bias."
+        },
+        {
+          "id": "c",
+          "text": "Sampling bias, where the data does not represent the full population.",
+          "correct": false,
+          "explanation": "Sampling bias is about an unrepresentative selection of data. Here the selection may be fine, but the measurement instrument is faulty, which is measurement bias."
+        },
+        {
+          "id": "d",
+          "text": "Measurement bias, from flawed collection tools or instruments.",
+          "correct": true,
+          "explanation": "Measurement bias arises when the instruments or methods used to collect data are flawed, such as a miscalibrated sensor, systematically distorting the data the model learns from."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "question": "A team deploys a SageMaker model that receives sporadic, unpredictable traffic with idle periods, and they do not want to manage or pay for always-on servers. They can tolerate occasional cold starts. Which SageMaker deployment option fits best?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Edge inference on user devices.",
+          "correct": false,
+          "explanation": "Edge inference runs locally on devices for offline or low-latency needs. It does not address serverless, intermittent cloud traffic with no server management."
+        },
+        {
+          "id": "b",
+          "text": "A always-on real-time endpoint provisioned for peak load at all times.",
+          "correct": false,
+          "explanation": "A constantly provisioned real-time endpoint adds cost during idle periods, which is wasteful for sporadic traffic. Serverless inference better matches intermittent demand."
+        },
+        {
+          "id": "c",
+          "text": "Batch transform running continuously.",
+          "correct": false,
+          "explanation": "Batch transform is for bulk offline processing, not for serving sporadic real-time requests. It does not fit an on-demand inference need."
+        },
+        {
+          "id": "d",
+          "text": "Serverless inference, for intermittent traffic with cold starts.",
+          "correct": true,
+          "explanation": "SageMaker Serverless Inference automatically provisions and scales capacity for intermittent traffic without managing servers, and is appropriate when occasional cold starts are acceptable."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "question": "A penetration tester crafts inputs that trick a model into revealing its hidden system prompt and confidential instructions. Which generative AI risk does this represent?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Prompt leaking, where hidden prompts or context are exposed.",
+          "correct": true,
+          "explanation": "Prompt leaking is when hidden system prompts or sensitive context are exposed through crafted inputs. Mitigations include avoiding secrets in prompts, limiting context, and using filters."
+        },
+        {
+          "id": "b",
+          "text": "Toxicity, the generation of offensive content.",
+          "correct": false,
+          "explanation": "Toxicity is about offensive output. Revealing a hidden system prompt is prompt leaking, not toxicity."
+        },
+        {
+          "id": "c",
+          "text": "Overfitting, a training generalization problem.",
+          "correct": false,
+          "explanation": "Overfitting concerns poor generalization from training. It is not an attack that exposes a model's hidden prompt."
+        },
+        {
+          "id": "d",
+          "text": "Data poisoning, where malicious data is added to training data.",
+          "correct": false,
+          "explanation": "Data poisoning corrupts the training data. The scenario is about extracting hidden prompt content at inference time, which is prompt leaking."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "question": "A medical screening classifier must correctly identify patients who are truly healthy (true negatives) to avoid unnecessary follow-up procedures. Which metric measures the proportion of actual negatives the model correctly rejects?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "R-squared, a regression metric.",
+          "correct": false,
+          "explanation": "R-squared describes variance explained in regression. It is not a measure of correctly identified negatives in classification."
+        },
+        {
+          "id": "b",
+          "text": "Recall, the proportion of actual positives the model identifies.",
+          "correct": false,
+          "explanation": "Recall focuses on actual positive cases found, not negatives correctly rejected. The metric for correctly identified negatives is specificity."
+        },
+        {
+          "id": "c",
+          "text": "Specificity, the share of actual negatives correctly identified.",
+          "correct": true,
+          "explanation": "Specificity measures, of all the actual negative cases, how many the model correctly classifies as negative. It is the right metric when correctly identifying true negatives matters."
+        },
+        {
+          "id": "d",
+          "text": "RMSE, a regression error metric.",
+          "correct": false,
+          "explanation": "RMSE measures error in continuous regression predictions. It does not apply to a classification true-negative rate."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "question": "A developer provides exactly one example of the desired input-and-output format in the prompt, then asks the model to handle a new input the same way. Which prompting technique is this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Zero-shot prompting, which provides no examples.",
+          "correct": false,
+          "explanation": "Zero-shot prompting includes no examples at all. Providing exactly one example is one-shot prompting."
+        },
+        {
+          "id": "b",
+          "text": "Few-shot prompting, which provides several examples.",
+          "correct": false,
+          "explanation": "Few-shot prompting uses multiple examples. A single example is specifically one-shot prompting."
+        },
+        {
+          "id": "c",
+          "text": "One-shot prompting, which provides a single guiding example.",
+          "correct": true,
+          "explanation": "One-shot prompting supplies a single example to demonstrate the desired format or style before the real task. It sits between zero-shot (no examples) and few-shot (several examples)."
+        },
+        {
+          "id": "d",
+          "text": "Chain-of-thought prompting, which elicits step-by-step reasoning.",
+          "correct": false,
+          "explanation": "Chain-of-thought asks the model to reason through steps. Showing one example of format is one-shot prompting, not chain-of-thought."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "question": "A manufacturer wants to detect their own specific products and brand logos on store shelves in images, which generic image labels cannot identify. Which capability should they use?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Rekognition Custom Labels, a custom vision model on your images.",
+          "correct": true,
+          "explanation": "Rekognition Custom Labels lets you train a custom computer vision model using your own labeled images to detect domain-specific objects such as particular products or brand logos."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Transcribe custom vocabulary.",
+          "correct": false,
+          "explanation": "Transcribe custom vocabulary improves speech-to-text for specific words. It cannot detect products or logos in images."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Comprehend custom classification.",
+          "correct": false,
+          "explanation": "Comprehend custom classification works on text documents, not images. Detecting logos in images requires a vision service like Rekognition."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Translate custom terminology.",
+          "correct": false,
+          "explanation": "Custom terminology guides translation of specific terms. It has nothing to do with detecting objects in images."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "question": "A Bedrock agent needs to run custom business logic, such as calling an internal order system, as part of completing a task. Which AWS service is commonly used to implement that action logic for the agent?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Polly, a text-to-speech service.",
+          "correct": false,
+          "explanation": "Amazon Polly generates speech from text. It does not run custom business logic for an agent's actions."
+        },
+        {
+          "id": "b",
+          "text": "AWS Trusted Advisor, an account recommendation service.",
+          "correct": false,
+          "explanation": "Trusted Advisor provides best-practice recommendations. It does not run code for a Bedrock agent's action groups."
+        },
+        {
+          "id": "c",
+          "text": "AWS Lambda, which runs the function code a Bedrock agent invokes.",
+          "correct": true,
+          "explanation": "AWS Lambda is commonly used to implement the action logic a Bedrock agent invokes, such as calling internal systems. It is serverless and event-driven, making it well suited to agent action groups and AI automation."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Macie, a sensitive data discovery service.",
+          "correct": false,
+          "explanation": "Amazon Macie discovers sensitive data in S3. It is not used to execute an agent's action logic."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "question": "A team wants a model that can take a text prompt and generate an original image, and also analyze an image and answer questions about it. Which characterization is most accurate?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Both tasks are handled by k-means clustering.",
+          "correct": false,
+          "explanation": "K-means groups unlabeled data into clusters. It cannot generate images or answer questions about them."
+        },
+        {
+          "id": "b",
+          "text": "Both tasks require a simple linear regression model.",
+          "correct": false,
+          "explanation": "Linear regression predicts a single continuous value and cannot generate images or reason over image-and-text inputs. These are multimodal generative tasks."
+        },
+        {
+          "id": "c",
+          "text": "Neither task is possible with current AI models.",
+          "correct": false,
+          "explanation": "Both text-to-image generation and visual question answering are well-established capabilities of modern diffusion and multimodal models."
+        },
+        {
+          "id": "d",
+          "text": "Multimodal capabilities, using diffusion and vision-language models.",
+          "correct": true,
+          "explanation": "Working across text and images is multimodal. Text-to-image generation commonly relies on diffusion models, while answering questions about an image uses a multimodal model that processes both vision and language."
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "question": "A team wants to use AWS's own family of foundation models, available through Amazon Bedrock, as one of their model options. Which of the following is an AWS foundation model family?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "AWS Config, a configuration compliance service.",
+          "correct": false,
+          "explanation": "AWS Config tracks resource configuration and compliance. It is not a foundation model offering."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Titan, an AWS foundation model family on Amazon Bedrock.",
+          "correct": true,
+          "explanation": "Amazon Titan is an AWS foundation model family offered through Amazon Bedrock, alongside Amazon Nova and models from other providers, giving customers AWS-built model options."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Inspector, a vulnerability scanning service.",
+          "correct": false,
+          "explanation": "Amazon Inspector scans workloads for vulnerabilities. It is not a foundation model family."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Kendra, an enterprise search service.",
+          "correct": false,
+          "explanation": "Amazon Kendra provides document search. It is not a foundation model family."
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "A company building a customer-facing AI assistant wants to act responsibly. Which combination of practices reflects responsible AI principles? (Select all that apply.)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Protect user privacy and secure personal and sensitive data.",
+          "correct": true,
+          "explanation": "Privacy and security, protecting personal and sensitive data, is a foundational responsible AI dimension."
+        },
+        {
+          "id": "b",
+          "text": "Design for controllability so the system stays aligned with human intent and can be overridden.",
+          "correct": true,
+          "explanation": "Controllability, keeping AI aligned with human intent and allowing human oversight or override, is a recognized responsible AI dimension."
+        },
+        {
+          "id": "c",
+          "text": "Collect as much personal data as possible up front in case it becomes useful later.",
+          "correct": false,
+          "explanation": "Collecting excess personal data conflicts with privacy and data-minimization principles and increases exposure risk. Responsible AI favors collecting only the data that is actually needed."
+        },
+        {
+          "id": "d",
+          "text": "Hide all information about how the system works to prevent any scrutiny.",
+          "correct": false,
+          "explanation": "Concealing how the system works undermines transparency and accountability. It runs counter to responsible AI principles."
+        },
+        {
+          "id": "e",
+          "text": "Be transparent with users about AI involvement and the system's limitations.",
+          "correct": true,
+          "explanation": "Transparency, including disclosing AI involvement and being honest about limitations, is a core responsible AI principle that supports informed, trustworthy use."
+        }
+      ]
+    }
+  ]
+}

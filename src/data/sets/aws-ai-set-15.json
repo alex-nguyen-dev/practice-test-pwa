@@ -1,0 +1,319 @@
+{
+  "id": "aws-ai-set-15",
+  "collection": "AWS AI Practitioner",
+  "title": "Practice Set 15",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "A team improves a model by having it take actions, receive rewards or penalties, and adjust its behavior over many trials, including using human feedback to shape responses. Which learning approach does this describe?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Reinforcement learning, learning from actions and rewards, as in RLHF.",
+          "correct": true,
+          "explanation": "Reinforcement learning trains behavior through actions and reward or penalty signals. Reinforcement learning from human feedback (RLHF) uses human preferences as the reward signal to shape model responses."
+        },
+        {
+          "id": "b",
+          "text": "Supervised learning on labeled input-output pairs.",
+          "correct": false,
+          "explanation": "Supervised learning maps inputs to known labels from a fixed dataset. Learning through actions and rewards over trials is reinforcement learning, not supervised learning."
+        },
+        {
+          "id": "c",
+          "text": "Feature engineering of raw inputs.",
+          "correct": false,
+          "explanation": "Feature engineering creates useful input variables. It is a data preparation step, not a reward-driven learning method."
+        },
+        {
+          "id": "d",
+          "text": "Unsupervised clustering of unlabeled data.",
+          "correct": false,
+          "explanation": "Unsupervised clustering finds groupings in unlabeled data. It does not involve rewards or actions, so it does not match this scenario."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "question": "A company needs to score a large archived dataset once per month, all at once, with no need for immediate responses. They want a SageMaker option optimized for bulk, offline processing. Which option fits?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Batch transform, for bulk offline processing of large datasets.",
+          "correct": true,
+          "explanation": "SageMaker batch transform is built for bulk, offline inference over large datasets when immediate, per-request responses are not required, matching a monthly large-scale scoring job."
+        },
+        {
+          "id": "b",
+          "text": "Asynchronous inference for interactive chat.",
+          "correct": false,
+          "explanation": "Asynchronous inference handles large payloads or longer processing with near real-time needs, but bulk monthly scoring of a whole dataset is best served by batch transform."
+        },
+        {
+          "id": "c",
+          "text": "A real-time endpoint kept running continuously.",
+          "correct": false,
+          "explanation": "A continuously running real-time endpoint is meant for low-latency synchronous requests and would be costly and unnecessary for a monthly bulk job."
+        },
+        {
+          "id": "d",
+          "text": "Edge inference on local devices.",
+          "correct": false,
+          "explanation": "Edge inference runs on local devices for offline or low-latency needs. It is not designed for centralized bulk dataset scoring."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "question": "A newcomer asks what a foundation model is. Which description is most accurate?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "A database index used for fast lookups.",
+          "correct": false,
+          "explanation": "A foundation model generates and processes content; it is not a database index. This is not an accurate description."
+        },
+        {
+          "id": "b",
+          "text": "A small model trained on a single narrow dataset for exactly one task.",
+          "correct": false,
+          "explanation": "Foundation models are large and broadly trained, supporting many tasks. A small single-task model is the opposite of a foundation model."
+        },
+        {
+          "id": "c",
+          "text": "A large model pre-trained on broad data, adaptable to many tasks.",
+          "correct": true,
+          "explanation": "Foundation models are large models pre-trained on broad datasets, capable of supporting many tasks such as generation, summarization, and Q&A, and adaptable through prompt engineering, RAG, or fine-tuning."
+        },
+        {
+          "id": "d",
+          "text": "A networking appliance that routes API requests.",
+          "correct": false,
+          "explanation": "A foundation model is a machine learning model, not a networking appliance. This description is incorrect."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "question": "A responsible AI committee is mapping their controls to responsible AI dimensions. Which pairings of dimension and goal are correct? (Select all that apply.)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Safety: the system avoids harm to people and society.",
+          "correct": true,
+          "explanation": "Safety, avoiding harm to individuals and society, is a core responsible AI dimension."
+        },
+        {
+          "id": "b",
+          "text": "Governance: policies and controls guide responsible AI use.",
+          "correct": true,
+          "explanation": "Governance covers the policies, oversight, and controls that guide how AI is used responsibly, and is a listed responsible AI dimension."
+        },
+        {
+          "id": "c",
+          "text": "Latency: the system always responds in under one second.",
+          "correct": false,
+          "explanation": "Response latency is a performance characteristic, not a responsible AI dimension. The recognized dimensions include fairness, explainability, privacy/security, transparency, veracity/robustness, governance, safety, and controllability."
+        },
+        {
+          "id": "d",
+          "text": "Popularity: choosing whichever model the most customers currently use.",
+          "correct": false,
+          "explanation": "How widely a model is used is not a responsible AI dimension. The recognized dimensions include fairness, explainability, privacy and security, transparency, veracity and robustness, governance, safety, and controllability."
+        },
+        {
+          "id": "e",
+          "text": "Veracity and robustness: the system remains reliable under expected and unexpected conditions.",
+          "correct": true,
+          "explanation": "Veracity and robustness refer to the system being truthful and reliable even under unexpected conditions, a recognized responsible AI dimension."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "question": "A team must decide between Amazon Bedrock and Amazon SageMaker. They want to build a generative AI app using managed foundation models with RAG and guardrails, without training their own model. Which service should they choose, and why?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker, because building a GenAI app always requires training a custom model from scratch.",
+          "correct": false,
+          "explanation": "Building a generative AI app on managed foundation models does not require training from scratch. Bedrock fits this need better; SageMaker is for custom ML lifecycle control."
+        },
+        {
+          "id": "b",
+          "text": "Neither; generative AI apps cannot be built on AWS.",
+          "correct": false,
+          "explanation": "AWS supports generative AI app development, primarily through Amazon Bedrock. This statement is false."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker, because Bedrock cannot perform RAG or apply guardrails.",
+          "correct": false,
+          "explanation": "This is incorrect: Bedrock supports RAG (via Knowledge Bases) and Guardrails. Bedrock is the appropriate choice here."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Bedrock, offering managed foundation models with RAG and guardrails.",
+          "correct": true,
+          "explanation": "Amazon Bedrock is designed for building generative AI applications on managed foundation models, with built-in support for RAG, agents, and guardrails, so the team does not need to train a custom model."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "question": "A team stores training data in Amazon S3 and wants AWS to manage server-side encryption keys with minimal effort, but a stricter project requires customer-managed keys with auditable key policies. Which pair of S3 encryption options matches these two needs, respectively?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Disable encryption for the simple case, and use SSE-S3 for the strict case.",
+          "correct": false,
+          "explanation": "Disabling encryption is insecure and not appropriate for training data. Both cases should be encrypted, using SSE-S3 and SSE-KMS respectively."
+        },
+        {
+          "id": "b",
+          "text": "Use client-side hashing for both cases instead of encryption.",
+          "correct": false,
+          "explanation": "Hashing is not encryption and does not protect data confidentiality at rest. S3 server-side encryption with SSE-S3 or SSE-KMS is the correct approach."
+        },
+        {
+          "id": "c",
+          "text": "SSE-KMS for AWS-managed keys, and SSE-S3 for auditable customer-managed keys.",
+          "correct": false,
+          "explanation": "This reverses the options. SSE-S3 is the simpler AWS-managed approach; SSE-KMS provides customer-managed keys with auditable policies."
+        },
+        {
+          "id": "d",
+          "text": "SSE-S3 for AWS-managed keys, and SSE-KMS for customer-managed keys.",
+          "correct": true,
+          "explanation": "SSE-S3 uses keys fully managed by S3 with minimal effort, while SSE-KMS uses AWS KMS keys that support customer-managed key policies and auditing, matching the two requirements."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "question": "A team asks how diffusion-based image generators create a picture from a text prompt. Which description is correct?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Training adds noise to images; generation reverses it from the prompt.",
+          "correct": true,
+          "explanation": "Diffusion models learn by adding noise to images during training and then reversing that noise during generation, producing an image that matches the text prompt."
+        },
+        {
+          "id": "b",
+          "text": "They translate the prompt into another language and read it aloud.",
+          "correct": false,
+          "explanation": "Translation and text-to-speech are unrelated to image generation. Diffusion models create images by denoising."
+        },
+        {
+          "id": "c",
+          "text": "They retrieve an existing image from a database and return it unchanged.",
+          "correct": false,
+          "explanation": "Diffusion models generate new images rather than retrieving and returning existing ones unchanged. This description is incorrect."
+        },
+        {
+          "id": "d",
+          "text": "They cluster pixels using k-means until an image appears.",
+          "correct": false,
+          "explanation": "K-means clustering groups data points; it is not how diffusion models generate images. Diffusion reverses a noise process."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "question": "An organization must choose between Amazon Kendra and Amazon Q Business. They want an assistant that not only finds answers in internal data but also generates responses and takes actions through plugins, with answers respecting each user's permissions. Which should they choose, and why?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Kendra, because it generates responses and takes actions through plugins.",
+          "correct": false,
+          "explanation": "Amazon Kendra focuses on intelligent document search and does not provide a full generative assistant that takes plugin actions. Q Business fits the stated needs."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Kendra, because Q Business cannot enforce per-user access to answers.",
+          "correct": false,
+          "explanation": "This is incorrect: Q Business integrates with IAM Identity Center and returns only content the user is allowed to access. Q Business is the better fit."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Q Business, a full assistant that generates answers and acts.",
+          "correct": true,
+          "explanation": "Amazon Q Business goes beyond search: it generates answers, integrates with plugins to take actions, and uses IAM Identity Center so users only receive answers from content they can access. That matches all the requirements."
+        },
+        {
+          "id": "d",
+          "text": "Neither, because AWS has no service for searching internal data.",
+          "correct": false,
+          "explanation": "AWS offers both Kendra and Q Business for internal data scenarios. This statement is false."
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "question": "A team must predict whether each incoming email is 'spam' or 'not spam.' Is this classification or regression, and why?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Reinforcement learning, because the model earns rewards per email.",
+          "correct": false,
+          "explanation": "Labeling emails from labeled examples is supervised classification. There is no agent earning rewards through actions, so it is not reinforcement learning."
+        },
+        {
+          "id": "b",
+          "text": "Clustering, because the categories are unknown in advance.",
+          "correct": false,
+          "explanation": "The categories (spam vs. not spam) are known and labeled, so this is supervised classification, not unsupervised clustering."
+        },
+        {
+          "id": "c",
+          "text": "Classification, because each input gets a discrete category.",
+          "correct": true,
+          "explanation": "Predicting a discrete category such as 'spam' or 'not spam' is a classification task. Regression would predict a continuous numeric value, which does not match this label."
+        },
+        {
+          "id": "d",
+          "text": "Regression, because the output is a continuous number.",
+          "correct": false,
+          "explanation": "The output is a category, not a continuous number, so this is classification rather than regression."
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "A security review of a generative AI application recommends layered defenses against attempts to override instructions or bypass safety controls. Which measures are appropriate? (Select all that apply.)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Monitor interactions and keep models and policies updated to address new bypass techniques.",
+          "correct": true,
+          "explanation": "Continuous monitoring and keeping models and policies up to date help detect and counter evolving jailbreak and injection techniques over time."
+        },
+        {
+          "id": "b",
+          "text": "Trust all user input by default so that legitimate requests are never blocked.",
+          "correct": false,
+          "explanation": "Trusting all input by default removes a key defense and makes injection and jailbreak attempts easier. Untrusted input should be validated and filtered, not trusted automatically."
+        },
+        {
+          "id": "c",
+          "text": "Use guardrails and content filters, and keep system instructions separate from user input.",
+          "correct": true,
+          "explanation": "Guardrails, content filters, and separating trusted system instructions from untrusted user input are layered defenses that reduce the success of injection and jailbreak attempts."
+        },
+        {
+          "id": "d",
+          "text": "Apply least privilege and validate tool actions before they execute.",
+          "correct": true,
+          "explanation": "Limiting the model's access to sensitive tools and data, and validating actions before execution, limits the damage if an attacker manages to manipulate the model."
+        },
+        {
+          "id": "e",
+          "text": "Embed all secrets directly in the system prompt so the model can use them freely.",
+          "correct": false,
+          "explanation": "Putting secrets in the prompt risks exposure through prompt leaking and increases impact if the model is manipulated. Secrets should be kept out of prompts."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+{
+  "id": "aws-ai-set-5",
+  "collection": "AWS AI Practitioner",
+  "title": "Practice Set 5",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "A company has a predictable, steady generative AI workload on Amazon Bedrock and wants reserved model capacity with consistent throughput. Which Bedrock pricing option best fits?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Provisioned throughput, which reserves dedicated model capacity.",
+          "correct": true,
+          "explanation": "Provisioned throughput reserves dedicated capacity for a model, providing predictable throughput and performance. It suits steady, predictable workloads where reserved capacity is valuable."
+        },
+        {
+          "id": "b",
+          "text": "Spot pricing, which uses spare capacity that can be interrupted.",
+          "correct": false,
+          "explanation": "Spot pricing applies to interruptible EC2 capacity, not Bedrock foundation model capacity reservations. It does not match this scenario."
+        },
+        {
+          "id": "c",
+          "text": "On-demand, which charges per token or image for unpredictable workloads.",
+          "correct": false,
+          "explanation": "On-demand pricing is best for unpredictable or spiky workloads where you pay per use. For a steady workload needing reserved capacity, provisioned throughput is more appropriate."
+        },
+        {
+          "id": "d",
+          "text": "Batch, which processes many predictions and writes output to S3 at reduced cost.",
+          "correct": false,
+          "explanation": "Batch is for processing large numbers of predictions offline at lower cost. It does not provide reserved capacity for steady real-time throughput."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "question": "A team needs natural language search that returns the most relevant passages and answers from a large set of internal PDFs, HTML pages, and FAQs. They do not need an assistant that takes actions, just high-quality document search. Which AWS service is the best fit?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Polly, a text-to-speech service.",
+          "correct": false,
+          "explanation": "Amazon Polly converts text to speech and does not perform document search."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Kendra, an ML-powered enterprise document search service.",
+          "correct": true,
+          "explanation": "Amazon Kendra provides intelligent, natural language search across documents such as PDFs, HTML, and FAQs, returning relevant answers. It is the right choice when the requirement is document search rather than a full action-taking assistant."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Rekognition, an image and video analysis service.",
+          "correct": false,
+          "explanation": "Amazon Rekognition analyzes images and video. It cannot search text documents and FAQs."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Personalize, a recommendations service.",
+          "correct": false,
+          "explanation": "Amazon Personalize generates recommendations and rankings. It is not designed for natural language document search."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "question": "A study guide notes that modern large language models are built on an architecture that processes input holistically and uses a mechanism to weigh the importance of relationships between tokens. Which architecture and mechanism are being described?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Decision tree architecture using information gain splits.",
+          "correct": false,
+          "explanation": "Decision trees split data on features and are used for classification or regression, not for generating language with attention over tokens."
+        },
+        {
+          "id": "b",
+          "text": "Transformer architecture using an attention mechanism.",
+          "correct": true,
+          "explanation": "Transformers process input more holistically than older sequence-by-sequence methods and use attention to identify important relationships between tokens. Models like GPT and BERT are transformer-based."
+        },
+        {
+          "id": "c",
+          "text": "Diffusion architecture using denoising steps for text classification.",
+          "correct": false,
+          "explanation": "Diffusion models are primarily used for image generation by reversing noise. They are not the standard architecture for LLM text generation, and the described mechanism is attention in transformers."
+        },
+        {
+          "id": "d",
+          "text": "K-means architecture using centroid distance.",
+          "correct": false,
+          "explanation": "K-means is an unsupervised clustering algorithm based on centroid distances. It is not the architecture behind large language models."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "question": "An architect wants to grant an AWS service temporary permissions to access other resources on its behalf, without embedding long-lived credentials. Which IAM concept is designed for this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "A VPC security group, which controls network traffic.",
+          "correct": false,
+          "explanation": "Security groups control inbound and outbound network traffic. They are not an identity mechanism for granting temporary permissions."
+        },
+        {
+          "id": "b",
+          "text": "An IAM user with long-lived access keys embedded in code.",
+          "correct": false,
+          "explanation": "Embedding long-lived access keys in code is discouraged because the credentials can be leaked. Roles with temporary credentials are the recommended approach."
+        },
+        {
+          "id": "c",
+          "text": "An IAM role, which grants temporary, assumable permissions.",
+          "correct": true,
+          "explanation": "IAM roles grant temporary credentials that AWS services, users, or workloads can assume to act with specific permissions, avoiding the need to embed long-lived keys. This follows AWS security best practices."
+        },
+        {
+          "id": "d",
+          "text": "An IAM group, which is only a collection of users.",
+          "correct": false,
+          "explanation": "An IAM group is just a collection of users used to manage their permissions together. It is not assumed by services and does not provide temporary credentials."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "question": "A team discovers their training dataset is imbalanced and underrepresents certain groups, which could lead to biased predictions. Which approaches help address this data imbalance? (Select all that apply.)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Use data augmentation to increase representation of underrepresented examples.",
+          "correct": true,
+          "explanation": "Data augmentation creates additional varied examples, which can boost the representation of underrepresented groups and help reduce bias from imbalance."
+        },
+        {
+          "id": "b",
+          "text": "Use SageMaker Data Wrangler to prepare, transform, and rebalance the data.",
+          "correct": true,
+          "explanation": "SageMaker Data Wrangler helps prepare, transform, and balance data, which can address data imbalance issues before training."
+        },
+        {
+          "id": "c",
+          "text": "Use SageMaker Clarify to detect bias in the dataset and model.",
+          "correct": true,
+          "explanation": "SageMaker Clarify detects bias in datasets and models, helping the team identify and measure imbalance so they can mitigate it. Detecting the problem is part of addressing it responsibly."
+        },
+        {
+          "id": "d",
+          "text": "Simply duplicate the existing majority-class records many times to make the dataset larger.",
+          "correct": false,
+          "explanation": "Duplicating majority-class records adds size without diversity and can worsen the imbalance and overfitting. It does not improve representation of the underrepresented groups."
+        },
+        {
+          "id": "e",
+          "text": "Ignore the imbalance because more training epochs will automatically fix it.",
+          "correct": false,
+          "explanation": "Training longer does not correct an imbalanced or unrepresentative dataset; it can even reinforce the bias. The imbalance must be addressed in the data itself."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "question": "A loan-processing workflow uses an ML model, but low-confidence or high-risk predictions must be reviewed by a human before a decision is finalized. Which AWS service provides this human review capability for ML predictions in production?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "AWS Artifact, a compliance report portal.",
+          "correct": false,
+          "explanation": "AWS Artifact provides compliance documents. It does not provide a human review workflow for ML predictions."
+        },
+        {
+          "id": "b",
+          "text": "Amazon CloudFront, a content delivery network.",
+          "correct": false,
+          "explanation": "Amazon CloudFront delivers content from edge locations. It has no role in routing predictions to human reviewers."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Translate, a translation service.",
+          "correct": false,
+          "explanation": "Amazon Translate performs language translation. It does not coordinate human review of model predictions."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Augmented AI (A2I), for human review of ML predictions.",
+          "correct": true,
+          "explanation": "Amazon Augmented AI (A2I) routes low-confidence, high-risk, or compliance-sensitive predictions to human reviewers, providing human oversight of ML predictions in production workflows."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "question": "A data engineer is categorizing the company's data sources. Which of the following is an example of unstructured data?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Scanned PDF contracts, photographs, and audio recordings.",
+          "correct": true,
+          "explanation": "Unstructured data includes text, PDFs, images, audio, and video, which do not fit neatly into rows and columns and often require NLP, computer vision, or document AI to process."
+        },
+        {
+          "id": "b",
+          "text": "A relational database table with rows and typed columns.",
+          "correct": false,
+          "explanation": "A relational table with rows and columns is structured data, not unstructured. It fits a defined schema."
+        },
+        {
+          "id": "c",
+          "text": "A time-series table of sensor readings with timestamps.",
+          "correct": false,
+          "explanation": "A time-series table with defined columns is structured data. Unstructured examples would be free text, images, or audio."
+        },
+        {
+          "id": "d",
+          "text": "A spreadsheet of monthly sales figures.",
+          "correct": false,
+          "explanation": "A spreadsheet of numeric figures organized in rows and columns is structured data, not unstructured."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "question": "A team is concerned that their generative AI assistant sometimes produces confident but factually incorrect statements (hallucinations). Which approaches help reduce the risk or impact of hallucinations? (Select all that apply.)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Assume the model is always correct and remove all human review to speed things up.",
+          "correct": false,
+          "explanation": "Treating outputs as always correct and removing human review increases the risk that hallucinations cause harm. It is the opposite of a sound mitigation."
+        },
+        {
+          "id": "b",
+          "text": "Ground responses using Retrieval Augmented Generation (RAG) so the model draws on verified source documents.",
+          "correct": true,
+          "explanation": "RAG grounds the model's answers in retrieved, verified source content, which reduces the likelihood of fabricated information compared to relying solely on the model's training."
+        },
+        {
+          "id": "c",
+          "text": "Increase the temperature so the answers sound more confident and authoritative.",
+          "correct": false,
+          "explanation": "Higher temperature increases randomness and can make incorrect answers sound more confident, which does not reduce hallucination and can make errors harder to spot."
+        },
+        {
+          "id": "d",
+          "text": "Add verification steps and cite independent sources so answers can be checked.",
+          "correct": true,
+          "explanation": "Verifying outputs and providing citations to independent sources lets users confirm accuracy and reduces the impact of any hallucinated content."
+        },
+        {
+          "id": "e",
+          "text": "Warn users that outputs may be inaccurate and should be reviewed for important decisions.",
+          "correct": true,
+          "explanation": "Clearly warning users that generated content can be incorrect is a responsible practice that reduces the impact of hallucinations by setting appropriate expectations."
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "question": "A developer wants an AI assistant that helps with writing and completing code, answering AWS documentation and service-selection questions, troubleshooting errors, and analyzing their AWS bill. Which AWS service is designed for this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Q Developer, an AI assistant for developers and AWS users.",
+          "correct": true,
+          "explanation": "Amazon Q Developer helps with code generation and completion, AWS documentation and service questions, troubleshooting, bill analysis, and security scans, integrating into IDEs and the AWS environment."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Kendra, an enterprise search service.",
+          "correct": false,
+          "explanation": "Amazon Kendra performs document search. It does not generate code or assist with AWS account and billing questions."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Comprehend, an NLP service.",
+          "correct": false,
+          "explanation": "Amazon Comprehend analyzes text for sentiment and entities. It is not a developer coding and AWS assistant."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Q Business, an employee assistant over company data.",
+          "correct": false,
+          "explanation": "Amazon Q Business is aimed at employees querying internal company data. For coding help and AWS account assistance, Amazon Q Developer is the better fit."
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "An account team wants automated, account-level recommendations spanning cost optimization, security, performance, fault tolerance, and service limits. Which AWS service provides this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Polly, a text-to-speech service.",
+          "correct": false,
+          "explanation": "Amazon Polly converts text to speech and is unrelated to account best-practice recommendations."
+        },
+        {
+          "id": "b",
+          "text": "AWS Trusted Advisor, giving account best-practice recommendations.",
+          "correct": true,
+          "explanation": "AWS Trusted Advisor inspects an account and provides best-practice recommendations across cost optimization, security, performance, fault tolerance, service limits, and operational excellence."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Rekognition, an image analysis service.",
+          "correct": false,
+          "explanation": "Amazon Rekognition analyzes images and video. It does not provide account-level best-practice recommendations."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Lex, a chatbot service.",
+          "correct": false,
+          "explanation": "Amazon Lex builds conversational interfaces. It does not generate account recommendations."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,313 @@
+{
+  "id": "aws-ai-set-11",
+  "collection": "AWS AI Practitioner",
+  "title": "Practice Set 11",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "A team's model performs poorly on both the training data and on new, unseen data. The model appears too simple to capture the underlying patterns. Which problem does this describe, and what is a reasonable fix?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Overfitting; address it by adding more regularization and stopping training early.",
+          "correct": false,
+          "explanation": "Overfitting shows strong training performance but poor generalization. Here training performance is also poor, so the issue is underfitting, and adding regularization would make a too-simple model even weaker."
+        },
+        {
+          "id": "b",
+          "text": "Underfitting; fix with a more complex model or better features.",
+          "correct": true,
+          "explanation": "Poor performance on both training and new data signals underfitting, where the model is too simple to capture the patterns. Fixes include using a more complex model, adding better features, reducing excessive regularization, or training longer."
+        },
+        {
+          "id": "c",
+          "text": "Hallucination; address it by lowering the temperature.",
+          "correct": false,
+          "explanation": "Hallucination is a generative AI concept about fabricated output, not a description of a model that underperforms on training and test data. Temperature does not apply here."
+        },
+        {
+          "id": "d",
+          "text": "Data leakage; address it by enabling encryption at rest.",
+          "correct": false,
+          "explanation": "Data leakage typically inflates performance, not lowers it on both sets, and encryption is unrelated to model fit. This does not match the symptoms of underfitting."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "question": "A team discovers their training data was collected only from one region and demographic, so it does not represent the full population the model will serve. Which type of bias does this describe?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Observer bias, where the person collecting or interpreting data influences results.",
+          "correct": false,
+          "explanation": "Observer bias comes from the human collecting or interpreting the data. The issue described is an unrepresentative sample, not observer influence."
+        },
+        {
+          "id": "b",
+          "text": "Measurement bias, where the collection tools or measurements are flawed.",
+          "correct": false,
+          "explanation": "Measurement bias arises from flawed instruments or measurement methods. Here the data is collected accurately but from too narrow a group, which is sampling bias."
+        },
+        {
+          "id": "c",
+          "text": "Sampling bias, where training data misrepresents the population.",
+          "correct": true,
+          "explanation": "Sampling bias occurs when the data used to train a model is not representative of the broader population it will serve, which can produce skewed or unfair predictions for underrepresented groups."
+        },
+        {
+          "id": "d",
+          "text": "Confirmation bias, where humans favor information that confirms existing beliefs.",
+          "correct": false,
+          "explanation": "Confirmation bias is about people favoring information that supports what they already believe. The scenario describes unrepresentative data collection, which is sampling bias."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "question": "A company is worried its generative AI assistant could produce offensive or inappropriate language. Which actions help mitigate the risk of toxic output? (Select all that apply.)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Apply guardrails and content filters to detect and block harmful output.",
+          "correct": true,
+          "explanation": "Guardrails and content filters can detect and block offensive or inappropriate content before it reaches users, directly mitigating toxicity risk."
+        },
+        {
+          "id": "b",
+          "text": "Curate and clean the training and reference data to reduce harmful content.",
+          "correct": true,
+          "explanation": "Curating data to remove offensive or harmful content reduces the chance the system reproduces toxicity, making it a sound mitigation."
+        },
+        {
+          "id": "c",
+          "text": "Remove all safety controls so responses are generated faster.",
+          "correct": false,
+          "explanation": "Removing safety controls increases the likelihood of toxic output reaching users. It is the opposite of a mitigation and is not acceptable."
+        },
+        {
+          "id": "d",
+          "text": "Continuously monitor outputs and review flagged interactions.",
+          "correct": true,
+          "explanation": "Ongoing monitoring and review of flagged content helps catch toxic outputs that slip through and supports continuous improvement of the safeguards."
+        },
+        {
+          "id": "e",
+          "text": "Increase the maximum response length so the assistant can always finish its thoughts.",
+          "correct": false,
+          "explanation": "Allowing longer responses only changes output length and does nothing to prevent offensive content. It is unrelated to mitigating toxicity."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "question": "A data scientist wants to use a popular, high-performing built-in SageMaker algorithm for structured/tabular classification and regression problems. Which built-in algorithm is a common choice?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Macie, a sensitive data discovery service.",
+          "correct": false,
+          "explanation": "Amazon Macie discovers sensitive data in S3. It is not a machine learning algorithm."
+        },
+        {
+          "id": "b",
+          "text": "AWS Glue, a data integration service.",
+          "correct": false,
+          "explanation": "AWS Glue performs ETL and data integration. It is not a built-in ML algorithm for training models."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Polly, a text-to-speech service.",
+          "correct": false,
+          "explanation": "Amazon Polly converts text to speech. It is a managed AI service, not a SageMaker built-in algorithm for tabular ML."
+        },
+        {
+          "id": "d",
+          "text": "XGBoost, a gradient-boosting algorithm for tabular problems.",
+          "correct": true,
+          "explanation": "XGBoost is a popular SageMaker built-in algorithm well suited to structured/tabular data for both classification and regression, known for strong performance on many problems."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "question": "A developer is debugging why a model counts text length in unexpected units. They learn that the model first converts text into smaller units before processing. What is this process called?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Hyperparameter tuning of the learning rate.",
+          "correct": false,
+          "explanation": "Hyperparameter tuning searches for good training settings. It is unrelated to splitting input text into tokens."
+        },
+        {
+          "id": "b",
+          "text": "Normalization of model weights during training.",
+          "correct": false,
+          "explanation": "Weight normalization is a training-time technique, not the process of splitting text into units the model reads. That is tokenization."
+        },
+        {
+          "id": "c",
+          "text": "Embedding lookup that returns a final answer.",
+          "correct": false,
+          "explanation": "Embeddings turn tokens into vectors, but the step that first breaks text into units is tokenization, and embeddings do not by themselves produce a final answer."
+        },
+        {
+          "id": "d",
+          "text": "Tokenization, which converts text into tokens the model processes.",
+          "correct": true,
+          "explanation": "Tokenization converts text into tokens, the units a language model actually processes. Token counts (not character or word counts) drive context window limits and pricing."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "question": "An architect is designing a VPC for an AI workload. Resources in a private subnet need to download software updates from the internet but must not be directly reachable from the internet. Which component enables this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon CloudFront in front of the instances.",
+          "correct": false,
+          "explanation": "CloudFront is a content delivery network for distributing content to users. It does not provide outbound internet access for private subnet resources."
+        },
+        {
+          "id": "b",
+          "text": "An Amazon Route 53 hosted zone.",
+          "correct": false,
+          "explanation": "Route 53 provides DNS. It does not give private subnet resources outbound internet connectivity."
+        },
+        {
+          "id": "c",
+          "text": "A NAT gateway, letting private resources reach the internet outbound.",
+          "correct": true,
+          "explanation": "A NAT gateway allows resources in a private subnet to initiate outbound internet connections (such as downloading updates) while preventing inbound connections from the internet, keeping them private."
+        },
+        {
+          "id": "d",
+          "text": "An internet gateway attached directly to the private subnet's instances.",
+          "correct": false,
+          "explanation": "An internet gateway provides direct internet reachability and is used with public subnets. Attaching it for direct access would make the resources publicly reachable, violating the requirement."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "question": "An insurer wants to automatically extract business-specific entities, such as policy numbers and claim identifiers, from free-text documents. Which capability fits this need?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Translate custom terminology.",
+          "correct": false,
+          "explanation": "Custom terminology guides how Translate renders specific terms during translation. It does not extract entities from documents."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Rekognition Custom Labels.",
+          "correct": false,
+          "explanation": "Rekognition Custom Labels trains custom image recognition. The task here is extracting entities from text, which is Comprehend's domain."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Polly lexicons.",
+          "correct": false,
+          "explanation": "Polly lexicons customize pronunciation for text-to-speech. They do not extract entities from text."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Comprehend custom entity recognition for your own entities.",
+          "correct": true,
+          "explanation": "Amazon Comprehend custom entity recognition lets you train the service to detect domain-specific entities such as policy numbers or claim identifiers that generic models would not recognize."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "question": "A team asks how a single pre-trained foundation model can support many different tasks such as summarization, Q&A, and extraction without training a separate model for each. Which statement is correct?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Foundation models require retraining from scratch for every new prompt.",
+          "correct": false,
+          "explanation": "Foundation models respond to new prompts without retraining. Retraining from scratch per prompt is neither necessary nor feasible."
+        },
+        {
+          "id": "b",
+          "text": "Foundation models are broadly pre-trained and adaptable to many tasks.",
+          "correct": true,
+          "explanation": "Foundation models are large models pre-trained on broad datasets, enabling them to support many tasks. They can be adapted with prompt engineering, RAG, or fine-tuning rather than building a separate model per task."
+        },
+        {
+          "id": "c",
+          "text": "Foundation models can only ever perform the single task they were trained on.",
+          "correct": false,
+          "explanation": "A defining strength of foundation models is their general capability across many tasks, so this statement is incorrect."
+        },
+        {
+          "id": "d",
+          "text": "Foundation models are simple rule-based systems with no learned parameters.",
+          "correct": false,
+          "explanation": "Foundation models are large neural networks with many learned parameters, not rule-based systems."
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "question": "An organization is applying human-centered design to its AI system. Which goal best reflects this approach?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Designing for clear decision support, accountability, and access.",
+          "correct": true,
+          "explanation": "Human-centered design focuses on supporting human decisions, reducing risk and errors, ensuring accountability and unbiased decisions, and creating accessible workflows that serve people effectively."
+        },
+        {
+          "id": "b",
+          "text": "Optimizing solely for model accuracy while ignoring usability and accountability.",
+          "correct": false,
+          "explanation": "Human-centered design balances usefulness, accountability, and accessibility, not just raw accuracy. Ignoring usability and accountability is contrary to it."
+        },
+        {
+          "id": "c",
+          "text": "Choosing the largest possible model in every case.",
+          "correct": false,
+          "explanation": "Model size is unrelated to human-centered design, which is about how the system supports and protects the people who use and are affected by it."
+        },
+        {
+          "id": "d",
+          "text": "Maximizing automation so humans are removed from every decision regardless of risk.",
+          "correct": false,
+          "explanation": "Human-centered design keeps appropriate human oversight, especially for high-risk decisions. Removing humans entirely from all decisions contradicts the approach."
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "A healthcare company needs the signed legal agreements and third-party audit reports (such as SOC and PCI, and a BAA for HIPAA) that demonstrate AWS's compliance posture. Where can they obtain these documents?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "AWS CloudTrail, which logs API activity.",
+          "correct": false,
+          "explanation": "CloudTrail records API calls for auditing your account activity. It does not host AWS's third-party compliance reports."
+        },
+        {
+          "id": "b",
+          "text": "AWS Artifact, a portal for AWS compliance reports and agreements.",
+          "correct": true,
+          "explanation": "AWS Artifact provides on-demand access to AWS compliance reports (ISO, PCI, SOC, and others) and agreements such as the BAA used for HIPAA, supporting customers' audit and compliance needs."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Inspector, which scans for vulnerabilities.",
+          "correct": false,
+          "explanation": "Amazon Inspector finds software vulnerabilities in workloads. It does not provide compliance reports or agreements."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Macie, which discovers sensitive data in S3.",
+          "correct": false,
+          "explanation": "Amazon Macie discovers and classifies sensitive data. It does not provide AWS compliance reports or legal agreements."
+        }
+      ]
+    }
+  ]
+}

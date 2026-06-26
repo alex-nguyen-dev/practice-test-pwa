@@ -8,7 +8,7 @@ const slugify = (value) =>
 
 export const practiceSets = Object.values(modules)
   .map((module) => module.default)
-  .sort((a, b) => a.title.localeCompare(b.title));
+  .sort((a, b) => a.title.localeCompare(b.title, undefined, { numeric: true }));
 
 export const collections = Object.values(
   practiceSets.reduce((acc, set) => {

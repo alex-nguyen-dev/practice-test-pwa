@@ -1,0 +1,319 @@
+{
+  "id": "aws-ai-set-9",
+  "collection": "AWS AI Practitioner",
+  "title": "Practice Set 9",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "A team is deciding when machine learning is appropriate. For which of the following is traditional rule-based code, rather than machine learning, usually the better choice?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Recognizing sentiment in free-form customer reviews.",
+          "correct": false,
+          "explanation": "Understanding sentiment in natural language requires learning from data and is a good ML/NLP use case, not a deterministic rule-based one."
+        },
+        {
+          "id": "b",
+          "text": "Detecting objects in millions of varied photographs.",
+          "correct": false,
+          "explanation": "Image recognition across varied photos involves complex patterns that are impractical to hand-code, which is exactly where machine learning (and deep learning) excels."
+        },
+        {
+          "id": "c",
+          "text": "Predicting customer churn from many behavioral signals.",
+          "correct": false,
+          "explanation": "Churn prediction from many subtle behavioral signals is a pattern-learning task well suited to machine learning, not fixed rules."
+        },
+        {
+          "id": "d",
+          "text": "A deterministic problem with clear, fixed rules and exact answers.",
+          "correct": true,
+          "explanation": "Deterministic problems with clear, fixed rules are usually best solved with normal code. Machine learning shines when patterns must be learned from data and rules are hard to specify explicitly."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "question": "A team building a RAG application on AWS wants to store embeddings in a vector-capable data store. Which of the following are valid AWS options for storing vectors for retrieval? (Select all that apply.)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Route 53 hosted zones.",
+          "correct": false,
+          "explanation": "Route 53 hosted zones manage DNS records. They cannot store embeddings or perform vector similarity search, so they are not a vector store."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SQS queues used as the primary index for similarity search.",
+          "correct": false,
+          "explanation": "Amazon SQS is a message-queuing service for decoupling components. It cannot store embeddings or perform vector similarity search, so it is not a vector store."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Aurora PostgreSQL with vector support.",
+          "correct": true,
+          "explanation": "Amazon Aurora PostgreSQL can store and search vector embeddings, and is listed as an AWS vector database option for RAG."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Neptune Analytics for graph-based RAG, or Amazon S3 Vectors.",
+          "correct": true,
+          "explanation": "Amazon Neptune Analytics supports graph-based RAG, and Amazon S3 Vectors is an option for storing vectors, both valid AWS choices for vector storage and retrieval."
+        },
+        {
+          "id": "e",
+          "text": "Amazon OpenSearch Service with vector search.",
+          "correct": true,
+          "explanation": "Amazon OpenSearch Service supports vector (k-NN) search, making it a valid store for embeddings used in RAG retrieval."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "question": "A writer wants the model to avoid technical jargon and not mention competitor brands in its output. Which prompting technique directly addresses telling the model what not to do?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Negative prompting, which tells the model what to avoid.",
+          "correct": true,
+          "explanation": "Negative prompting specifies content or behavior the model should avoid, such as steering clear of jargon or competitor mentions, helping keep output focused and appropriate."
+        },
+        {
+          "id": "b",
+          "text": "Few-shot prompting, which provides example pairs.",
+          "correct": false,
+          "explanation": "Few-shot prompting demonstrates desired behavior with examples. It is not specifically about telling the model what to avoid, which is negative prompting."
+        },
+        {
+          "id": "c",
+          "text": "Expanding the context window.",
+          "correct": false,
+          "explanation": "A larger context window lets the model consider more input. It does not, by itself, instruct the model on what to avoid."
+        },
+        {
+          "id": "d",
+          "text": "Increasing temperature to add creativity.",
+          "correct": false,
+          "explanation": "Raising temperature increases randomness, which does nothing to restrict jargon or competitor mentions. It could even make unwanted content more likely."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "question": "A new AWS account owner asks whether AWS CloudTrail must be turned on to begin capturing account activity. Which statement is most accurate?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "CloudTrail is a recommendations service for cost optimization.",
+          "correct": false,
+          "explanation": "Cost and best-practice recommendations come from Trusted Advisor. CloudTrail records API and account activity for auditing."
+        },
+        {
+          "id": "b",
+          "text": "CloudTrail discovers sensitive data such as PII in S3.",
+          "correct": false,
+          "explanation": "Discovering sensitive data in S3 is Amazon Macie's role. CloudTrail logs API activity, not data contents."
+        },
+        {
+          "id": "c",
+          "text": "CloudTrail records activity from the console, SDK, CLI, and services.",
+          "correct": true,
+          "explanation": "CloudTrail captures account activity, logging actions from the console, SDKs, CLI, and AWS services. It is the go-to service for investigating who did what, and management events are recorded without extra setup."
+        },
+        {
+          "id": "d",
+          "text": "CloudTrail can only log activity from the AWS Management Console, not the CLI or SDKs.",
+          "correct": false,
+          "explanation": "CloudTrail logs API activity across the console, CLI, SDKs, and AWS services, not just the console."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "question": "A classification model's overall ratio of correct predictions across all classes is being reported. Which metric does this describe?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "RMSE, a regression error metric.",
+          "correct": false,
+          "explanation": "RMSE measures error for continuous-value regression predictions. It is not the ratio of correct classifications."
+        },
+        {
+          "id": "b",
+          "text": "Accuracy, the overall ratio of correct predictions.",
+          "correct": true,
+          "explanation": "Accuracy is the overall proportion of predictions the model got right. It is a common high-level classification metric, though it can be misleading on imbalanced datasets."
+        },
+        {
+          "id": "c",
+          "text": "R-squared, a regression metric.",
+          "correct": false,
+          "explanation": "R-squared measures variance explained in regression. It is not a classification accuracy measure."
+        },
+        {
+          "id": "d",
+          "text": "MAE, a regression error metric.",
+          "correct": false,
+          "explanation": "MAE is the mean absolute error for regression. It does not describe the proportion of correct classifications."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "question": "A data scientist wants a visual tool to prepare, transform, visualize, and process data before training, reducing the amount of custom code needed. Which Amazon SageMaker capability fits?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker Data Wrangler, which prepares and transforms data.",
+          "correct": true,
+          "explanation": "SageMaker Data Wrangler provides a visual interface to prepare, transform, visualize, and process data for ML, helping reduce custom data-prep code and address issues like imbalance."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker Role Manager, which manages persona access.",
+          "correct": false,
+          "explanation": "Role Manager defines role-based access for ML personas. It is unrelated to data preparation."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker Model Registry, which versions models.",
+          "correct": false,
+          "explanation": "Model Registry manages model versions and approvals. It does not prepare or transform data."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker Model Monitor, which detects production drift.",
+          "correct": false,
+          "explanation": "Model Monitor watches deployed models for drift. It is not a data preparation tool."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "question": "An attacker crafts inputs that try to bypass a model's safety controls to get it to produce restricted content. Which generative AI risk does this describe?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Overfitting, a training generalization problem.",
+          "correct": false,
+          "explanation": "Overfitting is when a model memorizes training data and generalizes poorly. It is not an attack to bypass safety controls."
+        },
+        {
+          "id": "b",
+          "text": "Batch inference, an inference mode.",
+          "correct": false,
+          "explanation": "Batch inference processes many predictions offline. It is a deployment option, not a security risk."
+        },
+        {
+          "id": "c",
+          "text": "Jailbreaking, an attempt to bypass a model’s safety controls.",
+          "correct": true,
+          "explanation": "Jailbreaking refers to attempts to bypass a model's built-in safety controls to elicit restricted outputs. Mitigations include guardrails, model updates, monitoring, and policy enforcement."
+        },
+        {
+          "id": "d",
+          "text": "Feature engineering, a data preparation step.",
+          "correct": false,
+          "explanation": "Feature engineering creates useful input variables from raw data. It is a development activity, not a safety-bypass attack."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "question": "An organization is establishing AI governance. Which of the following are sound governance practices? (Select all that apply.)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Grant every employee administrator access to all models so that no one is ever blocked.",
+          "correct": false,
+          "explanation": "Giving all employees admin access to every model violates least privilege and removes meaningful oversight. It increases risk and runs counter to sound AI governance."
+        },
+        {
+          "id": "b",
+          "text": "Document model purpose, training data, limitations, and owners, and track versions and approvals.",
+          "correct": true,
+          "explanation": "Documenting each model's purpose, data, limitations, and ownership, plus tracking versions and approvals, supports accountability and auditability, which are core governance practices."
+        },
+        {
+          "id": "c",
+          "text": "Avoid documenting anything so the system stays flexible and undocumented.",
+          "correct": false,
+          "explanation": "Skipping documentation undermines accountability, auditability, and risk management. It is the opposite of sound AI governance."
+        },
+        {
+          "id": "d",
+          "text": "Establish an AI governance board and define acceptable AI use policies.",
+          "correct": true,
+          "explanation": "Creating a governance board and defining acceptable-use policies are foundational governance actions that establish oversight and clear rules for AI use."
+        },
+        {
+          "id": "e",
+          "text": "Monitor production performance and drift, and define incident response and escalation.",
+          "correct": true,
+          "explanation": "Ongoing monitoring for drift and defined incident response and escalation procedures are essential governance practices that keep AI systems reliable and accountable over time."
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "question": "A team must process scanned invoices to pull out structured fields, tables, and totals. A separate team must detect logos and unsafe content in marketing photos. Which services fit these two needs, respectively?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Polly for the invoices, and Amazon Translate for the photos.",
+          "correct": false,
+          "explanation": "Polly is text-to-speech and Translate is language translation. Neither extracts invoice fields nor analyzes image content."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Transcribe for both needs.",
+          "correct": false,
+          "explanation": "Transcribe converts speech to text. It cannot extract document fields or analyze image content."
+        },
+        {
+          "id": "c",
+          "text": "Textract for the invoices, and Rekognition for the photos.",
+          "correct": true,
+          "explanation": "Amazon Textract extracts structured text, forms, and tables from scanned documents like invoices, while Amazon Rekognition analyzes images for objects, logos, and unsafe content. Each fits its respective task."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Rekognition for the invoices, and Amazon Textract for the photos.",
+          "correct": false,
+          "explanation": "This reverses the right fit. Textract is for document text/forms/tables, and Rekognition is for image content analysis."
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "A manufacturer needs predictions to run directly on factory-floor devices with low latency, even when network connectivity is unavailable. Which inference approach fits this requirement?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Asynchronous inference for very large payloads.",
+          "correct": false,
+          "explanation": "Asynchronous inference handles large payloads or longer processing in the cloud. It does not provide local, offline predictions on factory devices."
+        },
+        {
+          "id": "b",
+          "text": "Edge inference, which runs predictions locally and offline.",
+          "correct": true,
+          "explanation": "Edge inference performs predictions locally on devices, which is ideal when low latency, offline operation, or privacy require local processing without depending on network connectivity."
+        },
+        {
+          "id": "c",
+          "text": "Real-time cloud inference that requires constant connectivity.",
+          "correct": false,
+          "explanation": "Real-time cloud inference depends on network connectivity to the endpoint. The requirement for offline operation makes edge inference the better fit."
+        },
+        {
+          "id": "d",
+          "text": "Batch inference in the cloud overnight.",
+          "correct": false,
+          "explanation": "Batch inference processes large datasets offline in the cloud and is unsuitable for low-latency, on-device predictions during disconnected operation."
+        }
+      ]
+    }
+  ]
+}

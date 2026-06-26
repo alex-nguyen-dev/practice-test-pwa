@@ -9,87 +9,309 @@
       "choices": [
         {
           "id": "a",
-          "text": "Amazon Bedrock, which provides serverless access to a choice of foundation models from Amazon and leading model providers through a single API.",
-          "correct": true,
-          "explanation": "Amazon Bedrock is a fully managed service that exposes foundation models from multiple providers through a unified, serverless API. Because there is no infrastructure to provision or manage, a team with limited ML experience can begin generating summaries quickly, making it the best fit for managed generative AI tasks such as text summarization."
-        },
-        {
-          "id": "b",
           "text": "Amazon EC2 Auto Scaling, which automatically adjusts the number of compute instances based on demand.",
           "correct": false,
           "explanation": "EC2 Auto Scaling only manages the number of compute instances to match load. It does not provide foundation models or a managed generative AI API, so the team would still have to source, host, and operate models themselves, which contradicts the requirement to avoid managing infrastructure."
         },
         {
+          "id": "b",
+          "text": "Amazon Route 53, which provides scalable Domain Name System (DNS) and traffic routing for applications.",
+          "correct": false,
+          "explanation": "Amazon Route 53 is a DNS web service for routing users to application endpoints. It has no relationship to natural language processing or text generation and cannot summarize articles."
+        },
+        {
           "id": "c",
           "text": "AWS Glue, which discovers, prepares, and integrates data from many sources for analytics and machine learning.",
           "correct": false,
-          "explanation": "AWS Glue is a serverless data integration and ETL service used to catalog and transform data before it is analyzed or used for training. It does not generate text or provide access to language models, so it cannot directly produce article summaries."
+          "explanation": "AWS Glue is a serverless data integration and ETL service used to catalog and transform data. It does not generate text or provide access to language models, so it cannot directly produce article summaries."
         },
         {
           "id": "d",
-          "text": "Amazon Route 53, which provides scalable Domain Name System (DNS) and traffic routing for applications.",
-          "correct": false,
-          "explanation": "Amazon Route 53 is a DNS web service for routing users to application endpoints. It has no relationship to natural language processing or text generation and therefore cannot be used to summarize articles."
+          "text": "Amazon Bedrock, a serverless API for managed foundation models.",
+          "correct": true,
+          "explanation": "Amazon Bedrock is a fully managed, serverless service that exposes foundation models from multiple providers through a unified API. With no infrastructure to provision or manage, a team with limited ML experience can begin generating summaries within days, making it the best fit for managed generative AI tasks such as summarization."
         }
       ]
     },
     {
       "id": "q2",
-      "question": "A startup is preparing to launch a customer-facing generative AI assistant that drafts marketing copy. The leadership team asks the project owner to ensure that the assistant is built and operated following responsible AI principles throughout its lifecycle. Which of the following describe sound responsible AI practices the team should adopt? (Select all that apply.)",
+      "question": "A retail company has several years of historical sales records in which each example is paired with the actual revenue that resulted. The data science team wants to train a model that learns the relationship between input features and these known outcomes so it can predict revenue for new situations. Which type of machine learning does this scenario describe?",
       "choices": [
         {
           "id": "a",
-          "text": "Establish a process to review model outputs for bias, harmful content, and accuracy both before launch and on an ongoing basis after release.",
+          "text": "Supervised learning, which trains on labeled input-output examples.",
           "correct": true,
-          "explanation": "Continuously evaluating outputs for bias, toxicity, and quality is a core responsible AI practice. Reviewing before launch reduces initial risk, and ongoing review catches new issues as usage patterns and inputs evolve over time."
+          "explanation": "Supervised learning uses labeled data where each input is paired with a known target output. Because the company has historical examples with actual revenue outcomes, training a model to map inputs to those known outputs is a supervised learning task."
         },
         {
           "id": "b",
-          "text": "Skip post-launch monitoring of the assistant because a foundation model's behavior is fixed once it is deployed and will not change.",
+          "text": "Self-supervised pretraining only, which removes any need for labeled data at every stage of the project.",
           "correct": false,
-          "explanation": "Even when the underlying model weights are fixed, real-world inputs, user behavior, prompt patterns, and business risks all change after launch. Responsible AI requires ongoing monitoring to detect drift, misuse, and emerging harms, so skipping it is not a sound practice."
+          "explanation": "While self-supervised pretraining can create representations without manual labels, predicting a known revenue value from labeled historical records is a classic supervised learning problem, not a label-free task."
         },
         {
           "id": "c",
-          "text": "Clearly disclose to users when they are interacting with AI or receiving AI-generated content, so they can make informed decisions.",
-          "correct": true,
-          "explanation": "Transparency is a key responsible AI principle. Telling users when content is AI-generated, or when they are interacting with an automated assistant, helps set appropriate expectations and supports informed, trustworthy use of the system."
+          "text": "Reinforcement learning, in which an agent learns a policy by taking actions in an environment and receiving rewards or penalties.",
+          "correct": false,
+          "explanation": "Reinforcement learning trains an agent through trial-and-error interactions guided by reward signals. It does not learn from a fixed dataset of labeled input-output pairs, so it does not match this scenario."
         },
         {
           "id": "d",
-          "text": "Grant the assistant broad, standing access to production systems and customer data to make testing and iteration faster.",
+          "text": "Unsupervised learning, in which a model finds structure or groupings in data that has no labeled outputs.",
           "correct": false,
-          "explanation": "Granting broad access violates the principle of least privilege and increases the blast radius of any mistake or compromise. Applications and test environments should be given only the minimum permissions they need, so this is not a responsible practice."
+          "explanation": "Unsupervised learning discovers patterns, clusters, or structure in unlabeled data. Since the dataset already includes the correct revenue outcome for each example, the scenario is supervised rather than unsupervised."
         }
       ]
     },
     {
       "id": "q3",
-      "question": "A data science team is building a supervised computer vision model and needs to create a large, high-quality set of labeled training images. They want a managed way to coordinate human labelers, apply automated labeling where confidence is high, and track labeling quality. Which AWS service is designed for this purpose?",
+      "question": "A large enterprise wants employees to ask natural language questions and receive accurate answers grounded in the company's internal policy and HR documents. The answers must reflect the most current documents and include information the foundation model was never trained on, without retraining the model. Which approach best meets these requirements?",
       "choices": [
         {
           "id": "a",
-          "text": "Amazon SageMaker Ground Truth, which helps build labeled datasets using a combination of human annotators and automated, machine-assisted labeling.",
-          "correct": true,
-          "explanation": "Amazon SageMaker Ground Truth is purpose-built for creating high-quality labeled training datasets. It can route data to human labelers, use automated (machine-assisted) labeling to reduce cost on high-confidence items, and help manage labeling workflows and quality, which is exactly what the team needs."
+          "text": "Increasing the model's temperature parameter so it produces more creative answers.",
+          "correct": false,
+          "explanation": "Temperature controls randomness and creativity of outputs. It does not give the model access to internal documents or current information, and higher temperature can actually increase the risk of inaccurate answers."
         },
         {
           "id": "b",
-          "text": "Amazon CloudFront, which caches and delivers content to users from edge locations close to them.",
+          "text": "Pretraining a new foundation model from scratch on the public internet.",
           "correct": false,
-          "explanation": "Amazon CloudFront is a content delivery network (CDN) that accelerates the distribution of static and dynamic content. It plays no role in annotating or labeling data for machine learning."
+          "explanation": "Pretraining a foundation model from scratch is extremely expensive, slow, and still would not include the company's private, frequently changing documents. It does not meet the need for current, grounded answers without retraining."
         },
         {
           "id": "c",
-          "text": "AWS CloudTrail, which records account activity and API calls across AWS services for auditing and governance.",
+          "text": "Configuring blue/green deployment for the application that calls the model.",
           "correct": false,
-          "explanation": "AWS CloudTrail provides a log of API activity for security analysis, auditing, and compliance. While useful for governance, it does not create or manage labeled datasets for training models."
+          "explanation": "Blue/green deployment is a release strategy to reduce downtime and risk. It does not retrieve documents or ground a model's answers, so it does not address grounded question answering."
         },
         {
           "id": "d",
-          "text": "Amazon VPC, which provides logically isolated virtual networks where AWS resources can be launched.",
+          "text": "Retrieval Augmented Generation (RAG), adding retrieved context at query time.",
+          "correct": true,
+          "explanation": "RAG combines retrieval with generation: relevant passages are fetched from an up-to-date knowledge base and passed to the model as context. This grounds responses in the company's own documents and lets the model answer using information it was never trained on, without retraining."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "question": "A startup is preparing to launch a customer-facing generative AI assistant that drafts marketing copy. Leadership asks the project owner to ensure the assistant is built and operated following responsible AI principles throughout its lifecycle. Which of the following describe sound responsible AI practices the team should adopt? (Select all that apply.)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Clearly disclose to users when they are interacting with AI or receiving AI-generated content, so they can make informed decisions.",
+          "correct": true,
+          "explanation": "Transparency is a key responsible AI principle. Telling users when content is AI-generated, or when they are interacting with an automated assistant, sets appropriate expectations and supports informed, trustworthy use."
+        },
+        {
+          "id": "b",
+          "text": "Skip post-launch monitoring of the assistant because a foundation model's behavior is fixed once it is deployed and will never change.",
           "correct": false,
-          "explanation": "Amazon Virtual Private Cloud (VPC) provides isolated networking and security boundaries for resources. It is an infrastructure networking service and has nothing to do with labeling training data."
+          "explanation": "Even when model weights are fixed, real-world inputs, user behavior, and business risks change after launch. Responsible AI requires ongoing monitoring to detect drift, misuse, and emerging harms, so skipping it is not sound."
+        },
+        {
+          "id": "c",
+          "text": "Establish a process to review model outputs for bias, harmful content, and accuracy both before launch and on an ongoing basis after release.",
+          "correct": true,
+          "explanation": "Continuously evaluating outputs for bias, toxicity, and quality is a core responsible AI practice. Reviewing before launch reduces initial risk, and ongoing review catches new issues as usage patterns and inputs evolve."
+        },
+        {
+          "id": "d",
+          "text": "Grant the assistant broad, standing access to production systems and customer data to make testing and iteration faster.",
+          "correct": false,
+          "explanation": "Granting broad access violates least privilege and increases the blast radius of any mistake or compromise. Applications and test environments should receive only the minimum permissions they need."
+        },
+        {
+          "id": "e",
+          "text": "Train the assistant on confidential customer data without obtaining consent in order to personalize the copy more aggressively.",
+          "correct": false,
+          "explanation": "Using confidential customer data without consent violates privacy and data-governance principles. Responsible AI requires a lawful basis and appropriate consent before using personal data, so this is not a sound practice."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "question": "A data science team trains a fraud-detection model that achieves 99% accuracy on the training data but performs poorly when scoring new transactions in production. Which problem does this most likely describe, and what is an appropriate mitigation?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Data leakage from the network; mitigate it by enabling a VPC endpoint.",
+          "correct": false,
+          "explanation": "This is a generalization problem, not a networking issue. VPC endpoints provide private connectivity to AWS services and have nothing to do with the gap between training and production accuracy."
+        },
+        {
+          "id": "b",
+          "text": "Overfitting; fix it with more data, regularization, or early stopping.",
+          "correct": true,
+          "explanation": "Strong training performance combined with poor performance on new data is the classic signature of overfitting, where the model memorizes the training set instead of generalizing. Common mitigations include more or more representative data, regularization, early stopping, and data augmentation."
+        },
+        {
+          "id": "c",
+          "text": "Hallucination; mitigate it by lowering the model's learning rate at inference time.",
+          "correct": false,
+          "explanation": "Hallucination is a generative AI concept about plausible-but-false output, not a description of a classifier overfitting. Learning rate is a training hyperparameter and is not applied at inference."
+        },
+        {
+          "id": "d",
+          "text": "Underfitting; mitigate it by reducing the amount of training data the model sees.",
+          "correct": false,
+          "explanation": "Underfitting shows up as poor performance on both training and new data, not high training accuracy. Reducing training data would generally make generalization worse, not better."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "question": "A solutions team is designing a Retrieval Augmented Generation (RAG) application on AWS. They need to store source documents, convert content into searchable embeddings, and retrieve the most relevant context to pass to a foundation model at query time. Which AWS services or features can support this RAG architecture? (Select all that apply.)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "AWS WAF managed rules used on their own to filter web traffic to the application.",
+          "correct": false,
+          "explanation": "AWS WAF helps protect web applications from common exploits and unwanted traffic. While it can secure the front end, by itself it provides no retrieval, embedding, or generation capability and is not part of the RAG pipeline."
+        },
+        {
+          "id": "b",
+          "text": "Knowledge Bases for Amazon Bedrock, which can connect to data sources, automatically ingest and chunk content, and retrieve relevant context for grounded responses.",
+          "correct": true,
+          "explanation": "Knowledge Bases for Amazon Bedrock is a managed capability that connects data sources, handles ingestion and embedding, and retrieves relevant passages for a model to use. It is designed specifically to support RAG workflows with minimal custom code."
+        },
+        {
+          "id": "c",
+          "text": "Amazon OpenSearch Service with vector (k-NN) search, which stores embeddings and returns semantically similar passages for a given query.",
+          "correct": true,
+          "explanation": "Amazon OpenSearch Service supports vector search, letting the application store document embeddings and retrieve the most semantically similar content. This retrieval capability is a common building block of RAG systems on AWS."
+        },
+        {
+          "id": "d",
+          "text": "Amazon S3 used as durable storage for the source documents that are ingested into the retrieval pipeline.",
+          "correct": true,
+          "explanation": "Amazon S3 is commonly used to store the raw source documents that feed a RAG system. A knowledge base or ingestion pipeline reads these objects, chunks and embeds them, and makes them available for retrieval."
+        },
+        {
+          "id": "e",
+          "text": "Amazon Route 53 health checks used to rank which documents are most relevant to a query.",
+          "correct": false,
+          "explanation": "Route 53 health checks monitor endpoint availability for DNS routing. They cannot embed, store, or rank documents by relevance, so they are not part of a RAG retrieval pipeline."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "question": "A developer needs to convert product descriptions and user search queries into numerical vectors so that semantically similar items can be found even when they do not share the same keywords. Which generative AI concept directly enables this capability?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Temperature, which adjusts how random or creative a model's output is.",
+          "correct": false,
+          "explanation": "Temperature is an inference parameter that influences output randomness. It has no role in encoding the meaning of text into comparable vectors."
+        },
+        {
+          "id": "b",
+          "text": "Embeddings, vectors where similar meaning yields similar vectors.",
+          "correct": true,
+          "explanation": "Embeddings convert content into numerical vectors such that items with similar meaning are close together in vector space. This is what enables semantic search and similarity matching even when exact keywords differ."
+        },
+        {
+          "id": "c",
+          "text": "Batch size, which sets how many examples are processed per training update.",
+          "correct": false,
+          "explanation": "Batch size is a training hyperparameter that affects how weights are updated during training. It does not produce vectors used for semantic search."
+        },
+        {
+          "id": "d",
+          "text": "Stop sequences, which tell a model when to stop generating tokens.",
+          "correct": false,
+          "explanation": "Stop sequences control where generation ends in a text completion. They do not represent meaning numerically and cannot be used for semantic similarity search."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "question": "A company wants to analyze incoming customer support emails to automatically detect the language, identify the overall sentiment, and extract key entities such as product names. The team wants a managed natural language processing service rather than building and training custom models. Which AWS service should they use?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Comprehend, a managed NLP service for text analysis.",
+          "correct": true,
+          "explanation": "Amazon Comprehend is a managed NLP service that provides language detection, sentiment analysis, entity recognition, and key-phrase extraction out of the box, which matches all of the team's requirements without custom model training."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Textract, which extracts text, forms, and tables from scanned documents.",
+          "correct": false,
+          "explanation": "Amazon Textract extracts text and structure from documents and images. It does not interpret meaning such as sentiment or entities, so it does not satisfy the analysis requirements."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Polly, which converts text into lifelike speech.",
+          "correct": false,
+          "explanation": "Amazon Polly is a text-to-speech service. It generates audio from text and does not analyze sentiment, entities, or language in written documents."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Translate, which translates text from one language to another.",
+          "correct": false,
+          "explanation": "Amazon Translate performs language translation. While it works with text, it does not provide sentiment analysis or entity extraction, so it is not the right fit for this NLP task."
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "question": "A security team wants to enforce content controls on a generative AI application built on Amazon Bedrock. They need to block specific denied topics, filter harmful content, and redact personally identifiable information (PII) from prompts and responses. Which Amazon Bedrock capability is designed for this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Bedrock model evaluation, which compares models against test datasets.",
+          "correct": false,
+          "explanation": "Model evaluation helps you measure and compare model quality before deployment. It assesses performance but does not enforce runtime content filtering or PII redaction."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Bedrock Guardrails, which apply safety and privacy controls.",
+          "correct": true,
+          "explanation": "Bedrock Guardrails let teams block undesirable topics, filter harmful content, and redact PII in prompts and responses. They are purpose-built for applying responsible AI and safety controls to model interactions."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Bedrock batch inference, which processes many predictions and writes output to Amazon S3.",
+          "correct": false,
+          "explanation": "Batch inference is a cost and throughput option for running many predictions at once. It is unrelated to enforcing safety or privacy controls on model interactions."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Bedrock provisioned throughput, which reserves model capacity for predictable performance.",
+          "correct": false,
+          "explanation": "Provisioned throughput reserves dedicated model capacity for consistent performance and pricing. It does not provide content filtering, topic blocking, or PII redaction."
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "An administrator discovers that an important S3 bucket used for training data was deleted, and wants to determine which user or service made the API call and when. Which AWS service should they consult first?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon CloudFront, which caches and delivers content from edge locations.",
+          "correct": false,
+          "explanation": "Amazon CloudFront is a content delivery network that accelerates content distribution. It does not record account-level API activity and cannot reveal who deleted a bucket."
+        },
+        {
+          "id": "b",
+          "text": "AWS CloudTrail, which records API calls and account activity.",
+          "correct": true,
+          "explanation": "AWS CloudTrail logs API calls and account activity across services, including who made a call, from where, and when. To investigate who deleted a resource, CloudTrail is the first place to look."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Polly, which converts text to speech.",
+          "correct": false,
+          "explanation": "Amazon Polly is a text-to-speech service and is entirely unrelated to logging or auditing AWS API calls."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Personalize, which generates personalized recommendations.",
+          "correct": false,
+          "explanation": "Amazon Personalize builds recommendation models. It has no role in auditing API activity or investigating deleted resources."
         }
       ]
     }

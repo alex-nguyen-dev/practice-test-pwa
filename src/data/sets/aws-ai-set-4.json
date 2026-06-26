@@ -1,0 +1,307 @@
+{
+  "id": "aws-ai-set-4",
+  "collection": "AWS AI Practitioner",
+  "title": "Practice Set 4",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "A study group is reviewing how key AI terms relate to one another. Which statement correctly describes the hierarchy of these concepts?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Generative AI is a subset of deep learning, of ML, and of AI.",
+          "correct": true,
+          "explanation": "The standard hierarchy is AI > Machine Learning > Deep Learning > Generative AI. AI is the umbrella term, ML learns from data, deep learning uses multi-layer neural networks, and generative AI is a deep learning subset that creates new content."
+        },
+        {
+          "id": "b",
+          "text": "Machine learning and artificial intelligence are unrelated fields with no overlap.",
+          "correct": false,
+          "explanation": "Machine learning is a method within artificial intelligence, so the fields are closely related and overlapping, not unrelated."
+        },
+        {
+          "id": "c",
+          "text": "Deep learning is broader than artificial intelligence and contains it.",
+          "correct": false,
+          "explanation": "Deep learning is a narrow subset of machine learning, which is itself within AI. AI is the broadest term, so deep learning cannot contain AI."
+        },
+        {
+          "id": "d",
+          "text": "Artificial intelligence is a subset of machine learning, which is a subset of generative AI.",
+          "correct": false,
+          "explanation": "This inverts the hierarchy. AI is the broadest field, not a subset of machine learning, and generative AI is the narrowest category, not the broadest."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "question": "A developer wants a foundation model to perform multi-step tasks such as looking up an order in a database, calling an external shipping API, and then composing a reply. They want a managed way to orchestrate these actions with the model's reasoning. Which Amazon Bedrock capability fits?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Bedrock model evaluation, which compares model quality.",
+          "correct": false,
+          "explanation": "Model evaluation measures and compares model performance before deployment. It does not execute multi-step task workflows."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Bedrock provisioned throughput, which reserves model capacity.",
+          "correct": false,
+          "explanation": "Provisioned throughput reserves dedicated capacity for predictable performance. It has nothing to do with orchestrating actions or tool calls."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Bedrock Guardrails, which filter content and redact PII.",
+          "correct": false,
+          "explanation": "Guardrails apply safety and privacy controls to interactions. They do not orchestrate multi-step actions or call external APIs to complete tasks."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Bedrock Agents, which orchestrate multi-step actions and API calls.",
+          "correct": true,
+          "explanation": "Bedrock Agents orchestrate multi-step tasks by combining model reasoning with action groups that can call APIs defined by OpenAPI schemas, invoke Lambda functions, and use knowledge bases. This matches the order-lookup and API-calling workflow."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "question": "A team is building a customer service chatbot and models the conversation using concepts like the user's goal, the required parameters to fulfill that goal, and a Lambda function that completes the action. In Amazon Lex, what are these three concepts called, respectively?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Guardrails, agents, and knowledge bases.",
+          "correct": false,
+          "explanation": "These are Amazon Bedrock features. The Lex conversation model uses intents, slots, and fulfillment instead."
+        },
+        {
+          "id": "b",
+          "text": "Pipelines, endpoints, and registries.",
+          "correct": false,
+          "explanation": "These are SageMaker lifecycle concepts. They are not how Amazon Lex structures conversations."
+        },
+        {
+          "id": "c",
+          "text": "Intents, slots, and fulfillment.",
+          "correct": true,
+          "explanation": "In Amazon Lex, an intent represents what the user wants, slots are the required input parameters for that intent, and fulfillment (often a Lambda function) completes the action. These are the core Lex building blocks."
+        },
+        {
+          "id": "d",
+          "text": "Embeddings, tokens, and epochs.",
+          "correct": false,
+          "explanation": "Embeddings, tokens, and epochs are general ML/GenAI concepts unrelated to how Lex models a conversation's goals and parameters."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "question": "A computer vision team needs to create a large, high-quality set of labeled training images. They want a managed way to coordinate human labelers, apply automated labeling where confidence is high, and track labeling quality. Which AWS service is designed for this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon CloudFront, which caches and delivers content from edge locations.",
+          "correct": false,
+          "explanation": "Amazon CloudFront is a content delivery network. It plays no role in annotating or labeling data for machine learning."
+        },
+        {
+          "id": "b",
+          "text": "Amazon VPC, which provides isolated virtual networks.",
+          "correct": false,
+          "explanation": "Amazon VPC provides networking isolation for resources. It is unrelated to labeling training data."
+        },
+        {
+          "id": "c",
+          "text": "AWS CloudTrail, which records API activity for auditing.",
+          "correct": false,
+          "explanation": "CloudTrail logs API activity for governance and auditing. It does not create or manage labeled training datasets."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker Ground Truth, for human and automated data labeling.",
+          "correct": true,
+          "explanation": "SageMaker Ground Truth creates high-quality labeled datasets by routing data to human labelers, using automated labeling for high-confidence items, and managing labeling workflows and quality, exactly what the team needs."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "question": "A risk officer asks the team to distinguish between interpretability and explainability for an AI model. Which statement is most accurate?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Interpretability and explainability are identical terms with no meaningful difference.",
+          "correct": false,
+          "explanation": "Although related, the terms differ: interpretability is about understanding internal mechanics, while explainability is about describing behavior even when internals are opaque."
+        },
+        {
+          "id": "b",
+          "text": "Interpretability explains internal decisions; explainability describes behavior.",
+          "correct": true,
+          "explanation": "Interpretability focuses on understanding the model's internal decision process, while explainability focuses on describing behavior based on inputs and outputs. Highly interpretable models like decision trees may trade off some performance."
+        },
+        {
+          "id": "c",
+          "text": "Interpretability means the model runs faster, and explainability means it uses less memory.",
+          "correct": false,
+          "explanation": "Neither term refers to runtime speed or memory usage. Both concern human understanding of model decisions and behavior."
+        },
+        {
+          "id": "d",
+          "text": "Explainability only applies to decision trees, and interpretability only applies to neural networks.",
+          "correct": false,
+          "explanation": "Both concepts apply across model types. Decision trees tend to be highly interpretable, while neural networks are less interpretable but can still be made more explainable with techniques like partial dependence plots."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "question": "An application running in a private subnet must call Amazon Bedrock without sending traffic over the public internet. Which AWS capability enables this private connectivity?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "An internet gateway attached to the VPC.",
+          "correct": false,
+          "explanation": "An internet gateway provides a path to the public internet for public subnets, which is the opposite of keeping traffic private."
+        },
+        {
+          "id": "b",
+          "text": "An interface VPC endpoint powered by AWS PrivateLink.",
+          "correct": true,
+          "explanation": "Interface VPC endpoints powered by AWS PrivateLink let resources in a VPC reach AWS services such as Bedrock privately, keeping traffic off the public internet. This is the standard pattern for private AI service access."
+        },
+        {
+          "id": "c",
+          "text": "An Amazon CloudFront distribution.",
+          "correct": false,
+          "explanation": "CloudFront is a CDN that delivers content from edge locations over the internet. It does not provide private VPC connectivity to Bedrock."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Route 53 health checks.",
+          "correct": false,
+          "explanation": "Route 53 health checks monitor endpoint availability for DNS routing. They do not provide private connectivity to AWS services."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "question": "A team is evaluating a model that accepts an image plus a text question and returns a text answer. What kind of model is this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "A multimodal model, which handles more than one type of data.",
+          "correct": true,
+          "explanation": "A model that takes multiple input types, such as image and text together, and produces output is multimodal. Multimodal models handle combinations like text-plus-image input or image generation from text."
+        },
+        {
+          "id": "b",
+          "text": "A rule-based expert system with no learned parameters.",
+          "correct": false,
+          "explanation": "An expert system uses manually defined rules rather than learned parameters across modalities. The described model is a learned multimodal model, not a rule-based system."
+        },
+        {
+          "id": "c",
+          "text": "A unimodal regression model that only outputs numbers.",
+          "correct": false,
+          "explanation": "The model produces a text answer and accepts both image and text, so it is multimodal, not a single-modality numeric regression model."
+        },
+        {
+          "id": "d",
+          "text": "A clustering model that groups images without labels.",
+          "correct": false,
+          "explanation": "Clustering groups unlabeled data by similarity. It does not answer text questions about images, so it does not describe this model."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "question": "A governance team needs to continuously track the configuration of AWS resources and evaluate them against compliance rules, flagging resources that drift out of compliance. Which AWS service should they use?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Lex, which builds chatbots.",
+          "correct": false,
+          "explanation": "Amazon Lex builds conversational interfaces. It is unrelated to configuration tracking and compliance evaluation."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Polly, which converts text to speech.",
+          "correct": false,
+          "explanation": "Amazon Polly is a text-to-speech service and has no role in tracking resource configuration or compliance."
+        },
+        {
+          "id": "c",
+          "text": "AWS Config, which tracks resource configuration and compliance.",
+          "correct": true,
+          "explanation": "AWS Config tracks resource configurations over time and evaluates them against defined rules, making it ideal for monitoring compliance and detecting configuration drift."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Comprehend, which analyzes text.",
+          "correct": false,
+          "explanation": "Amazon Comprehend is an NLP service. It does not record or evaluate AWS resource configurations."
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "question": "An e-commerce company wants to show each shopper personalized product recommendations and 'similar item' suggestions based on user behavior. Which managed AWS service is purpose-built for this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Personalize, a managed recommendations service.",
+          "correct": true,
+          "explanation": "Amazon Personalize is built for recommendation use cases such as product recommendations, personalized ranking, and similar items, using recipes tailored to these scenarios."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Transcribe, which converts speech to text.",
+          "correct": false,
+          "explanation": "Amazon Transcribe is a speech-to-text service. It has no recommendation capability."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Textract, which extracts text from documents.",
+          "correct": false,
+          "explanation": "Amazon Textract extracts text and structure from documents. It does not generate personalized recommendations."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Macie, which discovers sensitive data in S3.",
+          "correct": false,
+          "explanation": "Amazon Macie focuses on data privacy and discovering sensitive data. It does not provide product recommendations."
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "A developer notices that very long documents are being truncated when sent to a language model. Which model characteristic determines how much text the model can consider at once?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "The number of epochs used during training.",
+          "correct": false,
+          "explanation": "Epochs are passes over the training data during training. They do not determine how much text the model can process at inference time."
+        },
+        {
+          "id": "b",
+          "text": "The temperature, which controls output randomness.",
+          "correct": false,
+          "explanation": "Temperature affects how random or creative the output is. It does not change how much input text the model can read at once."
+        },
+        {
+          "id": "c",
+          "text": "The context window, the number of tokens processed at once.",
+          "correct": true,
+          "explanation": "The context window defines how many tokens a model can consider in a single request. Documents exceeding the context window get truncated. Larger context windows allow more input but increase compute, latency, and cost."
+        },
+        {
+          "id": "d",
+          "text": "The learning rate, a training hyperparameter.",
+          "correct": false,
+          "explanation": "Learning rate controls weight updates during training. It is unrelated to the amount of input text a deployed model can handle."
+        }
+      ]
+    }
+  ]
+}

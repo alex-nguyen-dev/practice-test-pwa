@@ -1,0 +1,307 @@
+{
+  "id": "aws-ai-set-7",
+  "collection": "AWS AI Practitioner",
+  "title": "Practice Set 7",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "A team wants to browse a hub of pre-trained foundation models and pre-built ML solutions that they can quickly deploy onto SageMaker infrastructure. Which SageMaker capability provides this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker Role Manager, which defines persona-based access.",
+          "correct": false,
+          "explanation": "Role Manager helps define role-based access for ML personas. It is not a model hub."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker Model Monitor, which detects production drift.",
+          "correct": false,
+          "explanation": "Model Monitor watches deployed models for drift. It does not provide a catalog of pre-built models and solutions."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker JumpStart, a hub of pre-built models and solutions.",
+          "correct": true,
+          "explanation": "SageMaker JumpStart is a model hub offering pre-trained foundation models and pre-built ML solutions that can be deployed quickly onto SageMaker, accelerating getting started."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker Clarify, which detects bias and explains models.",
+          "correct": false,
+          "explanation": "Clarify focuses on bias detection and explainability. It is not a model hub for deploying pre-built models."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "question": "An insurance company wants to automatically sort incoming documents into their own internal categories that do not match any generic, pre-built label set. They want a managed NLP service they can train on their categories. Which capability fits?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Polly with neural voices.",
+          "correct": false,
+          "explanation": "Amazon Polly produces speech from text. It cannot classify documents into custom categories."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Transcribe custom vocabularies.",
+          "correct": false,
+          "explanation": "Transcribe custom vocabularies improve speech-to-text accuracy for specific words. They do not classify text documents into categories."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Rekognition Custom Labels.",
+          "correct": false,
+          "explanation": "Rekognition Custom Labels trains custom image recognition models. The task is text document classification, which is Comprehend's domain, not image analysis."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Comprehend custom classification, for your own categories.",
+          "correct": true,
+          "explanation": "Amazon Comprehend supports custom classification, letting you train a model on your own labeled examples to sort documents into business-specific categories, plus custom entity recognition for domain-specific entities."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "question": "A team is adjusting inference parameters and asks which parameters primarily influence the creativity and randomness of a model's text output without being the main drivers of latency or per-token pricing. Which statement is accurate?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Top K is the single largest driver of inference latency.",
+          "correct": false,
+          "explanation": "Latency is driven mainly by model size and type and the number of input and output tokens. Top K is not a major latency driver."
+        },
+        {
+          "id": "b",
+          "text": "Top P determines the size of the model's context window.",
+          "correct": false,
+          "explanation": "The context window is a fixed model property describing how many tokens it can process. Top P only limits the probability mass of candidate tokens during generation."
+        },
+        {
+          "id": "c",
+          "text": "Temperature directly sets the per-token price charged by the model.",
+          "correct": false,
+          "explanation": "Pricing is driven by input/output token counts, model size, and provider, not by the temperature setting. Temperature only affects output randomness."
+        },
+        {
+          "id": "d",
+          "text": "Temperature, Top P, and Top K affect randomness, not mainly cost or latency.",
+          "correct": true,
+          "explanation": "Temperature, Top P, and Top K shape how random or focused the output is. They are not primary drivers of latency or pricing; cost is driven mainly by input and output tokens and model choice, and latency by model size and token counts."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "question": "A security team wants to scan EC2 instances, container images in Amazon ECR, and Lambda functions for software vulnerabilities and CVE-based risks. Which AWS service should they use?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Macie, which discovers sensitive data in S3.",
+          "correct": false,
+          "explanation": "Amazon Macie discovers and classifies sensitive data in S3. It does not scan workloads for software vulnerabilities."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Comprehend, which analyzes text.",
+          "correct": false,
+          "explanation": "Amazon Comprehend is an NLP service. It has no vulnerability scanning capability."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Inspector, which scans EC2, ECR images, and Lambda.",
+          "correct": true,
+          "explanation": "Amazon Inspector automatically scans EC2 instances, ECR container images, and Lambda functions for package vulnerabilities and CVE-based risks, and integrates with Security Hub and EventBridge."
+        },
+        {
+          "id": "d",
+          "text": "AWS CloudTrail, which logs API activity.",
+          "correct": false,
+          "explanation": "CloudTrail records API calls for auditing. It does not perform vulnerability scanning."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "question": "A company must score a very large dataset of records overnight, where immediate per-record responses are not required and processing them together is more efficient. Which inference approach is most appropriate?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Edge inference on a disconnected device.",
+          "correct": false,
+          "explanation": "Edge inference runs predictions locally on devices for low-latency, offline, or privacy-sensitive needs. It does not fit a centralized large overnight batch scoring job."
+        },
+        {
+          "id": "b",
+          "text": "Batch inference, which processes large volumes together offline.",
+          "correct": true,
+          "explanation": "Batch inference (or batch transform) processes large volumes of data together and is ideal when immediate responses are not needed and efficiency matters, such as overnight scoring of a large dataset."
+        },
+        {
+          "id": "c",
+          "text": "Real-time inference, which returns low-latency responses per request.",
+          "correct": false,
+          "explanation": "Real-time inference is optimized for immediate, per-request responses. It is unnecessary and less efficient for a large overnight batch job."
+        },
+        {
+          "id": "d",
+          "text": "Interactive streaming inference for a chatbot.",
+          "correct": false,
+          "explanation": "Streaming inference suits interactive, token-by-token chatbot responses. It is not appropriate for bulk offline scoring."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "question": "An ML governance lead wants standardized documentation for each model describing its intended use, risk rating, training details, and limitations. Which Amazon SageMaker capability provides this documentation?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker Feature Store, which stores features.",
+          "correct": false,
+          "explanation": "Feature Store stores and reuses features. It does not document model intended use and risk."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker Data Wrangler, which prepares data.",
+          "correct": false,
+          "explanation": "Data Wrangler is for data preparation. It is not a model documentation tool."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker Pipelines, which orchestrate ML workflows.",
+          "correct": false,
+          "explanation": "Pipelines automate ML workflow steps. They do not serve as standardized model documentation."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker Model Cards, documenting a model’s use and risk.",
+          "correct": true,
+          "explanation": "SageMaker Model Cards capture model documentation such as intended use, risk, training details, and limitations, supporting governance and transparency across the model lifecycle."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "question": "An attacker submits malicious examples into a model's training data to corrupt what the model learns. Which generative AI risk does this describe, and what helps mitigate it?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Hallucination; mitigate it by increasing temperature.",
+          "correct": false,
+          "explanation": "Hallucination is plausible-but-incorrect output, not corruption of training data. Increasing temperature would not mitigate it and could make outputs less reliable."
+        },
+        {
+          "id": "b",
+          "text": "Data poisoning; mitigate with data validation and trusted sources.",
+          "correct": true,
+          "explanation": "Data poisoning is the injection of malicious data into the training set to corrupt model behavior. Mitigations include validating data, using trusted sources, and monitoring for anomalies."
+        },
+        {
+          "id": "c",
+          "text": "Overfitting; mitigate it by making the model larger.",
+          "correct": false,
+          "explanation": "Overfitting is a generalization problem from training, not a deliberate attack on training data. Making the model larger can worsen overfitting, so this is incorrect."
+        },
+        {
+          "id": "d",
+          "text": "Prompt leaking; mitigate it by adding more training epochs.",
+          "correct": false,
+          "explanation": "Prompt leaking exposes hidden prompts or sensitive context at inference time. It is unrelated to injecting malicious training data, and more epochs would not address it."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "question": "A nontechnical user wants to experiment with building generative AI apps in a playground powered by Amazon Bedrock, with no coding and without needing an AWS account. Which offering fits?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "AWS CloudFormation, an infrastructure-as-code service.",
+          "correct": false,
+          "explanation": "CloudFormation provisions infrastructure with templates. It is not a no-code GenAI app playground."
+        },
+        {
+          "id": "b",
+          "text": "PartyRock, a no-code GenAI app playground powered by Bedrock.",
+          "correct": true,
+          "explanation": "PartyRock is a generative AI app-building playground powered by Amazon Bedrock that requires no coding and no AWS account, making it ideal for experimenting with foundation models and app ideas."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker Studio, a full ML development environment.",
+          "correct": false,
+          "explanation": "SageMaker Studio is a professional ML development interface that requires an AWS account and technical skills. It is not the no-account playground described."
+        },
+        {
+          "id": "d",
+          "text": "AWS Lambda, a serverless compute service.",
+          "correct": false,
+          "explanation": "Lambda runs serverless functions and requires an AWS account and code. It is not a no-code experimentation playground."
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "question": "A team is evaluating a regression model that predicts house prices and wants a metric that penalizes larger errors more heavily. Which metric fits this requirement?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Recall, the proportion of actual positives found.",
+          "correct": false,
+          "explanation": "Recall is a classification metric. It is not used to measure error magnitude in a regression model."
+        },
+        {
+          "id": "b",
+          "text": "F1 score, the balance of precision and recall.",
+          "correct": false,
+          "explanation": "F1 score balances precision and recall for classification. It does not measure regression error and does not emphasize larger errors."
+        },
+        {
+          "id": "c",
+          "text": "Accuracy, the ratio of correct classifications.",
+          "correct": false,
+          "explanation": "Accuracy is a classification metric for discrete categories. It does not apply to predicting a continuous house price."
+        },
+        {
+          "id": "d",
+          "text": "RMSE, which penalizes larger errors more heavily.",
+          "correct": true,
+          "explanation": "RMSE squares the errors before averaging and taking the root, so larger errors contribute disproportionately. This makes RMSE appropriate when large errors are especially undesirable."
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "A generative AI application must prevent sensitive personal data from appearing in model responses to users. Which Amazon Bedrock capability can redact personally identifiable information (PII) in prompts and responses?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Bedrock batch inference.",
+          "correct": false,
+          "explanation": "Batch inference processes many predictions efficiently. It provides no PII redaction or content filtering."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Bedrock Knowledge Bases.",
+          "correct": false,
+          "explanation": "Knowledge Bases support RAG by retrieving relevant context. They ground answers in data but do not provide PII redaction; Guardrails handle that."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Bedrock Guardrails, which can redact PII and filter content.",
+          "correct": true,
+          "explanation": "Bedrock Guardrails can detect and redact PII in prompts and responses, block denied topics, and filter harmful content, directly addressing the requirement to keep sensitive data out of responses."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Bedrock provisioned throughput.",
+          "correct": false,
+          "explanation": "Provisioned throughput reserves model capacity for performance. It does not redact PII or filter content."
+        }
+      ]
+    }
+  ]
+}

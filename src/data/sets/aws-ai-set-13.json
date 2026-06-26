@@ -1,0 +1,307 @@
+{
+  "id": "aws-ai-set-13",
+  "collection": "AWS AI Practitioner",
+  "title": "Practice Set 13",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "During data labeling, an annotator who strongly expects a particular outcome unconsciously labels ambiguous examples to match that expectation. Which type of bias does this introduce?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Measurement bias, where the collection tools are flawed.",
+          "correct": false,
+          "explanation": "Measurement bias comes from faulty instruments. The described problem is human interpretation influencing labels, which is observer bias."
+        },
+        {
+          "id": "b",
+          "text": "Sampling bias, where the data does not represent the population.",
+          "correct": false,
+          "explanation": "Sampling bias concerns an unrepresentative data selection. Here the issue is how an annotator interprets and labels data, which is observer bias."
+        },
+        {
+          "id": "c",
+          "text": "Overfitting, a training generalization issue.",
+          "correct": false,
+          "explanation": "Overfitting is about a model memorizing training data. It is not a labeling bias introduced by a human annotator."
+        },
+        {
+          "id": "d",
+          "text": "Observer bias, where the data collector influences the results.",
+          "correct": true,
+          "explanation": "Observer bias occurs when the human collecting or interpreting data lets their expectations influence the results, such as labeling ambiguous cases to fit what they expect to see."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "question": "A workload must send very large input payloads to a SageMaker model and can tolerate processing that takes longer than a typical synchronous request, without holding the connection open. Which SageMaker inference option is most appropriate?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Serverless inference for tiny, frequent requests only.",
+          "correct": false,
+          "explanation": "Serverless inference suits intermittent traffic but is not specifically the option for very large payloads and long processing; asynchronous inference is the better match."
+        },
+        {
+          "id": "b",
+          "text": "A standard real-time endpoint that must return within a short synchronous timeout.",
+          "correct": false,
+          "explanation": "A standard real-time endpoint expects fast synchronous responses and has payload and timeout limits, making it a poor fit for very large payloads and longer processing."
+        },
+        {
+          "id": "c",
+          "text": "Edge inference on a mobile device.",
+          "correct": false,
+          "explanation": "Edge inference runs locally on devices for offline or low-latency needs. It does not address large-payload, longer-processing cloud inference."
+        },
+        {
+          "id": "d",
+          "text": "Asynchronous inference, for large payloads and longer processing.",
+          "correct": true,
+          "explanation": "SageMaker Asynchronous Inference queues requests and is designed for larger payloads or longer-running processing where the caller does not need an immediate synchronous response."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "question": "An attacker submits input that redirects an assistant away from its intended task, making it perform malicious actions the developer never intended. Which generative AI risk does this describe?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Hallucination, where the model produces plausible but false claims.",
+          "correct": false,
+          "explanation": "Hallucination is unintentional fabrication of incorrect content, not a deliberate redirection of behavior by an attacker. That is prompt hijacking."
+        },
+        {
+          "id": "b",
+          "text": "Underfitting, a training problem.",
+          "correct": false,
+          "explanation": "Underfitting is a model that is too simple to capture patterns. It is unrelated to an attacker redirecting model behavior."
+        },
+        {
+          "id": "c",
+          "text": "Sampling bias, a data representation issue.",
+          "correct": false,
+          "explanation": "Sampling bias concerns unrepresentative data. It is not an attack that hijacks the model's behavior at inference time."
+        },
+        {
+          "id": "d",
+          "text": "Prompt hijacking, where model behavior is maliciously redirected.",
+          "correct": true,
+          "explanation": "Prompt hijacking is when crafted input redirects the model's behavior toward malicious ends. Mitigations include input validation, least privilege, and guardrails."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "question": "An ML engineer wants to summarize a classifier's correct and incorrect predictions per class in a table of true positives, false positives, true negatives, and false negatives. Which tool supports this analysis?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "A confusion matrix, mapping predicted versus actual classes.",
+          "correct": true,
+          "explanation": "A confusion matrix tabulates true positives, false positives, true negatives, and false negatives, helping you compute metrics like precision and recall and understand where a classifier errs."
+        },
+        {
+          "id": "b",
+          "text": "A context window.",
+          "correct": false,
+          "explanation": "A context window is the number of tokens a language model can process. It is unrelated to evaluating a classifier's predictions."
+        },
+        {
+          "id": "c",
+          "text": "A learning rate schedule.",
+          "correct": false,
+          "explanation": "A learning rate schedule adjusts the training step size over time. It does not summarize classification outcomes by class."
+        },
+        {
+          "id": "d",
+          "text": "An embedding vector.",
+          "correct": false,
+          "explanation": "An embedding represents content as a numeric vector. It does not summarize classification results by class."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "question": "A team is sending increasingly long documents to a model and notices both higher cost and higher latency. Which statement about the context window is accurate?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "The context window is a training hyperparameter set per request.",
+          "correct": false,
+          "explanation": "The context window is a fixed property of the model, not a per-request training hyperparameter. It bounds how many tokens can be processed at once."
+        },
+        {
+          "id": "b",
+          "text": "The context window only affects output creativity, not cost or latency.",
+          "correct": false,
+          "explanation": "Output creativity is governed by parameters like temperature. The context window relates to how much text is processed, which does affect cost and latency."
+        },
+        {
+          "id": "c",
+          "text": "Larger inputs use more context window, raising compute and cost.",
+          "correct": true,
+          "explanation": "The context window is how many tokens a model can consider at once. Larger inputs consume more tokens, increasing compute, latency, and cost, and inputs beyond the window get truncated."
+        },
+        {
+          "id": "d",
+          "text": "Increasing input length has no effect on token usage.",
+          "correct": false,
+          "explanation": "Longer inputs use more tokens by definition, and token counts drive both pricing and latency, so input length clearly affects token usage."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "question": "A contact center transcribing calls needs the service to better understand its broad industry-specific domain language overall, beyond just a handful of specific terms. Which Amazon Transcribe feature is the best fit?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Speech marks, a Polly feature.",
+          "correct": false,
+          "explanation": "Speech marks are an Amazon Polly text-to-speech timing feature, not a Transcribe capability for domain language."
+        },
+        {
+          "id": "b",
+          "text": "Custom vocabularies, which only help with a specific list of words.",
+          "correct": false,
+          "explanation": "Custom vocabularies improve recognition of specific terms or acronyms. For broader domain-wide context, custom language models are the better choice."
+        },
+        {
+          "id": "c",
+          "text": "PII redaction, which masks sensitive data.",
+          "correct": false,
+          "explanation": "PII redaction removes sensitive information from transcripts. It does not improve recognition of domain language."
+        },
+        {
+          "id": "d",
+          "text": "Custom language models, which improve broader domain recognition.",
+          "correct": true,
+          "explanation": "Amazon Transcribe custom language models adapt the service to a broader domain context, improving accuracy across industry-specific language, whereas custom vocabularies target a specific set of words."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "question": "A SageMaker notebook in a private subnet must read training data from Amazon S3 without traversing the public internet. Which approach achieves private connectivity to S3?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Make the S3 bucket public so the notebook can reach it.",
+          "correct": false,
+          "explanation": "Making a bucket public exposes data and does not provide a private path. A gateway endpoint provides private access without weakening security."
+        },
+        {
+          "id": "b",
+          "text": "Disable IAM permissions so access is unrestricted.",
+          "correct": false,
+          "explanation": "Disabling permissions is insecure and does not create a private network path. Private connectivity is provided by a VPC endpoint, with IAM still enforcing access."
+        },
+        {
+          "id": "c",
+          "text": "Use an Amazon S3 gateway VPC endpoint for private access to S3.",
+          "correct": true,
+          "explanation": "An S3 gateway VPC endpoint lets resources in a VPC access S3 privately without going over the public internet, which is the standard pattern for a private SageMaker-to-S3 path."
+        },
+        {
+          "id": "d",
+          "text": "Attach an internet gateway and route notebook traffic through it.",
+          "correct": false,
+          "explanation": "Routing through an internet gateway sends traffic over the public internet, which is what the requirement is trying to avoid."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "question": "A team building several applications wants to standardize prompts using a reusable structure with variables that are filled in at runtime. Which prompting technique fits?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Increasing temperature for variety.",
+          "correct": false,
+          "explanation": "Raising temperature changes output randomness. It does not standardize prompts with variables."
+        },
+        {
+          "id": "b",
+          "text": "Reducing the context window.",
+          "correct": false,
+          "explanation": "Shrinking the context window limits processed tokens. It has nothing to do with templating reusable prompts."
+        },
+        {
+          "id": "c",
+          "text": "Negative prompting, which tells the model what to avoid.",
+          "correct": false,
+          "explanation": "Negative prompting specifies content to avoid. It is not a method for creating reusable, variable-filled prompt structures."
+        },
+        {
+          "id": "d",
+          "text": "Prompt templates, which standardize prompts with variables.",
+          "correct": true,
+          "explanation": "Prompt templates define a standardized prompt structure with variables that are populated at runtime, making prompts consistent and reusable across applications and agents."
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "question": "A logistics company wants to forecast future demand from historical time-series data using a SageMaker built-in algorithm designed for forecasting. Which algorithm fits?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "DeepAR, a built-in algorithm for time-series forecasting.",
+          "correct": true,
+          "explanation": "DeepAR is a SageMaker built-in algorithm designed for time-series forecasting using recurrent neural network concepts, making it suitable for demand prediction from historical series."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Lex, a chatbot service.",
+          "correct": false,
+          "explanation": "Amazon Lex builds conversational interfaces. It does not forecast time-series data."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Rekognition, an image analysis service.",
+          "correct": false,
+          "explanation": "Amazon Rekognition analyzes images and video. It is not a time-series forecasting algorithm."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Macie, a data discovery service.",
+          "correct": false,
+          "explanation": "Amazon Macie discovers sensitive data in S3. It has no forecasting capability."
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "A data scientist wants to explain how changing a single input feature affects a model's predictions while holding the other features constant. Which explainability aid is designed for this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "A tokenization scheme.",
+          "correct": false,
+          "explanation": "Tokenization splits text into tokens for processing. It is unrelated to explaining feature influence on predictions."
+        },
+        {
+          "id": "b",
+          "text": "A partial dependence plot, showing one feature’s effect on output.",
+          "correct": true,
+          "explanation": "Partial dependence plots visualize the effect of a single feature on the model's predicted outcome while holding other features fixed, aiding explainability of complex models."
+        },
+        {
+          "id": "c",
+          "text": "A confusion matrix, which summarizes classification outcomes.",
+          "correct": false,
+          "explanation": "A confusion matrix tabulates classification results by class. It does not show how varying one feature changes predictions."
+        },
+        {
+          "id": "d",
+          "text": "A learning curve of training loss over epochs.",
+          "correct": false,
+          "explanation": "A training-loss curve tracks optimization progress over epochs. It does not isolate the effect of one input feature on predictions."
+        }
+      ]
+    }
+  ]
+}

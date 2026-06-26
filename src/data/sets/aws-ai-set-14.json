@@ -1,0 +1,313 @@
+{
+  "id": "aws-ai-set-14",
+  "collection": "AWS AI Practitioner",
+  "title": "Practice Set 14",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "An analyst reviewing model results tends to highlight only the outcomes that support a conclusion they already favored, while downplaying contradicting results. Which type of bias is this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Confirmation bias, favoring information that confirms beliefs.",
+          "correct": true,
+          "explanation": "Confirmation bias is the human tendency to favor and emphasize information that supports preexisting beliefs while discounting contradicting evidence, which can distort how AI results are interpreted and acted on."
+        },
+        {
+          "id": "b",
+          "text": "Sampling bias, an unrepresentative data selection.",
+          "correct": false,
+          "explanation": "Sampling bias is about the data not representing the population. The scenario describes a human favoring confirming evidence, which is confirmation bias."
+        },
+        {
+          "id": "c",
+          "text": "Overfitting, a generalization problem.",
+          "correct": false,
+          "explanation": "Overfitting describes a model fitting training data too closely. It is not a human interpretation bias."
+        },
+        {
+          "id": "d",
+          "text": "Measurement bias, flawed collection tools.",
+          "correct": false,
+          "explanation": "Measurement bias comes from faulty instruments. Selectively favoring supporting results is confirmation bias, not a measurement flaw."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "question": "A regulated workload requires that a SageMaker training job container have no outbound internet access while it runs. Which SageMaker capability enforces this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Network isolation mode, running containers without internet access.",
+          "correct": true,
+          "explanation": "SageMaker network isolation mode runs job containers without outbound internet access. Under strict isolation, jobs cannot even reach Amazon S3 unless access is configured through allowed paths or endpoints."
+        },
+        {
+          "id": "b",
+          "text": "Feature Store, which stores features.",
+          "correct": false,
+          "explanation": "Feature Store centralizes features for reuse. It is unrelated to restricting a training container's internet access."
+        },
+        {
+          "id": "c",
+          "text": "Model Registry, which versions models.",
+          "correct": false,
+          "explanation": "Model Registry manages model versions and approvals. It does not enforce network isolation for training jobs."
+        },
+        {
+          "id": "d",
+          "text": "Automatic Model Tuning, which searches hyperparameters.",
+          "correct": false,
+          "explanation": "Automatic Model Tuning optimizes hyperparameters. It does not control a container's network access."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "question": "A team is concerned that sensitive data could be revealed during model training or inference. Which controls help reduce the risk of data exposure? (Select all that apply.)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Encrypt sensitive data at rest and in transit.",
+          "correct": true,
+          "explanation": "Encrypting data at rest and in transit protects it from being read if storage or network traffic is intercepted, a foundational control against data exposure."
+        },
+        {
+          "id": "b",
+          "text": "Apply data governance and access controls so only authorized identities can reach sensitive data.",
+          "correct": true,
+          "explanation": "Strong data governance and least-privilege access controls limit who and what can reach sensitive data, reducing the chance of exposure during training or inference."
+        },
+        {
+          "id": "c",
+          "text": "Share one long-lived administrator credential across all services so access stays simple.",
+          "correct": false,
+          "explanation": "A shared, long-lived admin credential grants access far beyond what each component needs and is hard to audit or rotate, increasing the risk of data exposure rather than reducing it."
+        },
+        {
+          "id": "d",
+          "text": "Redact or mask sensitive values before they are processed where feasible.",
+          "correct": true,
+          "explanation": "Redacting or masking sensitive values before processing reduces how much sensitive data the model and logs ever handle, lowering exposure risk."
+        },
+        {
+          "id": "e",
+          "text": "Log full raw prompts containing secrets to a publicly readable location for convenience.",
+          "correct": false,
+          "explanation": "Writing raw prompts with secrets to a public location directly exposes sensitive data. This increases risk rather than reducing it."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "question": "A team launches an ML project and a senior engineer reminds them that the quality of the model depends heavily on the quality of the training data. Which principle does this reflect?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Only the choice of algorithm matters, not the data.",
+          "correct": false,
+          "explanation": "Algorithm choice matters, but data quality is equally or more important. Good data is essential to good outcomes."
+        },
+        {
+          "id": "b",
+          "text": "“Garbage in, garbage out”: poor data yields poor performance.",
+          "correct": true,
+          "explanation": "The \"garbage in, garbage out\" principle emphasizes that models learn from their data, so low-quality or unrepresentative data yields poor results. Good data is one of the most important parts of ML success."
+        },
+        {
+          "id": "c",
+          "text": "More compute always overcomes bad data.",
+          "correct": false,
+          "explanation": "Adding compute does not fix flawed data; the model still learns from whatever it is given. Data quality remains critical regardless of compute."
+        },
+        {
+          "id": "d",
+          "text": "Data quality is irrelevant once a model is large enough.",
+          "correct": false,
+          "explanation": "Even large models depend on the quality of their data. Poor data still degrades results, so this statement is false."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "question": "A search team wants to group thousands of support tickets by topic and find tickets with similar meaning even when they use different wording. Which approach enables this semantic grouping?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Increase the model temperature to find similar tickets.",
+          "correct": false,
+          "explanation": "Temperature controls output randomness in generation. It does not measure semantic similarity between documents."
+        },
+        {
+          "id": "b",
+          "text": "Match tickets only by exact keyword overlap.",
+          "correct": false,
+          "explanation": "Exact keyword matching misses semantically similar tickets that use different words. Embeddings capture meaning beyond surface keywords."
+        },
+        {
+          "id": "c",
+          "text": "Generate embeddings and compare vectors for semantic similarity.",
+          "correct": true,
+          "explanation": "Embeddings represent text as vectors where similar meaning yields nearby vectors. Comparing these vectors enables semantic similarity search and clustering even when wording differs."
+        },
+        {
+          "id": "d",
+          "text": "Set more training epochs to enable similarity search.",
+          "correct": false,
+          "explanation": "Epochs are a training setting. They do not provide a mechanism for semantic similarity grouping; embeddings do."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "question": "A team using Amazon Polly needs a specific brand name to always be pronounced a certain way and wants to insert deliberate pauses and emphasis in the narration. Which Polly features support this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Lexicons for pronunciation and SSML for pauses and emphasis.",
+          "correct": true,
+          "explanation": "Amazon Polly lexicons define custom pronunciations (for example, a brand name), and SSML markup controls pauses, emphasis, and other speech characteristics in the generated audio."
+        },
+        {
+          "id": "b",
+          "text": "Intents and slots in Amazon Lex.",
+          "correct": false,
+          "explanation": "Intents and slots model chatbot conversations in Lex. They do not control speech synthesis pronunciation or pauses."
+        },
+        {
+          "id": "c",
+          "text": "Knowledge Bases and Guardrails in Amazon Bedrock.",
+          "correct": false,
+          "explanation": "Knowledge Bases and Guardrails are Bedrock features for RAG and content safety. They do not control text-to-speech pronunciation and pauses."
+        },
+        {
+          "id": "d",
+          "text": "Custom vocabularies and PII redaction in Amazon Transcribe.",
+          "correct": false,
+          "explanation": "Those are Amazon Transcribe (speech-to-text) features. The scenario is about generating speech with Polly, so lexicons and SSML are correct."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "question": "A security team needs both to discover sensitive PII stored in S3 and to scan EC2 instances and Lambda functions for software vulnerabilities. Which two services should they use, respectively?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Inspector for sensitive data discovery, and Amazon Macie for vulnerability scanning.",
+          "correct": false,
+          "explanation": "This swaps the services. Macie discovers sensitive data; Inspector scans for vulnerabilities, not the other way around."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Macie for PII discovery, and Amazon Inspector for vulnerabilities.",
+          "correct": true,
+          "explanation": "Amazon Macie discovers and classifies sensitive data such as PII in S3, while Amazon Inspector scans EC2, ECR images, and Lambda for software vulnerabilities. Each addresses its respective need."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Comprehend for both needs.",
+          "correct": false,
+          "explanation": "Amazon Comprehend analyzes text meaning. It is not a data-discovery or vulnerability-scanning security service."
+        },
+        {
+          "id": "d",
+          "text": "AWS CloudTrail for both needs.",
+          "correct": false,
+          "explanation": "CloudTrail logs API activity. It neither discovers PII in S3 nor scans workloads for vulnerabilities."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "question": "A study group asks how transformer-based language models decide which words in a sentence are most relevant to each other. Which mechanism is responsible?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Noise scheduling, as used in diffusion image models.",
+          "correct": false,
+          "explanation": "Noise scheduling belongs to diffusion models for image generation. The mechanism for relating tokens in language transformers is attention."
+        },
+        {
+          "id": "b",
+          "text": "Centroid distance, as used in k-means.",
+          "correct": false,
+          "explanation": "Centroid distance is a clustering concept in k-means. It is not how transformers relate tokens to each other."
+        },
+        {
+          "id": "c",
+          "text": "Information gain splits, as used in decision trees.",
+          "correct": false,
+          "explanation": "Information gain governs splits in decision trees. Transformers rely on attention, not tree splits, to model token relationships."
+        },
+        {
+          "id": "d",
+          "text": "The attention mechanism, which weighs relationships between tokens.",
+          "correct": true,
+          "explanation": "Transformers use attention to weigh how relevant tokens are to one another, allowing the model to focus on the most important relationships in the input rather than processing strictly word by word."
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "question": "A data engineering team wants AI help generating and troubleshooting AWS Glue ETL jobs and code directly in their data-integration workflow. Which Amazon Q integration is designed for this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Q for Glue, which helps build and troubleshoot ETL jobs.",
+          "correct": true,
+          "explanation": "Amazon Q for Glue assists with ETL development by generating code and helping troubleshoot Glue jobs, fitting a data-integration workflow."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Q for QuickSight, for natural language BI.",
+          "correct": false,
+          "explanation": "Amazon Q in QuickSight is for natural language business intelligence over dashboards, not for building and troubleshooting Glue ETL jobs."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Q in AWS Chatbot, for chat-based troubleshooting.",
+          "correct": false,
+          "explanation": "Amazon Q in AWS Chatbot helps with alerts and troubleshooting in Slack or Teams. The Glue-specific ETL assistance comes from Amazon Q for Glue."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Q for EC2, for instance type guidance.",
+          "correct": false,
+          "explanation": "Amazon Q for EC2 helps choose instance types. It does not assist with Glue ETL development."
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "A university worries that students could submit AI-generated essays as their own work. Which combination best addresses the plagiarism and cheating risk of generative AI?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Raising the model's temperature so essays look more original.",
+          "correct": false,
+          "explanation": "Adjusting temperature changes output randomness and does nothing to address academic dishonesty. It would not mitigate plagiarism."
+        },
+        {
+          "id": "b",
+          "text": "Encrypting the essays at rest.",
+          "correct": false,
+          "explanation": "Encryption protects data confidentiality but does nothing to detect or deter passing off AI-generated work as one's own. It does not address the plagiarism risk."
+        },
+        {
+          "id": "c",
+          "text": "Clear policies, AI-detection and attribution, and human review.",
+          "correct": true,
+          "explanation": "Mitigating plagiarism and cheating involves clear acceptable-use policies, detection and attribution practices, and human review, combining governance and oversight to address misuse of AI-generated work."
+        },
+        {
+          "id": "d",
+          "text": "Removing all human review to process submissions faster.",
+          "correct": false,
+          "explanation": "Removing human review weakens oversight and makes it easier for misuse to go undetected. It is the opposite of a mitigation."
+        }
+      ]
+    }
+  ]
+}

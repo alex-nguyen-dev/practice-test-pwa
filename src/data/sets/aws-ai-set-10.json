@@ -1,0 +1,313 @@
+{
+  "id": "aws-ai-set-10",
+  "collection": "AWS AI Practitioner",
+  "title": "Practice Set 10",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "A stakeholder asks what distinguishes generative AI from other machine learning. Which description is most accurate?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Generative AI only classifies existing data into fixed categories and never creates content.",
+          "correct": false,
+          "explanation": "Classifying data into categories is a discriminative task. Generative AI is defined by its ability to create new content, not merely classify existing data."
+        },
+        {
+          "id": "b",
+          "text": "Generative AI is a networking protocol for routing traffic.",
+          "correct": false,
+          "explanation": "Generative AI has nothing to do with networking protocols. It is a class of models that generate content."
+        },
+        {
+          "id": "c",
+          "text": "Generative AI is a type of relational database.",
+          "correct": false,
+          "explanation": "Generative AI is not a database. It refers to models that produce new content, often built on foundation models."
+        },
+        {
+          "id": "d",
+          "text": "Generative AI, a deep learning subset that creates new content.",
+          "correct": true,
+          "explanation": "Generative AI is a deep learning subset focused on creating new content across modalities like text, images, audio, video, and code, and it is typically powered by large foundation models."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "question": "A team wants a managed Amazon Bedrock capability that connects to their data sources, automatically ingests and chunks content, creates embeddings, and retrieves relevant context for grounded responses, with minimal custom code. Which capability should they use?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Bedrock provisioned throughput.",
+          "correct": false,
+          "explanation": "Provisioned throughput reserves model capacity for performance. It is unrelated to ingesting data and retrieving context for grounding."
+        },
+        {
+          "id": "b",
+          "text": "Knowledge Bases for Amazon Bedrock, a managed RAG capability.",
+          "correct": true,
+          "explanation": "Knowledge Bases for Amazon Bedrock connects data sources, ingests and chunks content, creates embeddings, and retrieves relevant context for grounded responses, providing managed RAG with little custom code."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Bedrock batch inference.",
+          "correct": false,
+          "explanation": "Batch inference runs many predictions efficiently and writes output to S3. It does not provide a managed retrieval pipeline."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Bedrock Guardrails.",
+          "correct": false,
+          "explanation": "Guardrails apply safety and privacy controls such as content filtering and PII redaction. They do not provide the data ingestion and retrieval pipeline for RAG."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "question": "A team wants more varied, creative outputs from a foundation model and is adjusting an inference parameter to achieve this. Which parameter increases creativity and randomness as its value rises?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "The context window size.",
+          "correct": false,
+          "explanation": "The context window sets how many tokens the model can process at once. It does not adjust the randomness or creativity of generated text."
+        },
+        {
+          "id": "b",
+          "text": "Temperature, where higher values produce more creative output.",
+          "correct": true,
+          "explanation": "Temperature controls randomness: higher temperature makes output more creative and less predictable, while lower temperature makes it more focused and deterministic."
+        },
+        {
+          "id": "c",
+          "text": "Epochs, the number of training passes.",
+          "correct": false,
+          "explanation": "Epochs count passes over the training data during training. They do not control creativity at inference time."
+        },
+        {
+          "id": "d",
+          "text": "Batch size, a training hyperparameter.",
+          "correct": false,
+          "explanation": "Batch size affects how many examples are processed per training update. It is not an inference parameter for output creativity."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "question": "A classification model must balance precision and recall in a single metric, especially when classes are imbalanced. Which metric provides this balance?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Context window size.",
+          "correct": false,
+          "explanation": "Context window size is a model property for language models, not an evaluation metric for a classifier."
+        },
+        {
+          "id": "b",
+          "text": "F1 score, which balances precision and recall.",
+          "correct": true,
+          "explanation": "The F1 score is the harmonic mean of precision and recall, providing a single balanced measure that is especially useful when classes are imbalanced and both false positives and false negatives matter."
+        },
+        {
+          "id": "c",
+          "text": "MAE, a regression error metric.",
+          "correct": false,
+          "explanation": "MAE measures average absolute error for regression. It does not balance precision and recall for classification."
+        },
+        {
+          "id": "d",
+          "text": "R-squared, a regression metric.",
+          "correct": false,
+          "explanation": "R-squared measures variance explained in regression. It is unrelated to precision and recall."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "question": "A responsible AI working group is listing the core dimensions of responsible AI to evaluate their system against. Which of the following are recognized responsible AI dimensions? (Select all that apply.)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Veracity and robustness, governance, safety, and controllability.",
+          "correct": true,
+          "explanation": "Veracity and robustness, governance, safety, and controllability are all listed responsible AI dimensions, covering reliability, oversight, harm avoidance, and alignment with human intent."
+        },
+        {
+          "id": "b",
+          "text": "Token throughput: maximizing how many tokens the system can process per second.",
+          "correct": false,
+          "explanation": "Token throughput is a performance metric, not a responsible AI dimension. The recognized dimensions cover fairness, explainability, privacy and security, transparency, veracity and robustness, governance, safety, and controllability."
+        },
+        {
+          "id": "c",
+          "text": "Maximizing model size regardless of impact.",
+          "correct": false,
+          "explanation": "Increasing model size is not a responsible AI dimension. Responsible AI focuses on fairness, transparency, safety, and related principles, not raw model size."
+        },
+        {
+          "id": "d",
+          "text": "Privacy and security, plus transparency.",
+          "correct": true,
+          "explanation": "Protecting personal and sensitive data (privacy and security) and being clear about AI behavior and limitations (transparency) are recognized responsible AI dimensions."
+        },
+        {
+          "id": "e",
+          "text": "Fairness and explainability.",
+          "correct": true,
+          "explanation": "Fairness (reducing discrimination) and explainability (helping humans understand model behavior) are core responsible AI dimensions."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "question": "In a typical Retrieval Augmented Generation (RAG) flow, which sequence of steps is correct?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Generate an answer first, then create embeddings, then ignore any retrieved context.",
+          "correct": false,
+          "explanation": "Generating before retrieving defeats the purpose of RAG, which is to ground the answer in retrieved context before generation. This ordering is incorrect."
+        },
+        {
+          "id": "b",
+          "text": "Chunk, embed, store, query, retrieve, augment, then generate.",
+          "correct": true,
+          "explanation": "A typical RAG flow chunks source data, embeds it, stores embeddings in a vector database, converts the user question into a query, retrieves relevant chunks, augments the prompt with that context, and then generates the answer."
+        },
+        {
+          "id": "c",
+          "text": "Delete the source documents, then retrieve from them.",
+          "correct": false,
+          "explanation": "You cannot retrieve from deleted documents. RAG depends on indexed, available source content to retrieve relevant context."
+        },
+        {
+          "id": "d",
+          "text": "Fine-tune the base model on every query in real time, then answer.",
+          "correct": false,
+          "explanation": "RAG specifically avoids retraining or fine-tuning the model. It retrieves external context at query time instead, so this is not the RAG flow."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "question": "A business intelligence team wants to ask natural language questions of their dashboards and get summaries and visuals generated automatically. Which Amazon Q integration fits this need?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Q in QuickSight, for natural language BI and visuals.",
+          "correct": true,
+          "explanation": "Amazon Q in QuickSight brings generative BI capabilities, letting users ask natural language questions of their data and receive summaries and visuals, which matches this BI need."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Q in AWS Chatbot, for Slack/Teams troubleshooting.",
+          "correct": false,
+          "explanation": "Amazon Q in AWS Chatbot helps with troubleshooting and alerts in chat tools. It is not focused on natural language BI over dashboards."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Q for EC2, for instance type guidance.",
+          "correct": false,
+          "explanation": "Amazon Q for EC2 helps choose instance types for workloads. It is not a business intelligence and dashboard assistant."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Q for Glue, for ETL job help.",
+          "correct": false,
+          "explanation": "Amazon Q for Glue assists with ETL development and troubleshooting. It does not provide natural language BI on dashboards."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "question": "A developer is building a web app that calls a foundation model and needs to handle API credentials. Which practice is the most secure?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Email the API key to all team members in plain text.",
+          "correct": false,
+          "explanation": "Emailing secrets in plaintext spreads them insecurely and leaves copies in inboxes. Use a managed secrets store and least-privilege access instead."
+        },
+        {
+          "id": "b",
+          "text": "Commit the credentials to a public Git repository for easy sharing.",
+          "correct": false,
+          "explanation": "Publishing credentials to a public repository exposes them to the world and is a serious security risk. Secrets must be kept private."
+        },
+        {
+          "id": "c",
+          "text": "Hard-code the API key into the front-end JavaScript so the browser can call the service directly.",
+          "correct": false,
+          "explanation": "Front-end JavaScript is visible to anyone who inspects the page, so hard-coding a key there exposes it. This is an insecure practice."
+        },
+        {
+          "id": "d",
+          "text": "Keep credentials server-side or in a managed secrets store.",
+          "correct": true,
+          "explanation": "Secrets should be kept server-side or in a managed secrets store. Anything shipped to the browser can be inspected by users, so long-lived secrets must never be embedded in client-side code."
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "question": "A team wants to log every Amazon Bedrock model invocation, including prompts and responses, and send those logs to Amazon CloudWatch Logs and Amazon S3 for analysis and audit. Which Bedrock capability supports this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Bedrock model invocation logging, sending logs to CloudWatch and S3.",
+          "correct": true,
+          "explanation": "Amazon Bedrock model invocation logging can capture invocation data including text, images, and embeddings, and send it to CloudWatch Logs and S3 for monitoring and audit. CloudTrail can additionally audit Bedrock API calls."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Personalize event tracking.",
+          "correct": false,
+          "explanation": "Personalize event tracking feeds interaction data into recommendation models. It does not log Bedrock model invocations."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Polly speech marks.",
+          "correct": false,
+          "explanation": "Polly speech marks provide timing metadata for synthesized speech. They have nothing to do with logging Bedrock invocations."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Lex conversation logs only.",
+          "correct": false,
+          "explanation": "Lex conversation logs apply to Lex chatbots, not to Bedrock foundation model invocations."
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "A team is fine-tuning a foundation model and is choosing between approaches. Which statement correctly distinguishes supervised fine-tuning from reinforcement fine-tuning?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Supervised fine-tuning uses labeled pairs; reinforcement uses rewards.",
+          "correct": true,
+          "explanation": "Supervised fine-tuning trains on labeled prompt-and-completion pairs, whereas reinforcement fine-tuning uses feedback or reward signals to shape the model's behavior. Both adapt a copy of the model and change its weights."
+        },
+        {
+          "id": "b",
+          "text": "Both approaches leave the model's weights completely unchanged.",
+          "correct": false,
+          "explanation": "Fine-tuning, by definition, changes the model's weights in the adapted copy. RAG and prompt engineering leave weights unchanged, but fine-tuning does not."
+        },
+        {
+          "id": "c",
+          "text": "Reinforcement fine-tuning only translates text between languages.",
+          "correct": false,
+          "explanation": "Translation is a task handled by services like Amazon Translate. Reinforcement fine-tuning is a training approach using reward feedback, not a translation method."
+        },
+        {
+          "id": "d",
+          "text": "Supervised fine-tuning requires no data at all, while reinforcement fine-tuning uses labeled pairs.",
+          "correct": false,
+          "explanation": "Supervised fine-tuning specifically relies on labeled prompt/completion examples, so it does require data. This statement is incorrect."
+        }
+      ]
+    }
+  ]
+}

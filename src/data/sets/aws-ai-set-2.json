@@ -5,91 +5,307 @@
   "questions": [
     {
       "id": "q1",
-      "question": "A large enterprise wants employees to ask natural language questions and receive accurate answers grounded in the company's internal policy and HR documents. The answers must reflect the most current documents and include information the foundation model was never trained on. Which design pattern is the most appropriate way to meet these requirements?",
+      "question": "A developer is writing a prompt for a foundation model and includes three example input-output pairs before asking the model to handle a new input in the same format. Which prompt engineering technique is being used?",
       "choices": [
         {
           "id": "a",
-          "text": "Retrieval Augmented Generation (RAG), which retrieves relevant passages from an external knowledge source and supplies them to the model as context when generating an answer.",
-          "correct": true,
-          "explanation": "RAG combines a retrieval step with generation: relevant passages are fetched from an up-to-date knowledge base and passed to the model as context. This grounds responses in the company's own documents and lets the model answer using information it was never trained on, which directly satisfies the requirements."
+          "text": "Negative prompting, in which the model is told what not to do.",
+          "correct": false,
+          "explanation": "Negative prompting specifies content or behavior to avoid. Providing examples to follow is the opposite intent, so this is not negative prompting."
         },
         {
           "id": "b",
-          "text": "Blue/green deployment, which runs two production environments so traffic can be shifted between an old and a new version.",
-          "correct": false,
-          "explanation": "Blue/green deployment is a release strategy used to reduce downtime and risk when shipping new versions of an application. It does not retrieve documents or ground model answers, so it does not address grounded question answering."
+          "text": "Few-shot prompting, which provides several examples to guide the model.",
+          "correct": true,
+          "explanation": "Providing several examples in the prompt before the real task is few-shot prompting. The examples demonstrate the desired structure and behavior, helping the model produce consistent outputs for the new input."
         },
         {
           "id": "c",
-          "text": "Round-robin DNS, which distributes incoming requests across multiple servers by rotating through their IP addresses.",
+          "text": "Chain-of-thought prompting, in which the model is asked to reason step by step.",
           "correct": false,
-          "explanation": "Round-robin DNS is a simple load-distribution technique at the networking layer. It has nothing to do with retrieving knowledge or generating grounded answers from documents."
+          "explanation": "Chain-of-thought prompting asks the model to show intermediate reasoning steps. Supplying example input-output pairs is about demonstrating format, not eliciting step-by-step reasoning."
         },
         {
           "id": "d",
-          "text": "Server-side encryption, which automatically encrypts data before it is written to storage and decrypts it on retrieval.",
+          "text": "Zero-shot prompting, in which the model is asked to perform a task without any examples.",
           "correct": false,
-          "explanation": "Server-side encryption protects data confidentiality at rest. While important for security, it does not enable natural language search over documents or ground a model's answers in them."
+          "explanation": "Zero-shot prompting provides no examples at all. Because the developer supplies three example pairs, this is not zero-shot."
         }
       ]
     },
     {
       "id": "q2",
-      "question": "A solutions team is designing a Retrieval Augmented Generation (RAG) application on AWS. They need to store source documents, convert content into searchable embeddings, and retrieve the most relevant context to pass to a foundation model at query time. Which AWS services or features can support this RAG architecture? (Select all that apply.)",
+      "question": "Before releasing a new AI-powered feature, an organization evaluates the model against a set of representative test cases with known expected results. A stakeholder asks why this evaluation step is necessary. What is the primary purpose of evaluating a model before deployment?",
       "choices": [
         {
           "id": "a",
-          "text": "Knowledge Bases for Amazon Bedrock, which can connect to data sources, automatically ingest and chunk content, and retrieve relevant context for grounded responses.",
-          "correct": true,
-          "explanation": "Knowledge Bases for Amazon Bedrock is a managed capability that connects data sources, handles ingestion and embedding, and retrieves relevant passages for a model to use. It is designed specifically to support RAG workflows with minimal custom code."
-        },
-        {
-          "id": "b",
-          "text": "Amazon OpenSearch Service with vector search, which stores embeddings and returns semantically similar passages for a given query.",
-          "correct": true,
-          "explanation": "Amazon OpenSearch Service supports vector (k-NN) search, allowing the application to store document embeddings and retrieve the most semantically similar content. This retrieval capability is a common building block of RAG systems on AWS."
-        },
-        {
-          "id": "c",
-          "text": "AWS WAF managed rules used on their own to filter web traffic to the application.",
+          "text": "To guarantee that the generative model will never produce an incorrect or fabricated (hallucinated) response.",
           "correct": false,
-          "explanation": "AWS WAF helps protect web applications from common exploits and unwanted traffic. While it can secure the application's front end, by itself it provides no retrieval, embedding, or generation capability and is not part of the RAG pipeline."
-        },
-        {
-          "id": "d",
-          "text": "Amazon S3 used as durable storage for the source documents that are ingested into the retrieval pipeline.",
-          "correct": true,
-          "explanation": "Amazon S3 is commonly used to store the raw source documents that feed a RAG system. A knowledge base or ingestion pipeline can read these objects, chunk and embed them, and make them available for retrieval."
-        }
-      ]
-    },
-    {
-      "id": "q3",
-      "question": "Before releasing a new AI-powered feature to customers, an organization plans to evaluate the model against a set of representative test cases with known expected results. A stakeholder asks why this evaluation step is necessary. What is the primary purpose of evaluating a model before deployment?",
-      "choices": [
-        {
-          "id": "a",
-          "text": "To verify that the model meets quality, safety, and task-performance expectations by measuring its outputs against defined acceptance criteria.",
-          "correct": true,
-          "explanation": "Pre-deployment evaluation measures whether the model produces accurate, safe, and acceptable outputs for the intended task, using defined criteria and representative test cases. This is the main reason to evaluate before customers depend on the feature."
+          "explanation": "No evaluation can guarantee a generative model will never hallucinate. Evaluation lowers the likelihood and helps quantify risk, but it cannot eliminate incorrect outputs entirely."
         },
         {
           "id": "b",
           "text": "To eliminate any future need to collect or act on user feedback once the feature is live.",
           "correct": false,
-          "explanation": "Evaluation reduces risk but does not replace real-world feedback. Production usage frequently surfaces edge cases and issues that pre-launch testing misses, so user feedback remains valuable after deployment."
+          "explanation": "Evaluation reduces risk but does not replace real-world feedback. Production usage frequently surfaces edge cases that pre-launch testing misses, so user feedback remains valuable after deployment."
         },
         {
           "id": "c",
-          "text": "To guarantee that the generative model will never produce an incorrect or fabricated (hallucinated) response.",
-          "correct": false,
-          "explanation": "No evaluation can guarantee a generative model will never hallucinate. Evaluation lowers the likelihood and helps quantify the risk, but it cannot eliminate incorrect outputs entirely."
+          "text": "To verify the model meets quality, safety, and performance criteria.",
+          "correct": true,
+          "explanation": "Pre-deployment evaluation measures whether the model produces accurate, safe, and acceptable outputs for the intended task using defined criteria and representative test cases. This is the main reason to evaluate before customers depend on the feature."
         },
         {
           "id": "d",
           "text": "To remove the need for separate security testing of the application that hosts the model.",
           "correct": false,
-          "explanation": "Model evaluation focuses on output quality and behavior, not on application security. Security testing of the surrounding application remains necessary regardless of how the model performs."
+          "explanation": "Model evaluation focuses on output quality and behavior, not application security. Security testing of the surrounding application remains necessary regardless of how the model performs."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "question": "A healthcare organization is building a generative AI application that may process records containing personally identifiable information (PII). The security team wants layered controls that reduce the risk of exposing this data while still allowing the application to function. Which of the following actions help protect the sensitive data? (Select all that apply.)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Mask or redact sensitive values, where feasible, before including data in prompts sent to the model.",
+          "correct": true,
+          "explanation": "Masking or redacting PII before placing it into a prompt reduces the amount of sensitive data the model and downstream logs ever see, lowering exposure of regulated information."
+        },
+        {
+          "id": "b",
+          "text": "Turn off all access logging so that no record of who viewed the sensitive data is ever created.",
+          "correct": false,
+          "explanation": "Disabling access logging removes the audit trail needed to detect and investigate misuse. Logging supports security and accountability, so turning it off weakens protection rather than strengthening it."
+        },
+        {
+          "id": "c",
+          "text": "Apply least privilege access so the application and its users can reach only the specific source data they actually need.",
+          "correct": true,
+          "explanation": "Least privilege limits each identity and component to the minimum permissions required. Narrowing access to source data reduces the chance that sensitive records are exposed through over-broad permissions."
+        },
+        {
+          "id": "d",
+          "text": "Encrypt sensitive data both at rest in storage and in transit over the network.",
+          "correct": true,
+          "explanation": "Encrypting data at rest and in transit protects it from being read if storage or network traffic is intercepted or improperly accessed. This is a foundational control for safeguarding sensitive information end to end."
+        },
+        {
+          "id": "e",
+          "text": "Embed long-lived secrets and API keys directly in client-side JavaScript so the browser can call services without a backend.",
+          "correct": false,
+          "explanation": "Anything shipped to the browser can be viewed by users, so storing secrets in client-side JavaScript exposes them to anyone who inspects the page. Secrets should be kept server-side or in a managed secrets store."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "question": "A media company wants to automatically detect inappropriate or unsafe images uploaded by users, and also identify objects and scenes in those images. Which AWS service is purpose-built for this computer vision task?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Rekognition, for image and video analysis and moderation.",
+          "correct": true,
+          "explanation": "Amazon Rekognition is a managed computer vision service that detects objects, scenes, faces, and inappropriate content in images and video, making it the right choice for automated content moderation and image analysis."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Kendra, which provides ML-powered enterprise document search.",
+          "correct": false,
+          "explanation": "Amazon Kendra is an intelligent search service for documents and FAQs. It does not analyze image content for objects or moderation."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Lex, which builds conversational chatbots.",
+          "correct": false,
+          "explanation": "Amazon Lex builds voice and text chatbots using intents and slots. It has no image analysis or content moderation capability."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Transcribe, which converts speech to text.",
+          "correct": false,
+          "explanation": "Amazon Transcribe is a speech-to-text service for audio. It does not process images or detect visual content."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "question": "A team needs full control over building, training, tuning, and deploying a custom machine learning model, including managing training jobs, a model registry, and MLOps pipelines. Which AWS service is the best fit?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Q Developer, an AI assistant for developers and AWS users.",
+          "correct": false,
+          "explanation": "Amazon Q Developer assists with coding, AWS questions, and troubleshooting. It is a productivity assistant, not a platform for training and deploying custom ML models."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Comprehend, a managed NLP service for common text tasks.",
+          "correct": false,
+          "explanation": "Amazon Comprehend offers pre-built and limited custom NLP capabilities, but it does not provide a general-purpose platform for building and operating any custom ML model with full lifecycle control."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Bedrock, a managed service for using foundation models through an API.",
+          "correct": false,
+          "explanation": "Amazon Bedrock is ideal for consuming foundation models via API and building generative AI apps, but it is not intended for training and managing a fully custom ML model lifecycle from scratch."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker, an end-to-end service for the custom ML lifecycle.",
+          "correct": true,
+          "explanation": "Amazon SageMaker provides end-to-end tools for building, training, tuning, deploying, monitoring, and governing custom ML models, including training jobs, model registry, and pipelines. It is designed for teams that need full lifecycle control."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "question": "An interactive chatbot must respond to each user message immediately with low latency. Which inference type is most appropriate for this workload?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Offline training, which fits model parameters on historical data.",
+          "correct": false,
+          "explanation": "Training is the process of fitting model parameters, not serving predictions to users. It is unrelated to how a deployed chatbot responds to live requests."
+        },
+        {
+          "id": "b",
+          "text": "Asynchronous inference used specifically to minimize response time for tiny payloads.",
+          "correct": false,
+          "explanation": "Asynchronous inference is designed for large payloads or longer processing where the caller does not need an immediate synchronous reply. It is not the lowest-latency option for small, interactive chatbot messages."
+        },
+        {
+          "id": "c",
+          "text": "Real-time inference, returning low-latency synchronous predictions.",
+          "correct": true,
+          "explanation": "Real-time inference returns a response immediately for each request, which is exactly what an interactive chatbot needs. Low-latency synchronous responses keep the conversation feeling responsive."
+        },
+        {
+          "id": "d",
+          "text": "Batch inference, which processes large volumes of data together when latency is not important.",
+          "correct": false,
+          "explanation": "Batch inference is optimized for processing large datasets at once where immediate responses are not required. It is unsuitable for a chatbot that must reply to each message right away."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "question": "A bank builds a classifier to flag fraudulent transactions. Missing a real fraud case (a false negative) is far more costly than occasionally reviewing a legitimate transaction. Which evaluation metric should the team prioritize?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Recall, the share of actual positives the model correctly finds.",
+          "correct": true,
+          "explanation": "Recall (sensitivity) measures how many of the actual fraud cases the model catches. When missing a positive case is costly, optimizing recall reduces false negatives, which is the bank's priority."
+        },
+        {
+          "id": "b",
+          "text": "Mean absolute error (MAE), a regression metric.",
+          "correct": false,
+          "explanation": "MAE is a regression metric for continuous-value predictions. Fraud detection is a classification problem, so MAE does not apply."
+        },
+        {
+          "id": "c",
+          "text": "Precision, which measures how many predicted positives were actually positive.",
+          "correct": false,
+          "explanation": "Precision is most important when false positives are costly. Here the bank is more concerned about missing real fraud (false negatives), so recall is the better priority than precision."
+        },
+        {
+          "id": "d",
+          "text": "R-squared, which measures variance explained in a regression model.",
+          "correct": false,
+          "explanation": "R-squared is a regression metric describing how much variance the model explains. It is not used to evaluate a fraud classification model where catching positives matters."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "question": "An enterprise wants a fully managed generative AI assistant that lets employees ask questions over internal company data, respects each user's access permissions via IAM Identity Center, and can take actions through plugins like Jira and ServiceNow. Which AWS service best fits?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Q Business, a managed assistant over internal company data.",
+          "correct": true,
+          "explanation": "Amazon Q Business is a managed GenAI assistant built for employees. It uses enterprise data connectors for managed RAG, integrates with IAM Identity Center so users only see content they are allowed to access, and supports plugins such as Jira and ServiceNow."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Personalize, a recommendations service.",
+          "correct": false,
+          "explanation": "Amazon Personalize generates personalized recommendations and rankings. It is not an employee question-answering assistant over company data."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Kendra, an enterprise document search service.",
+          "correct": false,
+          "explanation": "Amazon Kendra provides intelligent document search, but it is not a full generative AI assistant that generates answers and takes actions through plugins. Q Business is the better match for this scenario."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Polly, a text-to-speech service.",
+          "correct": false,
+          "explanation": "Amazon Polly converts text into speech. It has no relationship to enterprise knowledge assistance or access-aware answers."
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "question": "An Amazon Bedrock application needs to read training data from an Amazon S3 bucket whose objects are encrypted with an AWS KMS key (SSE-KMS). What must be configured for Bedrock to successfully read this encrypted data?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "The bucket must be made public so that any service can read the objects.",
+          "correct": false,
+          "explanation": "Making a bucket public is a serious security risk and is unnecessary. Access should be granted through IAM roles and KMS permissions, not by exposing data publicly."
+        },
+        {
+          "id": "b",
+          "text": "The data must first be copied to the local disk of an EC2 instance for Bedrock to use.",
+          "correct": false,
+          "explanation": "Bedrock can read directly from S3 when permissions are configured correctly. Copying data to EC2 is unnecessary and does not address the KMS decrypt requirement."
+        },
+        {
+          "id": "c",
+          "text": "Encryption must be disabled on the bucket so Bedrock can read plaintext objects.",
+          "correct": false,
+          "explanation": "Disabling encryption weakens security and is not required. The correct approach is to grant the necessary KMS decrypt permission so the encrypted data can be read securely."
+        },
+        {
+          "id": "d",
+          "text": "The Bedrock IAM role needs both S3 access and KMS decrypt permission.",
+          "correct": true,
+          "explanation": "When S3 objects are encrypted with SSE-KMS, reading them requires both S3 permissions and KMS decrypt permission. The Bedrock service role must be granted both, and the KMS key policy must allow that role to decrypt."
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "A machine learning engineer is preparing to train a model and must set values such as the learning rate, batch size, and number of epochs before training begins. What are these configuration values called?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Embeddings, which are numerical vector representations of content.",
+          "correct": false,
+          "explanation": "Embeddings are vector representations of data used for similarity and search. They are not training configuration settings like learning rate or batch size."
+        },
+        {
+          "id": "b",
+          "text": "Tokens, which are the units of text a model processes.",
+          "correct": false,
+          "explanation": "Tokens are pieces of text the model reads and generates. They are not the pre-training configuration values described here."
+        },
+        {
+          "id": "c",
+          "text": "Model weights, which are the parameters the model learns from data during training.",
+          "correct": false,
+          "explanation": "Model weights are learned during training, not set beforehand. The values set before training that control the process are hyperparameters, not weights."
+        },
+        {
+          "id": "d",
+          "text": "Hyperparameters, settings chosen before training that guide it.",
+          "correct": true,
+          "explanation": "Learning rate, batch size, and epochs are hyperparameters: configuration values set before training that govern how the model learns. SageMaker Automatic Model Tuning can help search for good hyperparameter values."
         }
       ]
     }

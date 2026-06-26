@@ -1,0 +1,313 @@
+{
+  "id": "aws-ai-set-8",
+  "collection": "AWS AI Practitioner",
+  "title": "Practice Set 8",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "A team is selecting a foundation model on Amazon Bedrock for a new application. Which of the following are valid factors to consider when choosing a model? (Select all that apply.)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Cost, context window size, customization support, and licensing or compliance constraints.",
+          "correct": true,
+          "explanation": "Cost, context window, ability to customize, and licensing/compliance are all important when choosing a foundation model, since they affect feasibility, budget, and what data the model can handle at once."
+        },
+        {
+          "id": "b",
+          "text": "The color theme of the AWS Management Console.",
+          "correct": false,
+          "explanation": "The console's appearance has no bearing on which foundation model best fits a use case. It is not a model selection factor."
+        },
+        {
+          "id": "c",
+          "text": "Model modality (text, image, multimodal, embeddings) and accuracy for the target use case.",
+          "correct": true,
+          "explanation": "The model's modality and how accurately it performs the target task are central selection factors. A model must support the right input/output types and produce good results for the use case."
+        },
+        {
+          "id": "d",
+          "text": "The number of new AWS Regions that launched in the past year.",
+          "correct": false,
+          "explanation": "The count of recently launched AWS Regions has no bearing on which foundation model fits a use case. It is not a model selection factor."
+        },
+        {
+          "id": "e",
+          "text": "Performance and latency requirements of the application.",
+          "correct": true,
+          "explanation": "Latency and performance matter, especially for interactive applications. Smaller models are often faster and cheaper but may be less capable, so this trade-off is a key consideration."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "question": "A global company needs to translate user-generated content and its website into many languages with natural, accurate results at scale. Which AWS service is purpose-built for this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Translate, for natural, accurate language translation.",
+          "correct": true,
+          "explanation": "Amazon Translate provides natural, accurate machine translation between languages and is well suited for translating websites, applications, and large volumes of text at scale."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Lex, a chatbot service.",
+          "correct": false,
+          "explanation": "Amazon Lex builds conversational interfaces. Translation of content at scale is the job of Amazon Translate, not Lex."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Transcribe, a speech-to-text service.",
+          "correct": false,
+          "explanation": "Amazon Transcribe converts audio into text. It does not translate text between languages."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Textract, a document extraction service.",
+          "correct": false,
+          "explanation": "Amazon Textract extracts text and structure from documents. It does not perform language translation."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "question": "A marketing team has customer purchase data with no labels and wants to discover natural groupings of similar customers for targeted campaigns. Which type of machine learning and task does this describe?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Reinforcement learning using rewards.",
+          "correct": false,
+          "explanation": "Reinforcement learning trains an agent through actions and rewards in an environment. It does not match the task of grouping unlabeled customer data."
+        },
+        {
+          "id": "b",
+          "text": "Supervised learning using classification.",
+          "correct": false,
+          "explanation": "Classification assigns inputs to predefined labeled categories. The data here is unlabeled and the categories are unknown, so this is unsupervised clustering."
+        },
+        {
+          "id": "c",
+          "text": "Supervised learning using regression.",
+          "correct": false,
+          "explanation": "Regression predicts a continuous value from labeled data. Since the data has no labels and the goal is to find groupings, this is unsupervised clustering, not regression."
+        },
+        {
+          "id": "d",
+          "text": "Unsupervised learning using clustering.",
+          "correct": true,
+          "explanation": "Discovering natural groupings in unlabeled data is unsupervised learning, and grouping similar items together is clustering. No predefined labels are required."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "question": "An ML team needs to track model versions, store metadata, manage approval status, and control which version is promoted to production. Which Amazon SageMaker capability supports this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker Clarify, which detects bias.",
+          "correct": false,
+          "explanation": "Clarify analyzes bias and explainability. It is not a model versioning and approval registry."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker Canvas, a no-code modeling interface.",
+          "correct": false,
+          "explanation": "Canvas is a no-code interface for building models. It is not the registry for versioning and approvals."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker Model Registry, for versioning and approvals.",
+          "correct": true,
+          "explanation": "SageMaker Model Registry tracks model versions, metadata, approval status, and deployment state, giving teams controlled promotion of models to production."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker Ground Truth, which labels data.",
+          "correct": false,
+          "explanation": "Ground Truth creates labeled datasets. It does not version models or manage approvals."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "question": "A prompt engineer wants to write a strong prompt. Which components make up a well-structured prompt?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "VPC, subnet, route table, and internet gateway.",
+          "correct": false,
+          "explanation": "These are networking constructs unrelated to prompt design."
+        },
+        {
+          "id": "b",
+          "text": "Instructions, context, input data, and an output indicator.",
+          "correct": true,
+          "explanation": "A strong prompt typically includes clear instructions, relevant context, the input data to process, and an output indicator that specifies the desired format, length, or structure."
+        },
+        {
+          "id": "c",
+          "text": "Learning rate, batch size, epochs, and regularization.",
+          "correct": false,
+          "explanation": "These are training hyperparameters, not components of a prompt. Prompts are composed of instructions, context, input data, and output indicators."
+        },
+        {
+          "id": "d",
+          "text": "IAM user, group, role, and policy.",
+          "correct": false,
+          "explanation": "These are identity and access management concepts, not the building blocks of an effective prompt."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "question": "A company uses AWS KMS to manage encryption keys for data at rest. What is the primary purpose of AWS KMS in an AI/ML workflow?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "To provide natural language search over documents.",
+          "correct": false,
+          "explanation": "Document search is provided by services like Kendra. KMS is solely about encryption key management."
+        },
+        {
+          "id": "b",
+          "text": "To generate personalized recommendations.",
+          "correct": false,
+          "explanation": "Recommendations are produced by Amazon Personalize. KMS handles encryption keys, not recommendations."
+        },
+        {
+          "id": "c",
+          "text": "To train foundation models on customer data automatically.",
+          "correct": false,
+          "explanation": "KMS manages encryption keys; it does not train models. Model training is handled by services like SageMaker or Bedrock customization."
+        },
+        {
+          "id": "d",
+          "text": "To manage encryption keys for data at rest, with IAM controlling use.",
+          "correct": true,
+          "explanation": "AWS KMS is a managed service for creating and controlling encryption keys used to encrypt data at rest. Key policies and IAM permissions determine which identities and services can use a key to decrypt."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "question": "A privacy-conscious enterprise asks whether using Amazon Bedrock means their prompts and data will be used to train the base foundation models. What is correct?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Customers must publish their data publicly before using Bedrock.",
+          "correct": false,
+          "explanation": "There is no requirement to publish data publicly to use Bedrock. This statement is false."
+        },
+        {
+          "id": "b",
+          "text": "All customer prompts are automatically added to the public training set of every model.",
+          "correct": false,
+          "explanation": "This is incorrect. Bedrock does not use customer data to train the underlying base models, and prompts are not added to public training sets."
+        },
+        {
+          "id": "c",
+          "text": "Customer data is not used to train the base foundation models.",
+          "correct": true,
+          "explanation": "With Amazon Bedrock, customer data is not used to train the base foundation models. This data-handling assurance is an important point for privacy-conscious organizations evaluating the service."
+        },
+        {
+          "id": "d",
+          "text": "Bedrock requires disabling all encryption to function.",
+          "correct": false,
+          "explanation": "Bedrock works with encrypted data and AWS security controls. Disabling encryption is neither required nor advisable."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "question": "A developer wants the model to break a complex word problem into intermediate reasoning steps before giving the final answer, improving accuracy on multi-step tasks. Which prompting technique should they use?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Zero-shot prompting with no guidance or examples.",
+          "correct": false,
+          "explanation": "Zero-shot prompting provides no examples or reasoning guidance. For complex multi-step reasoning, chain-of-thought typically performs better."
+        },
+        {
+          "id": "b",
+          "text": "Chain-of-thought prompting, which elicits step-by-step reasoning.",
+          "correct": true,
+          "explanation": "Chain-of-thought prompting encourages the model to work through intermediate reasoning steps before answering, which often improves performance on complex, multi-step problems."
+        },
+        {
+          "id": "c",
+          "text": "Negative prompting that lists forbidden words.",
+          "correct": false,
+          "explanation": "Negative prompting tells the model what to avoid. It does not elicit step-by-step reasoning for solving multi-step problems."
+        },
+        {
+          "id": "d",
+          "text": "Reducing the context window to force shorter answers.",
+          "correct": false,
+          "explanation": "Shrinking the context window limits how much the model can consider and does not encourage structured reasoning. It would likely hurt performance on complex tasks."
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "question": "A line-of-business team wants to build internal generative AI apps using natural language, drawing on company data and plugins, without writing code. Which offering, built from Amazon Q Business, fits?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Rekognition Custom Labels.",
+          "correct": false,
+          "explanation": "Rekognition Custom Labels trains custom image models. It is not a natural-language no-code app builder."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker Pipelines.",
+          "correct": false,
+          "explanation": "SageMaker Pipelines orchestrate ML CI/CD workflows and require technical skills. They are not a no-code GenAI app builder for business users."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Q Apps, for no-code GenAI apps built on Q Business.",
+          "correct": true,
+          "explanation": "Amazon Q Apps lets users create generative AI applications using natural language with no code, built on Amazon Q Business and able to use internal company data and plugins."
+        },
+        {
+          "id": "d",
+          "text": "Amazon EC2 Auto Scaling.",
+          "correct": false,
+          "explanation": "EC2 Auto Scaling manages compute capacity. It is unrelated to no-code GenAI app creation."
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "When configuring access for an AI application, the security team insists each component be granted only the minimum permissions required to do its job. Which security principle does this represent?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Always granting administrator access for convenience.",
+          "correct": false,
+          "explanation": "Granting broad administrator access is the opposite of least privilege and increases risk. It is not a sound security principle."
+        },
+        {
+          "id": "b",
+          "text": "Disabling logging to reduce overhead.",
+          "correct": false,
+          "explanation": "Disabling logging harms auditability and security. It is unrelated to scoping permissions to the minimum necessary."
+        },
+        {
+          "id": "c",
+          "text": "Least privilege, granting only the minimum permissions needed.",
+          "correct": true,
+          "explanation": "Least privilege means granting each identity or component only the minimum permissions it needs. This reduces the blast radius of mistakes or compromises and is a core AWS security principle."
+        },
+        {
+          "id": "d",
+          "text": "Defense by obscurity, hiding resource names to stay secure.",
+          "correct": false,
+          "explanation": "Relying on hiding details is not a robust security strategy and is not what limiting permissions to the minimum represents. The principle here is least privilege."
+        }
+      ]
+    }
+  ]
+}

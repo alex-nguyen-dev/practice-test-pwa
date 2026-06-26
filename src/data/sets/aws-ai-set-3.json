@@ -5,91 +5,307 @@
   "questions": [
     {
       "id": "q1",
-      "question": "A retail company has several years of historical sales records in which each example is paired with the actual revenue that resulted. The data science team wants to train a model that learns the relationship between input features and these known outcomes so it can predict revenue for new situations. Which type of machine learning does this scenario describe?",
+      "question": "A team wants to improve a foundation model's answers for their use case and is weighing different customization approaches by cost. Ordering from least to most expensive, which sequence is correct?",
       "choices": [
         {
           "id": "a",
-          "text": "Supervised learning, in which a model is trained on labeled examples that include the correct output for each input.",
+          "text": "Prompt engineering, RAG, instruction fine-tuning, domain adaptation.",
           "correct": true,
-          "explanation": "Supervised learning uses labeled data where each input is paired with a known target output. Because the company has historical examples with the actual revenue outcomes, training a model to map inputs to those known outputs is a supervised learning task."
+          "explanation": "Generally the cheapest improvement is prompt engineering, followed by RAG, then instruction-based fine-tuning, and finally domain adaptation fine-tuning, which is the most resource intensive. This ordering helps teams try lower-cost options first."
         },
         {
           "id": "b",
-          "text": "Unsupervised learning, in which a model finds structure or groupings in data that has no labeled outputs.",
+          "text": "Instruction-based fine-tuning, then domain adaptation fine-tuning, then prompt engineering, then RAG.",
           "correct": false,
-          "explanation": "Unsupervised learning discovers patterns, clusters, or structure in unlabeled data. Since the dataset already includes the correct revenue outcome for each example, the scenario is supervised rather than unsupervised."
+          "explanation": "This places the most expensive fine-tuning approaches first and the cheapest approaches last, which is the opposite of the recommended cost ordering."
         },
         {
           "id": "c",
-          "text": "Reinforcement learning, in which an agent learns a policy by taking actions in an environment and receiving rewards or penalties.",
+          "text": "RAG, then prompt engineering, then domain adaptation fine-tuning, then instruction-based fine-tuning.",
           "correct": false,
-          "explanation": "Reinforcement learning trains an agent through trial-and-error interactions with an environment, guided by reward signals. It does not learn from a fixed dataset of labeled input-output pairs, so it does not match this scenario."
+          "explanation": "Prompt engineering is typically cheaper than RAG, and instruction-based fine-tuning is usually less costly than domain adaptation fine-tuning, so this sequence is incorrect."
         },
         {
           "id": "d",
-          "text": "DNS routing, which directs network requests to the appropriate servers based on domain names.",
+          "text": "Domain adaptation fine-tuning, then instruction-based fine-tuning, then RAG, then prompt engineering.",
           "correct": false,
-          "explanation": "DNS routing is a networking concept used to resolve domain names to server addresses. It is not a category of machine learning and is unrelated to training predictive models."
+          "explanation": "This reverses the correct order. Fine-tuning approaches are more expensive than RAG and prompt engineering, so starting with domain adaptation fine-tuning is the costliest, not the cheapest, path."
         }
       ]
     },
     {
       "id": "q2",
-      "question": "A healthcare organization is building a generative AI application that may process records containing personally identifiable information (PII) and other sensitive data. The security team wants to apply layered controls that reduce the risk of exposing this data while still allowing the application to function. Which of the following actions help protect the sensitive data? (Select all that apply.)",
+      "question": "A financial services company needs to extract printed text, handwriting, form fields, and tables from scanned loan application PDFs. Which AWS service is purpose-built for this?",
       "choices": [
         {
           "id": "a",
-          "text": "Apply least privilege access so that the application and its users can reach only the specific source data they actually need.",
-          "correct": true,
-          "explanation": "Least privilege limits each identity and component to the minimum permissions required. Narrowing access to source data reduces the chance that sensitive records are exposed through over-broad permissions, making this a sound protective control."
+          "text": "Amazon Lex, which builds conversational chatbots.",
+          "correct": false,
+          "explanation": "Amazon Lex creates chatbots with intents and slots. It has no document extraction capability."
         },
         {
           "id": "b",
-          "text": "Mask or redact sensitive values, where feasible, before including data in prompts sent to the model.",
+          "text": "Amazon Textract, which extracts text, forms, and tables from documents.",
           "correct": true,
-          "explanation": "Masking or redacting PII before it is placed into a prompt reduces the amount of sensitive data that the model and downstream logs ever see. This lowers exposure of confidential or regulated information and is a recommended practice."
+          "explanation": "Amazon Textract is a document AI service that extracts printed text, handwriting, form key-value pairs, and tables from scanned PDFs and images. It is the right choice for processing loan application documents."
         },
         {
           "id": "c",
-          "text": "Embed long-lived secrets and API keys directly in client-side JavaScript so the browser can call services without a backend.",
+          "text": "Amazon Translate, which translates text between languages.",
           "correct": false,
-          "explanation": "Anything shipped to the browser can be viewed by users, so storing secrets in client-side JavaScript exposes them to anyone who inspects the page. Secrets should be kept server-side or in a managed secrets store, making this an insecure choice."
+          "explanation": "Amazon Translate converts text from one language to another. It does not extract text or tables from scanned documents."
         },
         {
           "id": "d",
-          "text": "Encrypt sensitive data both at rest in storage and in transit over the network.",
-          "correct": true,
-          "explanation": "Encrypting data at rest and in transit protects it from being read if storage or network traffic is intercepted or improperly accessed. This is a foundational control for safeguarding sensitive information end to end."
+          "text": "Amazon Comprehend, which analyzes the meaning of text such as sentiment and entities.",
+          "correct": false,
+          "explanation": "Amazon Comprehend interprets text that already exists in machine-readable form. It does not extract text and structure from scanned images; that is Textract's job."
         }
       ]
     },
     {
       "id": "q3",
-      "question": "A business analyst needs to choose a foundation model for a new chat feature and wants to compare several candidate models on cost per request, response latency, and answer quality before committing to one. The analyst asks for the most practical way to make this decision. Which approach should be recommended?",
+      "question": "An artist wants to generate original images from text descriptions. Which type of model is most commonly used for high-quality text-to-image generation?",
       "choices": [
         {
           "id": "a",
-          "text": "Run an evaluation in which each candidate model is tested with representative prompts and expected outputs, measuring quality, latency, and cost.",
-          "correct": true,
-          "explanation": "Testing each candidate against realistic, representative prompts and measuring quality, latency, and cost provides the evidence needed to choose the best model for the task. This data-driven evaluation is the most practical way to compare models on the metrics that matter."
+          "text": "K-means clustering, which groups unlabeled data into clusters.",
+          "correct": false,
+          "explanation": "K-means is an unsupervised clustering algorithm. It organizes data into groups and does not create new image content."
         },
         {
           "id": "b",
-          "text": "Always select the largest available model, since larger models are assumed to perform best in every situation.",
+          "text": "Linear regression models, which fit a straight-line relationship between variables.",
           "correct": false,
-          "explanation": "Larger models often cost more and add latency, and they are not necessarily better for a given task. Choosing the largest model by default ignores cost and latency requirements and is not a sound selection strategy."
+          "explanation": "Linear regression predicts a continuous numeric value from inputs. It cannot generate images."
         },
         {
           "id": "c",
-          "text": "Ignore latency entirely and base the decision only on the model with the highest answer quality.",
+          "text": "Decision trees, which split data on feature thresholds to make predictions.",
           "correct": false,
-          "explanation": "Latency strongly affects user experience in an interactive chat feature and can be a hard requirement. Optimizing for quality alone while ignoring latency could result in a model that is too slow for real use."
+          "explanation": "Decision trees are interpretable models for classification and regression. They are not used to generate novel images from text."
         },
         {
           "id": "d",
-          "text": "Skip evaluation altogether whenever a model is available through a fully managed API.",
+          "text": "Diffusion models, which generate images by reversing a noise process.",
+          "correct": true,
+          "explanation": "Diffusion models are widely used for image generation. During training noise is added to images, and during generation the model reverses that noise into an image guided by a text prompt."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "question": "A team wants to detect bias in their training data and trained model, and also produce explainability reports showing how features influence predictions. Which Amazon SageMaker capability supports this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker Model Registry, which versions and approves model artifacts.",
           "correct": false,
-          "explanation": "Managed API access simplifies operations but says nothing about how well a particular model fits this specific task, or its cost and latency for these workloads. Task-specific evaluation is still needed to make an informed choice."
+          "explanation": "Model Registry tracks model versions, metadata, and approval status. It is a governance and lifecycle tool, not a bias or explainability analysis tool."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker Pipelines, which orchestrates CI/CD workflows for ML.",
+          "correct": false,
+          "explanation": "Pipelines automate ML workflow steps such as data prep, training, and deployment. They do not perform bias detection or explainability analysis themselves."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker Feature Store, which stores and reuses ML features.",
+          "correct": false,
+          "explanation": "Feature Store centralizes and reuses features across models. It does not analyze bias or generate explainability reports."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker Clarify, for bias detection and explainability.",
+          "correct": true,
+          "explanation": "SageMaker Clarify detects bias in datasets and models, supports foundation model evaluation, and provides explainability such as feature importance. It is the dedicated capability for fairness and explainability analysis."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "question": "A user submits input designed to override an application's system instructions and make a foundation model ignore its safety rules. Which of the following are effective mitigations against prompt injection? (Select all that apply.)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Use guardrails and content filters to detect and block malicious or policy-violating input and output.",
+          "correct": true,
+          "explanation": "Guardrails and content filters add a defensive layer that can catch harmful or manipulative content before it reaches the model or before responses are returned, helping mitigate injection attempts."
+        },
+        {
+          "id": "b",
+          "text": "Automatically execute any commands or code the model produces, without validation, so responses are faster.",
+          "correct": false,
+          "explanation": "Executing model-produced actions without validation lets a successful injection run arbitrary commands. Actions should be validated before execution, so this is an unsafe practice rather than a mitigation."
+        },
+        {
+          "id": "c",
+          "text": "Grant the model unrestricted permission to call any internal API so it can resolve requests faster.",
+          "correct": false,
+          "explanation": "Giving the model unrestricted API access dramatically increases the blast radius of a successful injection. This is the opposite of a sound mitigation and violates least privilege."
+        },
+        {
+          "id": "d",
+          "text": "Keep system instructions separate from user input and add explicit instructions to ignore unrelated or malicious content.",
+          "correct": true,
+          "explanation": "Separating trusted system instructions from untrusted user input, and explicitly instructing the model to disregard attempts to override its rules, reduces the effectiveness of prompt injection attacks."
+        },
+        {
+          "id": "e",
+          "text": "Limit the model's access to sensitive tools and data, and validate tool actions before they execute.",
+          "correct": true,
+          "explanation": "Applying least privilege to the tools and data a model can reach, and validating actions before executing them, limits the damage an injection attempt can cause even if some malicious input gets through."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "question": "A compliance team wants to automatically discover and report on sensitive data such as personally identifiable information (PII) stored in Amazon S3 buckets. Which AWS service is designed for this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Inspector, which scans for software vulnerabilities in EC2, ECR images, and Lambda.",
+          "correct": false,
+          "explanation": "Amazon Inspector finds software and network vulnerabilities in workloads. It does not discover or classify sensitive data in S3 buckets."
+        },
+        {
+          "id": "b",
+          "text": "AWS Trusted Advisor, which gives account-level best-practice recommendations.",
+          "correct": false,
+          "explanation": "Trusted Advisor offers recommendations across cost, security, performance, and more, but it does not specifically discover and classify PII inside S3 objects."
+        },
+        {
+          "id": "c",
+          "text": "AWS Artifact, which provides downloadable compliance reports and agreements.",
+          "correct": false,
+          "explanation": "AWS Artifact is a portal for compliance documents such as SOC and ISO reports. It does not scan data stores for sensitive content."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Macie, which discovers sensitive data such as PII in S3.",
+          "correct": true,
+          "explanation": "Amazon Macie uses machine learning to discover, classify, and report on sensitive data such as PII stored in S3, supporting data privacy and governance requirements."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "question": "A team must predict the exact future temperature in degrees for each day next week using historical weather data. Is this a classification or a regression problem, and why?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Reinforcement learning, because an agent earns rewards for accurate forecasts.",
+          "correct": false,
+          "explanation": "Reinforcement learning trains an agent through actions and rewards in an environment. Forecasting a numeric value from historical labeled data is a supervised regression problem."
+        },
+        {
+          "id": "b",
+          "text": "Classification, because the model assigns each day to a discrete category.",
+          "correct": false,
+          "explanation": "Classification predicts categories such as 'hot' or 'cold,' not exact numeric values. Since the target is a precise temperature, this is regression, not classification."
+        },
+        {
+          "id": "c",
+          "text": "Regression, because the target is a continuous numeric value.",
+          "correct": true,
+          "explanation": "Predicting a continuous numeric quantity such as temperature in degrees is a regression task. Classification predicts discrete categories, which does not match a continuous output."
+        },
+        {
+          "id": "d",
+          "text": "Clustering, because the data is unlabeled and grouped automatically.",
+          "correct": false,
+          "explanation": "Clustering groups unlabeled data by similarity. The task uses labeled historical values to predict a number, so it is supervised regression, not clustering."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "question": "A company wants to adapt a copy of a foundation model using their own labeled prompt-and-completion examples so the model better matches their tone and domain. The base model's weights should be updated in this adapted copy. Which approach are they using?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Prompt engineering, which changes the wording of prompts without altering model weights.",
+          "correct": false,
+          "explanation": "Prompt engineering improves results by crafting better prompts, but it does not change the model's weights. The scenario explicitly updates weights, which is fine-tuning."
+        },
+        {
+          "id": "b",
+          "text": "Fine-tuning, which adapts a model copy and changes its weights.",
+          "correct": true,
+          "explanation": "Fine-tuning trains a copy of a foundation model on your own data, updating its weights so it better fits your domain and style. Supervised fine-tuning specifically uses labeled prompt/completion examples."
+        },
+        {
+          "id": "c",
+          "text": "Retrieval Augmented Generation, which adds external context at query time without changing weights.",
+          "correct": false,
+          "explanation": "RAG supplies retrieved context to the model at inference time and leaves the model's weights unchanged. The scenario describes updating weights, so this is fine-tuning."
+        },
+        {
+          "id": "d",
+          "text": "Tokenization, which converts text into tokens for processing.",
+          "correct": false,
+          "explanation": "Tokenization is the process of splitting text into tokens. It is a preprocessing step, not a method for adapting a model to a domain."
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "question": "A contact center wants to transcribe recorded customer calls into text, automatically redact PII from the transcripts, and handle domain-specific terms. Which AWS service should they use?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Rekognition, which analyzes images and video.",
+          "correct": false,
+          "explanation": "Amazon Rekognition is a computer vision service for images and video. It does not transcribe audio recordings into text."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Polly, which converts text into lifelike speech.",
+          "correct": false,
+          "explanation": "Amazon Polly performs text-to-speech, the opposite of what is needed. The task is to convert recorded speech into text."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Comprehend, which analyzes the meaning of existing text.",
+          "correct": false,
+          "explanation": "Amazon Comprehend analyzes text once it exists, but it does not transcribe audio. Transcribe is required to turn the call recordings into text first."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Transcribe, a speech-to-text service with PII redaction.",
+          "correct": true,
+          "explanation": "Amazon Transcribe converts speech to text and offers features such as PII redaction, custom vocabularies for domain-specific words, and language identification, matching all the contact center's needs."
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "Under the AWS shared responsibility model, which of the following is the customer's responsibility when using managed AI services such as Amazon Bedrock?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Managing data, access permissions, and application configuration.",
+          "correct": true,
+          "explanation": "In the shared responsibility model, customers are responsible for security in the cloud: their data, IAM permissions, network and application configuration, and encryption choices. AWS secures the underlying infrastructure."
+        },
+        {
+          "id": "b",
+          "text": "Operating the global network backbone that connects AWS Regions.",
+          "correct": false,
+          "explanation": "The global network infrastructure connecting AWS Regions is owned and operated by AWS, not the customer."
+        },
+        {
+          "id": "c",
+          "text": "Maintaining the physical security of AWS data centers and hardware.",
+          "correct": false,
+          "explanation": "Physical security of data centers and hardware is AWS's responsibility (security of the cloud), not the customer's."
+        },
+        {
+          "id": "d",
+          "text": "Patching the underlying hypervisors and managed service infrastructure.",
+          "correct": false,
+          "explanation": "Patching and maintaining the underlying managed infrastructure and hypervisors is handled by AWS as part of security of the cloud."
         }
       ]
     }
