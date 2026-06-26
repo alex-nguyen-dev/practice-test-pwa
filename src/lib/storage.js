@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'practice-glass-progress';
+const STORAGE_KEY = 'cram-school-progress';
 
 export const loadProgress = () => {
   try {

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'practice-glass-v1';
+const CACHE_NAME = 'cram-school-v1';
 const APP_SHELL = ['/', '/index.html', '/manifest.webmanifest', '/icons/icon.svg'];
 
 self.addEventListener('install', (event) => {
