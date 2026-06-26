@@ -27,7 +27,7 @@ export default function ChoiceRow({ choice, selected, locked, multi, state, onSe
       <div className="flex items-start gap-2.5 sm:gap-3">
         <Icon className="mt-0.5 h-5 w-5 shrink-0 text-slate-700 dark:text-slate-200 sm:h-6 sm:w-6" />
         <div className="min-w-0 flex-1">
-          <p className="text-sm font-semibold leading-snug text-slate-900 dark:text-white sm:text-base">{choice.text}</p>
+          <p className="text-sm font-medium leading-snug text-slate-900 dark:text-white sm:text-base">{choice.text}</p>
           {locked && (
             <div className="mt-3 flex flex-wrap gap-2 text-xs font-bold uppercase tracking-wide">
               {state === 'correct' && (
