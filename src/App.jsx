@@ -5,7 +5,7 @@ import { GlassButton } from './components/GlassButton.jsx';
 
 const storedTheme = () => {
   if (localStorage.theme === 'dark' || localStorage.theme === 'light') return localStorage.theme;
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  return 'dark';
 };
 
 export default function App() {
