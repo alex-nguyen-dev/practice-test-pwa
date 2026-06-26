@@ -34,7 +34,7 @@ export default function App() {
             )}
             <div className="min-w-0">
               <p className="truncate text-sm font-semibold text-slate-600 dark:text-slate-300">Practice Glass</p>
-              <p className="truncate text-xs text-slate-500 dark:text-slate-400">Touch-first certification prep</p>
+              <p className="truncate text-xs text-slate-500 dark:text-slate-300">Touch-first certification prep</p>
             </div>
           </div>
           <GlassButton

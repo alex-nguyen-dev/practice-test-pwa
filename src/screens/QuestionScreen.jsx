@@ -95,7 +95,7 @@ export default function QuestionScreen() {
         <div className="mb-5 flex items-center justify-between gap-4">
           <div>
             <p className="text-sm font-semibold text-slate-600 dark:text-slate-300">{set.title}</p>
-            <p className="mt-1 text-xs font-bold uppercase text-slate-500 dark:text-slate-400">
+            <p className="mt-1 text-xs font-bold uppercase text-slate-500 dark:text-slate-300">
               {index + 1} / {set.questions.length}
             </p>
           </div>

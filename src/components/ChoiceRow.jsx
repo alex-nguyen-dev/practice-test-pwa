@@ -4,9 +4,9 @@ export default function ChoiceRow({ choice, selected, locked, multi, state, onSe
   const stateClasses = {
     neutral: 'border-white/35 bg-white/40 dark:border-white/15 dark:bg-white/10',
     selected: 'border-sky-300/70 bg-sky-100/70 dark:border-sky-300/40 dark:bg-sky-400/15',
-    correct: 'border-emerald-400/80 bg-emerald-100/75 dark:border-emerald-300/50 dark:bg-emerald-400/18',
-    wrong: 'border-rose-400/80 bg-rose-100/75 dark:border-rose-300/50 dark:bg-rose-400/18',
-    missed: 'border-emerald-400/80 bg-white/35 ring-2 ring-emerald-400/45 dark:bg-white/8',
+    correct: 'border-emerald-400/80 bg-white/40 dark:border-emerald-300/50 dark:bg-white/10',
+    wrong: 'border-rose-400/80 bg-white/40 dark:border-rose-300/50 dark:bg-white/10',
+    missed: 'border-emerald-400/80 bg-white/40 ring-2 ring-emerald-400/45 dark:bg-white/10',
   };
 
   const Icon = multi
