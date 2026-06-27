@@ -1,5 +1,5 @@
 import { matchPath, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { ArrowLeft, BookOpen, Home, Info, Moon, Sun } from 'lucide-react';
+import { ArrowLeft, BookOpen, Home, Info, Menu, Moon, Sun } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { GlassButton } from './components/GlassButton.jsx';
 import { getCollection, getSet } from './data/practiceSets.js';
@@ -28,30 +28,43 @@ const NAV_ITEMS = [
   { label: 'About', icon: Info, path: '/about' },
 ];
 
-function DesktopNav({ location, navTo }) {
+function MenuPanel({ location, navTo, theme, setTheme, open }) {
   return (
-    <nav className="hidden items-center gap-1 sm:flex">
-      {NAV_ITEMS.map(({ label, icon: Icon, path }) => {
-        const active = location.pathname === path;
-        return (
-          <button
-            key={path}
-            onClick={() => navTo(path)}
-            className={`flex items-center gap-2 rounded-2xl px-3 py-2 text-sm font-semibold transition ${active ? 'bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300' : 'text-slate-700 hover:bg-white/50 dark:text-slate-200 dark:hover:bg-white/10'}`}
-          >
-            <Icon className="h-4 w-4 shrink-0" />
-            {label}
-          </button>
-        );
-      })}
-    </nav>
+    <div
+      className={`absolute right-0 top-full z-50 mt-2 w-56 overflow-hidden rounded-2xl border border-white/40 bg-white/90 shadow-xl backdrop-blur-2xl transition-all duration-200 dark:border-white/15 dark:bg-slate-900/95 ${open ? 'pointer-events-auto translate-y-0 opacity-100' : 'pointer-events-none -translate-y-2 opacity-0'}`}
+    >
+      <nav className="p-2">
+        {NAV_ITEMS.map(({ label, icon: Icon, path }) => {
+          const active = location.pathname === path;
+          return (
+            <button
+              key={path}
+              onClick={() => navTo(path)}
+              className={`flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-left text-sm font-semibold transition ${active ? 'bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300' : 'text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-white/10'}`}
+            >
+              <Icon className="h-5 w-5 shrink-0" />
+              {label}
+            </button>
+          );
+        })}
+      </nav>
+      <div className="border-t border-slate-200 p-2 dark:border-white/10">
+        <button
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          className="flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-white/10"
+        >
+          {theme === 'dark' ? <Sun className="h-5 w-5 shrink-0" /> : <Moon className="h-5 w-5 shrink-0" />}
+          {theme === 'dark' ? 'Light mode' : 'Dark mode'}
+        </button>
+      </div>
+    </div>
   );
 }
 
 function BottomTabBar({ location, navTo }) {
   return (
     <nav
-      className="fixed inset-x-0 bottom-0 z-50 border-t border-white/30 bg-white/80 shadow-glass backdrop-blur-2xl backdrop-saturate-150 sm:hidden dark:border-white/10 dark:bg-slate-900/85"
+      className="fixed inset-x-0 bottom-0 z-50 border-t border-white/30 bg-white/80 shadow-[0_-6px_30px_-8px_rgba(2,6,23,0.35)] backdrop-blur-2xl backdrop-saturate-150 sm:hidden dark:border-white/10 dark:bg-slate-900/85"
       style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
     >
       <div className="mx-auto flex max-w-3xl items-stretch justify-around px-2 pt-1.5">
@@ -63,7 +76,9 @@ function BottomTabBar({ location, navTo }) {
               onClick={() => navTo(path)}
               className={`flex flex-1 flex-col items-center gap-1 rounded-2xl px-2 pb-2 pt-1.5 text-[11px] font-semibold transition active:scale-95 ${active ? 'text-sky-600 dark:text-sky-300' : 'text-slate-500 dark:text-slate-400'}`}
             >
-              <Icon className="h-5 w-5 shrink-0" strokeWidth={active ? 2.5 : 2} />
+              <span className="flex h-7 w-12 items-center justify-center">
+                <Icon className="h-5 w-5 shrink-0" strokeWidth={active ? 2.5 : 2} />
+              </span>
               {label}
             </button>
           );
@@ -87,6 +102,7 @@ export default function App() {
   const navigate = useNavigate();
   const location = useLocation();
   const [theme, setTheme] = useState(storedTheme);
+  const [menuOpen, setMenuOpen] = useState(false);
   const canGoBack = location.pathname !== '/';
   const isHome = location.pathname === '/';
   const title = headerTitle(location.pathname);
@@ -96,8 +112,13 @@ export default function App() {
     localStorage.theme = theme;
   }, [theme]);
 
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
+
   function navTo(path) {
     navigate(path);
+    setMenuOpen(false);
   }
 
   return (
@@ -115,7 +136,7 @@ export default function App() {
           )}
 
           <p
-            className={`min-w-0 flex-1 truncate text-center font-semibold tracking-tight sm:text-left ${
+            className={`min-w-0 flex-1 truncate text-center font-semibold tracking-tight ${
               isHome
                 ? 'bg-gradient-to-r from-sky-600 to-violet-600 bg-clip-text text-lg text-transparent dark:from-sky-300 dark:to-violet-200 sm:text-xl'
                 : 'text-base text-slate-700 dark:text-slate-100 sm:text-lg'
@@ -125,13 +146,32 @@ export default function App() {
           </p>
 
           <div className="flex shrink-0 items-center gap-1">
-            <DesktopNav location={location} navTo={navTo} />
-            <ThemeToggle theme={theme} setTheme={setTheme} />
+            {/* Mobile: standalone theme toggle (nav lives in the bottom bar) */}
+            <div className="sm:hidden">
+              <ThemeToggle theme={theme} setTheme={setTheme} />
+            </div>
+
+            {/* Desktop: menu popover holds nav + theme */}
+            <div className="relative hidden sm:block">
+              <GlassButton
+                icon={Menu}
+                label="Open menu"
+                onClick={() => setMenuOpen((o) => !o)}
+                className={menuOpen ? 'bg-white/70 ring-1 ring-inset ring-white/60 dark:bg-white/20 dark:ring-white/15' : ''}
+              />
+              <MenuPanel location={location} navTo={navTo} theme={theme} setTheme={setTheme} open={menuOpen} />
+            </div>
           </div>
         </header>
 
         <Outlet />
       </div>
+
+      {/* Desktop click-away for the popover */}
+      <div
+        onClick={() => setMenuOpen(false)}
+        className={`fixed inset-0 z-40 hidden sm:block ${menuOpen ? '' : 'pointer-events-none'}`}
+      />
 
       <BottomTabBar location={location} navTo={navTo} />
     </main>
