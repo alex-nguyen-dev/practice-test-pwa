@@ -11,10 +11,10 @@ const storedTheme = () => {
 
 const headerTitle = (pathname) => {
   const setMatch = matchPath('/sets/:setId', pathname);
-  if (setMatch) return getSet(setMatch.params.setId)?.title ?? 'Cram School';
+  if (setMatch) return getSet(setMatch.params.setId)?.title ?? 'Juku';
   const collectionMatch = matchPath('/collections/:collectionSlug', pathname);
-  if (collectionMatch) return getCollection(collectionMatch.params.collectionSlug)?.title ?? 'Cram School';
-  return 'Cram School';
+  if (collectionMatch) return getCollection(collectionMatch.params.collectionSlug)?.title ?? 'Juku';
+  return 'Juku';
 };
 
 export default function App() {

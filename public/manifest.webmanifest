@@ -1,6 +1,6 @@
 {
-  "name": "Cram School",
-  "short_name": "Cram School",
+  "name": "Juku",
+  "short_name": "Juku",
   "description": "Installable multiple-choice practice tests.",
   "start_url": "/",
   "scope": "/",
