@@ -12,7 +12,7 @@ export default function NoteReaderScreen() {
   }
 
   return (
-    <article className="prose prose-slate max-w-none dark:prose-invert prose-headings:font-bold prose-a:text-sky-600 dark:prose-a:text-sky-400">
+    <article className="prose prose-slate mt-5 max-w-none dark:prose-invert prose-headings:font-bold prose-a:text-sky-600 sm:mt-4 dark:prose-a:text-sky-400">
       <Markdown remarkPlugins={[remarkGfm]}>{note.content}</Markdown>
     </article>
   );
