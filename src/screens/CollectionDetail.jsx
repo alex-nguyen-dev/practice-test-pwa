@@ -14,8 +14,8 @@ export default function CollectionDetail() {
   return (
     <section className="space-y-5">
       <div className="px-1">
-        <p className="text-sm font-semibold text-slate-600 dark:text-slate-300">Collection</p>
-        <h1 className="mt-2 text-2xl font-bold text-slate-950 dark:text-white sm:text-4xl">{collection.title}</h1>
+        <p className="text-sm font-semibold text-slate-600 dark:text-slate-300">Practice Sets</p>
+        <h1 className="mt-2 text-2xl font-bold text-slate-950 dark:text-white sm:text-4xl">Choose a practice set</h1>
       </div>
 
       <div className="grid gap-4">
