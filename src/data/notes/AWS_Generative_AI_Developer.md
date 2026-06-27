@@ -1,5 +1,4 @@
-# AWS Certified Generative AI Developer – Professional (AIP-C01)
-## Comprehensive Study Notes
+# AWS Certified Generative AI Developer
 
 **Exam:** AIP-C01 | **Duration:** 170 minutes | **Questions:** 75 | **Cost:** ~$300
 

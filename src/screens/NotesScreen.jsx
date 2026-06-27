@@ -19,7 +19,7 @@ export default function NotesScreen() {
                 <FileText className="h-7 w-7" />
               </div>
               <div className="min-w-0 flex-1">
-                <h2 className="truncate text-xl font-bold text-slate-950 dark:text-white">{note.title}</h2>
+                <h2 className="line-clamp-2 text-lg font-bold text-slate-950 dark:text-white">{note.title}</h2>
               </div>
               <ArrowRight className="h-6 w-6 shrink-0 text-slate-500 dark:text-slate-300" />
             </div>

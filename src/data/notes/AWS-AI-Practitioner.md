@@ -1,8 +1,10 @@
-# AWS Certified AI Practitioner AIF-C01 Study Notes
+# AWS Certified AI Practitioner
 
-Source PDF: `AWS Certified AI Practitioner Slides v19.pdf`
+**Exam:** AIF-C01 | **Duration:** 120 minutes | **Questions:** 65 | **Cost:** ~$150
 
 These notes are optimized for exam review. They summarize concepts, AWS services, when to use each service, and common comparison points.
+
+---
 
 ## 1. Exam Orientation
 
