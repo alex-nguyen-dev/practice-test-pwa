@@ -74,7 +74,7 @@ function BottomTabBar({ location, navTo }) {
             <button
               key={path}
               onClick={() => navTo(path)}
-              className={`flex flex-1 flex-col items-center gap-1 rounded-2xl px-2 pb-2 pt-1.5 text-[11px] font-semibold transition active:scale-95 ${active ? 'text-sky-600 dark:text-sky-300' : 'text-slate-500 dark:text-slate-400'}`}
+              className={`flex flex-1 flex-col items-center gap-1 rounded-2xl px-2 pb-1 pt-1.5 text-[11px] font-semibold transition active:scale-95 ${active ? 'text-sky-600 dark:text-sky-300' : 'text-slate-500 dark:text-slate-400'}`}
             >
               <span className="flex h-7 w-12 items-center justify-center">
                 <Icon className="h-5 w-5 shrink-0" strokeWidth={active ? 2.5 : 2} />
