@@ -22,13 +22,13 @@ export default function CollectionDetail() {
         {collection.sets.map((set) => {
           const saved = progress[set.id];
           return (
-            <GlassCard key={set.id} as={Link} to={`/sets/${set.id}`} className="block p-5 active:scale-[.99]">
+            <GlassCard key={set.id} as={Link} to={`/sets/${set.id}`} className="block p-3 active:scale-[.99] sm:p-5">
               <div className="flex items-center gap-4">
-                <div className="grid h-14 w-14 shrink-0 place-items-center rounded-3xl bg-white/50 text-violet-700 shadow-inner dark:bg-white/10 dark:text-violet-200">
-                  <ClipboardList className="h-7 w-7" />
+                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white/50 text-violet-700 shadow-inner dark:bg-white/10 dark:text-violet-200 sm:h-14 sm:w-14 sm:rounded-3xl">
+                  <ClipboardList className="h-5 w-5 sm:h-7 sm:w-7" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h2 className="truncate text-xl font-bold text-slate-950 dark:text-white">{set.title}</h2>
+                  <h2 className="truncate text-base font-bold text-slate-950 dark:text-white sm:text-xl">{set.title}</h2>
                   <p className="mt-1 text-sm font-medium text-slate-600 dark:text-slate-300">
                     {set.questions.length} questions
                     {saved?.completed ? ` · Best ${saved.bestScore}/${set.questions.length}` : ''}

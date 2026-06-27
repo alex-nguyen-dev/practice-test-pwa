@@ -13,13 +13,13 @@ export default function NotesScreen() {
 
       <div className="grid gap-4">
         {notes.map((note) => (
-          <GlassCard key={note.id} as={Link} to={`/notes/${note.id}`} className="block p-5 active:scale-[.99]">
+          <GlassCard key={note.id} as={Link} to={`/notes/${note.id}`} className="block p-3 active:scale-[.99] sm:p-5">
             <div className="flex items-center gap-4">
-              <div className="grid h-14 w-14 shrink-0 place-items-center rounded-3xl bg-white/50 text-violet-700 shadow-inner dark:bg-white/10 dark:text-violet-300">
-                <FileText className="h-7 w-7" />
+              <div className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white/50 text-violet-700 shadow-inner dark:bg-white/10 dark:text-violet-300 sm:h-14 sm:w-14 sm:rounded-3xl">
+                <FileText className="h-5 w-5 sm:h-7 sm:w-7" />
               </div>
               <div className="min-w-0 flex-1">
-                <h2 className="line-clamp-2 text-lg font-bold text-slate-950 dark:text-white">{note.title}</h2>
+                <h2 className="line-clamp-2 text-md font-bold text-slate-950 dark:text-white">{note.title}</h2>
               </div>
               <ArrowRight className="h-6 w-6 shrink-0 text-slate-500 dark:text-slate-300" />
             </div>

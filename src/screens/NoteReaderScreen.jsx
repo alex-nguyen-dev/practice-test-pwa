@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { getNote } from '../data/notesList.js';
 
 export default function NoteReaderScreen() {
@@ -12,7 +13,7 @@ export default function NoteReaderScreen() {
 
   return (
     <article className="prose prose-slate max-w-none dark:prose-invert prose-headings:font-bold prose-a:text-sky-600 dark:prose-a:text-sky-400">
-      <Markdown>{note.content}</Markdown>
+      <Markdown remarkPlugins={[remarkGfm]}>{note.content}</Markdown>
     </article>
   );
 }
