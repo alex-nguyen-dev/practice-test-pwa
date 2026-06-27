@@ -65,7 +65,7 @@ function BottomTabBar({ location, navTo }) {
   return (
     <nav
       className="fixed inset-x-0 bottom-0 z-50 border-t border-white/30 bg-white/80 shadow-[0_-6px_30px_-8px_rgba(2,6,23,0.35)] backdrop-blur-2xl backdrop-saturate-150 sm:hidden dark:border-white/10 dark:bg-slate-900/85"
-      style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
+      style={{ paddingBottom: 'max(env(safe-area-inset-bottom) - 8px, 4px)' }}
     >
       <div className="mx-auto flex max-w-3xl items-stretch">
         {NAV_ITEMS.map(({ label, icon: Icon, path }) => {
@@ -74,7 +74,7 @@ function BottomTabBar({ location, navTo }) {
             <button
               key={path}
               onClick={() => navTo(path)}
-              className={`relative flex flex-1 flex-col items-center gap-0.5 rounded-2xl pb-0 pt-2 text-[11px] font-semibold transition active:scale-95 ${active ? 'text-sky-600 dark:text-sky-300' : 'text-slate-500 dark:text-slate-400'}`}
+              className={`relative flex flex-1 flex-col items-center gap-0.5 rounded-2xl pb-0 pt-3 text-[11px] font-semibold transition active:scale-95 ${active ? 'text-sky-600 dark:text-sky-300' : 'text-slate-500 dark:text-slate-400'}`}
             >
               {active && <span className="absolute inset-x-0 top-0 h-0.5 bg-sky-500 dark:bg-sky-400" />}
               <span className="flex h-6 w-12 items-center justify-center">
