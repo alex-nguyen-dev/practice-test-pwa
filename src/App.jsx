@@ -1,5 +1,5 @@
 import { matchPath, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { ArrowLeft, BookOpen, Home, Info, Menu, Moon, Sun } from 'lucide-react';
+import { ArrowLeft, BookOpen, Home, Info, Moon, Sun } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { GlassButton } from './components/GlassButton.jsx';
 import { getCollection, getSet } from './data/practiceSets.js';
@@ -28,31 +28,58 @@ const NAV_ITEMS = [
   { label: 'About', icon: Info, path: '/about' },
 ];
 
-function NavItems({ location, navTo }) {
-  return NAV_ITEMS.map(({ label, icon: Icon, path }) => {
-    const active = location.pathname === path;
-    return (
-      <button
-        key={path}
-        onClick={() => navTo(path)}
-        className={`flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-left text-sm font-semibold transition ${active ? 'bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300' : 'text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-white/10'}`}
-      >
-        <Icon className="h-5 w-5 shrink-0" />
-        {label}
-      </button>
-    );
-  });
+function DesktopNav({ location, navTo }) {
+  return (
+    <nav className="hidden items-center gap-1 sm:flex">
+      {NAV_ITEMS.map(({ label, icon: Icon, path }) => {
+        const active = location.pathname === path;
+        return (
+          <button
+            key={path}
+            onClick={() => navTo(path)}
+            className={`flex items-center gap-2 rounded-2xl px-3 py-2 text-sm font-semibold transition ${active ? 'bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300' : 'text-slate-700 hover:bg-white/50 dark:text-slate-200 dark:hover:bg-white/10'}`}
+          >
+            <Icon className="h-4 w-4 shrink-0" />
+            {label}
+          </button>
+        );
+      })}
+    </nav>
+  );
+}
+
+function BottomTabBar({ location, navTo }) {
+  return (
+    <nav
+      className="fixed inset-x-0 bottom-0 z-50 border-t border-white/30 bg-white/80 shadow-glass backdrop-blur-2xl backdrop-saturate-150 sm:hidden dark:border-white/10 dark:bg-slate-900/85"
+      style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
+    >
+      <div className="mx-auto flex max-w-3xl items-stretch justify-around px-2 pt-1.5">
+        {NAV_ITEMS.map(({ label, icon: Icon, path }) => {
+          const active = location.pathname === path;
+          return (
+            <button
+              key={path}
+              onClick={() => navTo(path)}
+              className={`flex flex-1 flex-col items-center gap-1 rounded-2xl px-2 pb-2 pt-1.5 text-[11px] font-semibold transition active:scale-95 ${active ? 'text-sky-600 dark:text-sky-300' : 'text-slate-500 dark:text-slate-400'}`}
+            >
+              <Icon className="h-5 w-5 shrink-0" strokeWidth={active ? 2.5 : 2} />
+              {label}
+            </button>
+          );
+        })}
+      </div>
+    </nav>
+  );
 }
 
 function ThemeToggle({ theme, setTheme }) {
   return (
-    <button
+    <GlassButton
+      icon={theme === 'dark' ? Sun : Moon}
+      label={theme === 'dark' ? 'Light mode' : 'Dark mode'}
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-white/10"
-    >
-      {theme === 'dark' ? <Sun className="h-5 w-5 shrink-0" /> : <Moon className="h-5 w-5 shrink-0" />}
-      {theme === 'dark' ? 'Light mode' : 'Dark mode'}
-    </button>
+    />
   );
 }
 
@@ -60,8 +87,8 @@ export default function App() {
   const navigate = useNavigate();
   const location = useLocation();
   const [theme, setTheme] = useState(storedTheme);
-  const [menuOpen, setMenuOpen] = useState(false);
   const canGoBack = location.pathname !== '/';
+  const isHome = location.pathname === '/';
   const title = headerTitle(location.pathname);
 
   useEffect(() => {
@@ -69,73 +96,44 @@ export default function App() {
     localStorage.theme = theme;
   }, [theme]);
 
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [location.pathname]);
-
   function navTo(path) {
     navigate(path);
-    setMenuOpen(false);
   }
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-slate-100 text-slate-950 transition-colors duration-500 dark:bg-slate-950 dark:text-white">
       <div className="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_15%_10%,rgba(56,189,248,.30),transparent_32%),radial-gradient(circle_at_88%_18%,rgba(167,139,250,.26),transparent_30%),linear-gradient(150deg,#f8fafc_0%,#e2e8f0_48%,#c7d2fe_100%)] dark:bg-[radial-gradient(circle_at_18%_8%,rgba(14,165,233,.28),transparent_32%),radial-gradient(circle_at_88%_12%,rgba(52,211,153,.18),transparent_28%),linear-gradient(150deg,#020617_0%,#111827_54%,#1e1b4b_100%)]" />
 
-      <div className="mx-auto flex min-h-screen w-full max-w-3xl flex-col px-4 pb-8 pt-[max(env(safe-area-inset-top),1rem)] sm:px-6">
-        <header className="sticky top-3 z-50 mb-5 grid grid-cols-[auto_1fr_auto] items-center gap-2 rounded-3xl border border-white/30 bg-white/35 px-3 py-3 shadow-glass-soft backdrop-blur-2xl transition dark:border-white/15 dark:bg-white/10">
+      <div className="mx-auto flex min-h-screen w-full max-w-3xl flex-col px-4 pb-24 pt-[max(env(safe-area-inset-top),1rem)] sm:px-6 sm:pb-8">
+        <header className="sticky top-3 z-50 mb-5 flex items-center gap-2 rounded-3xl border border-white/40 bg-white/40 px-3 py-2.5 shadow-glass-soft ring-1 ring-inset ring-white/50 backdrop-blur-2xl backdrop-saturate-150 transition before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-1/2 before:rounded-t-3xl before:bg-gradient-to-b before:from-white/60 before:to-transparent dark:border-white/10 dark:bg-white/[0.07] dark:ring-white/10 dark:before:from-white/10">
           {canGoBack ? (
             <GlassButton icon={ArrowLeft} label="Back" onClick={() => navigate(-1)} />
           ) : (
-            <img src="/icons/icon.svg" alt="Juku" className="h-8 w-8" />
-          )}
-          <p className="truncate text-center text-base font-semibold text-slate-700 dark:text-slate-100 sm:text-lg">{title}</p>
-
-          {/* Menu button + desktop dropdown */}
-          <div className="relative">
-            <GlassButton icon={Menu} label="Open menu" onClick={() => setMenuOpen((o) => !o)} />
-
-            {/* Desktop dropdown */}
-            <div
-              className={`absolute right-0 top-full z-50 mt-2 hidden w-52 overflow-hidden rounded-2xl border border-white/40 bg-white/90 shadow-xl backdrop-blur-2xl transition-all duration-200 dark:border-white/15 dark:bg-slate-900/95 sm:block ${menuOpen ? 'pointer-events-auto translate-y-0 opacity-100' : 'pointer-events-none -translate-y-2 opacity-0'}`}
-            >
-              <nav className="p-2">
-                <NavItems location={location} navTo={navTo} />
-              </nav>
-              <div className="border-t border-slate-200 p-2 dark:border-white/10">
-                <ThemeToggle theme={theme} setTheme={setTheme} />
-              </div>
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center">
+              <img src="/icons/icon.svg" alt="Juku" className="h-8 w-8" />
             </div>
+          )}
+
+          <p
+            className={`min-w-0 flex-1 truncate text-center font-semibold tracking-tight sm:text-left ${
+              isHome
+                ? 'bg-gradient-to-r from-sky-600 to-violet-600 bg-clip-text text-lg text-transparent dark:from-sky-300 dark:to-violet-200 sm:text-xl'
+                : 'text-base text-slate-700 dark:text-slate-100 sm:text-lg'
+            }`}
+          >
+            {title}
+          </p>
+
+          <div className="flex shrink-0 items-center gap-1">
+            <DesktopNav location={location} navTo={navTo} />
+            <ThemeToggle theme={theme} setTheme={setTheme} />
           </div>
         </header>
 
         <Outlet />
       </div>
 
-      {/* Backdrop — mobile: dark, desktop: transparent click-away */}
-      <div
-        onClick={() => setMenuOpen(false)}
-        className={`fixed inset-0 z-40 transition-opacity duration-300 sm:bg-transparent sm:backdrop-blur-none ${menuOpen ? 'opacity-100' : 'pointer-events-none opacity-0'} bg-black/40 backdrop-blur-sm`}
-      />
-
-      {/* Mobile bottom sheet */}
-      <div
-        className={`fixed inset-x-0 bottom-0 z-50 rounded-t-3xl border-t border-white/30 bg-white/90 shadow-2xl backdrop-blur-2xl transition-transform duration-300 dark:border-white/10 dark:bg-slate-900/95 sm:hidden ${menuOpen ? 'translate-y-0' : 'translate-y-full'}`}
-        style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
-      >
-        {/* Handle */}
-        <div className="flex justify-center pb-2 pt-3">
-          <div className="h-1 w-10 rounded-full bg-slate-300 dark:bg-slate-600" />
-        </div>
-
-        <nav className="space-y-1 px-3 pb-2">
-          <NavItems location={location} navTo={navTo} />
-        </nav>
-
-        <div className="border-t border-slate-200 px-3 py-2 dark:border-white/10">
-          <ThemeToggle theme={theme} setTheme={setTheme} />
-        </div>
-      </div>
+      <BottomTabBar location={location} navTo={navTo} />
     </main>
   );
 }
