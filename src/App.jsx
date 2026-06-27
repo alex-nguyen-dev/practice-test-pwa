@@ -67,16 +67,16 @@ function BottomTabBar({ location, navTo }) {
       className="fixed inset-x-0 bottom-0 z-50 border-t border-white/30 bg-white/80 shadow-[0_-6px_30px_-8px_rgba(2,6,23,0.35)] backdrop-blur-2xl backdrop-saturate-150 sm:hidden dark:border-white/10 dark:bg-slate-900/85"
       style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
     >
-      <div className="mx-auto flex max-w-3xl items-stretch justify-around px-2 pt-1.5">
+      <div className="mx-auto flex max-w-3xl items-stretch justify-around px-2">
         {NAV_ITEMS.map(({ label, icon: Icon, path }) => {
           const active = location.pathname === path;
           return (
             <button
               key={path}
               onClick={() => navTo(path)}
-              className={`flex flex-1 flex-col items-center gap-1 rounded-2xl px-2 pb-1 pt-1.5 text-[11px] font-semibold transition active:scale-95 ${active ? 'text-sky-600 dark:text-sky-300' : 'text-slate-500 dark:text-slate-400'}`}
+              className={`flex flex-1 flex-col items-center gap-0.5 rounded-2xl px-2 pb-1 pt-1 text-[11px] font-semibold transition active:scale-95 ${active ? 'text-sky-600 dark:text-sky-300' : 'text-slate-500 dark:text-slate-400'}`}
             >
-              <span className="flex h-7 w-12 items-center justify-center">
+              <span className="flex h-6 w-12 items-center justify-center">
                 <Icon className="h-5 w-5 shrink-0" strokeWidth={active ? 2.5 : 2} />
               </span>
               {label}
