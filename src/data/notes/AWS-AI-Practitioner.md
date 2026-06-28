@@ -1,6 +1,6 @@
 # AWS Certified AI Practitioner
 
-**Exam:** AIF-C01 | **Duration:** 120 minutes | **Questions:** 65 | **Cost:** ~$150
+**Exam:** AIF-C01 | **Duration:** 90 minutes | **Questions:** 65 | **Cost:** ~$100
 
 These notes are optimized for exam review. They summarize concepts, AWS services, when to use each service, and common comparison points.
 
@@ -1173,4 +1173,3 @@ Map these words to services:
 - Know shared responsibility and least privilege.
 - Know CloudTrail, Config, Macie, Inspector, Artifact, Audit Manager, Trusted Advisor.
 - Know VPC endpoints and PrivateLink for private AI service access.
-

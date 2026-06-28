@@ -1,21 +1,6 @@
-# AWS Certified Generative AI Developer
+# AWS Certified Generative AI Developer - Professional
 
-**Exam:** AIP-C01 | **Duration:** 170 minutes | **Questions:** 75 | **Cost:** ~$300
-
----
-
-## Table of Contents
-1. [GenAI Fundamentals and Bedrock](#1-genai-fundamentals-and-bedrock)
-2. [Managing Data for Generative AI](#2-managing-data-for-generative-ai)
-3. [Agentic AI](#3-agentic-ai)
-4. [Operational Efficiency and Optimization](#4-operational-efficiency-and-optimization)
-5. [Managing Models with SageMaker AI](#5-managing-models-with-sagemaker-ai)
-6. [More Tools for Building AI Applications](#6-more-tools-for-building-ai-applications)
-7. [Governance and QA](#7-governance-and-qa)
-8. [Security, Identity, and Compliance](#8-security-identity-and-compliance)
-9. [Other Services You Should Know](#9-other-services-you-should-know)
-10. [Architectural Decisions](#10-architectural-decisions)
-11. [Exam Preparation Tips](#11-exam-preparation-tips)
+**Exam:** AIP-C01 | **Duration:** 180 minutes | **Questions:** 75 | **Cost:** ~$300
 
 ---
 
@@ -1187,7 +1172,7 @@ Data prep → Train/Evaluate Model → Deploy/Evaluate in Production
 ## 11. Exam Preparation Tips
 
 ### About the Exam
-- **Duration**: 170 minutes (~3 hours)
+- **Duration**: 180 minutes
 - **Questions**: 75
 - **Question Types**:
   - Multiple choice (1 correct from 4)
@@ -1195,7 +1180,7 @@ Data prep → Train/Evaluate Model → Deploy/Evaluate in Production
   - **Ordering**: 3-5 responses in correct order (NEW; no partial credit)
   - **Matching**: Match responses to 3-7 prompts (NEW; no partial credit)
   - Case study type has been dropped
-- **Cost**: ~$300 ($150 for beta)
+- **Cost**: ~$300
 
 ### Strategies
 - Pace: **2–2.5 minutes per question**; flag and return if taking longer
