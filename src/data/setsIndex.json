@@ -1,0 +1,135 @@
+[
+  {
+    "id": "aws-ai-scraped-practitioner-test-1",
+    "collection": "AWS AI Practitioner",
+    "title": "Scraped Practitioner Test 1",
+    "questionCount": 65,
+    "file": "scraped-aws-ai-practitioner-test-1.json"
+  },
+  {
+    "id": "aws-ai-scraped-practitioner-test-2",
+    "collection": "AWS AI Practitioner",
+    "title": "Scraped Practitioner Test 2",
+    "questionCount": 65,
+    "file": "scraped-aws-ai-practitioner-test-2.json"
+  },
+  {
+    "id": "aws-ai-scraped-practitioner-test-3",
+    "collection": "AWS AI Practitioner",
+    "title": "Scraped Practitioner Test 3",
+    "questionCount": 65,
+    "file": "scraped-aws-ai-practitioner-test-3.json"
+  },
+  {
+    "id": "aws-ai-scraped-practitioner-test-4",
+    "collection": "AWS AI Practitioner",
+    "title": "Scraped Practitioner Test 4",
+    "questionCount": 65,
+    "file": "scraped-aws-ai-practitioner-test-4.json"
+  },
+  {
+    "id": "aws-ai-set-1",
+    "collection": "AWS AI Practitioner",
+    "title": "Study Note Practice Test 1",
+    "questionCount": 10,
+    "file": "study-note-aws-ai-practioner-test-1.json"
+  },
+  {
+    "id": "aws-ai-set-2",
+    "collection": "AWS AI Practitioner",
+    "title": "Study Note Practice Test 2",
+    "questionCount": 10,
+    "file": "study-note-aws-ai-practioner-test-2.json"
+  },
+  {
+    "id": "aws-ai-set-3",
+    "collection": "AWS AI Practitioner",
+    "title": "Study Note Practice Test 3",
+    "questionCount": 10,
+    "file": "study-note-aws-ai-practioner-test-3.json"
+  },
+  {
+    "id": "aws-ai-set-4",
+    "collection": "AWS AI Practitioner",
+    "title": "Study Note Practice Test 4",
+    "questionCount": 10,
+    "file": "study-note-aws-ai-practioner-test-4.json"
+  },
+  {
+    "id": "aws-ai-set-5",
+    "collection": "AWS AI Practitioner",
+    "title": "Study Note Practice Test 5",
+    "questionCount": 10,
+    "file": "study-note-aws-ai-practioner-test-5.json"
+  },
+  {
+    "id": "aws-ai-set-6",
+    "collection": "AWS AI Practitioner",
+    "title": "Study Note Practice Test 6",
+    "questionCount": 10,
+    "file": "study-note-aws-ai-practioner-test-6.json"
+  },
+  {
+    "id": "aws-ai-set-7",
+    "collection": "AWS AI Practitioner",
+    "title": "Study Note Practice Test 7",
+    "questionCount": 10,
+    "file": "study-note-aws-ai-practioner-test-7.json"
+  },
+  {
+    "id": "aws-ai-set-8",
+    "collection": "AWS AI Practitioner",
+    "title": "Study Note Practice Test 8",
+    "questionCount": 10,
+    "file": "study-note-aws-ai-practioner-test-8.json"
+  },
+  {
+    "id": "aws-ai-set-9",
+    "collection": "AWS AI Practitioner",
+    "title": "Study Note Practice Test 9",
+    "questionCount": 10,
+    "file": "study-note-aws-ai-practioner-test-9.json"
+  },
+  {
+    "id": "aws-ai-set-10",
+    "collection": "AWS AI Practitioner",
+    "title": "Study Note Practice Test 10",
+    "questionCount": 10,
+    "file": "study-note-aws-ai-practioner-test-10.json"
+  },
+  {
+    "id": "aws-ai-set-11",
+    "collection": "AWS AI Practitioner",
+    "title": "Study Note Practice Test 11",
+    "questionCount": 10,
+    "file": "study-note-aws-ai-practioner-test-11.json"
+  },
+  {
+    "id": "aws-ai-set-12",
+    "collection": "AWS AI Practitioner",
+    "title": "Study Note Practice Test 12",
+    "questionCount": 10,
+    "file": "study-note-aws-ai-practioner-test-12.json"
+  },
+  {
+    "id": "aws-ai-set-13",
+    "collection": "AWS AI Practitioner",
+    "title": "Study Note Practice Test 13",
+    "questionCount": 10,
+    "file": "study-note-aws-ai-practioner-test-13.json"
+  },
+  {
+    "id": "aws-ai-set-14",
+    "collection": "AWS AI Practitioner",
+    "title": "Study Note Practice Test 14",
+    "questionCount": 10,
+    "file": "study-note-aws-ai-practioner-test-14.json"
+  },
+  {
+    "id": "aws-ai-set-15",
+    "collection": "AWS AI Practitioner",
+    "title": "Study Note Practice Test 15",
+    "questionCount": 10,
+    "file": "study-note-aws-ai-practioner-test-15.json"
+  }
+]

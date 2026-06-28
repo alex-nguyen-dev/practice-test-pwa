@@ -11,7 +11,7 @@ npm run dev
 
 ## Add Practice Content
 
-Each practice set is one JSON file in `src/data/sets`. Adding a new file there is enough for the app to load it automatically through Vite's `import.meta.glob`.
+Each practice set is one JSON file in `src/data/sets`.
 
 ```json
 {
@@ -32,6 +32,16 @@ Each practice set is one JSON file in `src/data/sets`. Adding a new file there i
 ```
 
 Sets with the same `collection` value are grouped into one collection card on the home screen.
+
+The home and collection screens use `src/data/setsIndex.json`, a lightweight generated index that contains set metadata only. Full question files are lazy-loaded only when a user opens a specific practice set.
+
+After adding or editing a file in `src/data/sets`, update the index:
+
+```bash
+npm run generate:sets-index
+```
+
+This also runs automatically before `npm run dev` and `npm run build`. On Vercel, the default `npm run build` step runs `prebuild`, so the index is regenerated during deployment as long as the new JSON file is committed.
 
 ## Single vs Multi-Answer
 

@@ -2,7 +2,7 @@ import { matchPath, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { ArrowLeft, BookOpen, Home, Info, Menu, Moon, Sun } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { GlassButton } from './components/GlassButton.jsx';
-import { getCollection, getSet } from './data/practiceSets.js';
+import { getCollection, getSetSummary } from './data/practiceSets.js';
 import { getNote } from './data/notesList.js';
 
 const storedTheme = () => {
@@ -16,7 +16,7 @@ const headerTitle = (pathname) => {
   const noteMatch = matchPath('/notes/:noteId', pathname);
   if (noteMatch) return getNote(noteMatch.params.noteId)?.title ?? 'Notes';
   const setMatch = matchPath('/sets/:setId', pathname);
-  if (setMatch) return getSet(setMatch.params.setId)?.title ?? 'Juku';
+  if (setMatch) return getSetSummary(setMatch.params.setId)?.title ?? 'Juku';
   const collectionMatch = matchPath('/collections/:collectionSlug', pathname);
   if (collectionMatch) return getCollection(collectionMatch.params.collectionSlug)?.title ?? 'Juku';
   return 'Practice Tests';

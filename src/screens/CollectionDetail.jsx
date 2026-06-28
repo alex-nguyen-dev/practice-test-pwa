@@ -26,7 +26,7 @@ export default function CollectionDetail() {
               <div className="min-w-0 flex-1">
                 <h2 className="truncate text-base font-bold text-slate-950 dark:text-white sm:text-xl">{set.title}</h2>
                 <p className="mt-1 text-sm font-medium text-slate-600 dark:text-slate-300">
-                  {set.questions.length} questions
+                  {set.questionCount} questions
                 </p>
               </div>
               <ArrowRight className="h-6 w-6 shrink-0 text-slate-500 dark:text-slate-300" />

@@ -1,4 +1,6 @@
-const modules = import.meta.glob('./sets/*.json', { eager: true });
+import setsIndex from './setsIndex.json';
+
+const modules = import.meta.glob('./sets/*.json');
 
 const slugify = (value) =>
   value
@@ -6,8 +8,7 @@ const slugify = (value) =>
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/(^-|-$)/g, '');
 
-export const practiceSets = Object.values(modules)
-  .map((module) => module.default)
+export const practiceSets = [...setsIndex]
   .sort((a, b) => a.title.localeCompare(b.title, undefined, { numeric: true }));
 
 export const collections = Object.values(
@@ -27,7 +28,18 @@ export const collections = Object.values(
 
 export const getCollection = (slug) => collections.find((collection) => collection.id === slug);
 
-export const getSet = (setId) => practiceSets.find((set) => set.id === setId);
+export const getSetSummary = (setId) => practiceSets.find((set) => set.id === setId);
+
+export const loadSet = async (setId) => {
+  const summary = getSetSummary(setId);
+  if (!summary) return null;
+
+  const load = modules[`./sets/${summary.file}`];
+  if (!load) return null;
+
+  const module = await load();
+  return module.default;
+};
 
 export const getQuestionKind = (question) => {
   const correctCount = question.choices.filter((choice) => choice.correct).length;

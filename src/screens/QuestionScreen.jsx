@@ -1,21 +1,57 @@
 import { Navigate, useParams } from 'react-router-dom';
 import { Info, RotateCcw } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ChoiceRow from '../components/ChoiceRow.jsx';
 import ExplanationSheet from '../components/ExplanationSheet.jsx';
 import { GlassButton } from '../components/GlassButton.jsx';
 import { GlassCard } from '../components/GlassCard.jsx';
-import { getQuestionKind, getSet } from '../data/practiceSets.js';
+import { getQuestionKind, loadSet } from '../data/practiceSets.js';
 
 const sameSet = (a, b) => a.length === b.length && a.every((value) => b.includes(value));
 
 export default function QuestionScreen() {
   const { setId } = useParams();
-  const set = getSet(setId);
+  const [set, setSet] = useState(null);
+  const [loadState, setLoadState] = useState('loading');
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [selected, setSelected] = useState([]);
   const [sheetOpen, setSheetOpen] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+
+    setLoadState('loading');
+    setSet(null);
+    setIndex(0);
+    setAnswers({});
+    setSelected([]);
+    setSheetOpen(false);
+
+    loadSet(setId)
+      .then((loadedSet) => {
+        if (!active) return;
+        setSet(loadedSet);
+        setLoadState(loadedSet ? 'ready' : 'missing');
+      })
+      .catch(() => {
+        if (active) setLoadState('missing');
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [setId]);
+
+  if (loadState === 'loading') {
+    return (
+      <section className="space-y-4 sm:space-y-5">
+        <GlassCard className="p-6 text-center">
+          <p className="text-base font-semibold text-slate-700 dark:text-slate-200">Loading practice set...</p>
+        </GlassCard>
+      </section>
+    );
+  }
 
   if (!set) return <Navigate to="/" replace />;
 

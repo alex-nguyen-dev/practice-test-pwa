@@ -4,7 +4,10 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "generate:sets-index": "node scripts/generate-practice-set-index.mjs",
+    "predev": "npm run generate:sets-index",
     "dev": "vite --host 0.0.0.0",
+    "prebuild": "npm run generate:sets-index",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0"
   },

@@ -7,7 +7,7 @@ Each rule below maps to a real mistake made in that session.
 
 ## File format (must match exactly)
 
-The app auto-loads every `*.json` in `src/data/sets/` via `practiceSets.js`. Keep this shape:
+The app lazy-loads set JSON from `src/data/sets/` via `practiceSets.js`. Keep this shape:
 
 ```json
 {
@@ -33,6 +33,8 @@ Rules:
 - `title` is what's shown for the set and is sorted naturally (`Practice Set 2` before `Practice Set 10`), so keep a consistent, numbered naming scheme within a collection.
 - A question is **multi-answer** when more than one choice has `correct: true` (the app derives this; do not add a flag). Mark these stems with `(Select all that apply.)`.
 - **Every** choice — right or wrong — needs its own `explanation`. The explanation carries the teaching value, so it can be detailed even when the option text is short.
+
+After adding or changing set files, run `npm run generate:sets-index` so the home and collection screens can show the updated set metadata without loading every question file.
 
 ---
 
