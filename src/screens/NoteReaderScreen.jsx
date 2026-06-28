@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { TableOfContents, X } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GlassButton } from '../components/GlassButton.jsx';
 import { getNote } from '../data/notesList.js';
 
@@ -65,7 +65,7 @@ function ContentsSheet({ open, headings, onClose, onSelect }) {
   if (!open) return null;
 
   return createPortal(
-    <div className="fixed inset-0 z-50 flex items-start justify-center bg-slate-950/40 backdrop-blur-sm dark:bg-slate-950/70 sm:items-center sm:p-3">
+    <div className="fixed inset-0 z-50 flex touch-none items-start justify-center bg-slate-950/40 backdrop-blur-sm dark:bg-slate-950/70 sm:items-center sm:p-3">
       <section className="flex h-[100dvh] w-full max-w-2xl flex-col overflow-hidden border border-white/35 bg-white/80 shadow-glass backdrop-blur-2xl dark:border-white/15 dark:bg-slate-900/90 sm:h-auto sm:max-h-[86vh] sm:rounded-3xl">
         <div className="flex shrink-0 items-center justify-between gap-3 border-b border-white/30 p-3.5 pt-[max(env(safe-area-inset-top),0.875rem)] dark:border-white/10 sm:p-4 sm:pt-4">
           <div>
@@ -74,7 +74,7 @@ function ContentsSheet({ open, headings, onClose, onSelect }) {
           </div>
           <GlassButton icon={X} label="Close contents" onClick={onClose} />
         </div>
-        <nav className="min-h-0 flex-1 overflow-y-auto px-3.5 py-2 pb-[max(env(safe-area-inset-bottom),0.875rem)] sm:max-h-[68vh] sm:flex-none sm:px-4 sm:pb-4">
+        <nav className="min-h-0 flex-1 touch-pan-y overflow-y-auto overscroll-contain px-3.5 py-2 pb-[max(env(safe-area-inset-bottom),0.875rem)] sm:max-h-[68vh] sm:flex-none sm:px-4 sm:pb-4">
           <div className="divide-y divide-slate-200/70 dark:divide-white/10">
             {headings.map((heading) => (
               <a
@@ -100,6 +100,20 @@ export default function NoteReaderScreen() {
   const { noteId } = useParams();
   const note = getNote(noteId);
   const [contentsOpen, setContentsOpen] = useState(false);
+
+  useEffect(() => {
+    if (!contentsOpen) return undefined;
+
+    const originalOverflow = document.body.style.overflow;
+    const originalTouchAction = document.body.style.touchAction;
+    document.body.style.overflow = 'hidden';
+    document.body.style.touchAction = 'none';
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      document.body.style.touchAction = originalTouchAction;
+    };
+  }, [contentsOpen]);
 
   if (!note) {
     return <p className="px-1 text-slate-500 dark:text-slate-400">Note not found.</p>;
