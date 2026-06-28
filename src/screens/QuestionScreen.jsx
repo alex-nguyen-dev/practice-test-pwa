@@ -45,10 +45,43 @@ export default function QuestionScreen() {
 
   if (loadState === 'loading') {
     return (
-      <section className="space-y-4 sm:space-y-5">
-        <GlassCard className="p-6 text-center">
-          <p className="text-base font-semibold text-slate-700 dark:text-slate-200">Loading practice set...</p>
+      <section className="space-y-4 sm:space-y-5" aria-busy="true" aria-live="polite">
+        <GlassCard className="overflow-hidden p-4 sm:p-5">
+          <div className="mb-5 flex items-center justify-between gap-4">
+            <div className="min-w-0 flex-1 space-y-2">
+              <div className="h-4 w-44 animate-pulse rounded-full bg-slate-300/70 dark:bg-white/15" />
+              <div className="h-3 w-20 animate-pulse rounded-full bg-slate-300/60 dark:bg-white/10" />
+            </div>
+            <div className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-white/50 shadow-inner dark:bg-white/10">
+              <div className="h-5 w-5 animate-spin rounded-full border-2 border-slate-300 border-t-sky-500 dark:border-white/20 dark:border-t-sky-300" />
+            </div>
+          </div>
+
+          <div className="mb-6 h-2 overflow-hidden rounded-full bg-white/50 dark:bg-white/10">
+            <div className="h-full w-1/3 animate-pulse rounded-full bg-sky-400/70" />
+          </div>
+
+          <div className="space-y-3">
+            <div className="h-5 w-full animate-pulse rounded-full bg-slate-300/70 dark:bg-white/15" />
+            <div className="h-5 w-11/12 animate-pulse rounded-full bg-slate-300/60 dark:bg-white/10" />
+            <div className="h-5 w-2/3 animate-pulse rounded-full bg-slate-300/60 dark:bg-white/10" />
+          </div>
         </GlassCard>
+
+        <div className="grid gap-3">
+          {[0, 1, 2, 3].map((item) => (
+            <GlassCard key={item} className="p-4">
+              <div className="flex items-center gap-3">
+                <div className="h-6 w-6 shrink-0 animate-pulse rounded-full bg-slate-300/70 dark:bg-white/15" />
+                <div className="min-w-0 flex-1 space-y-2">
+                  <div className="h-4 w-full animate-pulse rounded-full bg-slate-300/70 dark:bg-white/15" />
+                  <div className="h-4 w-3/4 animate-pulse rounded-full bg-slate-300/60 dark:bg-white/10" />
+                </div>
+              </div>
+            </GlassCard>
+          ))}
+        </div>
+
       </section>
     );
   }
