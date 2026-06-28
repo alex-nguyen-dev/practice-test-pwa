@@ -1,5 +1,12 @@
 [
   {
+    "id": "aws-gen-ai-dev-scraped-test-1",
+    "collection": "AWS Generative AI Developer",
+    "title": "Scraped Gen AI Developer Test 1",
+    "questionCount": 25,
+    "file": "aws-gen-ai-dev-scraped-test-1.json"
+  },
+  {
     "id": "aws-ai-scraped-practitioner-test-1",
     "collection": "AWS AI Practitioner",
     "title": "Scraped Practitioner Test 1",

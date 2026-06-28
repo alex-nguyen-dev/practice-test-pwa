@@ -1,0 +1,787 @@
+{
+  "id": "aws-gen-ai-dev-scraped-test-1",
+  "collection": "AWS Generative AI Developer",
+  "title": "Scraped Gen AI Developer Test 1",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "An insurance company is building a GenAI workflow that processes claims descriptions in multiple languages and varying complexity and uses different specialized models for triage, summarization, and risk classification. The company wants to select the appropriate model based on language, token length, and content category and also evolve routing rules over time using performance metrics such as latency, cost, and human quality scores stored in an operational metrics store. You are responsible for designing an orchestration workflow that can apply content based routing, use metric driven rules for model selection, and support confidence based cascading between models. Which two approaches should you implement to design this intelligent routing workflow so that it can adapt to content characteristics and observed model performance? (Select two)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Use Step Functions Map or Parallel states to branch decisions and insert a metrics evaluation Lambda task that reads historical performance data to compute confidence scores before selecting the model. Implement a cascading workflow that invokes a primary model first and conditionally calls a backup model when confidence or quality thresholds from the metrics store are not met",
+          "correct": true,
+          "explanation": "This supports content-aware routing, runtime use of operational metrics, and confidence-based fallback between model choices."
+        },
+        {
+          "id": "b",
+          "text": "Use Step Functions with a Lambda pre processing task to compute language, token length, and content attributes and pass them to Choice states for routing to the triage, summarization, or risk classification model. Store performance metrics in DynamoDB and have a Lambda task read these metrics at runtime to adjust routing thresholds dynamically",
+          "correct": true,
+          "explanation": "This supports content-aware routing, runtime use of operational metrics, and confidence-based fallback between model choices."
+        },
+        {
+          "id": "c",
+          "text": "Implement a single Lambda function with hardcoded if else rules to select models based on language and token length and store metrics only as CloudWatch Logs. Rely on manual review of CloudWatch dashboards to determine when to update or redeploy routing rules",
+          "correct": false,
+          "explanation": "This does not fully combine content-based routing, metric-driven model selection, and adaptive cascading in the workflow."
+        },
+        {
+          "id": "d",
+          "text": "Use Step Functions with a Lambda pre processing task that computes language and token length, then call a metrics evaluation Lambda function to read latency and quality data from DynamoDB before routing to a Bedrock model. Apply Choice states only after the model inference step so the workflow can examine the generated output and decide whether to invoke a backup model",
+          "correct": false,
+          "explanation": "This does not fully combine content-based routing, metric-driven model selection, and adaptive cascading in the workflow."
+        },
+        {
+          "id": "e",
+          "text": "Use Step Functions Choice states with routing rules fixed by values stored in Parameter Store and update thresholds manually through configuration changes. Write latency and quality metrics to DynamoDB but use them only for offline dashboards rather than feeding them into the real time routing logic",
+          "correct": false,
+          "explanation": "This does not fully combine content-based routing, metric-driven model selection, and adaptive cascading in the workflow."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "question": "A product team is building a generative AI powered application that serves multiple business units with different cost, latency, and quality requirements. The application must support using different foundation models and even switching between providers as business priorities evolve. Product managers want to experiment with new models, gradually expose them to a subset of users, and quickly roll back if output quality or latency degrades, all while keeping the core application logic stable. Engineering leadership has also emphasized that operational changes should not require frequent redeployments, since the system runs across multiple environments and regions. They want configuration changes to be centrally managed, safely rolled out, and observable, so that teams can respond quickly to performance, cost, or compliance signals without introducing unnecessary risk. Which approach represents the BEST way to design the architecture to enable dynamic model selection and provider switching without requiring code modifications?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Configure Amazon API Gateway with static stage variables that define the model and provider to invoke. Manually update the stage variables during a release window to switch models for all users at once. Rely on API Gateway caching to minimize latency during changes",
+          "correct": false,
+          "explanation": "This either requires redeployment, switches too broadly, or does not provide managed staged rollout and rollback for routing changes."
+        },
+        {
+          "id": "b",
+          "text": "Implement an abstraction layer in AWS Lambda that reads model selection rules from AWS AppConfig. Configure provider endpoints by leveraging the Lambda function code. Update AppConfig to toggle feature flags while keeping provider specific logic fixed in code. Redeploy the function when switching providers to ensure consistency",
+          "correct": false,
+          "explanation": "This either requires redeployment, switches too broadly, or does not provide managed staged rollout and rollback for routing changes."
+        },
+        {
+          "id": "c",
+          "text": "Use Amazon API Gateway to route all inference requests to an AWS Lambda function that reads model and provider selection from AWS AppConfig at runtime. Update routing rules and configuration values in AppConfig to change models or providers without redeploying code. Control rollout and rollback by using AppConfig deployment strategies and validators",
+          "correct": true,
+          "explanation": "AppConfig externalizes model and provider routing, supports validators and staged deployments, and avoids code redeployments."
+        },
+        {
+          "id": "d",
+          "text": "Store the selected model and provider as environment variables in AWS Lambda and update them whenever a switch is required. Redeploy the Lambda function to propagate the new configuration to all environments. Use Lambda versions and aliases to manage traffic shifting between configurations",
+          "correct": false,
+          "explanation": "This either requires redeployment, switches too broadly, or does not provide managed staged rollout and rollback for routing changes."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "question": "A generative AI platform exposes a public endpoint that accepts free-form user prompts and forwards them to a foundation model. During load testing, engineers observe that some requests fail unpredictably when users submit very long prompts or request verbose outputs. These failures cause retries at the client layer and increase overall latency. The development team wants to introduce controls so that requests exceeding safe limits are handled consistently before reaching the model. The solution must protect downstream services, provide predictable behavior for clients, and avoid embedding complex logic into application code. What do you recommend as the MOST operationally efficient solution for this workload?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Use Amazon API Gateway to enforce payload size limits and additionally implement custom token counting logic in Lambda to dynamically rewrite prompts and outputs, truncate content when limits are exceeded, and retry requests automatically until they succeed, while logging all adjustments for audit purposes.",
+          "correct": false,
+          "explanation": "This lets invalid requests reach downstream code or relies on retries and truncation instead of predictable pre-invocation controls."
+        },
+        {
+          "id": "b",
+          "text": "Use AWS Lambda to calculate token usage for every request after it passes through the API layer. Truncate inputs and outputs dynamically based on remaining context window size. Allow the API to accept all requests without validation to maximize flexibility",
+          "correct": false,
+          "explanation": "This lets invalid requests reach downstream code or relies on retries and truncation instead of predictable pre-invocation controls."
+        },
+        {
+          "id": "c",
+          "text": "Use Amazon API Gateway to forward all requests to the backend and rely on the foundation model to return token limit errors. Capture those errors in AWS Lambda and retry the request with reduced parameters. Return the retried response to the client",
+          "correct": false,
+          "explanation": "This lets invalid requests reach downstream code or relies on retries and truncation instead of predictable pre-invocation controls."
+        },
+        {
+          "id": "d",
+          "text": "Use Amazon API Gateway request validation and mapping templates to enforce maximum input size and estimated token limits before invoking the backend. Reject requests that exceed configured thresholds with clear error responses. Forward only validated requests to the model invocation layer",
+          "correct": true,
+          "explanation": "API Gateway validation and mapping templates can reject oversized or unsafe requests before the model layer is invoked."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "question": "A travel planning assistant allows users to ask multi part questions such as \"Find me family friendly beach destinations near a warm city in April, then suggest three hotels with kids' clubs and create a day by day itinerary.\" The current implementation sends the raw user query directly into the retrieval layer, which leads to noisy results and incomplete constraint matching. Product management wants the system to better interpret user intent, break complex questions into smaller retrieval steps, and reformulate queries so that more relevant documents are retrieved before generating a final response. How should you structure the query handling and transformation pipeline in this scenario?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Call the foundation model first to generate a preliminary itinerary, extract keywords from that output with Lambda, and run a second retrieval step using those extracted keywords. Then use the reranked results to refine the FM response",
+          "correct": false,
+          "explanation": "This does not adequately decompose the complex request into targeted retrieval steps before final generation."
+        },
+        {
+          "id": "b",
+          "text": "Store every query and response pair from past users in DynamoDB and use a similarity search over past queries to retrieve the closest match. Then use the matched result as a template for constructing a new answer without performing layered query processing.",
+          "correct": false,
+          "explanation": "This does not adequately decompose the complex request into targeted retrieval steps before final generation."
+        },
+        {
+          "id": "c",
+          "text": "Use a Lambda function to rewrite the user query with an Amazon Bedrock model and then pass the rewritten query directly to OpenSearch Serverless for a single vector similarity call. Then route the top K results to the foundation model without performing any additional decomposition",
+          "correct": false,
+          "explanation": "This does not adequately decompose the complex request into targeted retrieval steps before final generation."
+        },
+        {
+          "id": "d",
+          "text": "Implement a multi stage query processing pipeline with AWS Lambda and Step Functions that breaks the user query into intent specific subqueries, performs query expansion using an Amazon Bedrock model, and issues targeted searches through the vector store. Then aggregate the retrieved context and pass the structured results to the foundation model for final synthesis",
+          "correct": true,
+          "explanation": "A multi-stage pipeline can decompose intent, expand queries, run targeted retrieval, and synthesize from structured context."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "question": "A digital assistant answers user questions across multiple business functions, including customer support, product usage, and general knowledge. During internal reviews, teams observe that some user inputs contain aggressive or explicit phrasing that varies in severity, while other inputs request guidance in domains, such as investment advice, that the company has decided the assistant should never address, even when the request is phrased in a neutral or professional manner. The platform team wants to enforce consistent safeguards at inference time. The solution must handle both types of inputs predictably, support centralized policy updates, and apply controls automatically during model invocation. Which design choices should be combined to provide the MOST appropriate solution? (Select two)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Use Amazon Bedrock Guardrails content filters for language analysis and add a custom Lambda based topic classification layer that evaluates intent using predefined domain taxonomies, synchronizes rule updates across environments, and coordinates enforcement decisions through Step Functions prior to invoking the model",
+          "correct": false,
+          "explanation": "This overcomplicates or misuses safeguards instead of combining content filters with denied topics in Bedrock Guardrails."
+        },
+        {
+          "id": "b",
+          "text": "Use Amazon Bedrock Guardrails content filters to evaluate prompts and responses for unsafe language patterns such as harassment, sexual references, or violent expressions. Configure category specific thresholds to determine when responses should be filtered, masked, or refused. Apply these checks during inference to enforce consistent behavior",
+          "correct": true,
+          "explanation": "This uses the appropriate Bedrock Guardrails control for either unsafe language categories or business-denied topics at inference time."
+        },
+        {
+          "id": "c",
+          "text": "Use Amazon Bedrock Guardrails denied topics to define subject areas the assistant must not address under any circumstances. Detect requests related to those domains regardless of tone or wording. Return deterministic refusal responses when such requests are identified",
+          "correct": true,
+          "explanation": "This uses the appropriate Bedrock Guardrails control for either unsafe language categories or business-denied topics at inference time."
+        },
+        {
+          "id": "d",
+          "text": "Use Amazon Bedrock Guardrails with the strictest content filter settings across all categories and treat requests related to restricted domains as high severity language violations. Tune thresholds over time based on observed user behavior and false positives. Leverage filter severity to suppress all undesired responses",
+          "correct": false,
+          "explanation": "This overcomplicates or misuses safeguards instead of combining content filters with denied topics in Bedrock Guardrails."
+        },
+        {
+          "id": "e",
+          "text": "Use AWS Step Functions and AWS Lambda to orchestrate a multi stage validation pipeline that classifies prompts by sentiment and topic intent, applies business logic rules, invokes guardrails conditionally, and routes decisions through approval states before model execution",
+          "correct": false,
+          "explanation": "This overcomplicates or misuses safeguards instead of combining content filters with denied topics in Bedrock Guardrails."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "question": "A large scale content platform exposes a recommendation API that identifies “related articles” using a vector search workflow backed by Amazon OpenSearch Service. As the article corpus has grown into tens of millions of vectors, the platform has started experiencing rising latencies, especially during marketing events and seasonal surges. Internal debugging shows that certain shards receive disproportionately heavy query traffic, and engineers occasionally observe irrelevant or weakly related articles being returned for semantically rich queries. As a GenAI engineer, how should you troubleshoot and optimize the vector search configuration so that retrieval performance and relevance remain consistent as the system scales? (Select two)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Resize and rebalance OpenSearch shards so that vector data and query load are distributed evenly across the cluster. Use OpenSearch dashboards to monitor hot shards and reindex when necessary to eliminate load concentration",
+          "correct": true,
+          "explanation": "This addresses either hot shard distribution or HNSW tuning, both of which affect vector search latency and relevance at scale."
+        },
+        {
+          "id": "b",
+          "text": "Tune the OpenSearch Hierarchical Navigable Small World (HNSW) index by adjusting efSearch, efConstruction, and M settings to balance recall and latency for large vector workloads. Validate improvements by using OpenSearch Trace Analytics and query level metrics during peak traffic periods",
+          "correct": true,
+          "explanation": "This addresses either hot shard distribution or HNSW tuning, both of which affect vector search latency and relevance at scale."
+        },
+        {
+          "id": "c",
+          "text": "Switch the vector index to Hierarchical Navigable Small World (HNSW) mode but keep the current shard count and default Approximate Nearest Neighbor (ANN) parameters unchanged. Use CloudWatch metrics at the cluster level instead of examining query level latencies or relevance metrics",
+          "correct": false,
+          "explanation": "This does not directly fix shard imbalance and vector-index recall/latency tuning for large OpenSearch workloads."
+        },
+        {
+          "id": "d",
+          "text": "Increase the top K value for all vector queries and pass the larger candidate list to Amazon Bedrock for re ranking. Allow autoscaling to trigger based solely on CPU utilization to handle traffic surges",
+          "correct": false,
+          "explanation": "This does not directly fix shard imbalance and vector-index recall/latency tuning for large OpenSearch workloads."
+        },
+        {
+          "id": "e",
+          "text": "Consolidate the vector index into a single high memory OpenSearch node to reduce cross shard communication. Use S3 snapshots as the primary method for ensuring consistent retrieval behavior",
+          "correct": false,
+          "explanation": "This does not directly fix shard imbalance and vector-index recall/latency tuning for large OpenSearch workloads."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "question": "A company operates a generative AI system that supports specialized internal workflows using domain specific language and formatting. The model performs well on general tasks but produces inconsistent outputs for niche scenarios that require learned patterns rather than simple context injection. The team needs a way to adapt the model’s behavior so that updates can be deployed frequently, rolled back safely, and versioned without retraining the entire model. The solution must minimize compute cost, reduce deployment risk, and allow multiple customized variants to coexist across environments. The team also wants to integrate the customization into an automated deployment pipeline with clear lifecycle management. What is the MOST efficient solution to address these requirements?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Use Amazon SageMaker to apply low-rank adaptation techniques such as LoRA to the base model and store adapter weights as separate artifacts. Register each adapter version in SageMaker Model Registry and deploy them independently through automated pipelines. Roll back by switching adapter versions without redeploying the base model",
+          "correct": true,
+          "explanation": "LoRA-style adapters minimize training cost and allow versioned, independently deployable customization artifacts."
+        },
+        {
+          "id": "b",
+          "text": "Continue pre-training the foundation model on large volumes of unlabeled domain data to internalize specialized language patterns, then fine-tune it further for task specificity, register each iteration in the model registry, and automate promotion across environments with staged pipelines and validation gates",
+          "correct": false,
+          "explanation": "This is more expensive, less targeted, or does not provide lightweight versioned model adaptation."
+        },
+        {
+          "id": "c",
+          "text": "Use retrieval-augmented generation by storing domain data in a vector store and injecting retrieved context into every prompt. Update embeddings regularly and tune retrieval parameters to improve accuracy. Manage changes through prompt updates rather than model deployment workflows",
+          "correct": false,
+          "explanation": "This is more expensive, less targeted, or does not provide lightweight versioned model adaptation."
+        },
+        {
+          "id": "d",
+          "text": "Perform full fine-tuning of the foundation model using domain specific datasets and deploy each new model version as a separate endpoint. Register each trained model in the model registry and replace endpoints during updates. Maintain rollback by redeploying the previous full model version",
+          "correct": false,
+          "explanation": "This is more expensive, less targeted, or does not provide lightweight versioned model adaptation."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "question": "A team is developing a generative AI assistant that produces multi step analytical responses, such as reasoning through policy eligibility, summarizing complex documents, and explaining recommendations to internal reviewers. Early testing shows that while the model answers are generally correct, the reasoning is often shallow, inconsistent, or difficult to follow, especially for complex inputs that require intermediate steps and structured thinking. The team wants to improve response quality without fine tuning the foundation model. They want an approach that systematically improves reasoning clarity, enforces predictable output structure, and allows the team to iteratively refine prompts using feedback and evaluation signals over time. What do you recommend?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Use Amazon Bedrock to fine tune a custom model with curated reasoning datasets and deploy it behind an endpoint. Trigger retraining pipelines using AWS Step Functions whenever output quality degrades. Leverage model retraining to improve reasoning",
+          "correct": false,
+          "explanation": "This relies on retraining, suppresses intermediate reasoning, or focuses only on output validation rather than reasoning quality."
+        },
+        {
+          "id": "b",
+          "text": "Use Amazon Bedrock with few shot examples that demonstrate the final answer format but suppress intermediate reasoning steps. Invoke the model through AWS Lambda and leverage repeated inference calls to improve consistency. Measure success by evaluating final answer accuracy",
+          "correct": false,
+          "explanation": "This relies on retraining, suppresses intermediate reasoning, or focuses only on output validation rather than reasoning quality."
+        },
+        {
+          "id": "c",
+          "text": "Use Amazon Bedrock with a zero shot prompt that asks the model to provide a concise answer only, while enforcing a JSON output schema. Invoke the model from AWS Lambda and validate responses using schema checks in application code. Prioritize model output validation over model reasoning to improve response quality",
+          "correct": false,
+          "explanation": "This relies on retraining, suppresses intermediate reasoning, or focuses only on output validation rather than reasoning quality."
+        },
+        {
+          "id": "d",
+          "text": "Use Amazon Bedrock with zero shot chain of thought prompting by explicitly instructing the model to reason step by step and produce a structured output format. Invoke the model from AWS Lambda and log intermediate responses to Amazon CloudWatch for prompt evaluation and iterative refinement. Use prompt versioning to continuously improve reasoning quality without retraining the model",
+          "correct": true,
+          "explanation": "Structured chain-of-thought prompting and prompt versioning improve reasoning clarity and iteration without fine tuning."
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "question": "A customer facing application provides real time AI generated responses as users type queries into a chat style interface. User research shows that perceived responsiveness matters more than receiving the entire response at once, especially for longer answers. The current implementation waits for the full model output before returning a response, which leads to noticeable delays and a poor user experience during peak usage. The engineering team wants to redesign the interaction pattern to deliver the first tokens as quickly as possible while still supporting scalable, managed APIs. They must choose an approach that minimizes end user latency without over engineering the frontend integration. What is the MOST operationally efficient way to improve responsiveness for time sensitive interactions?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Use Amazon Bedrock InvokeModelWithStreaming to stream tokens as they are generated by the foundation model. Forward the streamed output through Amazon API Gateway REST API response streaming so clients receive partial responses over HTTP immediately. Avoid buffering responses in the backend to minimize time to first token",
+          "correct": true,
+          "explanation": "Streaming Bedrock output through API Gateway avoids backend buffering and improves time to first token over HTTP."
+        },
+        {
+          "id": "b",
+          "text": "Use Amazon Bedrock InvokeModelWithStreaming and push tokens to clients using Amazon API Gateway WebSocket API connections. Maintain persistent bidirectional connections and manage connection state for each client. Close the connection after the full response is generated",
+          "correct": false,
+          "explanation": "This either buffers the full response or adds unnecessary connection management for the stated interaction pattern."
+        },
+        {
+          "id": "c",
+          "text": "Use Amazon Bedrock InvokeModelWithStreaming to stream tokens as they are generated by the foundation model. Forward the streamed output through Amazon API Gateway HTTP API so clients receive partial responses over HTTP immediately. Optimize performance by reducing payload size and using faster HTTP integrations",
+          "correct": false,
+          "explanation": "This either buffers the full response or adds unnecessary connection management for the stated interaction pattern."
+        },
+        {
+          "id": "d",
+          "text": "Use Amazon Bedrock InvokeModel to generate the full response and return it through Amazon API Gateway HTTP API. Optimize performance by reducing payload size and using faster HTTP integrations. Leverage client side loading indicators to manage perceived latency",
+          "correct": false,
+          "explanation": "This either buffers the full response or adds unnecessary connection management for the stated interaction pattern."
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "A global e-commerce company operates a conversational shopping assistant that helps customers discover products, understand return policies, and navigate catalog information across multiple Regions. Traffic analysis shows that customers frequently ask nearly identical questions with small wording variations, yet each request triggers a fresh model invocation, driving up token consumption and increasing operational costs. At the same time, users who are geographically distant from the primary hosting Region experience noticeably higher latency during peak shopping periods, especially during seasonal sales and major promotional events. As the lead GenAI architect, how should you implement a solution so that similar requests reuse prior results and frequent responses are served closer to end users? (Select two)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Create an OpenSearch index that stores plain text versions of prompts and rely on keyword matching to identify potential cache hits. Front the API with CloudFront but set very short TTL values so that responses stay fresh for global users",
+          "correct": false,
+          "explanation": "This relies on exact or keyword matching, caches the wrong data, or does not effectively serve frequent responses near users."
+        },
+        {
+          "id": "b",
+          "text": "Store all user queries in Amazon DynamoDB and rely on exact string matching to determine whether a response can be reused. Enable API Gateway response caching to return previously computed answers only when the same request path is invoked",
+          "correct": false,
+          "explanation": "This relies on exact or keyword matching, caches the wrong data, or does not effectively serve frequent responses near users."
+        },
+        {
+          "id": "c",
+          "text": "Build a semantic cache using Amazon OpenSearch Service to store embeddings of user queries and reuse prior responses when a new query is semantically similar. Place the GenAI API behind Amazon CloudFront so that frequently accessed responses are served from edge locations near end users",
+          "correct": true,
+          "explanation": "This combines semantic reuse of similar prompts with edge-oriented caching to reduce model invocations and user latency."
+        },
+        {
+          "id": "d",
+          "text": "Use Amazon Bedrock embeddings to compute vector representations of incoming questions and cache the resulting responses in Amazon ElastiCache for low latency retrieval. Configure CloudFront regional edge caches to serve popular API results globally, reducing latency across distant geographies",
+          "correct": true,
+          "explanation": "This combines semantic reuse of similar prompts with edge-oriented caching to reduce model invocations and user latency."
+        },
+        {
+          "id": "e",
+          "text": "Build a caching layer in Amazon OpenSearch Service that stores embeddings of entire product descriptions and use keyword boosted vector queries to retrieve potential matches before generating a new answer. Front the GenAI API with Amazon CloudFront so that cached API responses are returned when the same endpoint is accessed again",
+          "correct": false,
+          "explanation": "This relies on exact or keyword matching, caches the wrong data, or does not effectively serve frequent responses near users."
+        }
+      ]
+    },
+    {
+      "id": "q11",
+      "question": "A ride sharing company is developing a Driver Risk Assistant that evaluates structured telemetry data, such as speed readings, acceleration patterns, braking events, and categorical driver ratings, to generate short natural language risk insights. The system should need minimum infrastructure management and must respond in under 400 milliseconds as well as scale to millions of requests per day while ensuring very low inference cost. It must also minimize hallucinations because risk insights feed into regulatory reporting and insurance calculations. The output must follow a strict JSON schema so that downstream safety analytics systems can reliably parse and aggregate the results. Which solution should the architect choose to meet all these requirements?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Deploy a large fine tuned transformer model on Amazon SageMaker GPU instances and scale it with automatic instance count adjustments. Train the model specifically on telemetry data to improve risk reasoning accuracy while maintaining a consistent schema through custom post processing code in the inference container",
+          "correct": false,
+          "explanation": "This adds too much infrastructure and cost for a short, high-volume, low-latency structured-output workload."
+        },
+        {
+          "id": "b",
+          "text": "Use an Amazon Bedrock Knowledge Base to embed telemetry events and perform semantic searches for similar historical driving patterns, then generate a risk summary using a Titan text model. Aggregate retrieved examples and form the final structured JSON output from the model response",
+          "correct": false,
+          "explanation": "A knowledge base and semantic retrieval path adds latency and does not directly enforce strict JSON output for structured telemetry."
+        },
+        {
+          "id": "c",
+          "text": "Use a Claude 3 Sonnet configuration to generate risk insights, and rely on prompt engineering to enforce schema rules. Adjust temperature and top p values to reduce hallucinations and improve consistency across high traffic scenarios",
+          "correct": false,
+          "explanation": "Prompt-only schema control is weaker than a structured-output mechanism and Claude Sonnet is not the lowest-cost fit."
+        },
+        {
+          "id": "d",
+          "text": "Use a Titan Text Lite model configured with JSON mode or function calling so that outputs follow a predefined schema, and integrate response streaming via Amazon Bedrock Converse API to reduce token first latency",
+          "correct": true,
+          "explanation": "Among the choices, this best targets low-cost managed inference with schema-constrained output and faster perceived response latency."
+        }
+      ]
+    },
+    {
+      "id": "q12",
+      "question": "A financial advisory firm is piloting an Amazon Bedrock agent that recommends investment strategies based on a retrieval augmented knowledge base and several downstream APIs. Their internal audit team wants a detailed view of every reasoning step the agent takes, including retrieval calls, tool invocations, decision points, and intermediate conclusions, so that they can trace how any recommendation was derived during post incident reviews. How should you design the tracing and logging architecture so that auditors can reconstruct the full agent reasoning path for any given interaction?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Enable agent tracing in the Amazon Bedrock InvokeAgent API and capture all reasoning steps, retrieval metadata, and tool invocation details in structured CloudWatch Logs. Store trace events in a consistent schema and integrate them with CloudWatch Logs Insights so auditors can replay the full reasoning sequence for any historical recommendation",
+          "correct": true,
+          "explanation": "Bedrock agent tracing exposes retrieval, tool-use, and reasoning trace events that can be logged for audit reconstruction."
+        },
+        {
+          "id": "b",
+          "text": "Use a Lambda based ingestion pipeline to capture model inputs and outputs and store them in CloudWatch Logs without enabling agent tracing. Add CloudWatch alarms to notify auditors when model outputs require review and depend on application logs to infer how the agent reached its conclusions",
+          "correct": false,
+          "explanation": "This captures only partial information or uses the wrong service for reconstructing full agent execution paths."
+        },
+        {
+          "id": "c",
+          "text": "Enable agent tracing in the Amazon Bedrock InvokeAgent API and record the summarized reasoning output into CloudWatch Logs for downstream review. Use CloudWatch dashboards to visualize high level agent activity to understand the full reasoning sequence",
+          "correct": false,
+          "explanation": "This captures only partial information or uses the wrong service for reconstructing full agent execution paths."
+        },
+        {
+          "id": "d",
+          "text": "Configure Amazon Bedrock Guardrails to enforce reasoning visibility and send filtered reasoning summaries to a Lambda function for logging. Use CloudWatch metrics to track when reasoning content exceeds guardrail thresholds and rely on these summaries for audit reconstruction",
+          "correct": false,
+          "explanation": "This captures only partial information or uses the wrong service for reconstructing full agent execution paths."
+        }
+      ]
+    },
+    {
+      "id": "q13",
+      "question": "A platform team manages a generative AI service that runs in multiple environments with different operational requirements. The team frequently adjust which foundation model or provider is used in each environment to test quality, cost, and latency tradeoffs. These changes must be applied safely and consistently across environments while keeping application code unchanged. The team wants environment specific values to load automatically during deployment so that development and production behave differently without branching logic. The team also wants to streamline how configuration changes are promoted, audited, and rolled back using a single delivery workflow. What is the BEST way to meet these requirements?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Use AWS AppConfig with separate applications and environments for each stage, and create independent AWS CodePipeline workflows per environment to deploy configuration changes. Grant environment specific permissions and manually coordinate promotions across pipelines to avoid cross environment impact",
+          "correct": false,
+          "explanation": "This fragments promotion workflows, bakes configuration into artifacts, or requires restarts and weaker rollout controls."
+        },
+        {
+          "id": "b",
+          "text": "Use AWS AppConfig to store model and provider selection as environment specific configuration profiles. Deploy changes through a single AWS CodePipeline that promotes the same artifact across environments while AppConfig resolves values per environment at runtime. Apply validation and deployment strategies to control rollout and rollback without code changes",
+          "correct": true,
+          "explanation": "AppConfig environment-specific profiles and deployment strategies support safe promotion, validation, and rollback without code changes."
+        },
+        {
+          "id": "c",
+          "text": "Create separate AWS CodePipeline pipelines for development and production, each deploying different configuration files baked into the build artifact. Update the pipeline definitions when model or provider changes are required. Keep application logic unchanged and manage configuration divergence through pipeline separation",
+          "correct": false,
+          "explanation": "This fragments promotion workflows, bakes configuration into artifacts, or requires restarts and weaker rollout controls."
+        },
+        {
+          "id": "d",
+          "text": "Store model and provider configuration in AWS Systems Manager Parameter Store and load parameters at application startup. Use a single pipeline to deploy the application and require service restarts to apply configuration updates. Rely on parameter naming conventions to differentiate environments",
+          "correct": false,
+          "explanation": "This fragments promotion workflows, bakes configuration into artifacts, or requires restarts and weaker rollout controls."
+        }
+      ]
+    },
+    {
+      "id": "q14",
+      "question": "A healthcare provider manages a large library of patient education material that is frequently revised based on new clinical guidance, regulatory updates, and quality reviews. Some updates involve minor text edits that should trigger lightweight incremental updates to the vector store, while more urgent corrections must update embeddings immediately to avoid distributing outdated information to patients. Additionally, the provider requires a complete vector index rebuild every quarter to eliminate drift, fragmentation, and outdated embeddings. What maintenance architecture should the team deploy to keep the vector store current? (Select two)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Use an hourly AWS Batch job to reprocess all documents and regenerate embeddings, with manual triggers for urgent updates",
+          "correct": false,
+          "explanation": "This is too coarse, too manual, or does not meet both incremental update and quarterly rebuild requirements."
+        },
+        {
+          "id": "b",
+          "text": "Use Amazon Bedrock Knowledge Bases with a quarterly document sync job for full index rebuild",
+          "correct": false,
+          "explanation": "This is too coarse, too manual, or does not meet both incremental update and quarterly rebuild requirements."
+        },
+        {
+          "id": "c",
+          "text": "Use an EventBridge scheduled rule and an AWS Step Functions workflow to perform quarterly full index rebuilds",
+          "correct": true,
+          "explanation": "This covers either event-driven incremental corrections or scheduled quarterly full rebuilds of the vector index."
+        },
+        {
+          "id": "d",
+          "text": "Use Amazon OpenSearch Service ingestion pipelines for all changes and rely on scheduled cron based reprocessing for full index replacement",
+          "correct": false,
+          "explanation": "This is too coarse, too manual, or does not meet both incremental update and quarterly rebuild requirements."
+        },
+        {
+          "id": "e",
+          "text": "Use Amazon EventBridge rules and AWS Lambda to process incremental updates and real-time corrections",
+          "correct": true,
+          "explanation": "This covers either event-driven incremental corrections or scheduled quarterly full rebuilds of the vector index."
+        }
+      ]
+    },
+    {
+      "id": "q15",
+      "question": "An e-commerce company is building a conversational support assistant that searches across product descriptions, troubleshooting guides, and short FAQ entries to answer customer questions. A pure keyword search approach fails to match semantically similar questions, but a pure vector based semantic search sometimes ranks irrelevant results that share general themes but not specific product attributes or model numbers. Stakeholders want higher precision on the first page of results, especially for detailed troubleshooting queries. As a GenAI developer, you must design an advanced search architecture that balances recall and precision and improves the ranking of results used for FM context augmentation. What is the most effective retrieval and ranking approach to meet these requirements?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Load all troubleshooting documents into Amazon Bedrock Knowledge Bases and rely on default semantic search behavior without applying metadata filters or reranking. Then depend on the FM to synthesize relevance based on the retrieved context",
+          "correct": false,
+          "explanation": "This omits structured filtering, learned reranking, or both, leaving relevance problems for the foundation model to solve."
+        },
+        {
+          "id": "b",
+          "text": "Combine vector similarity search in Amazon OpenSearch Serverless with metadata filtering and structured attributes such as product IDs or device categories, then apply an Amazon Bedrock reranking model to refine the top results. This approach increases precision by integrating semantic scoring, structured filtering, and learned ranking",
+          "correct": true,
+          "explanation": "Hybrid semantic retrieval with metadata filters and Bedrock reranking improves both recall and precision for grounding context."
+        },
+        {
+          "id": "c",
+          "text": "Combine vector similarity search in OpenSearch Serverless with metadata filtering and structured attributes, and leverage the hybrid score that results from this combination for the final ranking. This approach improves the breadth of retrieval while keeping the architecture simple without introducing an additional reranking layer",
+          "correct": false,
+          "explanation": "This omits structured filtering, learned reranking, or both, leaving relevance problems for the foundation model to solve."
+        },
+        {
+          "id": "d",
+          "text": "Use a high dimensional Titan embedding model for all troubleshooting documents and rely entirely on vector similarity search without using structured filters. Then let the FM interpret the returned text even if it includes multiple product categories or different troubleshooting steps",
+          "correct": false,
+          "explanation": "This omits structured filtering, learned reranking, or both, leaving relevance problems for the foundation model to solve."
+        }
+      ]
+    },
+    {
+      "id": "q16",
+      "question": "A large enterprise stores millions of documents that are used to ground responses generated by a foundation model. Users frequently ask time bound and ownership specific questions such as retrieving the most recent policy written by a particular team or documents approved within a specific quarter. The current retrieval approach scans content extensively and struggles to return results quickly as the dataset continues to grow. The engineering team wants to improve search precision and latency by redesigning how documents are described and filtered before being passed to the model. The solution must scale to millions of objects, support fast filtering on attributes like timestamps and authorship. As a GenAI developer, how would you design the MOST efficient metadata framework to meet these requirements?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Store document attributes as Amazon S3 object metadata and object tags, and additionally generate embeddings for each document to support semantic ranking across the dataset. Index both metadata and embeddings in Amazon OpenSearch Service and rerank results before sending them to the model. Maintain periodic re indexing workflows to keep vector representations synchronized with metadata updates",
+          "correct": false,
+          "explanation": "This relies on embedding inference, full-text scans, or a heavier indexing path instead of scalable metadata filtering."
+        },
+        {
+          "id": "b",
+          "text": "Generate vector embeddings for all documents and encode timestamps and authorship into the embedding input. Store embeddings in a vector database and retrieve documents using similarity search only. Use prompt logic to infer metadata relevance instead of explicit filtering",
+          "correct": false,
+          "explanation": "This relies on embedding inference, full-text scans, or a heavier indexing path instead of scalable metadata filtering."
+        },
+        {
+          "id": "c",
+          "text": "Store document attributes inside the document body and rely on full text search to extract timestamps and authorship during retrieval. Use Amazon OpenSearch Service keyword queries to scan document content across the repository. Increase shard count and replica settings to handle scale",
+          "correct": false,
+          "explanation": "This relies on embedding inference, full-text scans, or a heavier indexing path instead of scalable metadata filtering."
+        },
+        {
+          "id": "d",
+          "text": "Store document attributes such as creation date, author, and domain as Amazon S3 object metadata and object tags at upload time. Use S3 Metadata, which introduces live inventory tables that work with familiar SQL based tools, to query these attributes efficiently at scale. Filter matching objects using SQL queries before retrieving content for foundation model context",
+          "correct": true,
+          "explanation": "S3 Metadata live inventory tables expose object metadata and tags for scalable SQL-based filtering before retrieval."
+        }
+      ]
+    },
+    {
+      "id": "q17",
+      "question": "A large enterprise is preparing to deploy an advanced language model that is several hundred gigabytes in size so that all inference happens entirely within its private network boundary. Initial tests show that the model files and tokenizer components take a long time to download and load into GPU memory, causing container startup to fail and preventing the system from becoming ready. The operations team also needs reliable and predictable health checks so that deployments do not roll back during long initialization periods. How would you configure the hosting environment, container behavior, and initialization timeouts to ensure that this very large model can load successfully and serve real time traffic?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Use SageMaker AI real time inference with large GPU instances such as ml.p4d or ml.g5 and configure extended container startup and health check timeouts to allow long model loading periods. Increase model loading quotas and adjust container health checks so that the endpoint becomes ready only after the model is fully downloaded and initialized",
+          "correct": true,
+          "explanation": "Large SageMaker real-time GPU endpoints with extended startup and health-check timeouts allow very large models to initialize reliably."
+        },
+        {
+          "id": "b",
+          "text": "Deploy the model on SageMaker AI multi model endpoints that automatically load models on demand to reduce initialization time. Let the container evict and reload model files dynamically to optimize for throughput and faster startup",
+          "correct": false,
+          "explanation": "This uses the wrong endpoint pattern or leaves startup and health checks too short for very large model initialization."
+        },
+        {
+          "id": "c",
+          "text": "Use SageMaker AI real time inference with large GPU instances such as ml.g5 and keep default container startup and health check timeouts unchanged. Rely on automatic retries during deployment to allow the model to finish loading without adjusting the initialization window",
+          "correct": false,
+          "explanation": "This uses the wrong endpoint pattern or leaves startup and health checks too short for very large model initialization."
+        },
+        {
+          "id": "d",
+          "text": "Use SageMaker AI real time inference with medium sized GPU instances and shorten container startup timeouts so that failed containers restart quickly. Rely on repeated restarts to eventually complete the model load when the infrastructure is under low utilization",
+          "correct": false,
+          "explanation": "This uses the wrong endpoint pattern or leaves startup and health checks too short for very large model initialization."
+        }
+      ]
+    },
+    {
+      "id": "q18",
+      "question": "A public sector agency uses a foundation model to draft citizen communication templates in multiple languages. Policy stakeholders are concerned that tone, content, and examples might differ unfairly across demographic groups, and they want measurable fairness metrics with automatic alerts when bias exceeds agreed thresholds. As the GenAI reliability engineer, how should you implement a solution that continuously evaluates outputs across protected groups and flags regressions?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Create CloudWatch metrics that store aggregated demographic sentiment and tone scores for each output and rely on a single Lambda function to push these values. Use CloudWatch alarms to notify administrators when overall sentiment trends shift",
+          "correct": false,
+          "explanation": "This tracks incomplete proxy signals or depends on manual review instead of continuous fairness metric evaluation."
+        },
+        {
+          "id": "b",
+          "text": "Implement a Step Functions workflow that periodically samples outputs and stores them in CloudWatch Logs for human review. Add a CloudWatch alarm based on log volume changes and depend on manual inspection to identify potential fairness drift",
+          "correct": false,
+          "explanation": "This tracks incomplete proxy signals or depends on manual review instead of continuous fairness metric evaluation."
+        },
+        {
+          "id": "c",
+          "text": "Use Amazon Bedrock Guardrails to block outputs that contain sensitive or demographic specific language and log guardrail violations into CloudWatch metrics. Configure alarms that notify reviewers whenever the number of blocked messages reaches a threshold and use this as an indicator of fairness performance",
+          "correct": false,
+          "explanation": "This tracks incomplete proxy signals or depends on manual review instead of continuous fairness metric evaluation."
+        },
+        {
+          "id": "d",
+          "text": "Define custom fairness metrics in Amazon CloudWatch that track bias indicators across demographic groups and integrate a fairness evaluation Lambda function that computes the metrics for each model output. Configure CloudWatch alarms and dashboards to alert reviewers when fairness thresholds are exceeded and trigger automated workflows for regression analysis",
+          "correct": true,
+          "explanation": "Custom fairness metrics, evaluation code, dashboards, and alarms provide measurable bias monitoring and regression alerts."
+        }
+      ]
+    },
+    {
+      "id": "q19",
+      "question": "A global consumer application relies on a generative AI capability to power real time user interactions. Usage patterns show predictable traffic spikes during morning hours in different regions as users come online across geographies. The application currently depends on a foundation model that is available only in a limited set of regions, and occasional regional disruptions have resulted in failed inference requests during peak hours. The engineering team must design a solution that keeps the application available during regional service disruptions while keeping costs predictable and low. Leadership has explicitly stated that the solution should not rely on overprovisioning or permanently reserving excess capacity. Which approach is the BEST way to ensure continuous operation during regional disruptions under these constraints?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Deploy identical Bedrock models in multiple Regions and configure Amazon Route 53 latency based routing to distribute traffic across all Regions. Scale provisioned throughput equally in each Region to handle peak morning traffic. Use Route 53 health checks to fail traffic over during outages",
+          "correct": false,
+          "explanation": "This adds manual failover or overprovisioning, which conflicts with the requirement for low predictable cost."
+        },
+        {
+          "id": "b",
+          "text": "Configure Amazon Bedrock cross Region inference so inference requests automatically route to another supported Region when the primary Region is unavailable or overloaded. Invoke the model through a regional endpoint and allow Bedrock to handle failover transparently at runtime. Monitor latency and error rates using Amazon CloudWatch to validate resilience during peak traffic windows",
+          "correct": true,
+          "explanation": "Bedrock cross-Region inference lets Bedrock route requests across supported Regions for resilience and burst handling without reserved excess capacity."
+        },
+        {
+          "id": "c",
+          "text": "Use Amazon Bedrock cross Region inference and explicitly configure fixed fallback Regions in application code. Configure routing logic in AWS Lambda to retry inference calls in another Region when the first call fails. Maintain separate configuration for each geography to control routing behavior",
+          "correct": false,
+          "explanation": "This adds manual failover or overprovisioning, which conflicts with the requirement for low predictable cost."
+        },
+        {
+          "id": "d",
+          "text": "Increase provisioned throughput for the existing Bedrock model in the primary Region to absorb peak traffic spikes. Configure Amazon CloudWatch alarms to detect saturation and trigger auto scaling policies. Leverage higher baseline capacity instead of cross Region failover to maintain application availability",
+          "correct": false,
+          "explanation": "This adds manual failover or overprovisioning, which conflicts with the requirement for low predictable cost."
+        }
+      ]
+    },
+    {
+      "id": "q20",
+      "question": "A multimodal image and text analysis pipeline currently calls a single, large foundation model for every request, regardless of whether the user needs a simple label or a detailed explanation, which increases cost and creates bottlenecks during peak load. Internal analysis shows that many requests could be handled by a smaller, cheaper model without affecting accuracy, while only a subset truly requires the advanced reasoning capabilities of the larger model. The platform team suspects they could reduce costs by splitting the workflow into cheaper classification steps and only invoking the more capable model when necessary. As a GenAI engineer, how should you implement a solution to optimize cost while preserving output quality for complex workloads?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Configure an Amazon SageMaker inference pipeline where a first, cheaper model hosted on SageMaker performs image or text classification and confidence scoring, and only call an Amazon Bedrock multimodal model in a later stage when the request requires detailed reasoning or the classifier has low confidence. Use routing logic in the pipeline container to short circuit the workflow and return early for simple label requests so that the multimodal model is invoked only when needed",
+          "correct": true,
+          "explanation": "A staged inference pipeline can return early for simple cases and invoke the expensive multimodal model only when needed."
+        },
+        {
+          "id": "b",
+          "text": "Migrate the large multimodal model to a larger instance type on SageMaker and enable Provisioned Throughput on Amazon Bedrock so that all requests continue to call the same model with lower latency. Rely on the increased capacity to absorb traffic without introducing additional routing or staged inference logic",
+          "correct": false,
+          "explanation": "This continues invoking the large model unnecessarily or solves capacity instead of reducing avoidable inference cost."
+        },
+        {
+          "id": "c",
+          "text": "Precompute simple labels for all images offline using a SageMaker training job and store them in Amazon DynamoDB, but still invoke the large multimodal model online for every incoming request to maintain a consistent experience. Use the stored labels only as metadata in responses rather than as a decision point for bypassing the multimodal model",
+          "correct": false,
+          "explanation": "This continues invoking the large model unnecessarily or solves capacity instead of reducing avoidable inference cost."
+        },
+        {
+          "id": "d",
+          "text": "Set up an Amazon SageMaker inference pipeline where a lightweight classifier runs first and forwards its prediction to the multimodal model so that both models contribute to the final answer. Always invoke the multimodal model to confirm or refine the classifier output to maintain consistent response quality",
+          "correct": false,
+          "explanation": "This continues invoking the large model unnecessarily or solves capacity instead of reducing avoidable inference cost."
+        }
+      ]
+    },
+    {
+      "id": "q21",
+      "question": "A multi-step GenAI workflow processes user input through several prompts and transformations, passing intermediate JSON payloads between stages. Occasionally downstream steps fail because fields are missing, misnamed, or formatted incorrectly, and engineers struggle to trace which upstream prompt or transformation introduced the error. The GenAI development team wants to build observability and schema validation across the prompt pipeline so that format errors are detected early and debugging becomes easier. What do you recommend?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Use AWS X-Ray to trace each stage in the workflow and log every intermediate JSON payload to CloudWatch Logs. Use downstream Lambda functions to handle malformed fields when errors occur. Configure Amazon SNS notifications only when final outputs fail validation",
+          "correct": false,
+          "explanation": "This relies on post-hoc debugging or downstream error handling instead of proactive schema validation at each stage."
+        },
+        {
+          "id": "b",
+          "text": "Add AWS X-Ray tracing for each prompt and transformation, and manually inspect CloudWatch Logs when downstream failures occur. Use runtime error catching in the application to handle malformed JSON rather than pre-validation at each stage",
+          "correct": false,
+          "explanation": "This relies on post-hoc debugging or downstream error handling instead of proactive schema validation at each stage."
+        },
+        {
+          "id": "c",
+          "text": "Instrument the workflow using AWS X-Ray to trace each prompt invocation and data transformation, and integrate JSON schema validation (for example using AWS Lambda or a custom validation layer) before each stage to enforce field names and types. Log validation failures in Amazon CloudWatch Logs and trigger Amazon SNS alerts when schema violations occur",
+          "correct": true,
+          "explanation": "Tracing each stage and validating JSON before stage boundaries catches format issues early and identifies the failing transformation."
+        },
+        {
+          "id": "d",
+          "text": "Skip explicit schema validation and instead log full JSON payloads after each stage to CloudWatch Logs, then leverage post-hoc analysis when errors appear. Use CloudWatch Metrics to track failure counts but do not enforce schema constraints up front",
+          "correct": false,
+          "explanation": "This relies on post-hoc debugging or downstream error handling instead of proactive schema validation at each stage."
+        }
+      ]
+    },
+    {
+      "id": "q22",
+      "question": "A document analysis system processes very large technical reports and feeds selected content into a foundation model to generate summaries and answers. As document size increases, engineers observe that some responses are incomplete or miss critical sections, especially when long inputs are passed through multi step workflows. Logs show that parts of the input are not consistently reaching the model during peak usage. The team wants to redesign how documents are split and passed to the model so that important context is preserved and truncation related loss is minimized. The solution must scale for heavy workloads and work reliably across diverse document structures. As a GenAI developer, which approach would you recommend to address the content handling issue?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Use a hierarchical chunking strategy that divides documents into fixed sections such as chapters, headings, and paragraphs. Aggregate child chunks into parent summaries and pass the top level summaries to the model. Increase chunk depth to reduce the chance of truncation during inference",
+          "correct": false,
+          "explanation": "This depends on fixed chunks, summaries, or truncation strategies that can still drop important context."
+        },
+        {
+          "id": "b",
+          "text": "Use a semantic chunking strategy that splits documents based on meaning and topic boundaries before generating embeddings with Amazon Bedrock. Pass semantically coherent chunks to the model so each request fits within the context window. Preserve relevance by selecting chunks dynamically at query time",
+          "correct": true,
+          "explanation": "Semantic chunking preserves coherent context and retrieves only relevant chunks that fit within the model context window."
+        },
+        {
+          "id": "c",
+          "text": "Use a semantic chunking strategy combined with static token limits per section and precomputed summaries for every chunk. Concatenate all summaries into a single prompt before model invocation and rely on truncation to discard excess tokens when limits are exceeded. Adjust chunk size thresholds periodically based on average document length",
+          "correct": false,
+          "explanation": "This depends on fixed chunks, summaries, or truncation strategies that can still drop important context."
+        },
+        {
+          "id": "d",
+          "text": "Use fixed size token based chunking and rely on prompt compression techniques to reduce overall input length. Truncate lower priority chunks first when token limits are reached. Monitor truncation events using logging services to tune chunk sizes over time",
+          "correct": false,
+          "explanation": "This depends on fixed chunks, summaries, or truncation strategies that can still drop important context."
+        }
+      ]
+    },
+    {
+      "id": "q23",
+      "question": "A generative AI analytics application queries a centralized data lake that contains sensitive business data shared across multiple teams. Different users are allowed to see different values within the same dataset depending on attributes such as geography, role, or business unit. During reviews, the security team finds that coarse access controls expose more data than intended for some users. The platform team wants to enforce fine grained data access so that only authorized values within specific rows and specific columns are visible to each request. The solution must integrate cleanly with existing analytics engines and avoid duplicating datasets or building custom filtering logic in application code. What do you recommend?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Use AWS Lake Formation to define cell-level security policies that restrict access to specific combinations of rows and columns based on user attributes. Grant permissions through Lake Formation so query engines enforce these rules automatically at query time",
+          "correct": true,
+          "explanation": "Lake Formation cell-level security can enforce row-and-column restrictions through supported query engines without duplicating data."
+        },
+        {
+          "id": "b",
+          "text": "Use AWS Lake Formation to apply column-level permissions and combine them with row-level locking semantics to prevent unauthorized access. Configure analytics engines to respect these locks during query execution. Manage exceptions through IAM policies",
+          "correct": false,
+          "explanation": "This is not true cell-level enforcement or depends on custom application query behavior and data layout changes."
+        },
+        {
+          "id": "c",
+          "text": "Store data in Amazon S3 tables and apply IAM policies that restrict access to specific object prefixes representing rows and columns. Enforce access control by reorganizing data layout and controlling S3 permissions. Update application queries to target only allowed prefixes",
+          "correct": false,
+          "explanation": "This is not true cell-level enforcement or depends on custom application query behavior and data layout changes."
+        },
+        {
+          "id": "d",
+          "text": "Use AWS Lake Formation to grant column-level permissions and require application queries to apply WHERE clauses that filter rows dynamically based on user identity. Validate access by reviewing query logs and audit trails. Enforce consistency through development guidelines",
+          "correct": false,
+          "explanation": "This is not true cell-level enforcement or depends on custom application query behavior and data layout changes."
+        }
+      ]
+    },
+    {
+      "id": "q24",
+      "question": "A content platform uses multiple foundation models that differ in cost, quality, and latency and wants to switch models for specific user segments without redeploying code. Product managers need the ability to roll out routing changes gradually, such as enabling a high quality model only for premium users at first and expanding coverage after monitoring performance. You are responsible for designing a routing mechanism that relies on externally managed configuration and supports fast, safe updates controlled outside of application deployments. How should you design the solution using a configuration management service for model selection?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Use AWS Systems Manager Parameter Store to store JSON objects that contain model routing rules and fetch them at runtime, but update these parameters manually without deployment strategies or rollout controls. Rely on the application to immediately adopt any parameter change without guardrails, validation, or monitoring",
+          "correct": false,
+          "explanation": "This stores configuration without managed validation, deployment strategies, or safe rollout controls."
+        },
+        {
+          "id": "b",
+          "text": "Use AWS AppConfig feature flags to store routing rules that map user segments to specific Amazon Bedrock models and retrieve the configuration at runtime inside the application. Implement AppConfig deployment strategies with gradual rollout and CloudWatch alarms so product managers can shift traffic safely without redeploying code",
+          "correct": true,
+          "explanation": "AppConfig feature flags provide runtime model routing with validation, gradual rollout, alarms, and rollback outside deployments."
+        },
+        {
+          "id": "c",
+          "text": "Write routing rules into an Amazon DynamoDB table and update the table directly whenever product managers want to shift traffic between models. Fetch the DynamoDB configuration values on every request and bypass any staged rollout or configuration validation mechanisms",
+          "correct": false,
+          "explanation": "This stores configuration without managed validation, deployment strategies, or safe rollout controls."
+        },
+        {
+          "id": "d",
+          "text": "Embed routing flags in Amazon S3 objects and instruct the application to periodically poll the bucket for changes to determine which model to call. Allow product managers to upload new objects to modify routing behavior without using versioning, deployment guards, or real time monitoring",
+          "correct": false,
+          "explanation": "This stores configuration without managed validation, deployment strategies, or safe rollout controls."
+        }
+      ]
+    },
+    {
+      "id": "q25",
+      "question": "A company operates a generative AI system that produces written recommendations used by different internal teams. During review cycles, stakeholders notice that certain phrasing patterns and contextual cues in the inputs and outputs can unintentionally influence how recommendations are framed. The team wants to introduce systematic controls so that inputs are normalized before inference and outputs are consistently adjusted before being consumed by downstream systems. The team also wants to automate comparisons without embedding complex logic directly into application code. The solution must support controlled experimentation, allow teams to compare different prompt handling strategies, and ensure that any pre processing and post processing steps are applied uniformly across evaluations. What do you recommend?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Use Amazon Bedrock Prompt Flows to orchestrate model calls, but embed all pre processing and post processing logic inside application code before invoking the flow. Use the flow to route requests and capture outputs. Compare results by toggling code paths during tests",
+          "correct": false,
+          "explanation": "This leaves key transformations in application code, manual prompt text, or downstream systems instead of the managed flow."
+        },
+        {
+          "id": "b",
+          "text": "Use Amazon Bedrock Prompt Management to maintain multiple prompt versions, attach metadata for fairness experiments, and leverage downstream systems to interpret and adjust outputs. Coordinate evaluations by switching prompts and correlating results manually across test runs",
+          "correct": false,
+          "explanation": "This leaves key transformations in application code, manual prompt text, or downstream systems instead of the managed flow."
+        },
+        {
+          "id": "c",
+          "text": "Use Amazon Bedrock Prompt Management to version prompts and manually apply input normalization and output rewriting inside the prompt text. Switch prompt versions during testing to compare results across groups. Log outputs externally for later fairness analysis",
+          "correct": false,
+          "explanation": "This leaves key transformations in application code, manual prompt text, or downstream systems instead of the managed flow."
+        },
+        {
+          "id": "d",
+          "text": "Use Amazon Bedrock Prompt Flows to define a multi step workflow that applies standardized pre processing to inputs and post processing to outputs. Run A/B evaluations by comparing different flow variants and capture metrics automatically. Use the flow structure to ensure consistent handling across all evaluations",
+          "correct": true,
+          "explanation": "Prompt Flows can standardize pre-processing and post-processing and compare flow variants under controlled evaluations."
+        }
+      ]
+    }
+  ]
+}
