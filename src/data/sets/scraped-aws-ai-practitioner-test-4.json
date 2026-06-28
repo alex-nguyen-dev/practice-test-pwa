@@ -1,0 +1,1981 @@
+{
+  "id": "aws-ai-scraped-practitioner-test-4",
+  "collection": "AWS AI Practitioner",
+  "title": "Scraped Practitioner Test 4",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "A tech startup is developing a new foundation model (FM) for image classification, aiming to deploy it for use in various applications, from identifying product defects to recognizing objects in photos. The team needs to assess the accuracy of the model to ensure it meets performance requirements before deployment. What is the best way to assess the accuracy of the foundation model for image classification?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Deploy the model in a live production environment and gather user feedback",
+          "correct": false,
+          "explanation": "This approach is not a reliable standardized accuracy assessment before deployment."
+        },
+        {
+          "id": "b",
+          "text": "Manually test the model by running random images through it",
+          "correct": false,
+          "explanation": "This approach is not a reliable standardized accuracy assessment before deployment."
+        },
+        {
+          "id": "c",
+          "text": "Evaluate the model using only a small subset of the training data",
+          "correct": false,
+          "explanation": "This approach is not a reliable standardized accuracy assessment before deployment."
+        },
+        {
+          "id": "d",
+          "text": "Use a benchmark dataset for evaluation",
+          "correct": true,
+          "explanation": "Benchmark datasets provide a standardized, representative way to measure image-classification accuracy before deployment."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "question": "A company needs to extract handwritten words and letters from scanned documents. Which ML-powered AWS service is the right fit for this requirement?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Textract",
+          "correct": true,
+          "explanation": "Amazon Textract extracts printed text, handwriting, and data from scanned documents and images."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Kendra",
+          "correct": false,
+          "explanation": "This service is not the best fit for extracting handwritten text from scanned documents."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Transcribe",
+          "correct": false,
+          "explanation": "This service is not the best fit for extracting handwritten text from scanned documents."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Rekognition",
+          "correct": false,
+          "explanation": "This service is not the best fit for extracting handwritten text from scanned documents."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "question": "An e-learning company is developing a Large Language Model (LLM) chatbot using Amazon Bedrock to enhance the personalized learning experience on its platform. The chatbot needs to dynamically tailor its responses based on the user's age group. By leveraging Amazon Bedrock's foundation models, the company aims to create an adaptive learning tool that delivers relevant, engaging, and age-appropriate support to a diverse user base. As an AI Practitioner, which of the following solutions would you recommend?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Implement dynamic prompt engineering to customize responses based on user characteristics like age",
+          "correct": true,
+          "explanation": "Dynamic prompt engineering can include user attributes such as age group in the prompt so the model adapts tone and content without retraining."
+        },
+        {
+          "id": "b",
+          "text": "Perform model re-training for tailoring responses based on user age",
+          "correct": false,
+          "explanation": "This adds unnecessary customization complexity or targets a different need than dynamic age-aware responses."
+        },
+        {
+          "id": "c",
+          "text": "Leverage Retrieval-Augmented Generation (RAG) to customize responses based on user characteristics like age",
+          "correct": false,
+          "explanation": "This adds unnecessary customization complexity or targets a different need than dynamic age-aware responses."
+        },
+        {
+          "id": "d",
+          "text": "Perform fine-tuning for the model to adjust the style or tone of responses based on user age",
+          "correct": false,
+          "explanation": "This adds unnecessary customization complexity or targets a different need than dynamic age-aware responses."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "question": "A financial services company is developing several machine learning models to handle fraud detection, credit scoring, and customer segmentation. To ensure consistent use of data and foster collaboration among its data scientists, the company needs an efficient way to share and manage the variables used in these models across different teams and projects. The goal is to create a centralized repository where these variables can be accessed and reused to maintain uniformity, reduce redundancy, and improve productivity. Which of the following AWS tools would be the most suitable for achieving this objective?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "SageMaker Feature Store",
+          "correct": true,
+          "explanation": "SageMaker Feature Store is a centralized repository for storing, sharing, and reusing ML features across teams and projects."
+        },
+        {
+          "id": "b",
+          "text": "SageMaker Clarify",
+          "correct": false,
+          "explanation": "This SageMaker tool is for bias analysis, data preparation, or monitoring rather than shared feature management."
+        },
+        {
+          "id": "c",
+          "text": "SageMaker Data Wrangler",
+          "correct": false,
+          "explanation": "This SageMaker tool is for bias analysis, data preparation, or monitoring rather than shared feature management."
+        },
+        {
+          "id": "d",
+          "text": "SageMaker Model Monitor",
+          "correct": false,
+          "explanation": "This SageMaker tool is for bias analysis, data preparation, or monitoring rather than shared feature management."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "question": "A healthcare analytics company is developing a machine learning model to provide patient risk assessments based on incoming medical data. The team needs to deploy the model in a way that supports continuous, low-latency predictions, where each request receives a response immediately, such as during patient check-ins. The team is evaluating deployment options within Amazon SageMaker and needs a solution that offers persistent endpoints to handle these individual prediction requests. What do you recommend?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Real-time hosting services",
+          "correct": true,
+          "explanation": "SageMaker real-time hosting provides persistent endpoints for low-latency, request-response inference."
+        },
+        {
+          "id": "b",
+          "text": "Serverless Inference",
+          "correct": false,
+          "explanation": "This option is less suited to persistent, immediate low-latency request-response predictions."
+        },
+        {
+          "id": "c",
+          "text": "Asynchronous Inference",
+          "correct": false,
+          "explanation": "This option is less suited to persistent, immediate low-latency request-response predictions."
+        },
+        {
+          "id": "d",
+          "text": "Batch transform",
+          "correct": false,
+          "explanation": "This option is less suited to persistent, immediate low-latency request-response predictions."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "question": "A global e-commerce company is utilizing a foundation model through Amazon Bedrock to enhance its customer service chatbot, providing automated support and answering user queries. However, the company is concerned about the potential for the model to generate inappropriate, sensitive, or malicious content that could harm its reputation or negatively impact customer experience. To mitigate these risks, the company seeks to implement safety measures that ensure the model consistently produces safe, relevant, and context-appropriate responses. Given this goal, what would be the most effective approach to control these risks and maintain model safety?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "The company should develop an API that processes all responses from the model and checks for any risks of exposure, which involves creating a custom layer that monitors and filters all model outputs, scanning them for inappropriate or unsafe content before they are delivered to the end-user",
+          "correct": true,
+          "explanation": "A response-filtering layer is the strongest option listed for checking model outputs before users see unsafe or inappropriate content."
+        },
+        {
+          "id": "b",
+          "text": "The company should instruct the model to stick to the prompt by adding explicit instructions to ignore any unrelated or potentially malicious content",
+          "correct": false,
+          "explanation": "This option is weaker, less practical, or does not directly inspect unsafe model outputs before delivery."
+        },
+        {
+          "id": "c",
+          "text": "The company should retrain the underlying foundation model (FM) from scratch to prevent exposure",
+          "correct": false,
+          "explanation": "This option is weaker, less practical, or does not directly inspect unsafe model outputs before delivery."
+        },
+        {
+          "id": "d",
+          "text": "The company should adjust the model hyperparameters to safeguard the output",
+          "correct": false,
+          "explanation": "This option is weaker, less practical, or does not directly inspect unsafe model outputs before delivery."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "question": "A large e-commerce company uses a language model (LLM) to assist its customer service agents by generating responses to customer queries. However, the company is concerned about prompt engineering attacks, where malicious users craft inputs to manipulate the LLM into producing incorrect or harmful responses. What is the best approach to mitigate this issue?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Restrict LLM output to a fixed set of predefined responses",
+          "correct": false,
+          "explanation": "This mitigation is too limited or impractical for prompt-engineering attacks."
+        },
+        {
+          "id": "b",
+          "text": "Monitor the length of the prompts to prevent overly long inputs",
+          "correct": false,
+          "explanation": "This mitigation is too limited or impractical for prompt-engineering attacks."
+        },
+        {
+          "id": "c",
+          "text": "Create a prompt template that teaches the LLM to detect attack patterns",
+          "correct": true,
+          "explanation": "A prompt template with explicit attack-pattern handling can help the model identify and resist prompt-engineering attacks."
+        },
+        {
+          "id": "d",
+          "text": "Disable user-generated inputs and rely solely on internal data for prompts",
+          "correct": false,
+          "explanation": "This mitigation is too limited or impractical for prompt-engineering attacks."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "question": "A media company is developing a machine learning model to categorize its vast library of content. The data science team is trying to decide between using multi-class or multi-label classification based on the complexity of the content categories. Understanding the differences between multi-class and multi-label classification will help the team choose the most appropriate approach for organizing their content effectively. What do you recommend to the company?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Multi-class classification is used exclusively for image data, whereas multi-label classification is used exclusively for text data",
+          "correct": false,
+          "explanation": "This statement reverses or misstates the distinction between multi-class and multi-label classification."
+        },
+        {
+          "id": "b",
+          "text": "Multi-class classification does not require labeled data, whereas multi-label classification requires labeled data for training",
+          "correct": false,
+          "explanation": "This statement reverses or misstates the distinction between multi-class and multi-label classification."
+        },
+        {
+          "id": "c",
+          "text": "Multi-class classification allows each instance to belong to multiple classes simultaneously, whereas multi-label classification restricts each instance to one class only",
+          "correct": false,
+          "explanation": "This statement reverses or misstates the distinction between multi-class and multi-label classification."
+        },
+        {
+          "id": "d",
+          "text": "Multi-class classification assigns each instance to one of several possible classes, while multi-label classification assigns each instance to one or more classes",
+          "correct": true,
+          "explanation": "Multi-class classification assigns one class per item, while multi-label classification can assign one or more labels to the same item."
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "question": "A healthcare analytics company has recently migrated to AWS Cloud and it is preparing to build several Machine Learning (ML) models to predict patient outcomes, optimize treatment plans, and analyze health data trends. The company wants to leverage the capabilities of various tools offered by Amazon SageMaker. Which of the following is a key use case addressed by Amazon SageMaker Data Wrangler?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Store and share the features used for model development",
+          "correct": false,
+          "explanation": "This option maps to another SageMaker service or a production monitoring task, not Data Wrangler's key data-prep role."
+        },
+        {
+          "id": "b",
+          "text": "Fix bias by balancing the dataset",
+          "correct": true,
+          "explanation": "SageMaker Data Wrangler helps prepare, transform, and balance datasets before model training."
+        },
+        {
+          "id": "c",
+          "text": "Build ML models with no code",
+          "correct": false,
+          "explanation": "This option maps to another SageMaker service or a production monitoring task, not Data Wrangler's key data-prep role."
+        },
+        {
+          "id": "d",
+          "text": "Monitor the quality of a model",
+          "correct": false,
+          "explanation": "This option maps to another SageMaker service or a production monitoring task, not Data Wrangler's key data-prep role."
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "Which AWS service is specifically designed for converting medical speech to text, ensuring compliance with healthcare regulations such as HIPAA?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Transcribe",
+          "correct": false,
+          "explanation": "This is not the healthcare-specific medical speech-to-text service."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Polly",
+          "correct": false,
+          "explanation": "This is not the healthcare-specific medical speech-to-text service."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Rekognition",
+          "correct": false,
+          "explanation": "This is not the healthcare-specific medical speech-to-text service."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Transcribe medical",
+          "correct": true,
+          "explanation": "Amazon Transcribe Medical is designed to convert medical speech to text for healthcare use cases."
+        }
+      ]
+    },
+    {
+      "id": "q11",
+      "question": "A retail company is developing a machine learning model to improve its customer segmentation and targeting strategies. The data science team is working with both labeled and unlabeled customer data to train their models but needs to clearly understand the distinction between these two types of data to decide how best to use them. Understanding this difference is critical for selecting the appropriate machine learning techniques, such as supervised or unsupervised learning, for different stages of the project. What is a key difference between labeled data and unlabeled data in the context of machine learning?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Labeled data can only be used for unsupervised learning algorithms, whereas, unlabeled data is exclusively for supervised learning algorithms",
+          "correct": false,
+          "explanation": "This reverses or misstates labeled and unlabeled data."
+        },
+        {
+          "id": "b",
+          "text": "Labeled data is inherently more complex to process due to the lack of structure, whereas unlabeled data is easier to handle because it has clear annotations",
+          "correct": false,
+          "explanation": "This reverses or misstates labeled and unlabeled data."
+        },
+        {
+          "id": "c",
+          "text": "Labeled data consists of raw information with no tags or annotations, while unlabeled data includes tags that provide meaning to the data",
+          "correct": false,
+          "explanation": "This reverses or misstates labeled and unlabeled data."
+        },
+        {
+          "id": "d",
+          "text": "Labeled data is annotated with output labels that provide specific information about each data point and is used for supervised learning, whereas, unlabeled data lacks such annotations and is used for unsupervised learning",
+          "correct": true,
+          "explanation": "Labeled data includes annotations or target outputs for supervised learning; unlabeled data lacks those labels and is used in unsupervised workflows."
+        }
+      ]
+    },
+    {
+      "id": "q12",
+      "question": "Match the following AWS services to the respective use cases: A) Amazon Textract B) Amazon Forecast C) Amazon Kendra 1) Easy-to-use enterprise search service that’s powered by machine learning 2) Automatically extract printed text, handwriting, layout elements, and data from any document 3) Forecast business outcomes easily and accurately using machine learning",
+      "choices": [
+        {
+          "id": "a",
+          "text": "A-1, B-3, C-2",
+          "correct": false,
+          "explanation": "This mapping pairs one or more AWS services with the wrong use case."
+        },
+        {
+          "id": "b",
+          "text": "A-2, B-1, C-3",
+          "correct": false,
+          "explanation": "This mapping pairs one or more AWS services with the wrong use case."
+        },
+        {
+          "id": "c",
+          "text": "A-2, B-3, C-1",
+          "correct": true,
+          "explanation": "Textract extracts document text and data, Forecast predicts business outcomes, and Kendra provides ML-powered enterprise search."
+        },
+        {
+          "id": "d",
+          "text": "A-3, B-2, C-1",
+          "correct": false,
+          "explanation": "This mapping pairs one or more AWS services with the wrong use case."
+        }
+      ]
+    },
+    {
+      "id": "q13",
+      "question": "A company is building an image recognition model to automate its quality assurance process. High accuracy in image annotation is critical to ensure the model can correctly identify defective products. To minimize the risk of incorrect annotations, the company needs a reliable labeling solution. What is the best approach to achieve high accuracy and reduce the risk of errors in image annotations?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Allow a small team of internal employees to manually label the images",
+          "correct": false,
+          "explanation": "This approach is less reliable for high-quality managed image annotation at scale."
+        },
+        {
+          "id": "b",
+          "text": "Use a simple rule-based algorithm to assign labels based on image characteristics",
+          "correct": false,
+          "explanation": "This approach is less reliable for high-quality managed image annotation at scale."
+        },
+        {
+          "id": "c",
+          "text": "Automatically generate labels using an existing pre-trained model",
+          "correct": false,
+          "explanation": "This approach is less reliable for high-quality managed image annotation at scale."
+        },
+        {
+          "id": "d",
+          "text": "Use GroundTruth Plus to label the data",
+          "correct": true,
+          "explanation": "Amazon SageMaker Ground Truth Plus provides a managed data-labeling service designed to improve label quality and reduce annotation errors."
+        }
+      ]
+    },
+    {
+      "id": "q14",
+      "question": "Which Amazon SageMaker service aggregates and displays data from Amazon SageMaker Model Cards, SageMaker Model Monitor and SageMaker Endpoint services?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker Model Dashboard",
+          "correct": true,
+          "explanation": "SageMaker Model Dashboard centralizes model information from model cards, monitoring, and endpoints."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker Feature Store",
+          "correct": false,
+          "explanation": "This service does not aggregate model card, model monitor, and endpoint information into a model dashboard."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker Data Wrangler",
+          "correct": false,
+          "explanation": "This service does not aggregate model card, model monitor, and endpoint information into a model dashboard."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker JumpStart",
+          "correct": false,
+          "explanation": "This service does not aggregate model card, model monitor, and endpoint information into a model dashboard."
+        }
+      ]
+    },
+    {
+      "id": "q15",
+      "question": "A tech startup is customizing a Foundation Model using Amazon Bedrock to enhance its machine learning capabilities for analyzing customer behavior and predicting market trends. As part of this customization, the company needs to perform model validation to ensure the model is accurately trained and tuned for its specific use case. To facilitate this, the company must choose an appropriate dataset storage location that is fully supported by Amazon Bedrock for storing and accessing the large datasets required for validation. Which of the following storage options would be the most suitable for this task?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "The company should use Amazon S3, which is a scalable object storage service fully integrated with Amazon Bedrock",
+          "correct": true,
+          "explanation": "Amazon Bedrock model customization and validation datasets are stored in Amazon S3."
+        },
+        {
+          "id": "b",
+          "text": "The company should use Amazon RDS, which is a managed relational database service for structured data",
+          "correct": false,
+          "explanation": "This storage option is not the supported Bedrock dataset location for model customization and validation."
+        },
+        {
+          "id": "c",
+          "text": "The company should use Amazon EBS , a block storage service designed to provide persistent storage for Amazon Bedrock",
+          "correct": false,
+          "explanation": "This storage option is not the supported Bedrock dataset location for model customization and validation."
+        },
+        {
+          "id": "d",
+          "text": "The company should use Amazon EFS, which is a managed file storage service that allows shared access to file data for Amazon Bedrock",
+          "correct": false,
+          "explanation": "This storage option is not the supported Bedrock dataset location for model customization and validation."
+        }
+      ]
+    },
+    {
+      "id": "q16",
+      "question": "Which AWS service helps you set up a cloud contact center in just a few clicks and onboard agents to help customers?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Lex",
+          "correct": false,
+          "explanation": "This service is not the cloud contact center service for onboarding agents and handling customer calls."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker Clarify",
+          "correct": false,
+          "explanation": "This service is not the cloud contact center service for onboarding agents and handling customer calls."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Personalize",
+          "correct": false,
+          "explanation": "This service is not the cloud contact center service for onboarding agents and handling customer calls."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Connect",
+          "correct": true,
+          "explanation": "Amazon Connect is a cloud contact center service for setting up customer service operations and onboarding agents."
+        }
+      ]
+    },
+    {
+      "id": "q17",
+      "question": "A media company is developing generative AI models using Amazon Bedrock for content creation and wants to ensure the responsible use of AI by implementing safeguards to prevent misuse. The data science team is evaluating the use of Guardrails and watermark detection, since understanding the differences between these two approaches will help the company choose the right measures for content security and ethical AI practices. Given this context, which of the following summarizes the differences between Guardrails for Amazon Bedrock and watermark detection for Amazon Bedrock?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Both Guardrails and watermark detection help control the interaction between users and FMs by filtering undesirable and harmful content",
+          "correct": false,
+          "explanation": "This statement reverses or conflates Guardrails and watermark detection."
+        },
+        {
+          "id": "b",
+          "text": "Guardrails helps control the interaction between users and FMs by filtering undesirable and harmful content, whereas, watermark detection identifies if an image was created by the Amazon Titan Image Generator model on Bedrock",
+          "correct": true,
+          "explanation": "Guardrails filter harmful or undesirable interactions, while watermark detection identifies images generated by Amazon Titan Image Generator."
+        },
+        {
+          "id": "c",
+          "text": "Watermark detection helps control the interaction between users and FMs by filtering undesirable and harmful content, whereas, Guardrails identifies if an image was created by the Amazon Titan Image Generator model on Bedrock",
+          "correct": false,
+          "explanation": "This statement reverses or conflates Guardrails and watermark detection."
+        },
+        {
+          "id": "d",
+          "text": "Both Guardrails and watermark detection help identify if an image was created by the Amazon Titan Image Generator model on Bedrock",
+          "correct": false,
+          "explanation": "This statement reverses or conflates Guardrails and watermark detection."
+        }
+      ]
+    },
+    {
+      "id": "q18",
+      "question": "A financial services company is scaling its machine learning operations on AWS to automate loan approvals and detect fraud. To ensure compliance with industry regulations and maintain model transparency, the data science team needs to implement governance tools provided by Amazon SageMaker to ensure models are used responsibly. Which of the following would you recommend as governance tools for the given use case?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker Model Dashboard, Amazon SageMaker Role Manager, Amazon SageMaker Clarify",
+          "correct": false,
+          "explanation": "This set omits a core governance tool or includes a service focused on monitoring or development rather than SageMaker governance."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker Model Dashboard, Amazon SageMaker Role Manager, Amazon SageMaker Model Monitor",
+          "correct": false,
+          "explanation": "This set omits a core governance tool or includes a service focused on monitoring or development rather than SageMaker governance."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker Role Manager, Amazon SageMaker Model Monitor, Amazon SageMaker Studio",
+          "correct": false,
+          "explanation": "This set omits a core governance tool or includes a service focused on monitoring or development rather than SageMaker governance."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker Role Manager, Amazon SageMaker Model Cards, Amazon SageMaker Model Dashboard",
+          "correct": true,
+          "explanation": "SageMaker Role Manager, Model Cards, and Model Dashboard are SageMaker governance tools for responsible model development and oversight."
+        }
+      ]
+    },
+    {
+      "id": "q19",
+      "question": "A manufacturing company is developing a machine learning model to optimize its supply chain operations. The data science team needs to prepare the dataset by dividing it into train, test, and validation sets to ensure the model is trained effectively and performs well on unseen data. Which of the following is the best fit to create train, test, and validation splits on your data for machine learning?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker Ground Truth",
+          "correct": false,
+          "explanation": "This service is for labeling, bias/explainability, or feature storage rather than data preparation and dataset splitting."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker Clarify",
+          "correct": false,
+          "explanation": "This service is for labeling, bias/explainability, or feature storage rather than data preparation and dataset splitting."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker Data Wrangler",
+          "correct": true,
+          "explanation": "SageMaker Data Wrangler supports data preparation steps such as creating train, validation, and test splits."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker Feature Store",
+          "correct": false,
+          "explanation": "This service is for labeling, bias/explainability, or feature storage rather than data preparation and dataset splitting."
+        }
+      ]
+    },
+    {
+      "id": "q20",
+      "question": "A media production company is looking to enhance its creative workflows by using AI to generate high-quality images from text prompts for marketing materials, storyboards, and content development. The company plans to use Amazon Bedrock for this purpose and wants to identify the most suitable Foundation Model to generate realistic and detailed images based on text descriptions provided by the creative team. Which of the following Foundation Models would you recommend for generating images from text prompts in this use case?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Jurassic",
+          "correct": false,
+          "explanation": "This model is primarily for text or language tasks rather than text-to-image generation."
+        },
+        {
+          "id": "b",
+          "text": "Stable Diffusion",
+          "correct": true,
+          "explanation": "Stable Diffusion is a foundation model used for generating images from text prompts."
+        },
+        {
+          "id": "c",
+          "text": "Llama",
+          "correct": false,
+          "explanation": "This model is primarily for text or language tasks rather than text-to-image generation."
+        },
+        {
+          "id": "d",
+          "text": "Claude",
+          "correct": false,
+          "explanation": "This model is primarily for text or language tasks rather than text-to-image generation."
+        }
+      ]
+    },
+    {
+      "id": "q21",
+      "question": "A media company is deploying machine learning models using Amazon SageMaker to generate personalized content recommendations. Since the company has intermittent workloads and it does not want to configure or manage the underlying infrastructure, the development team is evaluating different deployment models that offer cost savings by allowing for cold starts. Understanding which deployment model suits this use case will help them balance cost efficiency with operational needs. What do you suggest?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Asynchronous Inference",
+          "correct": false,
+          "explanation": "This option is less suited to intermittent, infrastructure-free inference with cold starts."
+        },
+        {
+          "id": "b",
+          "text": "Serverless Inference",
+          "correct": true,
+          "explanation": "SageMaker Serverless Inference suits intermittent workloads because it removes infrastructure management and can scale down between requests."
+        },
+        {
+          "id": "c",
+          "text": "Batch transform",
+          "correct": false,
+          "explanation": "This option is less suited to intermittent, infrastructure-free inference with cold starts."
+        },
+        {
+          "id": "d",
+          "text": "Real-time hosting services",
+          "correct": false,
+          "explanation": "This option is less suited to intermittent, infrastructure-free inference with cold starts."
+        }
+      ]
+    },
+    {
+      "id": "q22",
+      "question": "A company needs a solution that can convert text into human speech so that it can offer audio courses in multiple languages. Which AWS service is the best fit for this use case ?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Lex",
+          "correct": false,
+          "explanation": "This service does not convert written text into spoken audio."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Comprehend",
+          "correct": false,
+          "explanation": "This service does not convert written text into spoken audio."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Polly",
+          "correct": true,
+          "explanation": "Amazon Polly converts text into lifelike speech."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Translate",
+          "correct": false,
+          "explanation": "This service does not convert written text into spoken audio."
+        }
+      ]
+    },
+    {
+      "id": "q23",
+      "question": "A media company is using Amazon Bedrock to generate content such as headlines, articles, and social media posts. The data science team is particularly interested in understanding how adjusting the Temperature parameter can influence the model’s behavior to meet the company’s content generation goals. What do you recommend to the team regarding the Temperature parameter?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Influences the number of most-likely candidates that the model considers for the next token",
+          "correct": false,
+          "explanation": "This describes Top-K, Top-P, or stop sequences rather than temperature."
+        },
+        {
+          "id": "b",
+          "text": "Influences the likelihood of the model selecting lower-probability outputs, thereby impacting the creativity of the model’s output",
+          "correct": true,
+          "explanation": "Temperature controls the likelihood of selecting lower-probability tokens, which affects randomness and creativity."
+        },
+        {
+          "id": "c",
+          "text": "Influences the percentage of most-likely candidates that the model considers for the next token",
+          "correct": false,
+          "explanation": "This describes Top-K, Top-P, or stop sequences rather than temperature."
+        },
+        {
+          "id": "d",
+          "text": "Specifies the sequences of characters that stop the model from generating further tokens",
+          "correct": false,
+          "explanation": "This describes Top-K, Top-P, or stop sequences rather than temperature."
+        }
+      ]
+    },
+    {
+      "id": "q24",
+      "question": "A company is using a generative AI model to summarize a text based on a given prompt without providing specific examples in the prompt instructions. What type of prompting technique does the given use case represent?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Few shot Prompting",
+          "correct": false,
+          "explanation": "This prompting technique involves examples, exclusions, or reasoning steps rather than no examples."
+        },
+        {
+          "id": "b",
+          "text": "Negative prompting",
+          "correct": false,
+          "explanation": "This prompting technique involves examples, exclusions, or reasoning steps rather than no examples."
+        },
+        {
+          "id": "c",
+          "text": "Zero shot Prompting",
+          "correct": true,
+          "explanation": "Zero-shot prompting asks the model to perform a task without providing examples in the prompt."
+        },
+        {
+          "id": "d",
+          "text": "Chain-of-thought prompting",
+          "correct": false,
+          "explanation": "This prompting technique involves examples, exclusions, or reasoning steps rather than no examples."
+        }
+      ]
+    },
+    {
+      "id": "q25",
+      "question": "A business needs an automated solution that can extract text from thousands of receipts and invoices generated across all its stores. Which AWS Machine Learning (ML) service can offer the most optimal solution for this use case ?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Comprehend",
+          "correct": false,
+          "explanation": "This service is not the optimal document text and invoice extraction service."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Transcribe",
+          "correct": false,
+          "explanation": "This service is not the optimal document text and invoice extraction service."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Textract",
+          "correct": true,
+          "explanation": "Amazon Textract extracts text and structured data from receipts, invoices, and other documents."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Rekognition",
+          "correct": false,
+          "explanation": "This service is not the optimal document text and invoice extraction service."
+        }
+      ]
+    },
+    {
+      "id": "q26",
+      "question": "Which of the following represents the CORRECT statement regarding Amazon SageMaker Model Cards?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Model cards cannot be created for models not trained on Amazon SageMaker",
+          "correct": false,
+          "explanation": "This statement is false or less accurate for SageMaker Model Cards."
+        },
+        {
+          "id": "b",
+          "text": "The purpose of a Model card is to describe the technical requirements to which an ML model should be deployed",
+          "correct": false,
+          "explanation": "This statement is false or less accurate for SageMaker Model Cards."
+        },
+        {
+          "id": "c",
+          "text": "Describes how a model should be used in a production environment",
+          "correct": false,
+          "explanation": "This statement is false or less accurate for SageMaker Model Cards."
+        },
+        {
+          "id": "d",
+          "text": "Model Cards can be customized to meet the business needs",
+          "correct": true,
+          "explanation": "SageMaker Model Cards can be customized to capture the model information a business needs for documentation and governance."
+        }
+      ]
+    },
+    {
+      "id": "q27",
+      "question": "Consider a scenario where a fully-managed AWS service needs to be used for automating the extraction of insights from legal briefs such as contracts and court records. What do you recommend?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Translate",
+          "correct": false,
+          "explanation": "This service is for translation, speech, or image analysis rather than extracting text insights from legal documents."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Transcribe",
+          "correct": false,
+          "explanation": "This service is for translation, speech, or image analysis rather than extracting text insights from legal documents."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Rekognition",
+          "correct": false,
+          "explanation": "This service is for translation, speech, or image analysis rather than extracting text insights from legal documents."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Comprehend",
+          "correct": true,
+          "explanation": "Amazon Comprehend can extract insights such as entities, key phrases, and sentiment from unstructured text documents."
+        }
+      ]
+    },
+    {
+      "id": "q28",
+      "question": "A large enterprise is looking to implement an AI-powered assistant to help employees across departments streamline their work by answering questions, summarizing reports, generating content, and securely accessing data from internal systems. The company needs a solution that can seamlessly integrate with its enterprise systems while ensuring data privacy and security. The team is exploring various generative AI-powered assistants that can fulfill these requirements. Which of the following is a generative AI–powered assistant that can answer questions, provide summaries, generate content, and securely complete tasks based on data and information in the enterprise systems?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Q in Connect",
+          "correct": false,
+          "explanation": "This Amazon Q variant is specialized for contact centers, BI, or developers rather than broad enterprise assistant use."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Q in QuickSight",
+          "correct": false,
+          "explanation": "This Amazon Q variant is specialized for contact centers, BI, or developers rather than broad enterprise assistant use."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Q Business",
+          "correct": true,
+          "explanation": "Amazon Q Business is the enterprise generative AI assistant for answering questions, summarizing, generating content, and securely using company data."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Q Developer",
+          "correct": false,
+          "explanation": "This Amazon Q variant is specialized for contact centers, BI, or developers rather than broad enterprise assistant use."
+        }
+      ]
+    },
+    {
+      "id": "q29",
+      "question": "A customer support system frequently encounters database errors that result in incomplete sentences in the logs. The company wants to implement a machine learning model to automatically suggest missing words in these sentences to help resolve issues faster. Which type of model should be used to suggest the missing words?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Bidirectional Encoder Representations from Transformers (BERT) based Model",
+          "correct": true,
+          "explanation": "BERT-style masked language models use bidirectional context to predict missing words in incomplete sentences."
+        },
+        {
+          "id": "b",
+          "text": "Prescriptive AI Model",
+          "correct": false,
+          "explanation": "This model type is not designed for bidirectional masked-word prediction in text."
+        },
+        {
+          "id": "c",
+          "text": "Rule-based NLP Model",
+          "correct": false,
+          "explanation": "This model type is not designed for bidirectional masked-word prediction in text."
+        },
+        {
+          "id": "d",
+          "text": "Clustering Model",
+          "correct": false,
+          "explanation": "This model type is not designed for bidirectional masked-word prediction in text."
+        }
+      ]
+    },
+    {
+      "id": "q30",
+      "question": "A retail company wants to simplify how its employees access and analyze sales data stored in a large database. To achieve this, the company aims to implement a solution that automatically converts plain English text commands, such as \"show total sales for the last quarter\" or \"list top-selling products,\" into SQL queries. This would allow employees without technical skills to interact with the database seamlessly, improving efficiency and decision-making. Which of the following solutions would be most suitable for this purpose?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "The company should use Amazon Comprehend, to interpret natural language inputs and generating coherent outputs, such as SQL queries, by leveraging its understanding of language patterns and structures",
+          "correct": false,
+          "explanation": "This technology is not the best fit for generating SQL from natural language text."
+        },
+        {
+          "id": "b",
+          "text": "The company should use WaveNet, which is suitable for understanding or generating text, and therefore can be used to create highly optimized SQL queries from input text",
+          "correct": false,
+          "explanation": "This technology is not the best fit for generating SQL from natural language text."
+        },
+        {
+          "id": "c",
+          "text": "The company should use a Residual Neural Network (ResNet), for generating text-based outputs like SQL queries, as it is specifically tailored for natural language understanding",
+          "correct": false,
+          "explanation": "This technology is not the best fit for generating SQL from natural language text."
+        },
+        {
+          "id": "d",
+          "text": "The company should use GPT (Generative Pre-trained Transformer), to interpret natural language inputs and generating coherent outputs, such as SQL queries, by leveraging its understanding of language patterns and structures",
+          "correct": true,
+          "explanation": "GPT models are well suited to natural-language-to-SQL generation because they can interpret text instructions and generate coherent text outputs."
+        }
+      ]
+    },
+    {
+      "id": "q31",
+      "question": "A software development company is evaluating Amazon Q Developer to enhance its application development process by leveraging AI-driven tools for automation, code generation, and workflow optimization. The company is looking to understand the key features and capabilities of Amazon Q Developer. Gaining clarity on its core functionalities will help the company decide if it aligns with their development needs. What would you suggest to the company regarding the capabilities of Amazon Q Developer?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Q Developer can only be used in the AWS Management Console",
+          "correct": false,
+          "explanation": "This statement incorrectly limits where Amazon Q Developer can be used."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Q Developer can neither be used in the integrated development environments (IDEs) nor the AWS Management Console",
+          "correct": false,
+          "explanation": "This statement incorrectly limits where Amazon Q Developer can be used."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Q Developer can be used in integrated development environments (IDEs) as well as the AWS Management Console",
+          "correct": true,
+          "explanation": "Amazon Q Developer is available in IDEs and the AWS Management Console to assist developers across their workflow."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Q Developer can only be used in the integrated development environments (IDEs)",
+          "correct": false,
+          "explanation": "This statement incorrectly limits where Amazon Q Developer can be used."
+        }
+      ]
+    },
+    {
+      "id": "q32",
+      "question": "A financial services company is developing machine learning models to improve fraud detection and credit risk assessment. However, given the complexity of these tasks, the team wants to incorporate human input at key stages of the machine learning lifecycle to ensure that the models are accurate and relevant. The company is looking for an AWS service that allows human input and feedback to be integrated into the model development process, improving the overall performance and trustworthiness of the models. What do you suggest?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker Ground Truth",
+          "correct": true,
+          "explanation": "SageMaker Ground Truth integrates human labeling and feedback into ML data preparation and model development workflows."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker Feature Store",
+          "correct": false,
+          "explanation": "This service is for feature storage, access management, or explainability rather than human data labeling and feedback."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker Role Manager",
+          "correct": false,
+          "explanation": "This service is for feature storage, access management, or explainability rather than human data labeling and feedback."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker Clarify",
+          "correct": false,
+          "explanation": "This service is for feature storage, access management, or explainability rather than human data labeling and feedback."
+        }
+      ]
+    },
+    {
+      "id": "q33",
+      "question": "A healthcare organization is deploying machine learning models to assist in patient diagnosis and treatment planning. To ensure responsible use and compliance with healthcare regulations, the data science team needs a tool that offers clear guidance on how each model should be used, along with an assessment of the potential risks associated with its deployment. Understanding these factors is critical for maintaining transparency and trust in the AI models used in such sensitive applications. Which AWS tool do you recommend for the given use case?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker Ground Truth",
+          "correct": false,
+          "explanation": "This tool is for labeling, monitoring, or no-code model building rather than documenting model use and risk."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker Model Monitor",
+          "correct": false,
+          "explanation": "This tool is for labeling, monitoring, or no-code model building rather than documenting model use and risk."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker Model Cards",
+          "correct": true,
+          "explanation": "SageMaker Model Cards document intended uses, risks, performance, and other guidance for responsible model use."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker Canvas",
+          "correct": false,
+          "explanation": "This tool is for labeling, monitoring, or no-code model building rather than documenting model use and risk."
+        }
+      ]
+    },
+    {
+      "id": "q34",
+      "question": "A healthcare analytics company is using Amazon SageMaker Automatic Model Tuning (AMT) to optimize its machine learning models for predicting patient outcomes. To ensure the models are performing at their best, the data science team is configuring the autotune settings but needs to understand which parameters are mandatory for successful tuning. Properly setting these configurations will allow the team to enhance model accuracy and performance efficiently. Which of the following options is mandatory for the given use case?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Hyperparameter ranges",
+          "correct": false,
+          "explanation": "This field can be inferred or optimized by autotune and is not mandatory among the listed choices."
+        },
+        {
+          "id": "b",
+          "text": "Tuning strategy",
+          "correct": false,
+          "explanation": "This field can be inferred or optimized by autotune and is not mandatory among the listed choices."
+        },
+        {
+          "id": "c",
+          "text": "Number of jobs",
+          "correct": false,
+          "explanation": "This field can be inferred or optimized by autotune and is not mandatory among the listed choices."
+        },
+        {
+          "id": "d",
+          "text": "None",
+          "correct": true,
+          "explanation": "With SageMaker AMT autotune enabled, SageMaker can infer settings such as parameter ranges, resource limits, and strategy, so none of the listed fields is mandatory."
+        }
+      ]
+    },
+    {
+      "id": "q35",
+      "question": "A technology company is exploring AWS DeepRacer to introduce its employees to machine learning through an engaging and hands-on platform. The team wants to understand the key features and capabilities of AWS DeepRacer. Which of the following represents the CORRECT statement about AWS DeepRacer?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "The AWS DeepRacer vehicle is a Wi-Fi enabled, physical vehicle that can drive itself on a physical track",
+          "correct": true,
+          "explanation": "AWS DeepRacer includes a Wi-Fi enabled physical vehicle that can drive itself on a physical track."
+        },
+        {
+          "id": "b",
+          "text": "AWS DeepRacer vehicle is only a virtual vehicle running on AWS DeepRacer simulator",
+          "correct": false,
+          "explanation": "This statement misstates AWS DeepRacer hardware, simulator access, or learning method."
+        },
+        {
+          "id": "c",
+          "text": "You need an AWS DeepRacer car to use the AWS DeepRacer simulator",
+          "correct": false,
+          "explanation": "This statement misstates AWS DeepRacer hardware, simulator access, or learning method."
+        },
+        {
+          "id": "d",
+          "text": "AWS DeepRacer car is based on a model that uses a supervised learning ML algorithm",
+          "correct": false,
+          "explanation": "This statement misstates AWS DeepRacer hardware, simulator access, or learning method."
+        }
+      ]
+    },
+    {
+      "id": "q36",
+      "question": "A call center has introduced a chatbot to help employees respond to customer inquiries more efficiently during calls. The goal is to improve overall efficiency and reduce time spent on calls. Which of the following metrics should be monitored to evaluate the success of this initiative?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Average Call Duration",
+          "correct": true,
+          "explanation": "Average Call Duration directly measures whether the chatbot is reducing time spent on support calls."
+        },
+        {
+          "id": "b",
+          "text": "Average Chat Sessions per Day",
+          "correct": false,
+          "explanation": "This metric is less directly tied to reducing time spent on calls."
+        },
+        {
+          "id": "c",
+          "text": "Chat API Calls per Day",
+          "correct": false,
+          "explanation": "This metric is less directly tied to reducing time spent on calls."
+        },
+        {
+          "id": "d",
+          "text": "First-Call Resolution Rate",
+          "correct": false,
+          "explanation": "This metric is less directly tied to reducing time spent on calls."
+        }
+      ]
+    },
+    {
+      "id": "q37",
+      "question": "A software development company is migrating its operations to the AWS Cloud and is evaluating its security responsibilities under different generative AI use cases as outlined in the Generative AI Security Scoping Matrix. The company wants to identify the scenario where it would have the highest level of security ownership, including managing data protection, overseeing the underlying infrastructure, and ensuring compliance with relevant regulations. Understanding these security implications is critical for the company to implement appropriate controls and safeguard its operations. Which of the following scenarios would require the company to assume the maximum level of security ownership?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Refining an existing third-party generative AI foundation model by fine-tuning it with data specific to the company",
+          "correct": false,
+          "explanation": "This scenario leaves more model or infrastructure responsibility with a third party or managed service."
+        },
+        {
+          "id": "b",
+          "text": "Building and training a generative AI model from scratch",
+          "correct": true,
+          "explanation": "Building and training a generative AI model from scratch gives the company the most security ownership across data, model, and infrastructure."
+        },
+        {
+          "id": "c",
+          "text": "Building its own application using an existing third-party generative AI foundation model",
+          "correct": false,
+          "explanation": "This scenario leaves more model or infrastructure responsibility with a third party or managed service."
+        },
+        {
+          "id": "d",
+          "text": "Consuming a public third-party generative AI service",
+          "correct": false,
+          "explanation": "This scenario leaves more model or infrastructure responsibility with a third party or managed service."
+        }
+      ]
+    },
+    {
+      "id": "q38",
+      "question": "A research-focused AI company is developing a suite of machine learning models for tasks such as classification and content generation. The data science team needs to choose between discriminative and generative models depending on the specific use case. To make the right decision, they need to understand the fundamental differences between these two types of models, particularly in the context of generative AI, and how each model type fits into their project goals. What is the primary distinction between discriminative models and generative models in the context of generative AI?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Generative models are trained on labeled data, while discriminative models can be trained on both labeled and unlabeled data",
+          "correct": false,
+          "explanation": "This statement reverses or incorrectly narrows generative and discriminative models."
+        },
+        {
+          "id": "b",
+          "text": "Discriminative models are only used for text classification, while generative models are only used for image classification",
+          "correct": false,
+          "explanation": "This statement reverses or incorrectly narrows generative and discriminative models."
+        },
+        {
+          "id": "c",
+          "text": "Discriminative models are used to generate new data, while generative models are used only for classification",
+          "correct": false,
+          "explanation": "This statement reverses or incorrectly narrows generative and discriminative models."
+        },
+        {
+          "id": "d",
+          "text": "Generative models focus on generating new data from learned patterns, whereas discriminative models classify data by distinguishing between different classes",
+          "correct": true,
+          "explanation": "Generative models create new data from learned patterns, while discriminative models classify or distinguish between classes."
+        }
+      ]
+    },
+    {
+      "id": "q39",
+      "question": "A tech company is building machine learning models using Amazon SageMaker Studio and wants to streamline its development process. The data science team prefers using familiar Integrated Development Environments (IDEs) to write, test, and debug code more efficiently. To ensure a smooth workflow, the team is exploring which IDEs are supported within SageMaker Studio to maximize productivity and compatibility with their existing tools. Which of the following address the given requirement?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "All",
+          "correct": true,
+          "explanation": "SageMaker Studio supports RStudio, JupyterLab, and Code Editor, so all listed IDEs apply."
+        },
+        {
+          "id": "b",
+          "text": "RStudio",
+          "correct": false,
+          "explanation": "This is only one supported Studio IDE; the question asks which listed options address the requirement."
+        },
+        {
+          "id": "c",
+          "text": "JupyterLab",
+          "correct": false,
+          "explanation": "This is only one supported Studio IDE; the question asks which listed options address the requirement."
+        },
+        {
+          "id": "d",
+          "text": "Code Editor",
+          "correct": false,
+          "explanation": "This is only one supported Studio IDE; the question asks which listed options address the requirement."
+        }
+      ]
+    },
+    {
+      "id": "q40",
+      "question": "A financial services company is developing machine learning models using Amazon SageMaker to automate loan approvals and fraud detection. To ensure transparency and compliance with industry regulations, the data science team needs a tool that documents the model’s intended uses, performance metrics, and any assumptions made during development. This documentation is crucial for maintaining accountability and ensuring that the models are used appropriately. Which Amazon SageMaker tool meets these requirements?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker Model Cards",
+          "correct": true,
+          "explanation": "SageMaker Model Cards document intended use, performance metrics, assumptions, and other model details for accountability."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker Model Monitor",
+          "correct": false,
+          "explanation": "This SageMaker tool is for monitoring, explainability, or no-code modeling rather than model documentation."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker Clarify",
+          "correct": false,
+          "explanation": "This SageMaker tool is for monitoring, explainability, or no-code modeling rather than model documentation."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker Canvas",
+          "correct": false,
+          "explanation": "This SageMaker tool is for monitoring, explainability, or no-code modeling rather than model documentation."
+        }
+      ]
+    },
+    {
+      "id": "q41",
+      "question": "A company has recently migrated to AWS Cloud and it wants to optimize the hardware used for its AI workflows. Which of the following would you suggest?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Leverage AWS Inferentia for high-performance, cost-effective Deep Learning training. Leverage AWS Trainium for the deep learning (DL) and generative AI inference applications",
+          "correct": false,
+          "explanation": "This option reverses or overgeneralizes the roles of Trainium and Inferentia."
+        },
+        {
+          "id": "b",
+          "text": "Leverage either AWS Trainium or AWS Inferentia for high-performance, cost-effective Deep Learning training",
+          "correct": false,
+          "explanation": "This option reverses or overgeneralizes the roles of Trainium and Inferentia."
+        },
+        {
+          "id": "c",
+          "text": "Leverage AWS Trainium for high-performance, cost-effective Deep Learning training. Leverage AWS Inferentia for the deep learning (DL) and generative AI inference applications",
+          "correct": true,
+          "explanation": "AWS Trainium is built for deep learning training, while AWS Inferentia is optimized for deep learning and generative AI inference."
+        },
+        {
+          "id": "d",
+          "text": "Leverage either AWS Trainium or AWS Inferentia for the deep learning (DL) and generative AI inference applications",
+          "correct": false,
+          "explanation": "This option reverses or overgeneralizes the roles of Trainium and Inferentia."
+        }
+      ]
+    },
+    {
+      "id": "q42",
+      "question": "A financial services company is developing a machine-learning model to classify loan applications as either \"approved\" or \"denied.\" To ensure the model performs effectively, the company wants to evaluate how accurately it predicts these outcomes. Specifically, they are interested in knowing the overall percentage of correct predictions, including both approved and denied applications. The company is considering several metrics to assess the model's performance in terms of the number of correct outcomes. Which metric would be most appropriate for this purpose?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "The company should use Root Mean Squared Error (RMSE), a metric that calculates the square root of the average of the squared differences between predicted and actual values",
+          "correct": false,
+          "explanation": "This metric is for regression error, class-balance tradeoffs, or variance explanation rather than overall correct predictions."
+        },
+        {
+          "id": "b",
+          "text": "The company should use F1 Score, a metric that considers both precision and recall by calculating their harmonic mean",
+          "correct": false,
+          "explanation": "This metric is for regression error, class-balance tradeoffs, or variance explanation rather than overall correct predictions."
+        },
+        {
+          "id": "c",
+          "text": "The company should use Accuracy, which measures the proportion of correctly predicted instances (both true positives and true negatives) out of the total number of instances",
+          "correct": true,
+          "explanation": "Accuracy measures the proportion of all predictions that are correct, including true positives and true negatives."
+        },
+        {
+          "id": "d",
+          "text": "The company should use R-squared, a statistical measure that indicates the proportion of variance in the dependent variable explained by the independent variables",
+          "correct": false,
+          "explanation": "This metric is for regression error, class-balance tradeoffs, or variance explanation rather than overall correct predictions."
+        }
+      ]
+    },
+    {
+      "id": "q43",
+      "question": "An AI-driven healthcare company is focused on reducing its carbon footprint while running machine learning models to analyze large datasets for patient outcomes and research. To achieve this, the company needs to select an Amazon EC2 instance type that offers the highest energy efficiency for its computational workloads, minimizing environmental impact while still delivering the required performance for training complex machine learning models. Which of the following EC2 instance types would be the most suitable choice for achieving this goal?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Compute Optimized C type instances",
+          "correct": false,
+          "explanation": "This EC2 instance family is less purpose-built for energy-efficient ML training than Trainium."
+        },
+        {
+          "id": "b",
+          "text": "Accelerated Computing P type instances",
+          "correct": false,
+          "explanation": "This EC2 instance family is less purpose-built for energy-efficient ML training than Trainium."
+        },
+        {
+          "id": "c",
+          "text": "AWS Trainium instances",
+          "correct": true,
+          "explanation": "AWS Trainium instances are purpose-built for efficient high-performance ML training workloads."
+        },
+        {
+          "id": "d",
+          "text": "Accelerated Computing G type instances",
+          "correct": false,
+          "explanation": "This EC2 instance family is less purpose-built for energy-efficient ML training than Trainium."
+        }
+      ]
+    },
+    {
+      "id": "q44",
+      "question": "A retail company needs a solution that can help in forecasting foot traffic, visitor counts, and channel demand to efficiently manage the operating costs. Which AWS ML service is the right fit for this use case?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Forecast",
+          "correct": true,
+          "explanation": "Amazon Forecast is built to create accurate forecasts for business metrics such as traffic, demand, and visitor counts."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Personalize",
+          "correct": false,
+          "explanation": "This service is for personalization, chatbots, or feature storage rather than demand forecasting."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Lex",
+          "correct": false,
+          "explanation": "This service is for personalization, chatbots, or feature storage rather than demand forecasting."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker Feature Store",
+          "correct": false,
+          "explanation": "This service is for personalization, chatbots, or feature storage rather than demand forecasting."
+        }
+      ]
+    },
+    {
+      "id": "q45",
+      "question": "A company needs to support human reviews and audits for its ML model predictions. The solution should be easy to implement and have the facility to add multiple reviewers. Which AWS service do you recommend for this use case?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Forecast",
+          "correct": false,
+          "explanation": "This service is for forecasting, reinforcement-learning education, or labeling rather than human review workflows for predictions."
+        },
+        {
+          "id": "b",
+          "text": "AWS DeepRacer",
+          "correct": false,
+          "explanation": "This service is for forecasting, reinforcement-learning education, or labeling rather than human review workflows for predictions."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker Ground Truth",
+          "correct": false,
+          "explanation": "This service is for forecasting, reinforcement-learning education, or labeling rather than human review workflows for predictions."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Augmented AI (A2I)",
+          "correct": true,
+          "explanation": "Amazon Augmented AI (A2I) provides human review workflows for ML predictions and supports multiple reviewers."
+        }
+      ]
+    },
+    {
+      "id": "q46",
+      "question": "A healthcare analytics company is developing machine learning models to predict patient outcomes and improve treatment plans. To enhance these models, conduct rigorous testing, and ensure data privacy when sharing with partners, the company needs to generate synthetic data that closely mirrors its existing patient records without compromising sensitive information. The synthetic data must maintain the statistical properties and patterns of the original dataset to be useful for model training and evaluation. Which of the following methods would be most suitable for generating synthetic data?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "The company should use Support Vector Machines (SVMs), a type of supervised learning algorithm used for generating synthetic data",
+          "correct": false,
+          "explanation": "This model type is not the best general fit for realistic synthetic data generation."
+        },
+        {
+          "id": "b",
+          "text": "The company should use a Convolutional Neural Network (CNN), a type of deep learning model, best-suited for generating synthetic data",
+          "correct": false,
+          "explanation": "This model type is not the best general fit for realistic synthetic data generation."
+        },
+        {
+          "id": "c",
+          "text": "The company should use WaveNet, a deep generative model specifically designed for generating general-purpose synthetic data across various domains",
+          "correct": false,
+          "explanation": "This model type is not the best general fit for realistic synthetic data generation."
+        },
+        {
+          "id": "d",
+          "text": "The company should use a Generative Adversarial Network (GAN) for creating realistic synthetic data while preserving the statistical properties of the original data",
+          "correct": true,
+          "explanation": "Generative Adversarial Networks can generate realistic synthetic data that preserves patterns from the original dataset."
+        }
+      ]
+    },
+    {
+      "id": "q47",
+      "question": "A retail company is seeking to empower its business analysts to create data-driven dashboards without needing technical expertise in coding or data query languages. The company wants a solution that allows analysts to use natural language to generate reports, visualize key metrics, and build Business Intelligence (BI) dashboards to inform decision-making across departments. They are exploring options within AWS that can help streamline this process for non-technical users. Which of the following solutions allows business analysts to use natural language to build BI dashboards?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Q in Connect",
+          "correct": false,
+          "explanation": "This Amazon Q variant is specialized for contact centers, developers, or enterprise assistants rather than QuickSight BI dashboards."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Q in QuickSight",
+          "correct": true,
+          "explanation": "Amazon Q in QuickSight lets business analysts use natural language to build BI dashboards and analyze data."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Q Developer",
+          "correct": false,
+          "explanation": "This Amazon Q variant is specialized for contact centers, developers, or enterprise assistants rather than QuickSight BI dashboards."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Q Business",
+          "correct": false,
+          "explanation": "This Amazon Q variant is specialized for contact centers, developers, or enterprise assistants rather than QuickSight BI dashboards."
+        }
+      ]
+    },
+    {
+      "id": "q48",
+      "question": "A technology company is considering using Large Language Models (LLMs) to enhance its AI-driven customer support system. The development team is particularly interested in understanding the nature of LLMs, as this knowledge will help the team make decisions on how to manage the variability of responses and how best to apply the models in customer-facing applications. Which of the following is correct regarding Large Language Models (LLMs)?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "The Large Language Models (LLMs) are discriminative",
+          "correct": false,
+          "explanation": "This statement mischaracterizes LLMs or reverses the relationship between FMs and LLMs."
+        },
+        {
+          "id": "b",
+          "text": "The Large Language Models (LLMs) are non-deterministic",
+          "correct": true,
+          "explanation": "LLMs are generally non-deterministic because generation can vary based on sampling settings and model behavior."
+        },
+        {
+          "id": "c",
+          "text": "Foundation Models (FMs) are a class of Large Language Models (LLMs)",
+          "correct": false,
+          "explanation": "This statement mischaracterizes LLMs or reverses the relationship between FMs and LLMs."
+        },
+        {
+          "id": "d",
+          "text": "The Large Language Models (LLMs) are deterministic",
+          "correct": false,
+          "explanation": "This statement mischaracterizes LLMs or reverses the relationship between FMs and LLMs."
+        }
+      ]
+    },
+    {
+      "id": "q49",
+      "question": "A media company is planning to leverage AWS for its AI and machine learning projects, and the development team is evaluating both Amazon Bedrock and Amazon SageMaker JumpStart to accelerate their workflows. The team needs to understand the primary differences between these two services, particularly in how they provide access to pre-trained models and offer customization options. This knowledge will help the company choose the right tool for their content generation and optimization tasks. Which of the following best addresses these requirements?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Bedrock provides foundational models for generative AI applications, whereas Amazon SageMaker JumpStart offers pre-built solutions and one-click deployment for various machine learning models",
+          "correct": true,
+          "explanation": "Bedrock provides access to foundation models for generative AI apps, while SageMaker JumpStart offers pre-built ML solutions and one-click model deployment."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker JumpStart is designed for building and scaling machine learning models, whereas Amazon Bedrock is used for real-time data analytics",
+          "correct": false,
+          "explanation": "This statement reverses the roles of Bedrock and SageMaker JumpStart or assigns them unrelated analytics duties."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker JumpStart provides foundational models for generative AI applications, whereas Amazon Bedrock offers pre-built solutions and one-click deployment for various machine learning models",
+          "correct": false,
+          "explanation": "This statement reverses the roles of Bedrock and SageMaker JumpStart or assigns them unrelated analytics duties."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Bedrock is designed for building and scaling machine learning models, whereas Amazon SageMaker JumpStart is used for real-time data analytics",
+          "correct": false,
+          "explanation": "This statement reverses the roles of Bedrock and SageMaker JumpStart or assigns them unrelated analytics duties."
+        }
+      ]
+    },
+    {
+      "id": "q50",
+      "question": "An ecommerce company is transitioning to AWS Cloud and wants to use Amazon Bedrock for product recommendations. The company wants to provide its own labeled training dataset to improve the selected Foundation Model's (FM) performance. Which of the following represents the best-fit solution for the given use case?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Leverage Amazon Bedrock to make a separate copy of the base FM model and train this private copy of the model using the labeled training dataset",
+          "correct": true,
+          "explanation": "Amazon Bedrock creates a private copy of the selected base foundation model for customization with the customer's labeled data."
+        },
+        {
+          "id": "b",
+          "text": "Leverage Amazon Bedrock to discard the selected FM and create a new model from scratch by using the labeled training dataset",
+          "correct": false,
+          "explanation": "This does not describe private Bedrock model customization with customer labeled data."
+        },
+        {
+          "id": "c",
+          "text": "Leverage Amazon Bedrock to train the base FM itself using the labeled training dataset",
+          "correct": false,
+          "explanation": "This does not describe private Bedrock model customization with customer labeled data."
+        },
+        {
+          "id": "d",
+          "text": "Leverage Amazon Bedrock to make a public copy of the base FM model and train this public copy of the model using the labeled training dataset",
+          "correct": false,
+          "explanation": "This does not describe private Bedrock model customization with customer labeled data."
+        }
+      ]
+    },
+    {
+      "id": "q51",
+      "question": "A healthcare company is using machine learning models in Amazon SageMaker to predict patient outcomes based on various health indicators. To comply with regulatory requirements and build trust with medical professionals, the company needs to understand and explain how different input features, such as age, blood pressure, and medical history, contribute to the model’s predictions. The company is exploring which Amazon SageMaker service can provide this level of transparency and interpretability for their machine learning models. Which Amazon SageMaker service will help the company understand how an input feature contributes to the predictions of a machine learning model?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker JumpStart",
+          "correct": false,
+          "explanation": "This service is for model catalogs, no-code model building, or data labeling rather than feature attribution and explainability."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker Clarify",
+          "correct": true,
+          "explanation": "SageMaker Clarify helps explain model predictions by showing how input features contribute to outputs."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker Canvas",
+          "correct": false,
+          "explanation": "This service is for model catalogs, no-code model building, or data labeling rather than feature attribution and explainability."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker Ground Truth",
+          "correct": false,
+          "explanation": "This service is for model catalogs, no-code model building, or data labeling rather than feature attribution and explainability."
+        }
+      ]
+    },
+    {
+      "id": "q52",
+      "question": "A wildlife research organization has gathered thousands of images from camera traps in natural reserves worldwide, capturing various animal species. To support their research and conservation efforts, the organization wants to build a system that can automatically identify and categorize each animal in these images accurately and efficiently. The organization is evaluating different AI and machine learning techniques to achieve this goal. Which approach would you suggest to effectively recognize and categorize the various animal species in their image dataset?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "The company should use object detection, which involves identifying and locating specific objects within an image",
+          "correct": true,
+          "explanation": "Object detection identifies and locates objects in images, which fits recognizing and categorizing species in camera-trap photos."
+        },
+        {
+          "id": "b",
+          "text": "The company should use thermal imaging, a technique that detects heat patterns and variations, which can identify living beings in low-visibility conditions",
+          "correct": false,
+          "explanation": "This technique is for a narrower or non-image-recognition use case."
+        },
+        {
+          "id": "c",
+          "text": "The company should use face recognition, a computer vision technique specifically designed to identify faces in images or videos",
+          "correct": false,
+          "explanation": "This technique is for a narrower or non-image-recognition use case."
+        },
+        {
+          "id": "d",
+          "text": "The company should use named entity recognition, a technique for identifying entities like names, places, or dates",
+          "correct": false,
+          "explanation": "This technique is for a narrower or non-image-recognition use case."
+        }
+      ]
+    },
+    {
+      "id": "q53",
+      "question": "A software development team is exploring tools to improve their coding efficiency and streamline their workflow. They are particularly interested in leveraging Amazon Q Developer to support their development processes, but they want to understand its specific capabilities. Which of the following accurately describes what Amazon Q Developer can do to enhance the team's development efforts?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Q Developer can deploy applications, automating the entire process of application deployment from development to production environments",
+          "correct": false,
+          "explanation": "This is not Amazon Q Developer's primary coding-assistance capability."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Q Developer can create SageMaker models, allowing users to develop, train, and deploy machine learning models within the Amazon SageMaker environment",
+          "correct": false,
+          "explanation": "This is not Amazon Q Developer's primary coding-assistance capability."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Q Developer can create Large Language Model (LLM) chatbots, enabling the design and deployment of large language model-based conversational agents",
+          "correct": false,
+          "explanation": "This is not Amazon Q Developer's primary coding-assistance capability."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Q Developer can suggest code snippets, providing developers with recommendations for code based on specific tasks or requirements",
+          "correct": true,
+          "explanation": "Amazon Q Developer can suggest code snippets and provide coding assistance for developers."
+        }
+      ]
+    },
+    {
+      "id": "q54",
+      "question": "Which type of Machine Learning algorithm is used by the models that are trained, evaluated, and tuned on AWS DeepRacer?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Unsupervised Learning",
+          "correct": false,
+          "explanation": "DeepRacer is not based on this learning category."
+        },
+        {
+          "id": "b",
+          "text": "Semi-supervised Learning",
+          "correct": false,
+          "explanation": "DeepRacer is not based on this learning category."
+        },
+        {
+          "id": "c",
+          "text": "Deep Learning",
+          "correct": false,
+          "explanation": "DeepRacer is not based on this learning category."
+        },
+        {
+          "id": "d",
+          "text": "Reinforcement Learning",
+          "correct": true,
+          "explanation": "AWS DeepRacer trains, evaluates, and tunes models using reinforcement learning."
+        }
+      ]
+    },
+    {
+      "id": "q55",
+      "question": "A healthcare company wants to extract relevant health information from unstructured clinical data such as physician's notes, discharge summaries, and test results from multiple hospitals. Which ML-powered AWS service is the right fit to extract this data?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Comprehend",
+          "correct": false,
+          "explanation": "This service is too general or not intended for clinical entity extraction from medical notes."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Comprehend Medical",
+          "correct": true,
+          "explanation": "Amazon Comprehend Medical extracts health information from unstructured clinical text."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Rekognition",
+          "correct": false,
+          "explanation": "This service is too general or not intended for clinical entity extraction from medical notes."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker",
+          "correct": false,
+          "explanation": "This service is too general or not intended for clinical entity extraction from medical notes."
+        }
+      ]
+    },
+    {
+      "id": "q56",
+      "question": "A company is creating a custom search solution that will bring together the company's data repositories, FAQs, and support tickets. The support tickets might contain personally identifiable information (PII) that needs to be redacted before the tickets are processed to create the search indexes. Which AWS service will help you redact the PII in support tickets?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Kendra",
+          "correct": false,
+          "explanation": "This service is for search, chatbots, or document extraction rather than PII detection and redaction in text."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Lex",
+          "correct": false,
+          "explanation": "This service is for search, chatbots, or document extraction rather than PII detection and redaction in text."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Textract",
+          "correct": false,
+          "explanation": "This service is for search, chatbots, or document extraction rather than PII detection and redaction in text."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Comprehend",
+          "correct": true,
+          "explanation": "Amazon Comprehend can detect and redact personally identifiable information in text before it is indexed or processed."
+        }
+      ]
+    },
+    {
+      "id": "q57",
+      "question": "A company needs to process a large inference payload of several gigabytes (GBs) for its machine learning model built using Amazon SageMaker. The company's systems can tolerate some waiting time for the responses. Which inference method would be the most suitable for this scenario?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "The company should use asynchronous inference, which allows the model to handle large or complex payloads by queuing requests and processing them in the background, making it ideal when systems can wait for responses",
+          "correct": false,
+          "explanation": "Asynchronous inference is for queued requests, but SageMaker async payload size limits make it a poorer fit for several-GB inputs."
+        },
+        {
+          "id": "b",
+          "text": "The company should use batch inference, which processes multiple data points at once in large batches, suitable for processing large datasets in a single operation when immediate real-time responses are not required",
+          "correct": true,
+          "explanation": "Batch inference is best for very large, wait-tolerant inference jobs that can process data in bulk from storage."
+        },
+        {
+          "id": "c",
+          "text": "The company should use real-time inference, which is designed for low-latency predictions where responses are needed instantly",
+          "correct": false,
+          "explanation": "This inference method is less suited to queued large-payload, long-running requests that can tolerate waiting."
+        },
+        {
+          "id": "d",
+          "text": "The company should use serverless inference, which automatically scales resources based on traffic",
+          "correct": false,
+          "explanation": "This inference method is less suited to queued large-payload, long-running requests that can tolerate waiting."
+        }
+      ]
+    },
+    {
+      "id": "q58",
+      "question": "A law firm is handling an increasing volume of legal documents, including contracts, agreements, and case files, and seeks to streamline its document review process by automatically extracting key information such as important clauses, dates, and entities. The firm wants to implement an automated solution that can efficiently handle this task, reducing the time and effort required for manual review while ensuring accuracy in identifying critical details within the documents. Which of the following options would you suggest for achieving this goal? (Select three)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Textract",
+          "correct": true,
+          "explanation": "Textract extracts text from legal documents; Comprehend identifies entities and key information; a generative AI summarization chatbot can summarize clauses and records."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Comprehend",
+          "correct": true,
+          "explanation": "Textract extracts text from legal documents; Comprehend identifies entities and key information; a generative AI summarization chatbot can summarize clauses and records."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Personalize",
+          "correct": false,
+          "explanation": "This option is not one of the best services or approaches for extracting, analyzing, and summarizing legal documents."
+        },
+        {
+          "id": "d",
+          "text": "WaveNet",
+          "correct": false,
+          "explanation": "This option is not one of the best services or approaches for extracting, analyzing, and summarizing legal documents."
+        },
+        {
+          "id": "e",
+          "text": "Generative AI powered summarization chatbot",
+          "correct": true,
+          "explanation": "Textract extracts text from legal documents; Comprehend identifies entities and key information; a generative AI summarization chatbot can summarize clauses and records."
+        },
+        {
+          "id": "f",
+          "text": "Convolutional Neural Network (CNN)",
+          "correct": false,
+          "explanation": "This option is not one of the best services or approaches for extracting, analyzing, and summarizing legal documents."
+        }
+      ]
+    },
+    {
+      "id": "q59",
+      "question": "A financial services company is building machine learning models on AWS to automate loan approval processes. As an AI Practitioner, you have been tasked to build and maintain data lineage in the context of these machine learning models on AWS. Which of the following would you identify as the key reason to maintain data lineage?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "It improves the performance of machine learning models by optimizing data processing",
+          "correct": false,
+          "explanation": "This is not the main compliance reason for maintaining data lineage."
+        },
+        {
+          "id": "b",
+          "text": "It enhances the visualization capabilities of the data",
+          "correct": false,
+          "explanation": "This is not the main compliance reason for maintaining data lineage."
+        },
+        {
+          "id": "c",
+          "text": "It reduces the storage costs by efficiently managing data",
+          "correct": false,
+          "explanation": "This is not the main compliance reason for maintaining data lineage."
+        },
+        {
+          "id": "d",
+          "text": "It ensures data privacy and compliance by tracking the flow and transformation of data",
+          "correct": true,
+          "explanation": "Data lineage tracks how data moves and changes, supporting privacy, compliance, and audit requirements."
+        }
+      ]
+    },
+    {
+      "id": "q60",
+      "question": "Which of the following use cases is addressed by Amazon Personalize?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Offers highly accurate and easy-to-use enterprise search service that’s powered by machine learning",
+          "correct": false,
+          "explanation": "This describes enterprise search, document extraction, or telecom workflow automation rather than Personalize recommendations."
+        },
+        {
+          "id": "b",
+          "text": "Extract layout elements such as paragraphs, titles, lists, and more from documents",
+          "correct": false,
+          "explanation": "This describes enterprise search, document extraction, or telecom workflow automation rather than Personalize recommendations."
+        },
+        {
+          "id": "c",
+          "text": "Generate recommendations for items that are similar to an item you specify",
+          "correct": true,
+          "explanation": "Amazon Personalize can generate item recommendations, including items similar to a specified item."
+        },
+        {
+          "id": "d",
+          "text": "To offer personalized experiences for mobile subscriber activities such as activating a SIM card, adding a phone line, purchasing prepaid cards, requesting a service change",
+          "correct": false,
+          "explanation": "This describes enterprise search, document extraction, or telecom workflow automation rather than Personalize recommendations."
+        }
+      ]
+    },
+    {
+      "id": "q61",
+      "question": "A company is using Amazon Personalize to build a recommendations engine for its e-commerce application. As part of the process, the data from ten different sources needs to be processed and imported into Amazon Personalize. Which AWS service will help import, prepare, and transform data before it is fed into Amazon Personalize?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker Clarify",
+          "correct": false,
+          "explanation": "This service is for explainability, feature storage, or labeling rather than data import and transformation."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker Data Wrangler",
+          "correct": true,
+          "explanation": "SageMaker Data Wrangler helps import, prepare, and transform data before using it in Amazon Personalize or ML workflows."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker Feature Store",
+          "correct": false,
+          "explanation": "This service is for explainability, feature storage, or labeling rather than data import and transformation."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker Ground Truth",
+          "correct": false,
+          "explanation": "This service is for explainability, feature storage, or labeling rather than data import and transformation."
+        }
+      ]
+    },
+    {
+      "id": "q62",
+      "question": "A legal firm is digitizing a large volume of contracts and other legal documents to streamline document management and analysis. The firm is looking for AWS machine learning services that can automatically detect and extract text from scanned images and photos of these documents. Understanding which services specialize in text extraction from images will help the firm choose the right solution for automating its document processing workflow. Which AWS ML services will you recommend to the firm? (Select two)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Comprehend",
+          "correct": false,
+          "explanation": "This service is not focused on extracting text from scanned documents, images, or photos."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Lex",
+          "correct": false,
+          "explanation": "This service is not focused on extracting text from scanned documents, images, or photos."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Polly",
+          "correct": false,
+          "explanation": "This service is not focused on extracting text from scanned documents, images, or photos."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Textract",
+          "correct": true,
+          "explanation": "Amazon Textract extracts document text, and Amazon Rekognition can detect text in images and photos."
+        },
+        {
+          "id": "e",
+          "text": "Amazon Rekognition",
+          "correct": true,
+          "explanation": "Amazon Textract extracts document text, and Amazon Rekognition can detect text in images and photos."
+        }
+      ]
+    },
+    {
+      "id": "q63",
+      "question": "A traffic monitoring application needs to detect license plate numbers for the vehicles that pass a certain location from 11 PM to 7 AM every day. Which ML-powered AWS service is the right fit for this requirement?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker JumpStart",
+          "correct": false,
+          "explanation": "This service is less appropriate for license plate detection from traffic imagery."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker image classification algorithm",
+          "correct": false,
+          "explanation": "This service is less appropriate for license plate detection from traffic imagery."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Textract",
+          "correct": false,
+          "explanation": "This service is less appropriate for license plate detection from traffic imagery."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Rekognition",
+          "correct": true,
+          "explanation": "Amazon Rekognition is suited to detecting visual content and text such as license plates in traffic images."
+        }
+      ]
+    },
+    {
+      "id": "q64",
+      "question": "A global technology company has deployed several AI systems, including generative AI solutions that range from pre-trained models to fine-tuned, domain-specific models. As part of their commitment to ethical AI practices, the company wants to implement governance strategies to ensure the responsible development, deployment, and usage of these models. The development team is tasked with identifying key governance strategies to address concerns such as data privacy, fairness, and accountability in their AI systems. Which two governance strategies should the team prioritize to meet these objectives? (Select two)",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Establish ethical AI guidelines for developers to follow",
+          "correct": true,
+          "explanation": "Ethical AI guidelines and auditing processes help address privacy, fairness, accountability, and misuse risks."
+        },
+        {
+          "id": "b",
+          "text": "Allow unrestricted fine-tuning by all team members",
+          "correct": false,
+          "explanation": "This would weaken governance or leave key responsible-AI risks insufficiently controlled."
+        },
+        {
+          "id": "c",
+          "text": "Implement robust auditing processes for AI outputs",
+          "correct": true,
+          "explanation": "Ethical AI guidelines and auditing processes help address privacy, fairness, accountability, and misuse risks."
+        },
+        {
+          "id": "d",
+          "text": "Rely on user feedback alone to identify issues with the AI system",
+          "correct": false,
+          "explanation": "This would weaken governance or leave key responsible-AI risks insufficiently controlled."
+        },
+        {
+          "id": "e",
+          "text": "Use only open-source models without further evaluation",
+          "correct": false,
+          "explanation": "This would weaken governance or leave key responsible-AI risks insufficiently controlled."
+        }
+      ]
+    },
+    {
+      "id": "q65",
+      "question": "A retail company is exploring the use of generative AI to improve its customer experience by personalizing recommendations and automating product descriptions. The company is interested in leveraging pre-built, high-performing Foundation Models (FMs) to accelerate development but also needs the ability to customize these models with its proprietary data to meet specific business needs. The company is seeking an AWS service that not only provides access to a variety of Foundation Models but also offers the option to privately fine-tune and customize these models for their unique use case. Which AWS service/feature offers a choice of high-performing Foundation Models (FMs) and the ability to privately customize the FMs with your data?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Amazon Bedrock",
+          "correct": true,
+          "explanation": "Amazon Bedrock offers multiple high-performing foundation models and supports private customization with customer data."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Q Developer",
+          "correct": false,
+          "explanation": "This service does not provide Bedrock's choice of foundation models with private customization."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Q in QuickSight",
+          "correct": false,
+          "explanation": "This service does not provide Bedrock's choice of foundation models with private customization."
+        },
+        {
+          "id": "d",
+          "text": "AWS Inferentia",
+          "correct": false,
+          "explanation": "This service does not provide Bedrock's choice of foundation models with private customization."
+        }
+      ]
+    }
+  ]
+}
