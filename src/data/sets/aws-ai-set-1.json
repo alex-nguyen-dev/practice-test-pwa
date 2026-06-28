@@ -15,9 +15,9 @@
         },
         {
           "id": "b",
-          "text": "Amazon Route 53, which provides scalable Domain Name System (DNS) and traffic routing for applications.",
+          "text": "Amazon Comprehend, which analyzes text for sentiment, entities, key phrases, and language.",
           "correct": false,
-          "explanation": "Amazon Route 53 is a DNS web service for routing users to application endpoints. It has no relationship to natural language processing or text generation and cannot summarize articles."
+          "explanation": "Amazon Comprehend is a managed NLP service for analyzing existing text, such as detecting sentiment or entities. It is not a managed foundation model service for generating new summaries from long articles."
         },
         {
           "id": "c",
@@ -189,9 +189,9 @@
         },
         {
           "id": "e",
-          "text": "Amazon Route 53 health checks used to rank which documents are most relevant to a query.",
+          "text": "AWS Glue Data Catalog used by itself to catalog document metadata for analytics.",
           "correct": false,
-          "explanation": "Route 53 health checks monitor endpoint availability for DNS routing. They cannot embed, store, or rank documents by relevance, so they are not part of a RAG retrieval pipeline."
+          "explanation": "AWS Glue Data Catalog can store metadata about data assets, which may help analytics workflows. By itself, it does not chunk documents, create embeddings, or retrieve semantically relevant passages for a RAG prompt."
         }
       ]
     },

@@ -291,15 +291,15 @@
         },
         {
           "id": "c",
-          "text": "Collect as much personal data as possible up front in case it becomes useful later.",
+          "text": "Collect additional personal data for personalization without defining a purpose, retention period, or user notice.",
           "correct": false,
-          "explanation": "Collecting excess personal data conflicts with privacy and data-minimization principles and increases exposure risk. Responsible AI favors collecting only the data that is actually needed."
+          "explanation": "Personalization can be legitimate, but collecting extra personal data without a defined purpose, retention policy, or notice conflicts with privacy and data-minimization principles."
         },
         {
           "id": "d",
-          "text": "Hide all information about how the system works to prevent any scrutiny.",
+          "text": "Describe AI limitations only in internal documentation, without user-facing disclosure.",
           "correct": false,
-          "explanation": "Concealing how the system works undermines transparency and accountability. It runs counter to responsible AI principles."
+          "explanation": "Internal documentation helps governance, but responsible AI also requires appropriate transparency to users. Users should understand when AI is involved and what important limitations apply."
         },
         {
           "id": "e",

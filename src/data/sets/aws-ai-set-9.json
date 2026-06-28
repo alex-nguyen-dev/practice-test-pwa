@@ -39,15 +39,15 @@
       "choices": [
         {
           "id": "a",
-          "text": "Amazon Route 53 hosted zones.",
+          "text": "Amazon DynamoDB using only standard partition-key lookups.",
           "correct": false,
-          "explanation": "Route 53 hosted zones manage DNS records. They cannot store embeddings or perform vector similarity search, so they are not a vector store."
+          "explanation": "A standard DynamoDB key-value access pattern can store application data, but it does not provide vector similarity search for embeddings. A RAG vector store needs vector indexing and nearest-neighbor retrieval capabilities."
         },
         {
           "id": "b",
-          "text": "Amazon SQS queues used as the primary index for similarity search.",
+          "text": "Amazon RDS for MySQL used without any vector search capability.",
           "correct": false,
-          "explanation": "Amazon SQS is a message-queuing service for decoupling components. It cannot store embeddings or perform vector similarity search, so it is not a vector store."
+          "explanation": "A relational database can store structured application data, but a MySQL deployment without vector search support is not a vector-capable retrieval store for embeddings."
         },
         {
           "id": "c",
@@ -57,9 +57,9 @@
         },
         {
           "id": "d",
-          "text": "Amazon Neptune Analytics for graph-based RAG, or Amazon S3 Vectors.",
+          "text": "Amazon S3 Vectors, a purpose-built vector storage capability for embeddings.",
           "correct": true,
-          "explanation": "Amazon Neptune Analytics supports graph-based RAG, and Amazon S3 Vectors is an option for storing vectors, both valid AWS choices for vector storage and retrieval."
+          "explanation": "Amazon S3 Vectors is designed to store and query vector embeddings, making it a valid AWS option for retrieval workflows that need vector storage and similarity search."
         },
         {
           "id": "e",
@@ -225,9 +225,9 @@
       "choices": [
         {
           "id": "a",
-          "text": "Grant every employee administrator access to all models so that no one is ever blocked.",
+          "text": "Allow teams to deploy models after informal peer review, without central tracking of owners, versions, or approvals.",
           "correct": false,
-          "explanation": "Giving all employees admin access to every model violates least privilege and removes meaningful oversight. It increases risk and runs counter to sound AI governance."
+          "explanation": "Informal review can be useful, but governance also needs auditable ownership, versioning, approval status, and oversight. Without central tracking, accountability and risk management are weak."
         },
         {
           "id": "b",
@@ -237,9 +237,9 @@
         },
         {
           "id": "c",
-          "text": "Avoid documenting anything so the system stays flexible and undocumented.",
+          "text": "Keep model decisions and limitations only in team chat threads so updates are lightweight.",
           "correct": false,
-          "explanation": "Skipping documentation undermines accountability, auditability, and risk management. It is the opposite of sound AI governance."
+          "explanation": "Team chat is not a durable governance record. Model purpose, limitations, data, owners, approvals, and changes should be documented in a controlled place that can be reviewed and audited."
         },
         {
           "id": "d",

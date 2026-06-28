@@ -93,9 +93,9 @@
         },
         {
           "id": "e",
-          "text": "Embed long-lived secrets and API keys directly in client-side JavaScript so the browser can call services without a backend.",
+          "text": "Store complete, unredacted prompts and responses in encrypted logs indefinitely for troubleshooting.",
           "correct": false,
-          "explanation": "Anything shipped to the browser can be viewed by users, so storing secrets in client-side JavaScript exposes them to anyone who inspects the page. Secrets should be kept server-side or in a managed secrets store."
+          "explanation": "Encrypted logging can support audit and troubleshooting, but retaining complete unredacted prompts and responses indefinitely increases exposure of sensitive data. Logs should be minimized, protected, and retained only as long as needed."
         }
       ]
     },

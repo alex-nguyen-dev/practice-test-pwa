@@ -81,9 +81,9 @@
         },
         {
           "id": "c",
-          "text": "Share one long-lived administrator credential across all services so access stays simple.",
+          "text": "Use one broad execution role for all training and inference jobs so permission management is simpler.",
           "correct": false,
-          "explanation": "A shared, long-lived admin credential grants access far beyond what each component needs and is hard to audit or rotate, increasing the risk of data exposure rather than reducing it."
+          "explanation": "A broad shared role is easier to manage, but it grants more access than each job needs and increases blast radius. Separate least-privilege roles reduce the risk of sensitive data exposure."
         },
         {
           "id": "d",
@@ -93,9 +93,9 @@
         },
         {
           "id": "e",
-          "text": "Log full raw prompts containing secrets to a publicly readable location for convenience.",
+          "text": "Keep raw prompts and model outputs in centralized logs by default, without redaction or retention limits.",
           "correct": false,
-          "explanation": "Writing raw prompts with secrets to a public location directly exposes sensitive data. This increases risk rather than reducing it."
+          "explanation": "Centralized logs can support auditing, but storing raw sensitive prompts and outputs without redaction or retention limits increases exposure. Sensitive logging should be minimized, protected, and governed."
         }
       ]
     },

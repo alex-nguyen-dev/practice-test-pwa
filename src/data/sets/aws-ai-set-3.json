@@ -135,15 +135,15 @@
         },
         {
           "id": "b",
-          "text": "Automatically execute any commands or code the model produces, without validation, so responses are faster.",
+          "text": "Allow the model to call approved tools without validating each requested action once the user is authenticated.",
           "correct": false,
-          "explanation": "Executing model-produced actions without validation lets a successful injection run arbitrary commands. Actions should be validated before execution, so this is an unsafe practice rather than a mitigation."
+          "explanation": "Authentication alone does not make every model-requested action safe. Prompt injection can still manipulate tool use, so sensitive actions should be validated against policy and user intent before they execute."
         },
         {
           "id": "c",
-          "text": "Grant the model unrestricted permission to call any internal API so it can resolve requests faster.",
+          "text": "Give the model broad read access to internal systems so it has enough context to answer most requests.",
           "correct": false,
-          "explanation": "Giving the model unrestricted API access dramatically increases the blast radius of a successful injection. This is the opposite of a sound mitigation and violates least privilege."
+          "explanation": "Broad access may improve coverage, but it increases the impact of a successful prompt injection. The safer pattern is least privilege: provide only the tools and data needed for the task and validate their use."
         },
         {
           "id": "d",

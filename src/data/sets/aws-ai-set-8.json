@@ -15,9 +15,9 @@
         },
         {
           "id": "b",
-          "text": "The color theme of the AWS Management Console.",
+          "text": "Choosing the largest available model solely because it has the most parameters.",
           "correct": false,
-          "explanation": "The console's appearance has no bearing on which foundation model best fits a use case. It is not a model selection factor."
+          "explanation": "Model size can influence capability, cost, and latency, but parameter count alone does not determine the best fit. Teams should evaluate the model against the task, budget, modality, latency, and compliance requirements."
         },
         {
           "id": "c",
@@ -27,9 +27,9 @@
         },
         {
           "id": "d",
-          "text": "The number of new AWS Regions that launched in the past year.",
+          "text": "Selecting the provider with the most recognizable brand without testing task performance.",
           "correct": false,
-          "explanation": "The count of recently launched AWS Regions has no bearing on which foundation model fits a use case. It is not a model selection factor."
+          "explanation": "Provider reputation may be a business consideration, but it is not enough to choose a model. The model still needs to be tested for the application's accuracy, modality, latency, cost, and compliance needs."
         },
         {
           "id": "e",
@@ -285,9 +285,9 @@
       "choices": [
         {
           "id": "a",
-          "text": "Always granting administrator access for convenience.",
+          "text": "Using one shared service role with broad permissions for every application component.",
           "correct": false,
-          "explanation": "Granting broad administrator access is the opposite of least privilege and increases risk. It is not a sound security principle."
+          "explanation": "A shared broad role may be convenient, but it does not grant each component only what it needs. It increases blast radius and makes auditing harder, so it is not least privilege."
         },
         {
           "id": "b",

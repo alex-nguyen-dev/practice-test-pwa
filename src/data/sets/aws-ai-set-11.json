@@ -81,9 +81,9 @@
         },
         {
           "id": "c",
-          "text": "Remove all safety controls so responses are generated faster.",
+          "text": "Rely only on the base model provider's default safety training, with no application-level filtering or monitoring.",
           "correct": false,
-          "explanation": "Removing safety controls increases the likelihood of toxic output reaching users. It is the opposite of a mitigation and is not acceptable."
+          "explanation": "Base model safety training can help, but it is not a complete mitigation for a production assistant. Application-level guardrails, monitoring, and review are still needed to reduce toxic output risk."
         },
         {
           "id": "d",
@@ -171,9 +171,9 @@
         },
         {
           "id": "b",
-          "text": "An Amazon Route 53 hosted zone.",
+          "text": "An Amazon S3 gateway VPC endpoint.",
           "correct": false,
-          "explanation": "Route 53 provides DNS. It does not give private subnet resources outbound internet connectivity."
+          "explanation": "An S3 gateway endpoint gives private access to Amazon S3, but it does not provide general outbound internet access for downloading software updates from arbitrary internet repositories."
         },
         {
           "id": "c",

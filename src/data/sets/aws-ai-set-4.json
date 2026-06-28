@@ -131,13 +131,13 @@
           "id": "a",
           "text": "Interpretability and explainability are identical terms with no meaningful difference.",
           "correct": false,
-          "explanation": "Although related, the terms differ: interpretability is about understanding internal mechanics, while explainability is about describing behavior even when internals are opaque."
+          "explanation": "Although related, the terms differ. Interpretability usually refers to how directly a human can understand a model's internal logic, while explainability refers to techniques or descriptions that help explain a model's behavior or outputs."
         },
         {
           "id": "b",
-          "text": "Interpretability explains internal decisions; explainability describes behavior.",
+          "text": "Interpretability means the model's internal logic is directly understandable; explainability uses methods or descriptions to clarify its outputs.",
           "correct": true,
-          "explanation": "Interpretability focuses on understanding the model's internal decision process, while explainability focuses on describing behavior based on inputs and outputs. Highly interpretable models like decision trees may trade off some performance."
+          "explanation": "Interpretability focuses on whether people can directly understand how the model works internally, as with a simple decision tree. Explainability focuses on providing reasons, summaries, or analysis that help people understand a model's outputs, especially when the model itself is complex or opaque."
         },
         {
           "id": "c",
@@ -177,9 +177,9 @@
         },
         {
           "id": "d",
-          "text": "Amazon Route 53 health checks.",
+          "text": "An Amazon S3 gateway VPC endpoint.",
           "correct": false,
-          "explanation": "Route 53 health checks monitor endpoint availability for DNS routing. They do not provide private connectivity to AWS services."
+          "explanation": "A gateway VPC endpoint provides private access to Amazon S3 and DynamoDB, not Amazon Bedrock. Bedrock private access uses an interface VPC endpoint powered by AWS PrivateLink."
         }
       ]
     },

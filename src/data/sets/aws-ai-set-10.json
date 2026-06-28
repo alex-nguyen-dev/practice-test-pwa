@@ -15,15 +15,15 @@
         },
         {
           "id": "b",
-          "text": "Generative AI is a networking protocol for routing traffic.",
+          "text": "Generative AI retrieves existing documents and returns exact matching passages without creating new content.",
           "correct": false,
-          "explanation": "Generative AI has nothing to do with networking protocols. It is a class of models that generate content."
+          "explanation": "Retrieving existing passages is information retrieval or search. Generative AI is distinguished by producing new content, often using retrieved context as input but not limited to returning exact matches."
         },
         {
           "id": "c",
-          "text": "Generative AI is a type of relational database.",
+          "text": "Generative AI is a rules engine that follows only hand-written if/then logic.",
           "correct": false,
-          "explanation": "Generative AI is not a database. It refers to models that produce new content, often built on foundation models."
+          "explanation": "A rules engine executes explicit logic written by developers. Generative AI uses learned patterns from model training to produce new content such as text, images, audio, or code."
         },
         {
           "id": "d",
@@ -141,9 +141,9 @@
         },
         {
           "id": "c",
-          "text": "Maximizing model size regardless of impact.",
+          "text": "Choosing the most capable model available without evaluating fairness, safety, privacy, or transparency risks.",
           "correct": false,
-          "explanation": "Increasing model size is not a responsible AI dimension. Responsible AI focuses on fairness, transparency, safety, and related principles, not raw model size."
+          "explanation": "Model capability is not a responsible AI dimension by itself. Responsible AI requires evaluating risks such as fairness, privacy and security, transparency, veracity and robustness, safety, governance, and controllability."
         },
         {
           "id": "d",

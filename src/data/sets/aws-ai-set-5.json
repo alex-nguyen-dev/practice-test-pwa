@@ -201,9 +201,9 @@
         },
         {
           "id": "b",
-          "text": "A relational database table with rows and typed columns.",
+          "text": "A CSV export of invoice totals, dates, and customer IDs arranged in columns.",
           "correct": false,
-          "explanation": "A relational table with rows and columns is structured data, not unstructured. It fits a defined schema."
+          "explanation": "A CSV file can be stored as a file, but the invoice totals, dates, and customer IDs are arranged in a predictable column structure. That makes it structured data rather than unstructured data."
         },
         {
           "id": "c",
@@ -225,9 +225,9 @@
       "choices": [
         {
           "id": "a",
-          "text": "Assume the model is always correct and remove all human review to speed things up.",
+          "text": "Lower the temperature and rely on deterministic decoding as the only hallucination control.",
           "correct": false,
-          "explanation": "Treating outputs as always correct and removing human review increases the risk that hallucinations cause harm. It is the opposite of a sound mitigation."
+          "explanation": "Lowering randomness can make outputs more consistent, but it does not guarantee factual accuracy. Without grounding, verification, or review, the model can still produce confident incorrect statements."
         },
         {
           "id": "b",
