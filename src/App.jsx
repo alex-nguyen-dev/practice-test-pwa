@@ -2,13 +2,19 @@ import { matchPath, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { ArrowLeft, BookOpen, Home, Info, Menu, Moon, Sun } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { GlassButton } from './components/GlassButton.jsx';
+import { LoginScreen } from './components/LoginScreen.jsx';
 import { getCollection, getSetSummary } from './data/practiceSets.js';
 import { getNote } from './data/notesList.js';
+
+const AUTH_STORAGE_KEY = 'juku:authenticated';
+const APP_PASSWORD = '120312';
 
 const storedTheme = () => {
   if (localStorage.theme === 'dark' || localStorage.theme === 'light') return localStorage.theme;
   return 'dark';
 };
+
+const storedAuth = () => localStorage.getItem(AUTH_STORAGE_KEY) === 'true';
 
 const headerTitle = (pathname) => {
   if (matchPath('/about', pathname)) return 'About';
@@ -103,6 +109,7 @@ export default function App() {
   const navigate = useNavigate();
   const location = useLocation();
   const [theme, setTheme] = useState(storedTheme);
+  const [authenticated, setAuthenticated] = useState(storedAuth);
   const [menuOpen, setMenuOpen] = useState(false);
   const canGoBack = location.pathname !== '/';
   const isHome = location.pathname === '/';
@@ -120,6 +127,18 @@ export default function App() {
   function navTo(path) {
     navigate(path);
     setMenuOpen(false);
+  }
+
+  function login(password) {
+    if (password !== APP_PASSWORD) return false;
+
+    localStorage.setItem(AUTH_STORAGE_KEY, 'true');
+    setAuthenticated(true);
+    return true;
+  }
+
+  if (!authenticated) {
+    return <LoginScreen onLogin={login} />;
   }
 
   return (

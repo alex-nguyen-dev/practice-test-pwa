@@ -9,6 +9,12 @@ npm install
 npm run dev
 ```
 
+## Casual Login Gate
+
+The app has a frontend-only password gate for casual access protection. After a successful login, the browser stays logged in indefinitely by saving a flag in `localStorage`. It will only ask again if site data is cleared or the app is opened in a different browser/device.
+
+Because this is a static frontend app, this is not strong security: a determined user can inspect or bypass bundled frontend code.
+
 ## Add Practice Content
 
 Each practice set is one JSON file in `src/data/sets`.
