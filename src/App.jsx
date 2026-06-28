@@ -137,11 +137,7 @@ export default function App() {
           )}
 
           <p
-            className={`min-w-0 flex-1 truncate text-center font-semibold tracking-tight ${
-              isHome
-                ? 'bg-gradient-to-r from-sky-600 to-violet-600 bg-clip-text text-lg text-transparent dark:from-sky-300 dark:to-violet-200 sm:text-xl'
-                : 'text-base text-slate-700 dark:text-slate-100 sm:text-lg'
-            }`}
+            className={`min-w-0 flex-1 truncate text-center font-semibold tracking-tight bg-gradient-to-r from-sky-600 to-violet-600 bg-clip-text text-lg text-transparent dark:from-sky-300 dark:to-violet-200 sm:text-xl`}
           >
             {title}
           </p>
