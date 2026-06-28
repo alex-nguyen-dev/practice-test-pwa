@@ -5,7 +5,7 @@
   "questions": [
     {
       "id": "q1",
-      "question": "A retail company is exploring AI technologies to improve its inventory management by analyzing images from store cameras and shelves. The development team is considering both computer vision and image processing for different tasks but wants to understand the key differences between the two. Knowing how these technologies differ in terms of their capabilities — whether for recognizing objects, making predictions, or simply manipulating images — will help the team choose the right approach for each task. Given this context, how would you highlight the differences between computer vision and image processing?",
+      "question": "A retail company is exploring AI technologies to improve its inventory management by analyzing images from store cameras and shelves. The development team is considering both computer vision and image processing for different tasks but wants to understand the key differences between the two. Knowing how these technologies differ in terms of their capabilities \u2014 whether for recognizing objects, making predictions, or simply manipulating images \u2014 will help the team choose the right approach for each task. Given this context, how would you highlight the differences between computer vision and image processing?",
       "choices": [
         {
           "id": "a",
@@ -95,17 +95,17 @@
     },
     {
       "id": "q4",
-      "question": "A company has implemented a chatbot powered by Amazon Bedrock to handle customer inquiries and support requests. While the chatbot is effective at providing automated responses, the company has noticed that some of the replies do not consistently match its desired tone — professional, empathetic, and friendly. To maintain brand consistency and ensure a positive customer experience, the company needs to align the chatbot’s responses with its specific communication style and standards. Which approach would be most effective for ensuring that the chatbot's responses are consistently aligned with the company's tone and style?",
+      "question": "A company has implemented a chatbot powered by Amazon Bedrock to handle customer inquiries and support requests. While the chatbot is effective at providing automated responses, the company has noticed that some of the replies do not consistently match its desired tone \u2014 professional, empathetic, and friendly. To maintain brand consistency and ensure a positive customer experience, the company needs to align the chatbot\u2019s responses with its specific communication style and standards. Which approach would be most effective for ensuring that the chatbot's responses are consistently aligned with the company's tone and style?",
       "choices": [
         {
           "id": "a",
-          "text": "The company should set a low limit on the number of tokens, which restricts the length of the chatbot's responses, thereby making the chatbot’s responses consistent",
+          "text": "The company should set a low limit on the number of tokens, which restricts the length of the chatbot's responses, thereby making the chatbot\u2019s responses consistent",
           "correct": false,
           "explanation": "Token limits, temperature, and batch inference can affect output length, randomness, or throughput, but they do not by themselves define brand tone."
         },
         {
           "id": "b",
-          "text": "The company should adjust the temperature to reduce the randomness and creativity of the chatbot’s responses",
+          "text": "The company should adjust the temperature to reduce the randomness and creativity of the chatbot\u2019s responses",
           "correct": false,
           "explanation": "Token limits, temperature, and batch inference can affect output length, randomness, or throughput, but they do not by themselves define brand tone."
         },
@@ -117,7 +117,7 @@
         },
         {
           "id": "d",
-          "text": "The company should use batch inferencing, a method that processes multiple input requests in one go to make the chatbot’s responses consistent",
+          "text": "The company should use batch inferencing, a method that processes multiple input requests in one go to make the chatbot\u2019s responses consistent",
           "correct": false,
           "explanation": "Token limits, temperature, and batch inference can affect output length, randomness, or throughput, but they do not by themselves define brand tone."
         }
@@ -221,7 +221,7 @@
     },
     {
       "id": "q8",
-      "question": "A logistics company is exploring ways to label large datasets for an upcoming machine learning project focused on optimizing delivery routes. The team is evaluating two AWS services—Amazon Mechanical Turk and Amazon Ground Truth—to assist with the data labeling process. They need to understand the key differences between the two services, particularly in terms of automation, scalability, and workforce management. What is the primary difference between Amazon Mechanical Turk and Amazon Ground Truth?",
+      "question": "A logistics company is exploring ways to label large datasets for an upcoming machine learning project focused on optimizing delivery routes. The team is evaluating two AWS services\u2014Amazon Mechanical Turk and Amazon Ground Truth\u2014to assist with the data labeling process. They need to understand the key differences between the two services, particularly in terms of automation, scalability, and workforce management. What is the primary difference between Amazon Mechanical Turk and Amazon Ground Truth?",
       "choices": [
         {
           "id": "a",
@@ -281,7 +281,7 @@
     },
     {
       "id": "q10",
-      "question": "A machine learning team at a tech company is developing a generative AI model to automate text generation for customer support. As part of optimizing the model’s performance, the team needs to adjust both model parameters and hyperparameters but wants to clearly understand the distinctions between the two. Understanding these differences is crucial for fine-tuning the model and improving its output. Which of the following highlights the key differences between model parameters and hyperparameters in the context of generative AI?",
+      "question": "A machine learning team at a tech company is developing a generative AI model to automate text generation for customer support. As part of optimizing the model\u2019s performance, the team needs to adjust both model parameters and hyperparameters but wants to clearly understand the distinctions between the two. Understanding these differences is crucial for fine-tuning the model and improving its output. Which of the following highlights the key differences between model parameters and hyperparameters in the context of generative AI?",
       "choices": [
         {
           "id": "a",
@@ -311,7 +311,7 @@
     },
     {
       "id": "q11",
-      "question": "A robotics company is developing an AI system to improve the autonomous navigation of its robots. The team is exploring Deep Learning to enhance the system’s ability to recognize and respond to its environment. To ensure the AI model performs well, the team needs to understand how model training works in Deep Learning, specifically the process through which the model learns from large datasets by adjusting its internal parameters. This understanding is essential to optimize the model for real-time decision-making. How does model training work in Deep Learning?",
+      "question": "A robotics company is developing an AI system to improve the autonomous navigation of its robots. The team is exploring Deep Learning to enhance the system\u2019s ability to recognize and respond to its environment. To ensure the AI model performs well, the team needs to understand how model training works in Deep Learning, specifically the process through which the model learns from large datasets by adjusting its internal parameters. This understanding is essential to optimize the model for real-time decision-making. How does model training work in Deep Learning?",
       "choices": [
         {
           "id": "a",
@@ -491,7 +491,7 @@
     },
     {
       "id": "q17",
-      "question": "A healthcare technology company is developing AI-driven applications to assist doctors in diagnosing diseases. As part of its commitment to ethical standards, the company wants to ensure that its AI models are fair, transparent, and free from bias. To achieve this, the data science team is exploring AWS services and tools that can help implement Responsible AI practices, as understanding which AWS services support these practices is critical for the company’s AI development strategy. Which AWS services/tools can be used to implement Responsible AI practices? (Select two)",
+      "question": "A healthcare technology company is developing AI-driven applications to assist doctors in diagnosing diseases. As part of its commitment to ethical standards, the company wants to ensure that its AI models are fair, transparent, and free from bias. To achieve this, the data science team is exploring AWS services and tools that can help implement Responsible AI practices, as understanding which AWS services support these practices is critical for the company\u2019s AI development strategy. Which AWS services/tools can be used to implement Responsible AI practices? (Select two)",
       "choices": [
         {
           "id": "a",
@@ -689,7 +689,7 @@
     },
     {
       "id": "q23",
-      "question": "A financial institution is designing an AI system on AWS to process sensitive customer data for fraud detection. The company’s data engineering team is focused on securing the AI pipeline and ensuring that both data access and data integrity are maintained throughout the process. To implement proper security measures, they need to understand the distinction between data access control and data integrity. What do you suggest?",
+      "question": "A financial institution is designing an AI system on AWS to process sensitive customer data for fraud detection. The company\u2019s data engineering team is focused on securing the AI pipeline and ensuring that both data access and data integrity are maintained throughout the process. To implement proper security measures, they need to understand the distinction between data access control and data integrity. What do you suggest?",
       "choices": [
         {
           "id": "a",
@@ -779,7 +779,7 @@
     },
     {
       "id": "q26",
-      "question": "A media company is developing generative AI applications on AWS to automate content creation and enhance customer engagement. Given the sensitivity of customer data and the complexity of AI models, the company’s security team wants to implement a defense-in-depth security approach to protect both the data and the AI infrastructure. Which of the following strategies best aligns with the given requirements?",
+      "question": "A media company is developing generative AI applications on AWS to automate content creation and enhance customer engagement. Given the sensitivity of customer data and the complexity of AI models, the company\u2019s security team wants to implement a defense-in-depth security approach to protect both the data and the AI infrastructure. Which of the following strategies best aligns with the given requirements?",
       "choices": [
         {
           "id": "a",
@@ -814,8 +814,8 @@
         {
           "id": "a",
           "text": "Understand and manage your cloud infrastructure on AWS",
-          "correct": false,
-          "explanation": "Amazon Q Developer can help explain AWS resources and workflows, but this option overstates the capability as general infrastructure management."
+          "correct": true,
+          "explanation": "Amazon Q Developer can help you understand and manage your AWS cloud infrastructure by explaining resources, architectures, and recommended best practices."
         },
         {
           "id": "b",
@@ -832,8 +832,8 @@
         {
           "id": "d",
           "text": "Visualize your AWS account-specific cost-related data in Amazon Q Developer",
-          "correct": true,
-          "explanation": "Amazon Q Developer can return visualizations for supported account-specific cost data, making this a documented cost-analysis capability."
+          "correct": false,
+          "explanation": "Visualizing cost data is a feature of Amazon QuickSight or Cost Explorer, not a core capability of Amazon Q Developer."
         },
         {
           "id": "e",
@@ -879,7 +879,7 @@
       "choices": [
         {
           "id": "a",
-          "text": "The company should use a multi-modal generative model, which can generate responses or outputs based on combined inputs from different modalities, such as text and images, enhancing the chatbot’s ability to provide contextually relevant answers",
+          "text": "The company should use a multi-modal generative model, which can generate responses or outputs based on combined inputs from different modalities, such as text and images, enhancing the chatbot\u2019s ability to provide contextually relevant answers",
           "correct": true,
           "explanation": "A multimodal generative model can directly process combined text and image inputs and generate a context-aware chatbot response."
         },
@@ -941,7 +941,7 @@
     },
     {
       "id": "q31",
-      "question": "A software company is developing a generative AI model for language translation and needs to optimize the way the model processes and understands text. The development team is focusing on improving the model’s ability to convert words into a form that the AI can effectively interpret and generate accurate translations. To achieve this, they need to clarify the roles of tokens and embeddings in the model’s language processing. Which of the following summarizes the differences between a token and an embedding in the context of generative AI?",
+      "question": "A software company is developing a generative AI model for language translation and needs to optimize the way the model processes and understands text. The development team is focusing on improving the model\u2019s ability to convert words into a form that the AI can effectively interpret and generate accurate translations. To achieve this, they need to clarify the roles of tokens and embeddings in the model\u2019s language processing. Which of the following summarizes the differences between a token and an embedding in the context of generative AI?",
       "choices": [
         {
           "id": "a",
@@ -1187,7 +1187,7 @@
     },
     {
       "id": "q39",
-      "question": "A financial services company is building a machine learning model to improve its credit risk assessment process. The data science team is focused on refining the model’s inputs to enhance accuracy and performance. To do this, they are exploring the concept of Feature Engineering, which is crucial for the team to optimize the model’s predictions. What is Feature Engineering in the context of machine learning?",
+      "question": "A financial services company is building a machine learning model to improve its credit risk assessment process. The data science team is focused on refining the model\u2019s inputs to enhance accuracy and performance. To do this, they are exploring the concept of Feature Engineering, which is crucial for the team to optimize the model\u2019s predictions. What is Feature Engineering in the context of machine learning?",
       "choices": [
         {
           "id": "a",
@@ -1197,7 +1197,7 @@
         },
         {
           "id": "b",
-          "text": "Feature Engineering is the process of tuning hyperparameters in a machine learning model, and it is important because it optimizes the model’s performance",
+          "text": "Feature Engineering is the process of tuning hyperparameters in a machine learning model, and it is important because it optimizes the model\u2019s performance",
           "correct": false,
           "explanation": "This describes visualization, hyperparameter tuning, or data collection rather than creating useful model input features."
         },
@@ -1781,7 +1781,7 @@
     },
     {
       "id": "q58",
-      "question": "A financial services company is building a machine learning model to predict loan defaults, but the data science team is struggling to find the right balance between model complexity and accuracy. They are aware of the bias-variance trade-off, as understanding this trade-off is critical for optimizing the model’s performance and ensuring it generalizes well. What is the bias versus variance trade-off in machine learning?",
+      "question": "A financial services company is building a machine learning model to predict loan defaults, but the data science team is struggling to find the right balance between model complexity and accuracy. They are aware of the bias-variance trade-off, as understanding this trade-off is critical for optimizing the model\u2019s performance and ensuring it generalizes well. What is the bias versus variance trade-off in machine learning?",
       "choices": [
         {
           "id": "a",

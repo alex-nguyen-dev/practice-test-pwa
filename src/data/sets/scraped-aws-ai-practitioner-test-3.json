@@ -407,7 +407,7 @@
     },
     {
       "id": "q14",
-      "question": "A retail company is looking to analyze its sales performance over the past 12 months to identify trends, track key performance indicators, and make informed strategic decisions. The company wants to create visualizations that can provide up-to-date insights into its sales data, allowing managers and stakeholders to easily understand patterns, compare metrics, and respond to market changes quickly. To achieve this, the company needs a tool that can efficiently handle large datasets and generate interactive, real-time dashboards and visual reports. Which tool would be most suitable for creating visualizations that meet the company’s objectives?",
+      "question": "A retail company is looking to analyze its sales performance over the past 12 months to identify trends, track key performance indicators, and make informed strategic decisions. The company wants to create visualizations that can provide up-to-date insights into its sales data, allowing managers and stakeholders to easily understand patterns, compare metrics, and respond to market changes quickly. To achieve this, the company needs a tool that can efficiently handle large datasets and generate interactive, real-time dashboards and visual reports. Which tool would be most suitable for creating visualizations that meet the company\u2019s objectives?",
       "choices": [
         {
           "id": "a",
@@ -557,7 +557,7 @@
     },
     {
       "id": "q19",
-      "question": "A retail company wants to leverage machine learning to analyze customer behavior and predict future purchasing trends but lacks in-house coding expertise. The company’s goal is to build a model that can identify patterns in customer data and forecast sales, helping to tailor marketing strategies and inventory management. Since the team does not have any programming skills, they are considering different tools or services that would enable them to develop a machine learning model without writing any code. Given this limitation, which of the following tools or services would be most suitable for the company to use?",
+      "question": "A retail company wants to leverage machine learning to analyze customer behavior and predict future purchasing trends but lacks in-house coding expertise. The company\u2019s goal is to build a model that can identify patterns in customer data and forecast sales, helping to tailor marketing strategies and inventory management. Since the team does not have any programming skills, they are considering different tools or services that would enable them to develop a machine learning model without writing any code. Given this limitation, which of the following tools or services would be most suitable for the company to use?",
       "choices": [
         {
           "id": "a",
@@ -803,7 +803,7 @@
     },
     {
       "id": "q27",
-      "question": "A healthcare company is developing a machine learning model to classify medical conditions based on patient data. The data science team needs to evaluate the model’s performance to ensure that it makes correct predictions, particularly for critical diagnoses. To do so, the team is considering various performance metrics commonly used for classification systems. Which of the following performance metrics would you recommend to the team for evaluating the effectiveness of its classification system?",
+      "question": "A healthcare company is developing a machine learning model to classify medical conditions based on patient data. The data science team needs to evaluate the model\u2019s performance to ensure that it makes correct predictions, particularly for critical diagnoses. To do so, the team is considering various performance metrics commonly used for classification systems. Which of the following performance metrics would you recommend to the team for evaluating the effectiveness of its classification system?",
       "choices": [
         {
           "id": "a",
@@ -863,7 +863,7 @@
     },
     {
       "id": "q29",
-      "question": "A healthcare company is building a machine learning model to predict patient outcomes based on various health indicators. The data science team is exploring different techniques to improve the model’s accuracy by refining the input data, specifically using feature extraction and feature selection. Understanding the key differences between these two approaches will help the team optimize the model’s performance. What do you suggest to the company?",
+      "question": "A healthcare company is building a machine learning model to predict patient outcomes based on various health indicators. The data science team is exploring different techniques to improve the model\u2019s accuracy by refining the input data, specifically using feature extraction and feature selection. Understanding the key differences between these two approaches will help the team optimize the model\u2019s performance. What do you suggest to the company?",
       "choices": [
         {
           "id": "a",
@@ -971,7 +971,7 @@
           "id": "c",
           "text": "The company should create a service role for Amazon Bedrock for each team, granting access only to the specific team's clients data in Amazon S3",
           "correct": true,
-          "explanation": "Separate Bedrock service roles scoped to each team’s S3 data enforce least-privilege access for each client dataset."
+          "explanation": "Separate Bedrock service roles scoped to each team\u2019s S3 data enforce least-privilege access for each client dataset."
         },
         {
           "id": "d",
@@ -1043,7 +1043,7 @@
     },
     {
       "id": "q35",
-      "question": "A retail company is using Amazon Bedrock to enhance its product recommendation system with generative AI. To tailor the AI model to the company’s specific needs, the data science team is exploring different model customization methods, since understanding the valid customization options available for Amazon Bedrock is crucial for optimizing the model’s performance. Which of the following represent valid model customization methods for Amazon Bedrock? (Select two)",
+      "question": "A retail company is using Amazon Bedrock to enhance its product recommendation system with generative AI. To tailor the AI model to the company\u2019s specific needs, the data science team is exploring different model customization methods, since understanding the valid customization options available for Amazon Bedrock is crucial for optimizing the model\u2019s performance. Which of the following represent valid model customization methods for Amazon Bedrock? (Select two)",
       "choices": [
         {
           "id": "a",
@@ -1445,7 +1445,7 @@
     },
     {
       "id": "q48",
-      "question": "A financial services company is developing machine learning models to automate credit risk assessments and ensure regulatory compliance. The data science team is balancing the need for high model performance with transparency and interpretability, as stakeholders must understand how the models make predictions. The team is evaluating how these factors — model transparency, interpretability, and performance — interact and affect each other. What do you suggest to the team?",
+      "question": "A financial services company is developing machine learning models to automate credit risk assessments and ensure regulatory compliance. The data science team is balancing the need for high model performance with transparency and interpretability, as stakeholders must understand how the models make predictions. The team is evaluating how these factors \u2014 model transparency, interpretability, and performance \u2014 interact and affect each other. What do you suggest to the team?",
       "choices": [
         {
           "id": "a",
@@ -1719,7 +1719,7 @@
         },
         {
           "id": "d",
-          "text": "Influences the likelihood of the model selecting lower-probability outputs, thereby impacting the creativity of the model’s output",
+          "text": "Influences the likelihood of the model selecting lower-probability outputs, thereby impacting the creativity of the model\u2019s output",
           "correct": false,
           "explanation": "This describes stop sequences, top-p, or temperature rather than top-k."
         }
@@ -1787,7 +1787,7 @@
     },
     {
       "id": "q59",
-      "question": "A financial services company is developing a machine learning model to predict credit risk and optimize loan approvals. The data science team is preparing the dataset for model development and needs to understand how to properly split the data into training, validation, and test sets. Each of these sets serves a different purpose in ensuring the model’s accuracy and generalization. Understanding the key differences between a training set, validation set, and test set will help the team implement an effective model evaluation strategy. What do you recommend to the company?",
+      "question": "A financial services company is developing a machine learning model to predict credit risk and optimize loan approvals. The data science team is preparing the dataset for model development and needs to understand how to properly split the data into training, validation, and test sets. Each of these sets serves a different purpose in ensuring the model\u2019s accuracy and generalization. Understanding the key differences between a training set, validation set, and test set will help the team implement an effective model evaluation strategy. What do you recommend to the company?",
       "choices": [
         {
           "id": "a",
@@ -1864,14 +1864,14 @@
         {
           "id": "c",
           "text": "Use automated testing via metrics like ROUGE or BLEU to measure the similarity between generated and reference summaries",
-          "correct": true,
-          "explanation": "ROUGE and BLEU compare generated summaries with reference summaries and are common automated text-generation evaluation metrics."
+          "correct": false,
+          "explanation": "ROUGE and BLEU only measure n-gram overlap with reference summaries and miss important quality dimensions like coherence, relevance, and readability."
         },
         {
           "id": "d",
           "text": "Leverage human evaluation to assess the quality of summaries",
-          "correct": false,
-          "explanation": "This method is less directly suited to automated evaluation of summarization output quality."
+          "correct": true,
+          "explanation": "Human evaluation is the gold standard for assessing summarization quality, capturing coherence, relevance, and readability that automated metrics like ROUGE/BLEU cannot measure."
         }
       ]
     },

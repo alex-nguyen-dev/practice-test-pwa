@@ -160,14 +160,14 @@
         {
           "id": "a",
           "text": "The company should develop an API that processes all responses from the model and checks for any risks of exposure, which involves creating a custom layer that monitors and filters all model outputs, scanning them for inappropriate or unsafe content before they are delivered to the end-user",
-          "correct": true,
-          "explanation": "A response-filtering layer is the strongest option listed for checking model outputs before users see unsafe or inappropriate content."
+          "correct": false,
+          "explanation": "Building a separate API to post-process all responses adds complexity and latency; the recommended approach is to use Guardrails or explicit prompt instructions to prevent harmful outputs at the source."
         },
         {
           "id": "b",
           "text": "The company should instruct the model to stick to the prompt by adding explicit instructions to ignore any unrelated or potentially malicious content",
-          "correct": false,
-          "explanation": "This option is weaker, less practical, or does not directly inspect unsafe model outputs before delivery."
+          "correct": true,
+          "explanation": "Adding explicit system prompt instructions to constrain the model behavior is the standard first-line mitigation for preventing harmful or inappropriate responses in Amazon Bedrock."
         },
         {
           "id": "c",
@@ -335,7 +335,7 @@
     },
     {
       "id": "q12",
-      "question": "Match the following AWS services to the respective use cases: A) Amazon Textract B) Amazon Forecast C) Amazon Kendra 1) Easy-to-use enterprise search service that’s powered by machine learning 2) Automatically extract printed text, handwriting, layout elements, and data from any document 3) Forecast business outcomes easily and accurately using machine learning",
+      "question": "Match the following AWS services to the respective use cases: A) Amazon Textract B) Amazon Forecast C) Amazon Kendra 1) Easy-to-use enterprise search service that\u2019s powered by machine learning 2) Automatically extract printed text, handwriting, layout elements, and data from any document 3) Forecast business outcomes easily and accurately using machine learning",
       "choices": [
         {
           "id": "a",
@@ -665,7 +665,7 @@
     },
     {
       "id": "q23",
-      "question": "A media company is using Amazon Bedrock to generate content such as headlines, articles, and social media posts. The data science team is particularly interested in understanding how adjusting the Temperature parameter can influence the model’s behavior to meet the company’s content generation goals. What do you recommend to the team regarding the Temperature parameter?",
+      "question": "A media company is using Amazon Bedrock to generate content such as headlines, articles, and social media posts. The data science team is particularly interested in understanding how adjusting the Temperature parameter can influence the model\u2019s behavior to meet the company\u2019s content generation goals. What do you recommend to the team regarding the Temperature parameter?",
       "choices": [
         {
           "id": "a",
@@ -675,7 +675,7 @@
         },
         {
           "id": "b",
-          "text": "Influences the likelihood of the model selecting lower-probability outputs, thereby impacting the creativity of the model’s output",
+          "text": "Influences the likelihood of the model selecting lower-probability outputs, thereby impacting the creativity of the model\u2019s output",
           "correct": true,
           "explanation": "Temperature controls the likelihood of selecting lower-probability tokens, which affects randomness and creativity."
         },
@@ -815,7 +815,7 @@
     },
     {
       "id": "q28",
-      "question": "A large enterprise is looking to implement an AI-powered assistant to help employees across departments streamline their work by answering questions, summarizing reports, generating content, and securely accessing data from internal systems. The company needs a solution that can seamlessly integrate with its enterprise systems while ensuring data privacy and security. The team is exploring various generative AI-powered assistants that can fulfill these requirements. Which of the following is a generative AI–powered assistant that can answer questions, provide summaries, generate content, and securely complete tasks based on data and information in the enterprise systems?",
+      "question": "A large enterprise is looking to implement an AI-powered assistant to help employees across departments streamline their work by answering questions, summarizing reports, generating content, and securely accessing data from internal systems. The company needs a solution that can seamlessly integrate with its enterprise systems while ensuring data privacy and security. The team is exploring various generative AI-powered assistants that can fulfill these requirements. Which of the following is a generative AI\u2013powered assistant that can answer questions, provide summaries, generate content, and securely complete tasks based on data and information in the enterprise systems?",
       "choices": [
         {
           "id": "a",
@@ -1175,7 +1175,7 @@
     },
     {
       "id": "q40",
-      "question": "A financial services company is developing machine learning models using Amazon SageMaker to automate loan approvals and fraud detection. To ensure transparency and compliance with industry regulations, the data science team needs a tool that documents the model’s intended uses, performance metrics, and any assumptions made during development. This documentation is crucial for maintaining accountability and ensuring that the models are used appropriately. Which Amazon SageMaker tool meets these requirements?",
+      "question": "A financial services company is developing machine learning models using Amazon SageMaker to automate loan approvals and fraud detection. To ensure transparency and compliance with industry regulations, the data science team needs a tool that documents the model\u2019s intended uses, performance metrics, and any assumptions made during development. This documentation is crucial for maintaining accountability and ensuring that the models are used appropriately. Which Amazon SageMaker tool meets these requirements?",
       "choices": [
         {
           "id": "a",
@@ -1505,7 +1505,7 @@
     },
     {
       "id": "q51",
-      "question": "A healthcare company is using machine learning models in Amazon SageMaker to predict patient outcomes based on various health indicators. To comply with regulatory requirements and build trust with medical professionals, the company needs to understand and explain how different input features, such as age, blood pressure, and medical history, contribute to the model’s predictions. The company is exploring which Amazon SageMaker service can provide this level of transparency and interpretability for their machine learning models. Which Amazon SageMaker service will help the company understand how an input feature contributes to the predictions of a machine learning model?",
+      "question": "A healthcare company is using machine learning models in Amazon SageMaker to predict patient outcomes based on various health indicators. To comply with regulatory requirements and build trust with medical professionals, the company needs to understand and explain how different input features, such as age, blood pressure, and medical history, contribute to the model\u2019s predictions. The company is exploring which Amazon SageMaker service can provide this level of transparency and interpretability for their machine learning models. Which Amazon SageMaker service will help the company understand how an input feature contributes to the predictions of a machine learning model?",
       "choices": [
         {
           "id": "a",
@@ -1791,7 +1791,7 @@
       "choices": [
         {
           "id": "a",
-          "text": "Offers highly accurate and easy-to-use enterprise search service that’s powered by machine learning",
+          "text": "Offers highly accurate and easy-to-use enterprise search service that\u2019s powered by machine learning",
           "correct": false,
           "explanation": "This describes enterprise search, document extraction, or telecom workflow automation rather than Personalize recommendations."
         },

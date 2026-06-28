@@ -65,7 +65,7 @@
     },
     {
       "id": "q3",
-      "question": "As a developer specializing in Large Language Models (LLMs) at a technology company, you have been tasked with migrating the company’s AI infrastructure to AWS Cloud to support the development of LLM-based solutions for various applications, such as natural language processing, text generation, and chatbots. The company is looking for AWS services that offer robust support for training, deploying, and managing LLMs while ensuring scalability, security, and integration with other cloud services. Which AWS services would you recommend for developing LLM-based solutions in this environment? (Select two)",
+      "question": "As a developer specializing in Large Language Models (LLMs) at a technology company, you have been tasked with migrating the company\u2019s AI infrastructure to AWS Cloud to support the development of LLM-based solutions for various applications, such as natural language processing, text generation, and chatbots. The company is looking for AWS services that offer robust support for training, deploying, and managing LLMs while ensuring scalability, security, and integration with other cloud services. Which AWS services would you recommend for developing LLM-based solutions in this environment? (Select two)",
       "choices": [
         {
           "id": "a",
@@ -105,7 +105,7 @@
       "choices": [
         {
           "id": "a",
-          "text": "Amazon Bedrock is a generative AI–powered assistant that allows you to create pre-packaged generative AI applications, whereas, Amazon Q provides an environment to build and scale generative AI applications using a Foundation Model (FM)",
+          "text": "Amazon Bedrock is a generative AI\u2013powered assistant that allows you to create pre-packaged generative AI applications, whereas, Amazon Q provides an environment to build and scale generative AI applications using a Foundation Model (FM)",
           "correct": false,
           "explanation": "This statement reverses or overgeneralizes the roles of Amazon Q and Amazon Bedrock."
         },
@@ -123,7 +123,7 @@
         },
         {
           "id": "d",
-          "text": "Amazon Q is a generative AI–powered assistant that allows you to create pre-packaged generative AI applications, whereas, Amazon Bedrock provides an environment to build and scale generative AI applications using a Foundation Model (FM)",
+          "text": "Amazon Q is a generative AI\u2013powered assistant that allows you to create pre-packaged generative AI applications, whereas, Amazon Bedrock provides an environment to build and scale generative AI applications using a Foundation Model (FM)",
           "correct": true,
           "explanation": "Amazon Q is a generative AI assistant for business and developer workflows, while Amazon Bedrock lets builders choose foundation models and build generative AI applications."
         },
@@ -197,7 +197,7 @@
     },
     {
       "id": "q7",
-      "question": "A marketing company is researching generative AI technologies to better understand how they work and what makes them suitable for automating creative tasks. Understanding the core principles of generative AI will help the company determine if it’s the right fit for their content creation needs. Given this context, which of the following best describes generative AI?",
+      "question": "A marketing company is researching generative AI technologies to better understand how they work and what makes them suitable for automating creative tasks. Understanding the core principles of generative AI will help the company determine if it\u2019s the right fit for their content creation needs. Given this context, which of the following best describes generative AI?",
       "choices": [
         {
           "id": "a",
@@ -467,7 +467,7 @@
     },
     {
       "id": "q16",
-      "question": "An e-commerce company wants to analyze thousands of customer reviews it receives daily to understand customer sentiment — whether positive, negative, neutral, or mixed. The goal is to gain insights into customer opinions, identify potential issues, and refine product offerings and marketing strategies. To achieve this, the company's data science team is exploring AWS AI services that can perform sentiment analysis on the written customer reviews. Which of the following would you recommend? (Select two)",
+      "question": "An e-commerce company wants to analyze thousands of customer reviews it receives daily to understand customer sentiment \u2014 whether positive, negative, neutral, or mixed. The goal is to gain insights into customer opinions, identify potential issues, and refine product offerings and marketing strategies. To achieve this, the company's data science team is exploring AWS AI services that can perform sentiment analysis on the written customer reviews. Which of the following would you recommend? (Select two)",
       "choices": [
         {
           "id": "a",
@@ -939,7 +939,7 @@
       "choices": [
         {
           "id": "a",
-          "text": "Shapley values provide a local explanation by quantifying the contribution of each feature to the prediction for a specific instance, while PDP provides a global explanation by showing the marginal effect of a feature on the model’s predictions across the dataset. Use Shapley values to explain individual predictions and PDP to understand the model's behavior at a dataset level",
+          "text": "Shapley values provide a local explanation by quantifying the contribution of each feature to the prediction for a specific instance, while PDP provides a global explanation by showing the marginal effect of a feature on the model\u2019s predictions across the dataset. Use Shapley values to explain individual predictions and PDP to understand the model's behavior at a dataset level",
           "correct": true,
           "explanation": "Shapley values explain feature contributions for individual predictions, while PDPs show global marginal effects across a dataset."
         },
@@ -957,7 +957,7 @@
         },
         {
           "id": "d",
-          "text": "Shapley values provide a global view of the model’s behavior by measuring the average effect of each feature across all instances, while PDP offers a local view by showing the effect of a single feature on the model’s prediction for a specific instance. Use Shapley values to understand overall feature importance and PDP to interpret individual predictions",
+          "text": "Shapley values provide a global view of the model\u2019s behavior by measuring the average effect of each feature across all instances, while PDP offers a local view by showing the effect of a single feature on the model\u2019s prediction for a specific instance. Use Shapley values to understand overall feature importance and PDP to interpret individual predictions",
           "correct": false,
           "explanation": "This option reverses or misstates the local/global roles of Shapley values and PDPs."
         }
@@ -1269,7 +1269,7 @@
       "choices": [
         {
           "id": "a",
-          "text": "Influences the likelihood of the model selecting lower-probability outputs, thereby impacting the creativity of the model’s output",
+          "text": "Influences the likelihood of the model selecting lower-probability outputs, thereby impacting the creativity of the model\u2019s output",
           "correct": false,
           "explanation": "This option describes temperature, Top K, or stop sequences rather than Top P."
         },
@@ -1396,14 +1396,14 @@
         {
           "id": "b",
           "text": "Each AWS Region consists of a minimum of three Availability Zones (AZ)",
-          "correct": false,
-          "explanation": "This statement overstates or misstates how Regions, Availability Zones, or edge locations are structured."
+          "correct": true,
+          "explanation": "Each AWS Region consists of a minimum of three Availability Zones, providing high availability and fault tolerance across geographically separated facilities."
         },
         {
           "id": "c",
           "text": "Each AWS Region consists of a minimum of two Availability Zones (AZ)",
-          "correct": true,
-          "explanation": "An Availability Zone contains one or more discrete data centers, and each AWS Region has at least two Availability Zones."
+          "correct": false,
+          "explanation": "This is incorrect \u2014 AWS Regions have a minimum of three Availability Zones, not two."
         },
         {
           "id": "d",
@@ -1863,7 +1863,7 @@
         },
         {
           "id": "c",
-          "text": "Recommendations tailored to a user’s profile, behavior, preferences, and history",
+          "text": "Recommendations tailored to a user\u2019s profile, behavior, preferences, and history",
           "correct": false,
           "explanation": "This use case maps to content moderation, personalization, or conversational bots rather than forecasting."
         },
@@ -1979,7 +1979,7 @@
     },
     {
       "id": "q65",
-      "question": "A manufacturing company has developed a machine learning model to automate the process of identifying and classifying different types of materials — such as metals, plastics, and fabrics — in images captured from its production line. To ensure that the model accurately differentiates between these materials and performs reliably in real-world conditions, the company needs to evaluate its performance using an appropriate method that can provide detailed insights into the model's accuracy and classification errors. Which of the following options would be the most suitable for assessing the performance of the classification model?",
+      "question": "A manufacturing company has developed a machine learning model to automate the process of identifying and classifying different types of materials \u2014 such as metals, plastics, and fabrics \u2014 in images captured from its production line. To ensure that the model accurately differentiates between these materials and performs reliably in real-world conditions, the company needs to evaluate its performance using an appropriate method that can provide detailed insights into the model's accuracy and classification errors. Which of the following options would be the most suitable for assessing the performance of the classification model?",
       "choices": [
         {
           "id": "a",
