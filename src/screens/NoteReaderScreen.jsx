@@ -141,7 +141,7 @@ export default function NoteReaderScreen() {
         />
       )}
 
-      <article className="prose prose-slate max-w-none scroll-smooth dark:prose-invert prose-headings:scroll-mt-24 prose-headings:font-bold prose-a:text-sky-600 dark:prose-a:text-sky-400">
+      <article className="prose prose-slate max-w-none scroll-smooth dark:prose-invert prose-headings:scroll-mt-24 prose-headings:font-bold prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-a:text-sky-600 sm:prose-h1:text-3xl sm:prose-h2:text-2xl sm:prose-h3:text-xl dark:prose-a:text-sky-400">
         <Markdown
           remarkPlugins={[remarkGfm]}
           components={{
