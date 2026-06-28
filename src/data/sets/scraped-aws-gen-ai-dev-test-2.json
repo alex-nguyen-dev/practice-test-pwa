@@ -125,7 +125,7 @@
     },
     {
       "id": "q5",
-      "question": "A marketing content assistant recently adopted a new “tone and brand” prompt template that was manually tuned in a staging environment. After rollout, some product lines show improved copy while others regress, and the team has no structured way to compare the new template against the previous one across a broad test set. How should you introduce a prompt testing framework and evaluation workflow to systematically compare prompt versions and prevent quality regressions?",
+      "question": "A marketing content assistant recently adopted a new \u201ctone and brand\u201d prompt template that was manually tuned in a staging environment. After rollout, some product lines show improved copy while others regress, and the team has no structured way to compare the new template against the previous one across a broad test set. How should you introduce a prompt testing framework and evaluation workflow to systematically compare prompt versions and prevent quality regressions?",
       "choices": [
         {
           "id": "a",
@@ -305,7 +305,7 @@
     },
     {
       "id": "q11",
-      "question": "A global automotive manufacturer is developing a unified “Product Intelligence Assistant” that can help engineering, marketing, and field-service teams search across product manuals, assembly-line videos, test-drive transcripts, and CAD-annotation metadata. The assistant must support multimodal retrieval, provide streaming conversational responses with grounded citations, and route requests to different foundation models depending on the requesting business unit. Additionally, the company must strictly separate pre-release and public content and wants to avoid the operational burden of building custom multimodal ingestion pipelines or hosting models directly. What do you recommend?",
+      "question": "A global automotive manufacturer is developing a unified \u201cProduct Intelligence Assistant\u201d that can help engineering, marketing, and field-service teams search across product manuals, assembly-line videos, test-drive transcripts, and CAD-annotation metadata. The assistant must support multimodal retrieval, provide streaming conversational responses with grounded citations, and route requests to different foundation models depending on the requesting business unit. Additionally, the company must strictly separate pre-release and public content and wants to avoid the operational burden of building custom multimodal ingestion pipelines or hosting models directly. What do you recommend?",
       "choices": [
         {
           "id": "a",
@@ -335,7 +335,7 @@
     },
     {
       "id": "q12",
-      "question": "A healthcare startup trains and retrains generative models on sensitive clinical notes and imaging metadata across multiple environments in different AWS accounts. Auditors now require a complete lineage graph that shows exactly which datasets, preprocessing jobs, training jobs, and model artifacts contributed to each production endpoint, including associations across accounts used for experimentation. How would you architect a lineage tracking solution that creates and connects artifacts, actions, and contexts so that auditors can reconstruct every model’s history?",
+      "question": "A healthcare startup trains and retrains generative models on sensitive clinical notes and imaging metadata across multiple environments in different AWS accounts. Auditors now require a complete lineage graph that shows exactly which datasets, preprocessing jobs, training jobs, and model artifacts contributed to each production endpoint, including associations across accounts used for experimentation. How would you architect a lineage tracking solution that creates and connects artifacts, actions, and contexts so that auditors can reconstruct every model\u2019s history?",
       "choices": [
         {
           "id": "a",
@@ -406,8 +406,8 @@
         {
           "id": "b",
           "text": "Use AWS Step functions to enforce multi-stage approval workflows across business units, combine Amazon Bedrock Guardrails for topic blocking and injection resistance, and integrate Amazon Bedrock Knowledge Bases for retrieval with citation metadata. Then enable Amazon Bedrock model invocation logging with Amazon S3 Object Lock configured at 10-year governance mode retention",
-          "correct": true,
-          "explanation": "Step Functions can provide the formal approval workflow, while Bedrock Guardrails, Knowledge Bases, invocation logging, and S3 Object Lock address safety, citations, audit retention, and managed operation."
+          "correct": false,
+          "explanation": "Step Functions adds unnecessary custom infrastructure overhead. Additionally, S3 Object Lock governance mode can be overridden by privileged users \u2014 a 10-year regulatory mandate requires compliance mode, which prevents deletion or modification by anyone including root."
         },
         {
           "id": "c",
@@ -418,8 +418,8 @@
         {
           "id": "d",
           "text": "Use Amazon Bedrock Prompt Management to enforce multi-stage approval workflows across business units, combine Amazon Bedrock Guardrails for topic blocking and injection resistance, and integrate Amazon Bedrock Knowledge Bases for retrieval with citation metadata. Then enable Amazon Bedrock model invocation logging with Amazon S3 Object Lock configured at 10-year compliance mode retention",
-          "correct": false,
-          "explanation": "This option misses a required managed control or assumes native prompt approval behavior that is not documented for Bedrock Prompt Management."
+          "correct": true,
+          "explanation": "Bedrock Prompt Management is purpose-built for prompt lifecycle management with IAM-controlled approval before deployment. Bedrock Guardrails handles topic blocking, Bedrock Knowledge Bases provides retrieval with citation metadata, and S3 Object Lock compliance mode \u2014 unlike governance mode \u2014 cannot be bypassed by anyone, satisfying the 10-year regulatory retention requirement."
         }
       ]
     },
@@ -485,11 +485,11 @@
     },
     {
       "id": "q17",
-      "question": "A SaaS provider is developing a conversational assistant that can answer customer questions by referencing proprietary implementation guides, internal processes, and highly customized runbooks. Each customer’s documents must stay fully isolated from other tenants so that no organization ever gains visibility into another’s intellectual property. The legal team also requires strict controls to ensure that none of the customer provided documents are used to train or improve the underlying language models. The architecture must allow the assistant to generate grounded responses while maintaining strong privacy guarantees for every customer. As a GenAI developer, which solution would you recommend?",
+      "question": "A SaaS provider is developing a conversational assistant that can answer customer questions by referencing proprietary implementation guides, internal processes, and highly customized runbooks. Each customer\u2019s documents must stay fully isolated from other tenants so that no organization ever gains visibility into another\u2019s intellectual property. The legal team also requires strict controls to ensure that none of the customer provided documents are used to train or improve the underlying language models. The architecture must allow the assistant to generate grounded responses while maintaining strong privacy guarantees for every customer. As a GenAI developer, which solution would you recommend?",
       "choices": [
         {
           "id": "a",
-          "text": "Provide each customer’s documents directly to the model at runtime and control exposure by encrypting the files with a customer specific KMS key. Allow the foundation model to generate grounded answers by reading unprocessed documents and leverage output postprocessing to ensure private data is not leaked",
+          "text": "Provide each customer\u2019s documents directly to the model at runtime and control exposure by encrypting the files with a customer specific KMS key. Allow the foundation model to generate grounded answers by reading unprocessed documents and leverage output postprocessing to ensure private data is not leaked",
           "correct": false,
           "explanation": "It risks tenant data exposure or relies on application filtering instead of isolated retrieval and scoped policies."
         },
@@ -501,13 +501,13 @@
         },
         {
           "id": "c",
-          "text": "Use Amazon Bedrock Knowledge Bases to store and index each customer’s documents in isolated data stores and configure resource based policies so that only that customer’s assistant can retrieve embeddings and context. Leverage Amazon Bedrock’s native privacy guarantees, which ensure that none of the customer provided data is used to train or improve foundation models, while grounding responses exclusively from the customer’s isolated knowledge base",
+          "text": "Use Amazon Bedrock Knowledge Bases to store and index each customer\u2019s documents in isolated data stores and configure resource based policies so that only that customer\u2019s assistant can retrieve embeddings and context. Leverage Amazon Bedrock\u2019s native privacy guarantees, which ensure that none of the customer provided data is used to train or improve foundation models, while grounding responses exclusively from the customer\u2019s isolated knowledge base",
           "correct": true,
           "explanation": "Isolated Bedrock Knowledge Bases with scoped access policies preserve tenant privacy while Bedrock does not use customer content to train base models."
         },
         {
           "id": "d",
-          "text": "Use Amazon Bedrock Knowledge Bases to store and index customer documents in separate logical indexes while allowing all indexes to share a single underlying storage location and unified access policy for simplified management. Leverage Amazon Bedrock’s privacy guarantees to ensure that customer data is not used to train models and depend on application side routing to direct retrieval queries to the correct customer context",
+          "text": "Use Amazon Bedrock Knowledge Bases to store and index customer documents in separate logical indexes while allowing all indexes to share a single underlying storage location and unified access policy for simplified management. Leverage Amazon Bedrock\u2019s privacy guarantees to ensure that customer data is not used to train models and depend on application side routing to direct retrieval queries to the correct customer context",
           "correct": false,
           "explanation": "It risks tenant data exposure or relies on application filtering instead of isolated retrieval and scoped policies."
         }
@@ -1007,7 +1007,7 @@
     },
     {
       "id": "q34",
-      "question": "A bank is developing a GenAI assistant that handles customer queries about cards, loans, and savings products in a single chat interface. They want to detect the user’s intent as early as possible so that card disputes, loan preapproval checks, and account balance inquiries are routed to separate downstream workflows that each call different Amazon Bedrock models and prompts. The team decides to move away from simple keyword based routing and adopt ML based intent classification. As the lead GenAI engineer, how should you integrate Amazon services to detect intents and route each conversation to the correct handling logic?",
+      "question": "A bank is developing a GenAI assistant that handles customer queries about cards, loans, and savings products in a single chat interface. They want to detect the user\u2019s intent as early as possible so that card disputes, loan preapproval checks, and account balance inquiries are routed to separate downstream workflows that each call different Amazon Bedrock models and prompts. The team decides to move away from simple keyword based routing and adopt ML based intent classification. As the lead GenAI engineer, how should you integrate Amazon services to detect intents and route each conversation to the correct handling logic?",
       "choices": [
         {
           "id": "a",
@@ -1283,7 +1283,7 @@
     },
     {
       "id": "q43",
-      "question": "A media company’s content generation system must remain available across multiple geographic regions. During high traffic periods, Amazon Bedrock occasionally returns “Too many requests” errors for their preferred model. The company wants to increase resilience without modifying the application’s content generation logic or switching to a different foundation model family. They want an approach that preserves model consistency while ensuring that surges in regional traffic do not cause user facing failures. Which model configuration strategy should they choose?",
+      "question": "A media company\u2019s content generation system must remain available across multiple geographic regions. During high traffic periods, Amazon Bedrock occasionally returns \u201cToo many requests\u201d errors for their preferred model. The company wants to increase resilience without modifying the application\u2019s content generation logic or switching to a different foundation model family. They want an approach that preserves model consistency while ensuring that surges in regional traffic do not cause user facing failures. Which model configuration strategy should they choose?",
       "choices": [
         {
           "id": "a",
@@ -1313,7 +1313,7 @@
     },
     {
       "id": "q44",
-      "question": "An insurance company’s AI governance committee meets monthly to review the compliance status of all foundation model workloads across multiple Regions and business units. They want automated reports that summarize key governance metrics, such as model card coverage, lineage completeness, bias and drift incidents, guardrail enforcement statistics, and remediation actions taken, without assembling data manually from many teams. As a GenAI developer, how would you design an architecture that aggregates monitoring and governance data into automated, consumable compliance reports?",
+      "question": "An insurance company\u2019s AI governance committee meets monthly to review the compliance status of all foundation model workloads across multiple Regions and business units. They want automated reports that summarize key governance metrics, such as model card coverage, lineage completeness, bias and drift incidents, guardrail enforcement statistics, and remediation actions taken, without assembling data manually from many teams. As a GenAI developer, how would you design an architecture that aggregates monitoring and governance data into automated, consumable compliance reports?",
       "choices": [
         {
           "id": "a",
@@ -1359,7 +1359,7 @@
         },
         {
           "id": "c",
-          "text": "Use Amazon Bedrock Prompt Router to route each department’s requests to the appropriate model configuration and combine this with Bedrock Guardrails to apply department specific safety rules. Orchestrate prompt assembly and retrieval using Amazon Bedrock Flows, allowing centralized governance and consistent policy enforcement",
+          "text": "Use Amazon Bedrock Prompt Router to route each department\u2019s requests to the appropriate model configuration and combine this with Bedrock Guardrails to apply department specific safety rules. Orchestrate prompt assembly and retrieval using Amazon Bedrock Flows, allowing centralized governance and consistent policy enforcement",
           "correct": true,
           "explanation": "Prompt Router, Guardrails, and Bedrock Flows centralize model routing, safety policies, prompt assembly, and retrieval across departments."
         },
@@ -2044,8 +2044,8 @@
         {
           "id": "a",
           "text": "Use Amazon Bedrock Prompt Management to store, version, and approve prompt templates, while allowing compliance reviewers to compare historical prompt versions with new ones. Leverage Prompt Management to implement controlled approval workflows and promote prompt configurations across development, staging, and production environments",
-          "correct": false,
-          "explanation": "This option is either too manual, routing-only, or assumes native Prompt Management approval and environment-promotion capabilities that are not documented."
+          "correct": true,
+          "explanation": "Amazon Bedrock Prompt Management natively supports version control, version comparison, rollback, and IAM-auditable approvals \u2014 exactly what the compliance team needs. Per-environment promotion is handled by controlling which version ARN each environment references, all with minimal infrastructure overhead."
         },
         {
           "id": "b",
@@ -2062,8 +2062,8 @@
         {
           "id": "d",
           "text": "Use an internal Git based workflow to store configuration JSON files and prompt templates, combined with CodePipeline to deploy updates to Lambda functions that wrap model calls. Leverage Git tags and pull requests as approval checkpoints and rely on environment specific branches to manage configuration drift",
-          "correct": true,
-          "explanation": "A Git and CodePipeline workflow supports versioned configuration files, pull request approvals, rollback, environment-specific promotion, and an auditable record of who approved each change."
+          "correct": false,
+          "explanation": "A Git + CodePipeline + Lambda wrapper approach introduces significant custom infrastructure overhead, violating the minimum overhead requirement. Bedrock Prompt Management provides these capabilities natively without building a custom deployment pipeline."
         }
       ]
     },
@@ -2195,7 +2195,7 @@
     },
     {
       "id": "q72",
-      "question": "A customer support application intermittently returns generic “model invocation failed” errors when sending structured JSON prompts to a foundation model API. Initial checks reveal that some requests include optional fields in unexpected formats and unescaped characters that were not present during earlier testing. How should you design request validation and error handling so that malformed inputs are detected early and failures are easier to diagnose?",
+      "question": "A customer support application intermittently returns generic \u201cmodel invocation failed\u201d errors when sending structured JSON prompts to a foundation model API. Initial checks reveal that some requests include optional fields in unexpected formats and unescaped characters that were not present during earlier testing. How should you design request validation and error handling so that malformed inputs are detected early and failures are easier to diagnose?",
       "choices": [
         {
           "id": "a",

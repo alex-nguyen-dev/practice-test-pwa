@@ -4,7 +4,14 @@
     "collection": "AWS Generative AI Developer",
     "title": "Scraped Gen AI Developer Test 1",
     "questionCount": 25,
-    "file": "aws-gen-ai-dev-scraped-test-1.json"
+    "file": "scraped-aws-gen-ai-dev-test-1.json"
+  },
+  {
+    "id": "aws-gen-ai-dev-scraped-test-2",
+    "collection": "AWS Generative AI Developer",
+    "title": "Scraped Generative AI Developer Test 2",
+    "questionCount": 75,
+    "file": "scraped-aws-gen-ai-dev-test-2.json"
   },
   {
     "id": "aws-ai-scraped-practitioner-test-1",
