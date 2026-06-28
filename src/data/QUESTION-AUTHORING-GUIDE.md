@@ -55,6 +55,16 @@ A well-written distractor is wrong on the *content*, never identifiable from the
 **Rule:** a multi-answer question needs at least **2 distractors**. Match the real exam: "select TWO" → 5 options, "select THREE" → 5–6 options. The number of correct answers should be at most `options − 2`.
 **Don't** reveal the count in the stem ("Select all that apply," not "Select THREE").
 
+### 4. Do not let keyword matching reveal the answer
+**Mistake made:** some stems repeated distinctive phrases that appeared almost verbatim in the correct option, while distractors used unrelated language.
+**Rule:** if the stem says "redact PII and filter harmful content," don't make the only option with "redact PII" and "filter content" the correct one. Use scenario requirements in the stem, but make the answer require concept recognition.
+**How:** write options as comparable service/concept choices, then put the detailed requirement mapping in the explanations.
+
+### 5. Avoid absurd or reckless distractors
+**Mistake made:** some wrong options were joke-level or obviously unsafe, such as unrelated DNS services, console color themes, public logging of secrets, or granting everyone admin access.
+**Rule:** a distractor should be something a prepared but imperfect learner might plausibly choose. Avoid options that can be eliminated by common sense alone.
+**Better:** for a private connectivity question, use NAT gateway, gateway VPC endpoint, interface VPC endpoint, and public endpoint with TLS. These are all real networking concepts, but only one fits the exact requirement.
+
 ---
 
 ## Writing the stem
@@ -63,20 +73,24 @@ A well-written distractor is wrong on the *content*, never identifiable from the
 - Put all needed context in the stem; end with a single, clear question.
 - Avoid negatives ("which is NOT") where possible; if unavoidable, emphasize the negative word.
 - One defensible correct answer (or one defensible set for multi-answer). No "best of two rights" ambiguity.
+- Avoid embedding the exact service tagline or feature wording that appears in the correct option. The stem should describe requirements, not hand the learner a string to match.
 
 ## Writing the options
 
 - **Plausible distractors:** use real, related services/concepts a confused learner might pick (e.g., for a RAG question, use OpenSearch vs. an unrelated DNS service — but make the wrong one genuinely tempting, not absurd). Avoid joke options.
+- **Same-domain distractor sets:** keep options in the same family when possible. Compare AI services with AI services, inference modes with inference modes, VPC connectivity patterns with VPC connectivity patterns, and governance controls with governance controls.
 - **Parallel grammar and structure:** every option starts the same way (e.g., all "Service, which does X") so none stands out.
 - **No grammatical or "all/always/never" giveaways:** absolute words in an option usually signal a distractor — use sparingly and on both correct and wrong options, or not at all.
 - **Mutually exclusive** options for single-answer questions; no overlapping or synonym choices.
 - Keep distractors mutually distinct — don't repeat the same idea twice.
+- **Do not make the correct option the only operationally reasonable one.** Wrong choices can be incomplete, over-scoped, too narrow, or suited to a neighboring use case; they should not be obviously foolish.
 
 ## Writing the explanations
 
 - For the **correct** option: state why it satisfies the scenario's requirements, not just what the service is.
 - For each **wrong** option: name what it actually does and why it fails *this* requirement — this is where the learning happens.
-- Be specific and accurate. If unsure of a fact, verify against the study notes (`AWS-AI-Practitioner-Study-Notes.md`) before writing.
+- Write each option and its explanation as a pair. The explanation must directly address that exact option, not a generic reason the service or concept is wrong.
+- Be specific and accurate. If unsure of a fact, verify against the provided study notes or official vendor documentation before writing, especially for newer services or renamed features.
 
 ---
 
@@ -101,4 +115,7 @@ Run these checks (a small Node script over `src/data/sets/*.json` works well) be
 3. **Each question has ≥1 correct answer**; multi-answer questions have **≥2 distractors**.
 4. **Position balance:** correct-answer slots are spread across positions, not concentrated in one.
 5. **Length balance:** the correct option is not consistently the longest (or shortest); option lengths within a question are comparable.
-6. **Build passes:** `npm run build` succeeds (confirms the files load).
+6. **Keyword leakage:** the correct option is not the only one repeating distinctive words from the stem.
+7. **Distractor plausibility:** wrong options are same-domain, realistic mistakes — not jokes, unrelated services, or obviously reckless security practices.
+8. **Explanation alignment:** every option has a matching explanation that directly describes why that exact option is right or wrong for the scenario.
+9. **Build passes:** `npm run build` succeeds (confirms the files load).
